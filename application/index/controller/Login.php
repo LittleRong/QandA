@@ -2,7 +2,7 @@
 namespace app\index\controller;
 use think\View;
 use think\Controller;
-use app\index\model\User;
+use app\index\model\UserModel;
 use think\Session;
 
 class login extends Controller{
@@ -29,30 +29,29 @@ class login extends Controller{
   }
 
   public function login($username='',$password=''){
-    $user = User::get([
-        'login_name' => $username,
-        'pwd' => md5($password)
-        ]);
-    if($user){
+    $user_model = new UserModel();    //实例化用户模型
+    $login_result = $user_model->login($username,$password);  //调用函数进行登录判断
+    if($login_result){
       if(Session::get('user_id')){
         $data = array('result'=>'已登陆');
-        return json_encode($data, 200);
+        return json_encode($data);
       }else{
           $data = array('result'=>'登陆成功');
-        Session::set('user_id',$user->id); //设置session保存当前登陆用户信息
-        return json_encode($data, 200);
+        Session::set('user_id',$login_result->id); //设置session保存当前登陆用户信息
+        return json_encode($data);
       }
     }else{
         $data = array('result'=>'登陆失败,用户名或密码错误');
-        return json_encode($data, 200);
+        return json_encode($data);
     }
+
   }
 
   public function logout(){
     //注销session
     session(null);
-      $data = array('result'=>'成功退出');
-    return json_encode($data, 200);
+    $data = array('result'=>'成功退出');
+    return json_encode('$data');
 
   }
 
