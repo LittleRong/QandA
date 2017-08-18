@@ -49,10 +49,13 @@ $(document).ready(function(){
                 async: false,
                 success: function(data){
                     alert("跳转成功");
-                    if(data['result']=="登陆成功"||data['result']=="已登陆"){
-                        alert(data['result']);
+                    json_data=eval('('+data+')');
+                    if(json_data['result']=="登陆成功"||json_data['result']=="已登陆"){
+                        alert(json_data['result']);
+                        //登录成功操作......
                     }else{
-                        alert(data['result']);
+                        alert(json_data['result']);
+                        //登录失败操作......
                     }
                 },
                 error: function(data, status, error){
