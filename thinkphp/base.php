@@ -13,7 +13,7 @@ define('THINK_VERSION', '5.0.0');
 define('THINK_START_TIME', microtime(true));
 define('THINK_START_MEM', memory_get_usage());
 define('EXT', '.php');
-define('DS', DIRECTORY_SEPARATOR);
+define('DS', DIRECTORY_SEPARATOR);    //DIRECTORY_SEPARATOR php目录分隔符
 defined('THINK_PATH') or define('THINK_PATH', __DIR__ . DS);
 define('LIB_PATH', THINK_PATH . 'library' . DS);
 define('CORE_PATH', LIB_PATH . 'think' . DS);

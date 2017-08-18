@@ -24,6 +24,7 @@ class login extends Rest{
     if(Session::get('user_id')){//用户已经登陆，直接进入用户中心
       return $view->fetch('user@user_index/user_index');
     }else{
+		//return $view->fetch('model@model/model');
       return $view->fetch('index');//用户未登录，进入登陆界面
     }
 
