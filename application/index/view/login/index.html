@@ -42,7 +42,7 @@ $(document).ready(function(){
         }else{
             var post_data = {username:username,password:password};
             $.ajax({
-                url:"login",
+                url:"{:url('login/check')}",
                 dataType: "json",
                 type: 'POST',
                 data: post_data,
