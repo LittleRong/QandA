@@ -11,6 +11,6 @@ CREATE TABLE event(
     `ekind` varchar(50) NOT NULL COMMENT '事件种类',
     `pro_ramdom` boolean NOT NULL COMMENT '是否控制题目随机排序',
 	`opt_ramdom` boolean NOT NULL COMMENT '是否控制选项随机排序',
-	`credit_rule` varchar(150) NOT NULL COMMENT '积分规则',
+	`credit_rule` varchar(250) NOT NULL COMMENT '积分规则',
     `message`  varchar(500) NOT NULL COMMENT '事件描述'
 );
