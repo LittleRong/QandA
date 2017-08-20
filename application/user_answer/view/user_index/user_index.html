@@ -9,7 +9,8 @@
 </head>
 <body>
     登录成功，欢迎！！！
-    <button type="button" id="logout_btn">退出</button>
+    <a href="{:url('login/change_pwd')}">修改密码</a>
+    <button id="logout_btn">退出</button>
 </body>
 </html>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -20,17 +21,18 @@ $(document).ready(function(){
     $("#logout_btn").click(function(){
             var post_data = {};
             $.ajax({
-                url:"logout",
+                url:"{:url('index/Login/logout')}",
                 dataType: "json",
                 type: 'POST',
                 data: post_data,
                 async: false,
                 success: function(data){
-                    location.reload();
+                    window.location.href="{:url('index/Login/index')}"
                 },
                 error: function(data, status, error){
                 }
             });
+            return false;
     });
 });
 </script>
