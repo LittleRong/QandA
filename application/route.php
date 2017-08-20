@@ -18,4 +18,9 @@ return [
         ':name' => ['index/hello', ['method' => 'post']],
     ],
 
+
+    //添加路由
+    //'admin'  =>  'admin/index/index',
+    //'login'  =>  'index/login/index'
+
 ];

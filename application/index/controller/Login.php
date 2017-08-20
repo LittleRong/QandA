@@ -5,7 +5,7 @@ use think\Controller;
 use app\index\model\UserModel;
 use think\Session;
 
-class login extends Controller{
+class Login extends Controller{
 /*
   //可用于其他页面进行是否登陆判断
   public function _initialize()
