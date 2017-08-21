@@ -99,6 +99,7 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
+    loadInit();
     $("#logout_btn").click(function(){
             var post_data = {};
             $.ajax({
@@ -117,6 +118,26 @@ $(document).ready(function(){
     });
 });
 
+function loadInit(){
+  var post_data={};
+  $.ajax({
+        url:"{:url('index/userindex/show')}",
+        dataType: "json",
+        type: 'GET',
+        data: post_data,
+        async: false,
+        success: function(data){
+            alert("跳转成功");
+            alert(data);
+            //json_data=eval('('+data+')');
+            //alert(json_data['event_message'][0]['event_title']);
+        },
+        error: function(data, status, error){
+            alert("跳转失败");
+            alert(error);
+        }
+  });
+}
 
 </script>
 </html>
