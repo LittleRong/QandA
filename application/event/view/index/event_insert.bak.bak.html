@@ -82,7 +82,7 @@
         		</div>
         	</div>
         	<div class="pui-row">
-        		<h1 class="pui-text-center">——配置事件——</h1>
+        		<h1 class="pui-text-center">配置事件</h1>
         	</div>
         	<div class="pui-row">
         		<div class="pui-grid-xs-2"></div>
@@ -91,68 +91,31 @@
         			<input type="text" id="ename" name="ename">
         			<label >事件描述：</label>
         			<textarea id="message" name="message"></textarea>
-        			<label >事件类型：</label>
-        			<div>
-								<select name="select_event" id="select_event" onchange="GetSelValue();">
-                        <option selected value="选择事件种类">请选择事件种类</option>
-                        <option value="业务知识类竞赛">业务知识类竞赛</option>
-                        <option value="种类二">种类二</option>
-                    	</select>
-                    </div>
-                    <label >参赛人员：</label>
-                    <div>
-        				<input style="width:20%" type="number">——<input style="width:20%" type="number">人
-                    </div>
-								<label >开始时间：</label>
-								<input type="date" id="start_time" name="start_time">
-								<label >结束时间：</label>
-								<input type="date" id="end_time" name="end_time">
-
+        			<label >开始时间：</label>
+        			<input type="date" id="start_time" name="start_time">
+        			<label >结束时间：</label>
+        			<input type="date" id="end_time" name="end_time">
         			<div style="margin-bottom: 15px;">
-        			<label >答题日期：</label>
-        			<label>
-                        <input type="checkbox" name=""> 星期一
-                    </label>
-                    <label>
-                        <input type="checkbox" name=""> 星期二
-                    </label>
-                    <label>
-                        <input type="checkbox" name=""> 星期三
-                    </label>
-                    <label>
-                        <input type="checkbox" name=""> 星期四
-                    </label>
-                    <label>
-                        <input type="checkbox" name=""> 星期五
-                    </label>
-                    <label>
-                        <input type="checkbox" name=""> 星期六
-                    </label>
-                    <label>
-                        <input type="checkbox" name=""> 星期日
-                    </label>
-                    </div>
-        				<div style="margin-bottom: 15px;">
-									<div class="pui-row">
-	        					<div class="pui-grid-xs-4">
+        				<div class="pui-row">
+        					<div class="pui-grid-xs-4">
 
-	        					</div>
-	        					<div class="pui-grid-xs-4">
-	        						<strong>每天答题数量</strong>
-	        					</div>
-	        					<div class="pui-grid-xs-4">
-	        						<strong>每题获得积分</strong>
-	        					</div>
-	        				</div>
-									<div class="pui-row">
-        					<div class="pui-grid-xs-4">
-										<label>单选题：</label>
         					</div>
         					<div class="pui-grid-xs-4">
-        						<input type="number" id="single" name="single">
+        						<strong>每天答题数量</strong>
         					</div>
         					<div class="pui-grid-xs-4">
-        						<input type="number" id="single_score" name="single_score">
+        						<strong>每题获得积分</strong>
+        					</div>
+        				</div>
+        				<div class="pui-row">
+        					<div class="pui-grid-xs-4">
+        						<label>单选题：</label>
+        					</div>
+        					<div class="pui-grid-xs-4">
+        						<input type="number" id='single' name='single'>
+        					</div>
+        					<div class="pui-grid-xs-4">
+        						<input type="number" id='single_score' name='single_score'>
         					</div>
         				</div>
         				<div class="pui-row">
@@ -160,10 +123,10 @@
         						<label>多选题：</label>
         					</div>
         					<div class="pui-grid-xs-4">
-        						<input type="number" id="multiple" name="multiple">
+        						<input type="number" id='multiple' name='multiple'>
         					</div>
         					<div class="pui-grid-xs-4">
-        						<input type="number" id="multiple_score" name="multiple_score">
+        						<input type="number" id='multiple_score' name='multiple_score'>
         					</div>
         				</div>
         				<div class="pui-row">
@@ -171,10 +134,10 @@
         						<label>填空题：</label>
         					</div>
         					<div class="pui-grid-xs-4">
-        						<input type="number" id="fill" name="fill">
+        						<input type="number" id='fill' name='fill'>
         					</div>
         					<div class="pui-grid-xs-4">
-        						<input type="number" id="fill_score" name="fill_score">
+        						<input type="number" id='fill_score' name='fill_score'>
         					</div>
         				</div>
         				<div class="pui-row">
@@ -182,71 +145,51 @@
         						<label>判断题：</label>
         					</div>
         					<div class="pui-grid-xs-4">
-        						<input type="number" id="judge" name="judge">
+        						<input type="number" id='judge' name='judge'>
         					</div>
         					<div class="pui-grid-xs-4">
-        						<input type="number" id="judge_score" name="judge_score">
+        						<input type="number" id='judge_score' name='judge_score'>
         					</div>
         				</div>
         			</div>
-
-        				<label>当日个人全对额外加分：</label>
-        				<input type="number" style="width: 85%;" id="person_score" name="person_score">
-        				<label>当日团队全对额外加分：</label>
-        				<input type="number" style="width: 85%;" id="team_score" name="team_score">
-								<label>个人总积分上限：</label>
-        				<input type="number" style="width: 85%;" id="person_score_up" name="person_score_up">
-        				<label>团队总积分上限：</label>
-        				<input type="number" style="width: 85%;" id="team_score_up" name="team_score_up">
-
+        			<label >事件类型：</label>
+        			<div>
+        				<select name="select_event" id="select_event" onchange="GetSelValue();">
+                        <option selected value="选择事件种类">业务知识类竞赛</option>
+                        <option value="种类一">种类一</option>
+                        <option value="种类二">种类二</option>
+                    	</select>
+              </div>
+                    <div style="padding-top: 15px;">
+                        <input type="checkbox" id="pro_ramdom" name="pro_ramdom"> 是否控制题目随机顺序
+                    </div>
                     <div style="padding-top: 15px;padding-bottom: 15px;">
-											<input type="checkbox" id="pro_ramdom" name="pro_ramdom"> 是否控制题目随机顺序
-											</div>
-											<div style="padding-bottom: 15px;">
-											<input type="checkbox" id="opt_ramdom" name="opt_ramdom"> 是否控制选项随机顺序
-											</div>
-              <label >答题时间：</label>
+                        <input type="checkbox" id="opt_ramdom" name="opt_ramdom"> 是否控制选项随机顺序
+                    </div>
+                    	<label >答题时间：</label>
         			<div>
         				<select name="select_time" id="select_time" onchange="GetSelValue();">
-                        <option selected value="选择">请选择答题时长</option>
-												<option value="半小时">半小时</option>
-												<option value="一小时">一小时</option>
+                        <option selected value="选择答题时间">选择答题时间</option>
+                        <option value="一小时">一小时</option>
                         <option value="两小时">两小时</option>
                     	</select>
                     </div>
                     <div class="pui-form-group" style="padding-bottom: 15px;">
                     <label>参加道具：</label>
-                    <div>
-                    	<label>
-                        	<input type="checkbox" name=""> 道具1
-                    	</label>
-                    	<input type="text" style="width:20%;">
-                    	<input type="text" style="width:20%;">
-                    	<input type="text" style="width:20%;">
-                    </div>
-                    <div>
-                    	<label>
-                        	<input type="checkbox" name=""> 道具2
-                    	</label>
-                    	<input type="text" style="width:20%;">
-                    	<input type="text" style="width:20%;">
-                    	<input type="text" style="width:20%;">
-                    </div>
-                    <div>
-                    	<label>
-                        	<input type="checkbox" name=""> 道具3
-                    	</label>
-                    	<input type="text" style="width:20%;">
-                    	<input type="text" style="width:20%;">
-                    	<input type="text" style="width:20%;">
-                    </div>
+                    <label>
+                        <input type="checkbox" name=""> 道具一
+                    </label>
+                    <label>
+                        <input type="checkbox" name=""> 道具二
+                    </label>
+                    <label>
+                        <input type="checkbox" name=""> 道具三
+                    </label>
                 	</div>
-
-                			<button class="pui-btn pui-btn-primary pui-btn-large pui-btn-block"  id="submit_message" style="margin-bottom: 30px;">
-								下一步
-							</button>
-						</a>
-        			</div>
+                	<button class="pui-btn pui-btn-primary pui-btn-large pui-btn-block" id="submit_message" style="margin-bottom: 30px;">
+						下一步
+					</button>
+        		</div>
         	</div>
         </div>
         <!-- 代码写在这上面 -->
@@ -279,8 +222,8 @@
 		    $("#submit_message").click(function(){
 		        // var eid = $("#eid").val();
 		        // var aid = $("#aid").val();
-						var eid = '5';
-		        var aid = '2';
+						var eid = "3";
+						var aid = "4"
 						var ename = $("#ename").val();
 						var start_time = $("#start_time").val();
 						var end_time = $("#end_time").val();
@@ -298,11 +241,15 @@
 						var multiple_score = $("#multiple_score").val();
 						var fill_score = $("#fill_score").val();
 						var judge_score = $("#judge_score").val();
-						var person_score = $("#person_score").val();
-						var team_score = $("#team_score").val();
-						var person_score_up = $("#person_score_up").val();
-						var team_score_up = $("#team_score_up").val();
-						var message = $("#message").val();
+						// var person_score = $("#person_score").val();
+						// var team_score = $("#team_score").val();
+						// var person_score_up = $("#person_score_up").val();
+						// var team_score_up = $("#team_score_up").val();
+						var person_score = '100';
+						var team_score = '100';
+						var person_score_up = '100';
+						var team_score_up = '100';
+						var message = '100';
 
 						if($("#pro_ramdom").is(":checked"))
 						{

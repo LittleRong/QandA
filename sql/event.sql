@@ -3,7 +3,7 @@ use `question`;
 
 DROP TABLE if exists `event`;
 CREATE TABLE event(
-    `eid` int PRIMARY KEY AUTO_INCREMENT COMMENT '事件ID',
+    `eid` int PRIMARY KEY IDENTITY COMMENT '事件ID',
     `aid` int NOT NULL COMMENT '管理员ID',
     `ename` varchar(100) NOT NULL COMMENT '事件名称',
     `event_time` varchar(150) NOT NULL COMMENT '事件时间',

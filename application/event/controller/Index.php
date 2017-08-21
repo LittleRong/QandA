@@ -13,8 +13,7 @@
       public function insertEvent()
       {
           $view = new View();
-          return $view->fetch('contact');
-
+          return $view->fetch('event_insert');
       }
 
       //跳转到事件显示视图
@@ -26,7 +25,7 @@
          {
             $item = json_decode($result[$i],true);
             $event_time = json_decode($item['event_time'],true);
-            $question_num = json_decode($item['question_num'],true);
+            $question_num = json_decode($item['event_num'],true);
             $credit_rule = json_decode($item['credit_rule'],true);
             $merge_item = array_merge($item,$event_time,$question_num,$credit_rule);
             $all[$i] = $merge_item;
@@ -43,7 +42,7 @@
               $team_score,$person_score_up,$team_score_up,$message)
        {
           $this->insert((int)$eid,(int)$aid,$ename,$start_time,$end_time,(int)$single,(int)$multiple,
-                  (int)$fill,(int)$judge,(bool)$pro_ramdom,(bool)$opt_ramdom,$ekind,(int)$time,(int)$single_score,
+                  (int)$fill,(int)$judge,(bool)$pro_ramdom,(bool)$opt_ramdom,$ekind,$time,(int)$single_score,
                   (int)$multiple_score,(int)$fill_score,(int)$judge_score,(int)$person_score,
                   (int)$team_score,(int)$person_score_up,(int)$team_score_up,$message);
           $data = array('result'=>'录入成功!');

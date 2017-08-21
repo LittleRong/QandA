@@ -45,16 +45,17 @@ class EventModel extends Model{
 
 
       $this->data([
-        'eid' => $eid,
-        'aid'  =>  $aid,
-        'ename'  => $ename,
+        //'event_id' => $eid,
+        'manage_id'  =>  $aid,
+        'event_title'  => $ename,
         'event_time' => $event_time,
-       'question_num'  => $question_num,
-        'ekind'  => $ekind,
-        'pro_ramdom'  =>  $pro_ramdom,
-        'opt_ramdom'  => $opt_ramdom,
+       'event_num'  => $question_num,
+        'event_type'  => $ekind,
+        'problem_random'  =>  $pro_ramdom,
+        'option_random'  => $opt_ramdom,
        'credit_rule' => $credit_rule,
-        'message'  =>  $message
+        'event_description'  =>  $message,
+        'answer_time'  =>  $time
       ]);
 
       $this->save();
