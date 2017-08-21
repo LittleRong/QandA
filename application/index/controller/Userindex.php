@@ -3,6 +3,7 @@ namespace app\index\controller;
 use think\View;
 use think\Controller;
 use app\index\model\UserModel;
+use app\index\model\EventModel;
 use think\Session;
 
 class Userindex extends Controller{
@@ -23,5 +24,13 @@ class Userindex extends Controller{
 
     public function show(){
         $user_id=Session::get('user_id');
+        $user_model = new UserModel();
+        $user_data=$user_model->getMessageById($user_id);
+        $event_model = new EventModel();
+        $event_data=$event_model->getEventMessageByUser($user_id);
+        $result_data=array();
+        $result_data['user_message']=$user_data;
+        $result_data['event_message']=$event_data;
+        return json_encode($result_data);
     }
 }

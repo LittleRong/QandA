@@ -49,4 +49,15 @@ class UserModel extends Model{
       }
     }
 
+    //获取用户信息
+    public function getMessageById($user_id){
+      $query=['id'=>$user_id];
+      $result = $this->get($query);
+      if (empty($result)) {//获取数据，若不存在则返回空
+          return null;
+      }
+      return $result;   //返回用户信息
+
+    }
+
 }
