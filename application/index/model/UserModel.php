@@ -32,4 +32,10 @@ class UserModel extends Model{
         return $data;
     }
 
+    public function showAllUser(){
+        $query=['deleted'=>0];
+        $result = $this->all($query);
+        return $result;
+    }
+
 }

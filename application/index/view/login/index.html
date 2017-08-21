@@ -50,9 +50,12 @@ $(document).ready(function(){
                 success: function(data){
                     alert("跳转成功");
                     json_data=eval('('+data+')');
-                    if(json_data['result']=="登陆成功"||json_data['result']=="已登陆"){
-                        alert(json_data['result']);
-                        //登录成功操作......
+                    if(json_data['result']=="管理员"){
+                        window.location.href="{:url('user_manage/index')}";
+                    }else if(json_data['result']=="普通用户"){
+                        window.location.href="{:url('user_answer/user_index/index')}";
+                    }else if(json_data['result']=="已登陆"){
+                        window.location.href="{:url('user_answer/user_index/index')}";
                     }else{
                         alert(json_data['result']);
                         //登录失败操作......
@@ -65,6 +68,7 @@ $(document).ready(function(){
                 }
             });
         }
+        return false;
     });
 });
 

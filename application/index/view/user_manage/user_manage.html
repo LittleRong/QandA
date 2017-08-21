@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>答题系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+    管理员登陆成功！！！
+    <a href="{:url('index/login/change_pwd')}">修改密码</a>
+    <button id="logout_btn">退出</button>
+</body>
+</html>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="{$Think.config.web_res_root}/js/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  loadInit();
+  $("#logout_btn").click(function(){
+          var post_data = {};
+          $.ajax({
+              url:"{:url('index/Login/logout')}",
+              dataType: "json",
+              type: 'POST',
+              data: post_data,
+              async: false,
+              success: function(data){
+                  window.location.href="{:url('index/Login/index')}"
+              },
+              error: function(data, status, error){
+              }
+          });
+          return false;
+  });
+});
+
+function loadInit(){
+  var post_data={};
+  alert("loadInit");
+  $.ajax({
+        url:"{:url('index/user_manage/show')}",
+        dataType: "json",
+        type: 'GET',
+        data: post_data,
+        async: false,
+        success: function(data){
+            json_data=eval('('+data+')');
+            alert(json_data[0]['id']);
+        },
+        error: function(data, status, error){
+            alert("跳转失败");
+            alert(error);
+        }
+  });
+}
+
+</script>

@@ -29,16 +29,18 @@ class Login extends Controller{
             if($login_result){
                 if(Session::get('user_id')){
                     $data = array('result'=>'已登陆');
-                    return json_encode($data);
                 }else{
-                    $data = array('result'=>'登陆成功');
                     Session::set('user_id',$login_result->id); //设置session保存当前登陆用户信息
-                    return json_encode($data);
+                    if($login_result->permission==1){//管理员用户
+                        $data = array('result'=>'管理员');
+                    }else{//普通用户
+                        $data = array('result'=>'普通用户');
+                    }
                 }
             }else{
                 $data = array('result'=>'登陆失败,用户名或密码错误');
-                return json_encode($data);
             }
+            return json_encode($data);
         }
 
     }
