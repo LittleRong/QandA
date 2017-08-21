@@ -20,14 +20,20 @@
       //跳转到事件显示视图
       public function showEvent()
       {
-         $result = self::check(1);
-        $result = json_decode($result,true);
-        $event_time = json_decode($result['event_time'],true);
-        $question_num = json_decode($result['question_num'],true);
-        $credit_rule = json_decode($result['credit_rule'],true);
-        $result = array_merge($result,$event_time,$question_num,$credit_rule);
+         $result = self::checkall();
+         $all = array(array());
+         for($i=0;$i<count($result);$i++)
+         {
+            $item = json_decode($result[$i],true);
+            $event_time = json_decode($item['event_time'],true);
+            $question_num = json_decode($item['question_num'],true);
+            $credit_rule = json_decode($item['credit_rule'],true);
+            $merge_item = array_merge($item,$event_time,$question_num,$credit_rule);
+            $all[$i] = $merge_item;
+        }
+        // dump($result);
          $view = new View();
-         return $view->fetch('elements',$result);
+         return $view->fetch('elements',$all[0]);
       }
 
       //接受ajax数据并写入数据库
@@ -58,11 +64,12 @@
       {
           $user_model = new EventModel();
           $result = $user_model->sql_checkall();
-          for($i=0;$i<count($result);$i++)
-          {
-            echo $result[$i];
-            echo "<br>";
-          }
+          return $result;
+          // for($i=0;$i<count($result);$i++)
+          // {
+          //   echo $result[$i];
+          //   echo "<br>";
+          // }
       }
 
       //插入数据
