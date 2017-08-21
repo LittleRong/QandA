@@ -46,8 +46,9 @@ function loadInit(){
         data: post_data,
         async: false,
         success: function(data){
-            json_data=eval('('+data+')');
-            alert(json_data);
+            alert(data);
+            //json_data=eval('('+data+')');
+            //alert(json_data);
         },
         error: function(data, status, error){
             alert("跳转失败");
