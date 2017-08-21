@@ -38,4 +38,15 @@ class UserModel extends Model{
         return $result;
     }
 
+    //判断是否为管理员
+    public function isManager($user_id){
+      $query=['id'=>$user_id];
+      $result = $this->get($query);
+      if($result->getAttr('permission')==1){
+          return true;
+      }else{
+          return false;
+      }
+    }
+
 }

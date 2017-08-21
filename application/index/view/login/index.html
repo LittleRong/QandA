@@ -89,11 +89,11 @@ $(document).ready(function(){
                     alert("跳转成功");
                     json_data=eval('('+data+')');
                     if(json_data['result']=="管理员"){
-                        window.location.href="{:url('user_manage/index')}";
+                        window.location.href="{:url('usermanage/user_manage')}";
                     }else if(json_data['result']=="普通用户"){
-                        window.location.href="{:url('user_answer/user_index/index')}";
+                        window.location.href="{:url('userindex/user_index')}";
                     }else if(json_data['result']=="已登陆"){
-                        window.location.href="{:url('user_answer/user_index/index')}";
+                        window.location.href="{:url('userindex/user_index')}";
                     }else{
                         alert(json_data['result']);
                         //登录失败操作......

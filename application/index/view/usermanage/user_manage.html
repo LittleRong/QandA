@@ -9,6 +9,7 @@
 </head>
 <body>
     管理员登陆成功！！！
+    <div id="user_manage"></div>
     <a href="{:url('index/login/change_pwd')}">修改密码</a>
     <button id="logout_btn">退出</button>
 </body>
@@ -38,16 +39,15 @@ $(document).ready(function(){
 
 function loadInit(){
   var post_data={};
-  alert("loadInit");
   $.ajax({
-        url:"{:url('index/user_manage/show')}",
+        url:"{:url('index/usermanage/show')}",
         dataType: "json",
         type: 'GET',
         data: post_data,
         async: false,
         success: function(data){
             json_data=eval('('+data+')');
-            alert(json_data[0]['id']);
+            alert(json_data);
         },
         error: function(data, status, error){
             alert("跳转失败");

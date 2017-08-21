@@ -1,15 +1,12 @@
 <?php
-
 namespace app\index\controller;
-
-use think\Controller;
-use think\Request;
 use think\View;
+use think\Controller;
 use app\index\model\UserModel;
 use think\Session;
 
-class Usermanage extends Controller{
-    public function user_manage(){
+class Userindex extends Controller{
+    public function user_index(){
         $view = new View();
         if(Session::get('user_id')){//用户已经登陆，直接进入用户中心
             $user_id=Session::get('user_id');
@@ -24,11 +21,7 @@ class Usermanage extends Controller{
         }
     }
 
-    //显示所有用户信息
     public function show(){
-      $user_model = new UserModel();
-      $user_result = $user_model->showAllUser();
-      return json_encode($user_result);
+        $user_id=Session::get('user_id');
     }
-
 }
