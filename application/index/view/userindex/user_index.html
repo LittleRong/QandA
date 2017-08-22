@@ -45,7 +45,7 @@
                         	<li>
                     <div class="clear pui-card pui-card-shadow pui-card-radius">
             	                <div class="pui-card-box">
-            	                    <h1>！！！2017年一叶知秋知识竞赛<small></small></h1>
+            	                    <h1>2017年一叶知秋知识竞赛!!!!!!!!!!!!!<small></small></h1>
             	                    <p class="pui-text-indent">比赛详情：一叶知秋知识竞赛是中国移动南方基地开展的一项有关员工专业知识的竞赛，主要是为了考擦员工对知识的把握以及应变能力等等，促进员工的学习热情，并给予相当的奖励。</p>
             	                    <p>
                         	<strong>参赛形式:</strong> 2-3人团队  <strong>答题规则:</strong>每日10道题量<br>
@@ -84,7 +84,7 @@
                 <div class="pui-card pui-card-shadow pui-card-radius">
                     <div class="pui-card-box">
                         <h1 style="text-align: center;"><img src="img/logo.png" class="pui-img-circle pui-box-shadow-plus"></h1>
-                        <h4 style="text-align: center;"><strong>姓名：</strong>张小蓝</h4>
+                        <h4 style="text-align: center;"><strong>姓名：</strong>{$data.user_message}</h4>
                         <h4 style="text-align: center;"><strong>部门：</strong>IT支撑中心</h4>
                         <h4 style="text-align: center;"><strong>工号：</strong>21011000</h4>
                         <h4 style="text-align: center;"><strong><a href="{:url('index/login/change_pwd')}">修改密码</a></strong></h4>
@@ -99,7 +99,6 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-    loadInit();
     $("#logout_btn").click(function(){
             var post_data = {};
             $.ajax({
@@ -118,26 +117,6 @@ $(document).ready(function(){
     });
 });
 
-function loadInit(){
-  var post_data={};
-  $.ajax({
-        url:"{:url('index/userindex/show')}",
-        dataType: "json",
-        type: 'GET',
-        data: post_data,
-        async: false,
-        success: function(data){
-            alert("跳转成功");
-            alert(data);
-            //json_data=eval('('+data+')');
-            //alert(json_data['event_message'][0]['event_title']);
-        },
-        error: function(data, status, error){
-            alert("跳转失败");
-            alert(error);
-        }
-  });
-}
 
 </script>
 </html>

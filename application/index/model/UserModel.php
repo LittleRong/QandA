@@ -34,7 +34,7 @@ class UserModel extends Model{
 
     public function showAllUser(){
         $query=['deleted'=>0];
-        $result = $this->all($query);
+        $result = $this->where('deleted',0)->field('login_name,name,phone_number,job_number,gender')->select();
         return $result;
     }
 
