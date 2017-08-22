@@ -22,6 +22,7 @@ class Userindex extends Controller{
         }
     }
 
+//显示信息
     public function show(){
         $user_id=Session::get('user_id');
         $user_model = new UserModel();
