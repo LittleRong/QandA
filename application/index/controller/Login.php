@@ -6,6 +6,7 @@ use think\Controller;
 use think\Request;
 use think\View;
 use app\index\model\UserModel;
+use app\index\model\EventModel;
 use think\Session;
 
 class Login extends Controller{
