@@ -101,7 +101,7 @@
                     </div>
                     <label >参赛人员：</label>
                     <div>
-        				<input style="width:20%" type="number">——<input style="width:20%" type="number">人
+        						<input style="width:20%" type="number" id="participant_num" name="participant_num">人
                     </div>
 								<label >开始时间：</label>
 								<input type="date" id="start_time" name="start_time">
@@ -111,25 +111,25 @@
         			<div style="margin-bottom: 15px;">
         			<label >答题日期：</label>
         			<label>
-                        <input type="checkbox" name=""> 星期一
+                        <input type="checkbox" id="cbox" name="cbox" value="Mon"> 星期一
                     </label>
                     <label>
-                        <input type="checkbox" name=""> 星期二
+                        <input type="checkbox" id="cbox" name="cbox" value="Tue"> 星期二
                     </label>
                     <label>
-                        <input type="checkbox" name=""> 星期三
+                        <input type="checkbox" id="cbox" name="cbox" value="Wed"> 星期三
                     </label>
                     <label>
-                        <input type="checkbox" name=""> 星期四
+                        <input type="checkbox" id="cbox" name="cbox" value="Thu"> 星期四
                     </label>
                     <label>
-                        <input type="checkbox" name=""> 星期五
+                        <input type="checkbox" id="cbox" name="cbox" value="Fri"> 星期五
                     </label>
                     <label>
-                        <input type="checkbox" name=""> 星期六
+                        <input type="checkbox" id="cbox" name="cbox" value="Sat"> 星期六
                     </label>
                     <label>
-                        <input type="checkbox" name=""> 星期日
+                        <input type="checkbox" id="cbox" name="cbox" value="Sun"> 星期日
                     </label>
                     </div>
         				<div style="margin-bottom: 15px;">
@@ -190,20 +190,28 @@
         				</div>
         			</div>
 
-        				<label>当日个人全对额外加分：</label>
-        				<input type="number" style="width: 85%;" id="person_score" name="person_score">
-        				<label>当日团队全对额外加分：</label>
-        				<input type="number" style="width: 85%;" id="team_score" name="team_score">
-								<label>个人总积分上限：</label>
-        				<input type="number" style="width: 85%;" id="person_score_up" name="person_score_up">
-        				<label>团队总积分上限：</label>
-        				<input type="number" style="width: 85%;" id="team_score_up" name="team_score_up">
+							<div class="pui-row">
+								<div class="pui-grid-xs-4"><label>当日个人全对额外加分：</label></div>
+								<div class="pui-grid-xs-8"><input type="number" style="width: 100%;" id="person_score" name="person_score"></div>
+							</div>
+							<div class="pui-row">
+								<div class="pui-grid-xs-4"><label>当日团队全对额外加分：</label></div>
+								<div class="pui-grid-xs-8"><input type="number" style="width: 100%;" id="team_score" name="team_score"></div>
+							</div>
+							<div class="pui-row">
+								<div class="pui-grid-xs-4"><label>个人总积分上限：</label></div>
+								<div class="pui-grid-xs-8"><input type="number" style="width: 100%;" id="person_score_up" name="person_score_up"></div>
+							</div>
+							<div class="pui-row">
+								<div class="pui-grid-xs-4"><label>团队总积分上限：</label></div>
+								<div class="pui-grid-xs-8"><input type="number" style="width: 100%;" id="team_score_up" name="team_score_up"></div>
+							</div>
 
                     <div style="padding-top: 15px;padding-bottom: 15px;">
-											<input type="checkbox" id="pro_ramdom" name="pro_ramdom"> 是否控制题目随机顺序
+											<input type="checkbox" id="pro_random" name="pro_random"> 是否控制题目随机顺序
 											</div>
 											<div style="padding-bottom: 15px;">
-											<input type="checkbox" id="opt_ramdom" name="opt_ramdom"> 是否控制选项随机顺序
+											<input type="checkbox" id="opt_random" name="opt_random"> 是否控制选项随机顺序
 											</div>
               <label >答题时间：</label>
         			<div>
@@ -269,18 +277,33 @@
 			 var objSel = document.getElementById("select_event");
 			 ekind = objSel.value;
 			 var objSel = document.getElementById("select_time");
-			 time = objSel.value;
+			 answer_time = objSel.value;
 			 //这是获取值
 			//  alert("当前值: " + ekind);
 			//  alert("当前值: " + time);
 		 	}
 
+		//获取星期几被勾选
+		function mutil_check()
+		{
+			var arr = [];
+			var obj = document.getElementsByName("cbox");
+			var obj_legth = obj.length;
+			for(var i=0;i<obj_legth;i++)
+			{
+				if(obj[i].checked)
+				{
+					 arr.push(obj[i].value);
+				 }
+			}
+			return arr;
+		}
+
 		$(document).ready(function(){
 		    $("#submit_message").click(function(){
 		        // var eid = $("#eid").val();
 		        // var aid = $("#aid").val();
-						var eid = '5';
-		        var aid = '2';
+						var participant_num = $("#participant_num").val();
 						var ename = $("#ename").val();
 						var start_time = $("#start_time").val();
 						var end_time = $("#end_time").val();
@@ -288,10 +311,10 @@
 		        var multiple = $("#multiple").val();
 						var fill = $("#fill").val();
 						var judge = $("#judge").val();
-						// var pro_ramdom = $("#pro_ramdom").val();
-						// var opt_ramdom = $("#opt_ramdom").val();
-						var pro_ramdom = false;
-						var opt_ramdom = false;
+						// var pro_random = $("#pro_random").val();
+						// var opt_random = $("#opt_random").val();
+						var pro_random = 0;
+						var opt_random = 0;
 						//var ekind = $("#ekind").val();
 						// var time = $("#time").val();
 						var single_score = $("#single_score").val();
@@ -304,25 +327,33 @@
 						var team_score_up = $("#team_score_up").val();
 						var message = $("#message").val();
 
-						if($("#pro_ramdom").is(":checked"))
+						var time;    //答题时间（星期几）
+
+						if($("#pro_random").is(":checked"))
 						{
-							pro_ramdom = true;
+							pro_random = 1;
 						}
-						if($("#opt_ramdom").is(":checked"))
+						if($("#opt_random").is(":checked"))
 						{
-							opt_ramdom = true;
+							opt_random = 1;
 						}
 
+						if($("#Mon").is(":checked"))
+						{
+							mon = 1;
+						}
 
-		        if(eid == ''){
-		            alert("事件ID不能为空");
-		        }else if(aid == ''){
-		            alert("管理员ID不能为空");
-					  }else if(ename == ''){
+						 time = mutil_check();
+
+					  if(ename == ''){
 				        alert("事件名称不能为空");
 		        }else{
-		            var post_data = {eid:eid,aid:aid,ename:ename,start_time:start_time,end_time:end_time,single:single,multiple:multiple,
-								fill:fill,judge:judge,pro_ramdom:pro_ramdom,opt_ramdom:opt_ramdom,ekind:ekind,time:time,single_score:single_score,
+		        //     var post_data = {eid:eid,aid:aid,ename:ename,start_time:start_time,end_time:end_time,single:single,multiple:multiple,
+						// 		fill:fill,judge:judge,pro_random:pro_random,opt_random:opt_random,ekind:ekind,time:time,single_score:single_score,
+						// 	multiple_score:multiple_score,fill_score:fill_score,judge_score:judge_score,person_score:person_score,
+						// team_score:team_score,person_score_up:person_score_up,team_score_up:team_score_up,message:message};
+						    var post_data = {time:time,participant_num:participant_num,ename:ename,start_time:start_time,end_time:end_time,single:single,multiple:multiple,
+								fill:fill,judge:judge,pro_random:pro_random,opt_random:opt_random,ekind:ekind,answer_time:answer_time,single_score:single_score,
 							multiple_score:multiple_score,fill_score:fill_score,judge_score:judge_score,person_score:person_score,
 						team_score:team_score,person_score_up:person_score_up,team_score_up:team_score_up,message:message};
 		            $.ajax({

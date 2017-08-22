@@ -25,11 +25,11 @@ class EventModel extends Model{
       return $result;   //返回用户信息
     }
 
-    public function sql_insert($eid,$aid,$ename,$start_time,$end_time,$single,$multiple,
-            $fill,$judge,$pro_ramdom,$opt_ramdom,$ekind,$time,$single_score,
+    public function sql_insert($time,$participant_num,$aid,$ename,$start_time,$end_time,$single,$multiple,
+            $fill,$judge,$pro_random,$opt_random,$ekind,$answer_time,$single_score,
             $multiple_score,$fill_score,$judge_score,$person_score,
             $team_score,$person_score_up,$team_score_up,$message)
-    // public function sql_insert($eid,$aid,$ename,$start_time,$end_time,$single,$multiple,$fill,$judge,$pro_ramdom,$opt_ramdom,$ekind,$time,$single_score)
+    // public function sql_insert($eid,$aid,$ename,$start_time,$end_time,$single,$multiple,$fill,$judge,$pro_random,$opt_random,$ekind,$time,$single_score)
     {
 
       $event_time =  array('start_time'=>$start_time,'end_time'=>$end_time ,'time'=>$time);
@@ -45,17 +45,17 @@ class EventModel extends Model{
 
 
       $this->data([
-        //'event_id' => $eid,
         'manage_id'  =>  $aid,
         'event_title'  => $ename,
         'event_time' => $event_time,
        'event_num'  => $question_num,
         'event_type'  => $ekind,
-        'problem_random'  =>  $pro_ramdom,
-        'option_random'  => $opt_ramdom,
+        'problem_random'  =>  $pro_random,
+        'option_random'  => $opt_random,
        'credit_rule' => $credit_rule,
         'event_description'  =>  $message,
-        'answer_time'  =>  $time
+        'answer_time'  =>  $answer_time,
+        'participant_num' => $participant_num
       ]);
 
       $this->save();

@@ -36,13 +36,14 @@
       }
 
       //接受ajax数据并写入数据库
-      public function manage($eid,$aid,$ename,$start_time,$end_time,$single,$multiple,
-              $fill,$judge,$pro_ramdom,$opt_ramdom,$ekind,$time,$single_score,
+      public function manage($time,$participant_num,$ename,$start_time,$end_time,$single,$multiple,
+              $fill,$judge,$pro_random,$opt_random,$ekind,$answer_time,$single_score,
               $multiple_score,$fill_score,$judge_score,$person_score,
               $team_score,$person_score_up,$team_score_up,$message)
        {
-          $this->insert((int)$eid,(int)$aid,$ename,$start_time,$end_time,(int)$single,(int)$multiple,
-                  (int)$fill,(int)$judge,(bool)$pro_ramdom,(bool)$opt_ramdom,$ekind,$time,(int)$single_score,
+          $aid = 2;
+          $this->insert($time,(int)$participant_num,(int)$aid,$ename,$start_time,$end_time,(int)$single,(int)$multiple,
+                  (int)$fill,(int)$judge,(boolean)$pro_random,(boolean)$opt_random,$ekind,$answer_time,(int)$single_score,
                   (int)$multiple_score,(int)$fill_score,(int)$judge_score,(int)$person_score,
                   (int)$team_score,(int)$person_score_up,(int)$team_score_up,$message);
           $data = array('result'=>'录入成功!');
@@ -72,18 +73,18 @@
       }
 
       //插入数据
-      public function insert($eid,$aid,$ename,$start_time,$end_time,$single,$multiple,
-              $fill,$judge,$pro_ramdom,$opt_ramdom,$ekind,$time,$single_score,
+      public function insert($time,$participant_num,$aid,$ename,$start_time,$end_time,$single,$multiple,
+              $fill,$judge,$pro_random,$opt_random,$ekind,$answer_time,$single_score,
               $multiple_score,$fill_score,$judge_score,$person_score,
               $team_score,$person_score_up,$team_score_up,$message)
-      // public function insert($eid,$aid,$ename,$start_time,$end_time,$single,$multiple,$fill,$judge,$pro_ramdom,$opt_ramdom,$ekind,$time,$single_score)
+      // public function insert($eid,$aid,$ename,$start_time,$end_time,$single,$multiple,$fill,$judge,$pro_random,$opt_random,$ekind,$time,$single_score)
       {
           $user_model = new EventModel();
-          $user_model->sql_insert($eid,$aid,$ename,$start_time,$end_time,$single,$multiple,
-                  $fill,$judge,$pro_ramdom,$opt_ramdom,$ekind,$time,$single_score,
+          $user_model->sql_insert($time,$participant_num,$aid,$ename,$start_time,$end_time,$single,$multiple,
+                  $fill,$judge,$pro_random,$opt_random,$ekind,$answer_time,$single_score,
                   $multiple_score,$fill_score,$judge_score,$person_score,
                   $team_score,$person_score_up,$team_score_up,$message);
-          // $user_model->sql_insert($eid,$aid,$ename,$start_time,$end_time,$single,$multiple,$fill,$judge,$pro_ramdom,$opt_ramdom,$ekind,$time,$single_score);
+          // $user_model->sql_insert($eid,$aid,$ename,$start_time,$end_time,$single,$multiple,$fill,$judge,$pro_random,$opt_random,$ekind,$time,$single_score);
       }
 
       //删除数据

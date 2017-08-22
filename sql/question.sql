@@ -30,7 +30,7 @@ CREATE TABLE event(
     `manage_id` INT NOT NULL COMMENT '本事件的管理员id',
     `event_title` VARCHAR(50) NOT NULL COMMENT '事件的标题',
     `event_description` TEXT NOT NULL COMMENT '事件的描述',
-    `event_time` JSON COMMENT '事件时间,保存为json形式,包括开始时间start_time、结束时间end_time、答题时间answer_time',
+    `event_time` JSON COMMENT '事件时间,保存为json形式,包括开始时间start_time、结束时间end_time、答题时间time',
     `event_num` JSON COMMENT '题目数量,保存为json形式,包括单选题数量single_choice_number、多选题数量multiple_choice_number、填空题数量fill_number、判断题数量true_or_false_number',
     `event_type` VARCHAR(50) NOT NULL COMMENT '事件的种类',
     `problem_random` BOOLEAN NOT NULL COMMENT '是否控制题目随机排序,0--否,1--是',
@@ -82,3 +82,5 @@ CREATE TABLE credit(
     `change_value` FLOAT NOT NULL COMMENT '操作值,更改的值',
     `change_reason` VARCHAR(100) NOT NULL COMMENT '更改原因'
 )ENGINE = Innodb default charset utf8 comment '积分详细信息表';
+
+ALTER TABLE event ADD participant_num INT NOT NULL COMMENT '参加比赛的小组人数';

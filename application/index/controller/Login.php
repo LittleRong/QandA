@@ -8,14 +8,19 @@ use think\View;
 use app\index\model\UserModel;
 use think\Session;
 
-class Login extends Controller
-{
+class Login extends Controller{
     public function index(){
         $view = new View();
         if(Session::get('user_id')){//用户已经登陆，直接进入用户中心
-            return $view->fetch('user_answer@user_index/user_index');
+        $user_id=Session::get('user_id');
+        $user_model = new UserModel();//实例化用户模型
+          if($user_model->isManager($user_id)){//管理员
+              return $view->fetch('usermanage/user_manage');
+          }else{//普通用户
+              return $view->fetch('userindex/user_index');
+          }
         }else{
-            return $view->fetch('index');//用户未登录，进入登陆界面
+            return $view->fetch('login/index');//用户未登录，进入登陆界面
         }
     }
 
@@ -30,26 +35,50 @@ class Login extends Controller
             if($login_result){
                 if(Session::get('user_id')){
                     $data = array('result'=>'已登陆');
-                    return json_encode($data);
                 }else{
-                    $data = array('result'=>'登陆成功');
                     Session::set('user_id',$login_result->id); //设置session保存当前登陆用户信息
-                    return json_encode($data);
+                    if($login_result->permission==1){//管理员用户
+                        $data = array('result'=>'管理员');
+                    }else{//普通用户
+                        $data = array('result'=>'普通用户');
+                    }
                 }
             }else{
                 $data = array('result'=>'登陆失败,用户名或密码错误');
-                return json_encode($data);
             }
+            return json_encode($data);
         }
 
     }
 
     //注销
-    public function logout()
-    {
+    public function logout(){
         //注销session
         session(null);
         $data = array('result'=>'成功退出');
         return json_encode('$data');
+    }
+
+    //转到修改密码页面
+    public function change_pwd(){
+        $view = new View();
+        if(Session::get('user_id')){//用户已经登陆，可修改密码
+            return $view->fetch('change_pwd');
+        }else{
+            return $view->fetch('index');//用户未登录，进入登陆界面
+        }
+    }
+
+    //修改密码操作
+    public function change_pwd_post(Request $request){
+        if($request->isPost()){//判断是否为POST方法
+            $data=$request->param();
+            $old_password=$data['old_password'];
+            $new_password=$data['new_password'];
+            $user_id=Session::get('user_id');
+            $user_model = new UserModel();//实例化用户模型
+            $change_result = $user_model->change_pwd($user_id,$old_password,$new_password);//调用函数进行修改密码
+            return json_encode($change_result);
+        }
     }
 }
