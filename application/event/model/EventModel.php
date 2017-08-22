@@ -4,6 +4,43 @@ use think\Model;
 class EventModel extends Model{
     protected $table = 'event';// 对应数据库中的event表
 
+    //查询数据库
+    public function check($id)
+    {
+        //$user_model = new EventModel();
+        $result = $this->sql_check($id);
+        return $result;
+    }
+
+    //查询全部
+    public function checkall()
+    {
+        //$user_model = new EventModel();
+        $result = $this->sql_checkall();
+        return $result;
+    }
+
+    //插入数据
+    public function insert($time,$participant_num,$aid,$ename,$start_time,$end_time,$single,$multiple,
+            $fill,$judge,$pro_random,$opt_random,$ekind,$answer_time,$single_score,
+            $multiple_score,$fill_score,$judge_score,$person_score,
+            $team_score,$person_score_up,$team_score_up,$message)
+    {
+        //$user_model = new EventModel();
+        $this->sql_insert($time,$participant_num,$aid,$ename,$start_time,$end_time,$single,$multiple,
+                $fill,$judge,$pro_random,$opt_random,$ekind,$answer_time,$single_score,
+                $multiple_score,$fill_score,$judge_score,$person_score,
+                $team_score,$person_score_up,$team_score_up,$message);
+    }
+
+    //删除数据
+    public function delete()
+    {
+        $user_model = new EventModel();
+        $this->sql_delete(3);
+
+    }
+
     //查找event表
     public function sql_check($id)
     {
@@ -29,7 +66,6 @@ class EventModel extends Model{
             $fill,$judge,$pro_random,$opt_random,$ekind,$answer_time,$single_score,
             $multiple_score,$fill_score,$judge_score,$person_score,
             $team_score,$person_score_up,$team_score_up,$message)
-    // public function sql_insert($eid,$aid,$ename,$start_time,$end_time,$single,$multiple,$fill,$judge,$pro_random,$opt_random,$ekind,$time,$single_score)
     {
 
       $event_time =  array('start_time'=>$start_time,'end_time'=>$end_time ,'time'=>$time);
