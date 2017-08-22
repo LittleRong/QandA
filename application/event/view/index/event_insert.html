@@ -270,17 +270,16 @@
 
 		<script type="text/javascript">
 
+		//定义变量
 		var ekind;
 		var time;
 
-		function GetSelValue() {
+		function GetSelValue()
+		{
 			 var objSel = document.getElementById("select_event");
 			 ekind = objSel.value;
 			 var objSel = document.getElementById("select_time");
 			 answer_time = objSel.value;
-			 //这是获取值
-			//  alert("当前值: " + ekind);
-			//  alert("当前值: " + time);
 		 	}
 
 		//获取星期几被勾选
@@ -301,8 +300,6 @@
 
 		$(document).ready(function(){
 		    $("#submit_message").click(function(){
-		        // var eid = $("#eid").val();
-		        // var aid = $("#aid").val();
 						var participant_num = $("#participant_num").val();
 						var ename = $("#ename").val();
 						var start_time = $("#start_time").val();
@@ -311,12 +308,8 @@
 		        var multiple = $("#multiple").val();
 						var fill = $("#fill").val();
 						var judge = $("#judge").val();
-						// var pro_random = $("#pro_random").val();
-						// var opt_random = $("#opt_random").val();
 						var pro_random = 0;
 						var opt_random = 0;
-						//var ekind = $("#ekind").val();
-						// var time = $("#time").val();
 						var single_score = $("#single_score").val();
 						var multiple_score = $("#multiple_score").val();
 						var fill_score = $("#fill_score").val();
@@ -348,10 +341,6 @@
 					  if(ename == ''){
 				        alert("事件名称不能为空");
 		        }else{
-		        //     var post_data = {eid:eid,aid:aid,ename:ename,start_time:start_time,end_time:end_time,single:single,multiple:multiple,
-						// 		fill:fill,judge:judge,pro_random:pro_random,opt_random:opt_random,ekind:ekind,time:time,single_score:single_score,
-						// 	multiple_score:multiple_score,fill_score:fill_score,judge_score:judge_score,person_score:person_score,
-						// team_score:team_score,person_score_up:person_score_up,team_score_up:team_score_up,message:message};
 						    var post_data = {time:time,participant_num:participant_num,ename:ename,start_time:start_time,end_time:end_time,single:single,multiple:multiple,
 								fill:fill,judge:judge,pro_random:pro_random,opt_random:opt_random,ekind:ekind,answer_time:answer_time,single_score:single_score,
 							multiple_score:multiple_score,fill_score:fill_score,judge_score:judge_score,person_score:person_score,
