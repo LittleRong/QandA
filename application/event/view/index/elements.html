@@ -198,6 +198,8 @@
 					<div class="row">
 						<div class="12u">
 
+
+
 							<!-- Table -->
 								<section class="box">
 									<h3>Table</h3>
@@ -213,34 +215,10 @@
 											</thead>
 											<tbody>
 
-												<tr>
-													<td>事件ID</td>
-													<td>{$event_id}</td>
-												</tr>
-												<tr>
-													<td>管理员ID</td>
-													<td>{$manage_id}</td>
-												</tr>
-												<tr>
-													<td>事件名称</td>
-													<td>{$event_title}</td>
-												</tr>
-												<tr>
-													<td>时间</td>
-													<td>从{$start_time}到{$end_time}，答题时间为{$time}</td>
-												</tr>
-												<tr>
-													<td>题目数量</td>
-													<td>单选:{$single},多选:{$multiple},填空:{$fill},判断:{$judge}</td>
-												</tr>
-												<tr>
-													<td>事件种类</td>
-													<td>{$event_type}</td>
-												</tr>
-												<tr>
-													<td>描述</td>
-													<td>{$event_description}</td>
-												</tr>
+										 {foreach $data as $v=>$k}
+			                	title:{$k.event_title}
+		                 {/foreach}
+											
 											</tbody>
 
 

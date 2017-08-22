@@ -32,8 +32,10 @@
             $all[$i] = $merge_item;
         }
         //  dump($all);
-         $view = new View();
-         return $view->fetch('elements',$all[0]);
+        //  $view = new View();
+        //  return $view->fetch('elements',$all[0]);
+        $this->assign('data',$all);
+        return $this->fetch("elements");
       }
 
 
