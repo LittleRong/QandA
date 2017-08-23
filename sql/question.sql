@@ -39,16 +39,6 @@ CREATE TABLE event(
     `credit_rule` JSON NOT NULL COMMENT '积分规则,保存为json形式,包括单选题分数single_choice_score、多选题分数multiple_choice_score、填空题分数fill_score、判断题分数true_or_false_score、当日本人全对额外加分person_score、当日团队全对额外加分team_score、团队总积分上限team_score_up、个人总积分上限person_score_up'
 )ENGINE = Innodb default charset utf8 comment '事件表,保存发起的比赛信息';
 
-DROP TABLE if exists `participant`;
-CREATE TABLE participant(
-    `refer_event_id` INT NOT NULL COMMENT '参见的事件id,关联的事件的id',
-    `user_id` INT NOT NULL COMMENT '参赛人id,参加这次比赛的用户的id',
-    `team_id` INT NOT NULL COMMENT '组id,所属组id',
-    `have_answered` JSON NOT NULL COMMENT '	已答题目,保存为json形式：题目id  problem_id,用户答案user_answer,正确与否true_or_false',
-    `credit` FLOAT NOT NULL COMMENT '该用户在比赛中的个人积分',
-    `leader` BOOLEAN NOT NULL COMMENT '是否为组长,0--否,1--是'
-)ENGINE = Innodb default charset utf8 comment '保存参加比赛的用户信息';
-
 DROP TABLE if exists `event_problem`;
 CREATE TABLE event_problem(
     `refer_event_id` INT NOT NULL COMMENT '参见的事件id,关联的事件的id',
@@ -84,3 +74,24 @@ CREATE TABLE credit(
 )ENGINE = Innodb default charset utf8 comment '积分详细信息表';
 
 ALTER TABLE event ADD participant_num INT NOT NULL COMMENT '参加比赛的小组人数';
+
+DROP TABLE if exists `participant`;
+CREATE TABLE participant(
+	  `participant_id` INT PRIMARY KEY AUTO_INCREMENT COMMENT '事件的id',
+    `refer_event_id` INT NOT NULL COMMENT '参见的事件id,关联的事件的id',
+    `user_id` INT NOT NULL COMMENT '参赛人id,参加这次比赛的用户的id',
+    `team_id` INT NOT NULL COMMENT '组id,所属组id',
+    `credit` FLOAT NOT NULL COMMENT '该用户在比赛中的个人积分',
+    `leader` BOOLEAN NOT NULL COMMENT '是否为组长,0--否,1--是',
+    `waited_answer` JSON comment '保存参加比赛要答的题的答案'
+)ENGINE = Innodb default charset utf8 comment '保存参加比赛的用户信息';
+
+DROP TABLE if exists `participant_haved_answer`;
+CREATE TABLE participant_haved_answer(
+   `refer_participant_id`  INT NOT NULL comment '参赛者id',
+   `refer_problem_id`   INT NOT NULL comment '题id',
+   `refer_team_id` INT NOT NULL comment '关联的组id',
+   `answer_date` Date not null comment '的用户答题日期',
+   `user_answer` VARCHAR(60) comment '的用户答题结果',
+   `true_or_false` boolean comment '的用户答题是否正确'
+)ENGINE = Innodb default charset utf8 comment '保存参加比赛的用户已经答的题';
