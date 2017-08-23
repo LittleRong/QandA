@@ -71,4 +71,15 @@ class Usermanage extends Controller{
       }
     }
 
+    //删除用户
+    public function deleteuser(Request $request){
+          if($request->isPost()){//判断是否为POST方法
+            $data=$request->param();
+            $delete_id=$data['delete_id'];
+            $user_model = new UserModel();
+            $result = $user_model->delete_user($delete_id);
+            return json_encode($result);
+          }
+    }
+
 }

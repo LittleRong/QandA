@@ -35,7 +35,7 @@ class UserModel extends Model{
 
     public function showAllUser(){
         $query=['deleted'=>0];
-        $result = $this->where('deleted',0)->field('login_name,name,phone_number,job_number,gender')->select();
+        $result = $this->where('deleted',0)->field('id,login_name,name,phone_number,job_number,gender')->select();
         return $result;
     }
 
@@ -60,6 +60,7 @@ class UserModel extends Model{
       return $result;   //返回用户信息
     }
 
+    //增加用户
     public function add_user($user_name,$login_name,$password,$user_phone_number,$user_job_number,$user_gender){
         $this->data([
             'name'  =>  $user_name,
@@ -83,6 +84,7 @@ class UserModel extends Model{
         }
     }
 
+    //更新用户
     public function update_user($user_id,$user_name,$login_name,$user_phone_number,$user_job_number,$user_gender){
         $this->save([
         'name'  =>  $user_name,
@@ -92,6 +94,13 @@ class UserModel extends Model{
         'gender' =>  $user_gender
         ],['id' => $user_id]);
         $data['result']="更新成功";
+        return $data;
+    }
+
+    //删除用户
+    public function delete_user($delete_id){
+        $this->destroy(['id' => $delete_id]);
+        $data['result']="删除成功";
         return $data;
     }
 

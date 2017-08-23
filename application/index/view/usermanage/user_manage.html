@@ -1,427 +1,264 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-	<head>
-		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-        <meta http-equiv="Cache-Control" content="no-siteapp"/>
-		<meta name="renderer" content="webkit" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-        <meta name="description" content="Plane UI" />
-        <meta name="keywords" content="Plane UI" />
-		<meta name="apple-mobile-web-app-title" content="Plane UI" />
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="renderer" content="webkit" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="description" content="Plane UI" />
+    <meta name="keywords" content="Plane UI" />
+    <meta name="apple-mobile-web-app-title" content="Plane UI" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<!-- for iOS icons -->
-		<link rel="apple-touch-icon-precomposed" href="../dist/icons/icon-57x57.png" />
-		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../dist/icons/icon-72x72.png" />
-		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../dist/icons/icon-114x114.png" />
-		<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../dist/icons/icon-120x120.png">
-		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../dist/icons/icon-144x144.png" />
-		<link rel="apple-touch-icon-precomposed" sizes="180x180" href="../dist/icons/icon-180x180.png">
+    <!-- for iOS icons -->
+    <link rel="apple-touch-icon-precomposed" href="../dist/icons/icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../dist/icons/icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../dist/icons/icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../dist/icons/icon-120x120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../dist/icons/icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="../dist/icons/icon-180x180.png">
 
-		<meta name="google" value="notranslate" />
+    <meta name="google" value="notranslate" />
 
-		<!-- for Android 5 -->
-		<meta name="theme-color" content="#008FE2" />
+    <!-- for Android 5 -->
+    <meta name="theme-color" content="#008FE2" />
 
-		<!-- Windows 8 metro color -->
-		<meta name="msapplication-TileColor" content="#008FE2" />
+    <!-- Windows 8 metro color -->
+    <meta name="msapplication-TileColor" content="#008FE2" />
 
-		<!-- Windows 8 metro icon -->
-		<meta name="msapplication-TileImage" content="favicon.png" />
+    <!-- Windows 8 metro icon -->
+    <meta name="msapplication-TileImage" content="favicon.png" />
 
-		<title>南方基地答题系统</title>
-        <link rel="icon" type="image/png" href="{$Think.config.web_res_root}/image/CM.png" />
-        <link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/css/planeui.css" />
-        <link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/css/planeui.min.css" />
-        <link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/css/user_manage/user.css" />
-        <link rel="stylesheet" href="{$Think.config.web_res_root}/css/jquery-ui.min.css" />
-
-        <!-- <script type="text/javascript" src="./js/dialog-test.js"></script> -->
-
-        <!-- <link rel="stylesheet" type="text/css" href="../slidemenu.css" /> -->
-        <!-- <script src="../js/jquery.js"></script> -->
-
-
-	</head>
-	<body>
-        <a name="top"></a>
-		<div class="pui-layout">
-            <div class="page-header">
-                <div class="pui-layout pui-layout-fixed pui-layout-fixed-1200">
-                    <div class="pui-menubar pui-menubar-square pui-menubar-header-style pui-bg-none pui-unbordered">
-                        <div class="pui-menubar-aside">
-                            <h2 class="pui-margin-none pui-text-normal page-title" title="中国移动南方基地"> <img src="{$Think.config.web_res_root}/image/CM.png" class="icon-CM"/> 中国移动南方基地知识题库</h2>
-                        </div>
-                        <div class="pui-menubar-offside">
-                            <ul class="pui-menu pui-menu-inline pui-menu-simple pui-right">
-                                <li>
-                                    <a href="#top">管理员</a>
-                                </li>
-                                <li>
-                                    <a href="{:url('index/login/change_pwd')}" id="pwchange">密码修改</a>
-                                </li>
-                                <li>
-                                    <a href="#examples" id="logout_btn">退出</a>
-                                </li>
-                            </ul>
-                        </div>
+    <title>南方基地答题系统</title>
+    <link rel="icon" type="image/png" href="{$Think.config.web_res_root}/image/CM.png" />
+    <link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/css/planeui.css" />
+    <link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/css/planeui.min.css" />
+    <link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/css/user_manage/user.css" />
+    <link rel="stylesheet" href="{$Think.config.web_res_root}/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="{$Think.config.web_res_root}/css/ui-lightness/jquery-ui-1.10.3.custom.css" />
+</head>
+<body>
+    <a name="top"></a>
+    <div class="pui-layout">
+        <div class="page-header">
+            <div class="pui-layout pui-layout-fixed pui-layout-fixed-1200">
+                <div class="pui-menubar pui-menubar-square pui-menubar-header-style pui-bg-none pui-unbordered">
+                    <div class="pui-menubar-aside">
+                        <h2 class="pui-margin-none pui-text-normal page-title" title="中国移动南方基地">
+                            <img src="{$Think.config.web_res_root}/image/CM.png" class="icon-CM" />
+                            中国移动南方基地知识题库</h2>
+                    </div>
+                    <div class="pui-menubar-offside">
+                        <ul class="pui-menu pui-menu-inline pui-menu-simple pui-right">
+                            <li>
+                                <a href="#top">管理员</a>
+                            </li>
+                            <li>
+                                <a href="{:url('index/login/change_pwd')}" id="pwchange">密码修改</a>
+                            </li>
+                            <li>
+                                <a href="#examples" id="logout_btn">退出</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- 侧边栏 -->
-            <div class="container ">
-                <div class="pui-row">
-                    <div class="SlideMenu ">
-                        <div class="pui-grid-md-2">
-                            <div class="pui-btn-group-vertical pui-btn-gradient pui-btn-shadow ">
-                                <div class="pui-btn-group ">
-                                        <a href="#" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow pui-btn-primary-active"><i class="fa fa-user fa-large"></i> 用户管理</a>
-                                        <a href="{:url('index/usermanager/questionmaneger')}" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow"><i class="fa fa-file-o fa-large"></i> 题目管理</a>
-                                        <a href="#" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow"><i class="fa fa-th fa-large"></i> 事件管理</a>
-                                        <a href="#" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow"><i class="fa fa-tint fa-large"></i> 积分道具管理</a>
-                                </div>
+        <!-- 侧边栏 -->
+        <div class="container ">
+            <div class="pui-row">
+                <div class="SlideMenu ">
+                    <div class="pui-grid-md-2">
+                        <div class="pui-btn-group-vertical pui-btn-gradient pui-btn-shadow ">
+                            <div class="pui-btn-group ">
+                                <a href="#" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow pui-btn-primary-active"><i class="fa fa-user fa-large"></i>用户管理</a>
+                                <a href="{:url('index/usermanager/questionmaneger')}" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow"><i class="fa fa-file-o fa-large"></i>题目管理</a>
+                                <a href="#" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow"><i class="fa fa-th fa-large"></i>事件管理</a>
+                                <a href="#" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow"><i class="fa fa-tint fa-large"></i>积分道具管理</a>
                             </div>
-                        </div>
-                        <div class="pui-grid-md-10">
-                            <button id="create-user" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow">创建新用户</button>
-                            <!-- <a href="#" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow" id="user_maneger">用户管理</a> -->
-                            <h3> 团队信息 </h3>
 
-                            <table id="user_message" class="pui-table pui-table-bordered pui-table-text-center pui-table-thead-bg pui-table-interlaced-color box-shadow-bottom pui-table-gradient">
-                                <thead>
-                                    <tr>
-                                        <th>姓名</th>
-                                        <th>手机号</th>
-                                        <th>工号</th>
-                                        <th>编辑</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- <tr>
-                                        <td>1</td>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td><a href="#">修改</a>&nbsp<a href="#">删除</a></td>
-                                    </tr> -->
-
-                                </tbody>
-                            </table>
                         </div>
+                    </div>
+                    <div class="pui-grid-md-10">
+                        <table id="user_message" class="pui-table pui-table-bordered pui-table-text-center pui-table-thead-bg pui-table-interlaced-color box-shadow-bottom pui-table-gradient">
+                            <thead>
+                                <tr>
+                                    <th>用户ID</th>
+                                    <th>姓名</th>
+                                    <th>手机号</th>
+                                    <th>工号</th>
+                                    <th>编辑</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <button id="create-user" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow" onclick="$.openDialog()">创建新用户</button>
+                        <form>
+                            <input type="text" id="user_name" name="user_name" maxlength="16" class="" placeholder="姓名" />
+                            <input type="text" id="login_name" name="login_name" maxlength="16" class="" placeholder="登录名" />
+                            <input type="text" id="user_phone_number" name="user_phone_number" maxlength="16" class="" placeholder="手机号" />
+                            <input type="text" id="user_job_number" name="user_job_number" maxlength="16" class="" placeholder="工号" />
+                            <input type="text" id="user_gender" name="user_gender" maxlength="16" class="" placeholder="性别" />
+                            <button class="pui-btn pui-btn-primary pui-btn-large" id="add_user" name="add_user" onclick="adduser()">确定</button>
+                            <button class="pui-btn pui-btn-primary pui-btn-large">取消</button>
+                        </form>
                     </div>
                 </div>
             </div>
+        </div>
 
 
         <!-- <a href="#top" class="fa fa-arrow-circle-up fa-3x pui-text-blue-400" id="go-to-top"></a> -->
 
         <div class="novisibility" id="testDialog">
-        请输入原密码:<input type="password" id="pass0"/><br/>
-        请输入新密码:<input type="password" id="pass1"/><br/>
-        再次输入密码:<input type="password" id="pass2"><br/>
-        <button class="pui-btn pui-btn-primary pui-btn-large" id="confirm">确定</button>
-        <button class="pui-btn pui-btn-primary pui-btn-large">取消</button>
+            请输入原密码:<input type="password" id="pass0" /><br />
+            请输入新密码:<input type="password" id="pass1" /><br />
+            再次输入密码:<input type="password" id="pass2"><br />
+            <button class="pui-btn pui-btn-primary pui-btn-large" id="confirm">确定</button>
+            <button class="pui-btn pui-btn-primary pui-btn-large">取消</button>
         </div>
         <div class="novisibility" id="user_new">
-            <form>
-            <fieldset>
-                <div >
-                    <input type="text" id="user_name" name="user_name" maxlength="16" class="pui-unbordered" value="11111" placeholder="姓名" />
-                </div>
-								<div >
-										<input type="text" id="login_name" name="login_name" maxlength="16" class="pui-unbordered" value="11111" placeholder="登陆名" />
-								</div>
-                <div >
-                    <input type="number" id="user_phone_number" name="user_phone_number" maxlength="16" value="11111" class="pui-unbordered" placeholder="电话号码" />
-                </div>
-                <div >
-                    <input type="number" id="user_job_number" name="user_job_number" maxlength="16" value="11111" class="pui-unbordered" placeholder="工号" />
-                </div>
-								<div >
-                    <input type="number" id="user_gender" name="user_gender" maxlength="16" value="1" class="pui-unbordered" placeholder="性别" />
-                </div>
+            <form id="user_form">
+                <input type="hidden" id="Hidden1" />
+                <input type="hidden" id="Hidden2" />
+                <input type="hidden" id="Hidden3" />
+                <input type="hidden" id="Hidden4" />
+                <input type="hidden" id="Hidden5" />
 
-                <!-- <div>
-                <input type="submit" id="add_user" name="sum" class="pui-btn pui-btn-default pui-bg-purple-us pui-unbordered" value="确定" />
-                <input type="submit" id="cancle" name="cancle" class="pui-btn pui-btn-default pui-bg-purple-us pui-unbordered" value="取消" />
-                </div>
-                姓名:<input type="text" id="user_name" name="user_name"/><br/>
-                手机号:<input type="text" id="user_phone_bumber" name="user_phone_bumber"/><br/>
-                工号:<input type="text" id="user_job_number" name="user_job_number"><br/> -->
+                <input type="text" id="Duser_name" name="user_name" maxlength="16" class="pui-unbordered" value="11111" />
 
-                <button class="pui-btn pui-btn-primary pui-btn-large" id="add_user" name="add_user" onclick="adduser()" >确定</button>
+                <div>
+                    <input type="text" id="Dlogin_name" name="login_name" maxlength="16" class="pui-unbordered" value="11111" placeholder="登陆名" />
+                </div>
+                <div>
+                    <input type="number" id="Duser_phone_number" name="user_phone_number" maxlength="16" value="11111" class="pui-unbordered" placeholder="电话号码" />
+                </div>
+                <div>
+                    <input type="number" id="Duser_job_number" name="user_job_number" maxlength="16" value="11111" class="pui-unbordered" placeholder="工号" />
+                </div>
+                <div>
+                    <input type="number" id="Duser_gender" name="user_gender" maxlength="16" value="1" class="pui-unbordered" placeholder="性别" />
+                </div>
+                <button class="pui-btn pui-btn-primary pui-btn-large" id="Button1" name="add_user" onclick="$.openDialog()">确定</button>
                 <button class="pui-btn pui-btn-primary pui-btn-large">取消</button>
-            </fieldset>
             </form>
         </div>
-        <script>
-            $(function(){
-                var header  = $(".page-header");
-                var goToTop = $("#go-to-top");
+</body>
+<script type="text/javascript" src="{$Think.config.web_res_root}/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="{$Think.config.web_res_root}/js/planeui.js"></script>
+<script type="text/javascript" src="{$Think.config.web_res_root}/js/dialog-test.js"></script>
+<script type="text/javascript" src="{$Think.config.web_res_root}/js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="{$Think.config.web_res_root}/js/jquery-ui-1.10.3.custom.js"></script>
+<script>
+    function adduser() {
+        var user_name = $("#user_name").val();
+        var login_name = $("#login_name").val();
+        var user_phone_number = $("#user_phone_number").val();
+        var user_job_number = $("#user_job_number").val();
+        var user_gender = $("#user_gender").val();
 
-                $('a[href*="#"]').scrollTo();
-
-                $(window).scroll(function() {
-                    var top = $(this).scrollTop();
-                    var heading = $(".banner-con h1");
-                    var title1 = heading.eq(1);
-                    var title2 = heading.eq(2);
-                    var title2 = heading.eq(2);
-                    var sloganEn = $(".slogan-en");
-
-                    if (title1.is(":in-viewport")) {
-                        title1.addClass("pui-animation-expand-in");
-                    } else {
-                        title1.removeClass("pui-animation-expand-in");
-                    }
-
-                    if (title2.is(":in-viewport")) {
-                        title2.addClass("pui-animation-slide-left");
-                    } else {
-                        title2.removeClass("pui-animation-slide-left");
-                    }
-
-                    if (sloganEn.is(":in-viewport")) {
-                        sloganEn.addClass("pui-animation-slide-right");
-                    } else {
-                        sloganEn.removeClass("pui-animation-slide-right");
-                    }
-
-                    if (top > 300) {
-                        header.css({
-                            position: "fixed",
-                            top: 0,
-                            left: 0,
-                            zIndex: 10000,
-                            boxShadow : "0 0 5px rgba(0, 0, 0, .5)"
-                        });
-                    } else {
-                        header.css({
-                            position: "static",
-                            boxShadow : "none"
-                        });
-                    }
-
-                    if (top > 300) {
-                        goToTop.fadeIn();
-                    } else {
-                        goToTop.fadeOut();
-                    }
-                });
-
-                function openMenu() {
-
-                    if (!$.responsive.xs() && !$.responsive.sm()) {
-                        return ;
-                    }
-
-                    var menu = $(".page-header .pui-menu-simple");
-
-                    menu.toggleClass("pui-right pui-pos-fixed open");
-                    header.toggleClass("main-color");
-
-                    $(".page-header .pui-menu-simple.open").bind("mouseleave", openMenu);
+        if (user_name == '' || login_name == '' || user_phone_number == '' || user_job_number == '' || user_gender == '') {
+            alert("信息不能留空");
+        } else {
+            var post_data = { user_name: user_name, login_name: login_name, user_phone_number: user_phone_number, user_job_number: user_job_number, user_gender: user_gender };
+            $.ajax({
+                url: "{:url('index/usermanage/adduser')}",
+                dataType: "json",
+                type: 'POST',
+                data: post_data,
+                async: false,
+                success: function (data) {
+                    json_data=eval('('+data+')');
+										alert(json_data['result']);
+                },
+                error: function (data, status, error) {
+                    alert("跳转失败");
+                    alert(error);
                 }
-
-                $(".page-header .fa-list").bind("click", openMenu);
             });
-        </script>
-
-        <script type="text/javascript">
-            function reset() {
-                var linkTags = $("a");
-
-                if ($(window).width() > 1000) {
-                    linkTags.attr("target", "viewer");
-                } else {
-                    linkTags.attr("target", "");
-                }
-            }
-
-            $(function() {
-                reset();
-
-                $(window).resize(reset);
-            });
-        </script>
-
-
-
-
-    </body>
-
-    <!-- <script>
-            $(document).ready(function(){
-                $("#add_user").click(function(){
-                    alert("hello");
-                    var username = $("#user_name").val();
-                    var user_phone_bumber = $("#user_phone_bumber").val();
-                    var user_job_number = $("#user_job_number").val();
-                    if(username == ''){
-                        alert("姓名不能留空");
-                    }else if(user_phone_bumber == ''){
-                        alert("电话不能为空");
-                    }else if(user_job_number == ''){
-                        alert("工号不能为空");
-                    }else{
-                        var post_data = {user_name:user_name,user_phone_bumber:user_phone_bumber,user_job_number:user_job_number};
-                        $.ajax({
-                            url:"",
-                            dataType: "json",
-                            type: 'POST',
-                            data: post_data,
-                            async: false,
-                            success: function(data){
-                                alert("成功");
-                                //alert(data)
-                                //json_data=eval('('+data+')');
-
-                            },
-                            error: function(data, status, error){
-                                alert("跳转失败");
-                                alert(error);
-                            }
-                        });
-                    }
-                    return false;
-                });
-            });
-        </script> -->
-
-        <script>
-            function adduser(){
-                alert("hello");
-								var user_name = $("#user_name").val();
-								var login_name = $("#login_name").val();
-								var user_phone_number = $("#user_phone_number").val();
-								var user_job_number = $("#user_job_number").val();
-								var user_gender = $("#user_gender").val();
-                    if(user_name == ''){
-                        alert("姓名不能留空");
-                    }else if(user_phone_number == ''){
-                        alert("电话不能为空");
-                    }else if(user_job_number == ''){
-                        alert("工号不能为空");
-                    }else{
-                        var post_data = {user_name:user_name,login_name:login_name,user_phone_number:user_phone_number,user_job_number:user_job_number,user_gender:user_gender};
-                        $.ajax({
-                            url:"{:url('index/usermanage/adduser')}",
-                            dataType: "json",
-                            type: 'POST',
-                            data: post_data,
-                            async: false,
-                            success: function(data){
-                                alert("成功");
-                                //alert(data)
-                                //json_data=eval('('+data+')');
-
-                            },
-                            error: function(data, status, error){
-                                alert("跳转失败");
-                                alert(error);
-                            }
-                        });
-                    }
-                    return false;
-            }
-        </script>
+        }
+        return false;
+    }
+</script>
 
 </html>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="{$Think.config.web_res_root}/js/jquery-2.1.1.min.js"></script>
-
-<script type="text/javascript" >
-$(document).ready(function(){
-  loadInit();
-  $("#logout_btn").click(function(){
-          var post_data = {};
-          $.ajax({
-              url:"{:url('index/Login/logout')}",
-              dataType: "json",
-              type: 'POST',
-              data: post_data,
-              async: false,
-              success: function(data){
-                  window.location.href="{:url('index/Login/index')}"
-              },
-              error: function(data, status, error){
-              }
-          });
-          return false;
-  });
-});
-function loadInit(){
-  var post_data={};
-  $.ajax({
-        url:"{:url('index/usermanage/show')}",
-        dataType: "json",
-        type: 'GET',
-        data: post_data,
-        async: true,
-        success: function(data){
-            //alert(data);
-            json_data=eval('('+data+')');
-            //alert(json_data[0]['login_name']);
-            //遍历json数组
-            $.each(json_data, function(i, item) {
-                //alert(item.name+" "+item.phone_number+" "+item.job_number);
-                $('#user_message').append("<tr>"+"<td>"+item.name+"</td><td>"+item.phone_number+"</td><td>"+item.job_number+"</td><td>"+"<button >"+"del"+"</button"+"</td>"+"</tr>");
-
-            });
-        },
-        error: function(data, status, error){
-            alert("跳转失败");
-            alert(error);
-        }
-  });
-}
-</script>
-
-<script type="text/javascript" src="{$Think.config.web_res_root}/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="{$Think.config.web_res_root}/js/planeui.js"></script>
-<script type="text/javascript" src="{$Think.config.web_res_root}/js/dialog-test.js"></script>
+<!-- <script src="{$Think.config.web_res_root}/js/jquery-2.1.1.min.js"></script> -->
 
 <script type="text/javascript">
-    $(document).ready(function(){
-        $("#login_btn").click(function(){
-            var username = $("#username").val();
-            var password = $("#password").val();
-            if(username == ''){
-                alert("用户名不能为空");
-            }else if(password == ''){
-                alert("密码不能为空");
-            }else{
-                var post_data = {username:username,password:password};
-                $.ajax({
-                    url:"{:url('login/check')}",
-                    dataType: "json",
-                    type: 'POST',
-                    data: post_data,
-                    async: false,
-                    success: function(data){
-                        alert("跳转成功");
-                        json_data=eval('('+data+')');
-                        if(json_data['result']=="管理员"){
-                            window.location.href="{:url('usermanage/user_manage')}";
-                        }else if(json_data['result']=="普通用户"){
-                            window.location.href="{:url('userindex/user_index')}";
-                        }else if(json_data['result']=="已登陆"){
-                            window.location.href="{:url('userindex/user_index')}";
-                        }else{
-                            alert(json_data['result']);
-                            //登录失败操作......
-                        }
-                    },
-                    error: function(data, status, error){
-                        alert("跳转失败");
-                        alert(error);
-                    }
-                });
-            }
+    $(document).ready(function () {
+        loadInit();
+        $("#logout_btn").click(function () {
+            var post_data = {};
+            $.ajax({
+                url: "{:url('index/Login/logout')}",
+                dataType: "json",
+                type: 'POST',
+                data: post_data,
+                async: false,
+                success: function (data) {
+                    window.location.href = "{:url('index/Login/index')}"
+                },
+                error: function (data, status, error) {
+                }
+            });
             return false;
         });
+        $(".delete_btn").click(function () {
+            alert("确认删除");
+            var delete_id = $(this).parent().parent().find('td').eq(0).html();
+            var post_data = { delete_id: delete_id };
+            $.ajax({
+                url: "{:url('index/usermanage/deleteuser')}",
+                dataType: "json",
+                type: 'POST',
+                data: post_data,
+                async: false,
+                success: function (data) {
+                    json_data = eval('(' + data + ')');
+                    alert(json_data['result']);
+                    window.location.reload();
+                },
+                error: function (data, status, error) {
+                    alert("跳转失败");
+                    alert(error);
+                }
+            });
+        });
+				$(".change_btn").click(function () {
+
+        });
     });
-    </script>
+    function loadInit() {
+        var post_data = {};
+        $.ajax({
+            url: "{:url('index/usermanage/show')}",
+            dataType: "json",
+            type: 'GET',
+            data: post_data,
+            async: false,
+            success: function (data) {
+                //alert(data);
+                json_data = eval('(' + data + ')');
+                //alert(json_data[0]['login_name']);
+                //遍历json数组
+                $.each(json_data, function (i, item) {
+                    //alert(item.name+" "+item.phone_number+" "+item.job_number);
+                    $('#user_message').append("<tr>" + "<td>" + item.id + "</td><td>" + item.name + "</td><td>" + item.phone_number + "</td><td>" + item.job_number + "</td><td>"
+										+ "<button class='delete_btn'>" + "删除" + "</button>"
+										+ "<button class='change_btn'>" + "修改" + "</button>" + "</td>" + "</tr>");
+
+                });
+            },
+            error: function (data, status, error) {
+                alert("跳转失败");
+                alert(error);
+            }
+        });
+    }
+</script>
