@@ -20,7 +20,7 @@
       public function showEvent()
       {
          $model = new EventModel();
-         $result = $model->checkall();
+         $result = $model->event_checkall();
          $all = array(array());
          for($i=0;$i<count($result);$i++)
          {
@@ -32,8 +32,10 @@
             $all[$i] = $merge_item;
         }
         //  dump($all);
-         $view = new View();
-         return $view->fetch('elements',$all[0]);
+        //  $view = new View();
+        //  return $view->fetch('elements',$all[0]);
+        $this->assign('data',$all);
+        return $this->fetch("elements");
       }
 
 
@@ -46,7 +48,7 @@
        {
           $aid = 2;
           $model = new EventModel();
-          $model->insert($time,(int)$participant_num,(int)$aid,$ename,$start_time,$end_time,(int)$single,(int)$multiple,
+          $model->event_insert($time,(int)$participant_num,(int)$aid,$ename,$start_time,$end_time,(int)$single,(int)$multiple,
                   (int)$fill,(int)$judge,(boolean)$pro_random,(boolean)$opt_random,$ekind,$answer_time,(int)$single_score,
                   (int)$multiple_score,(int)$fill_score,(int)$judge_score,(int)$person_score,
                   (int)$team_score,(int)$person_score_up,(int)$team_score_up,$message);
