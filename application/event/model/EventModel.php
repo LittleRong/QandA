@@ -4,45 +4,9 @@ use think\Model;
 class EventModel extends Model{
     protected $table = 'event';// 对应数据库中的event表
 
-    //查询数据库
-    public function check($id)
-    {
-        //$user_model = new EventModel();
-        $result = $this->sql_check($id);
-        return $result;
-    }
-
-    //查询全部
-    public function checkall()
-    {
-        //$user_model = new EventModel();
-        $result = $this->sql_checkall();
-        return $result;
-    }
-
-    //插入数据
-    public function insert($time,$participant_num,$aid,$ename,$start_time,$end_time,$single,$multiple,
-            $fill,$judge,$pro_random,$opt_random,$ekind,$answer_time,$single_score,
-            $multiple_score,$fill_score,$judge_score,$person_score,
-            $team_score,$person_score_up,$team_score_up,$message)
-    {
-        //$user_model = new EventModel();
-        $this->sql_insert($time,$participant_num,$aid,$ename,$start_time,$end_time,$single,$multiple,
-                $fill,$judge,$pro_random,$opt_random,$ekind,$answer_time,$single_score,
-                $multiple_score,$fill_score,$judge_score,$person_score,
-                $team_score,$person_score_up,$team_score_up,$message);
-    }
-
-    //删除数据
-    public function delete()
-    {
-        $user_model = new EventModel();
-        $this->sql_delete(3);
-
-    }
 
     //查找event表
-    public function sql_check($id)
+    public function event_check($id)
     {
         $query=['eid'=>$id];
         $result = $this->get($query);
@@ -53,7 +17,7 @@ class EventModel extends Model{
     }
 
     //查找event表中所有数据
-    public function sql_checkall()
+    public function event_checkall()
     {
       $result = $this->all();
       if (empty($result)) {//获取数据，若不存在则返回空
@@ -62,7 +26,9 @@ class EventModel extends Model{
       return $result;   //返回用户信息
     }
 
-    public function sql_insert($time,$participant_num,$aid,$ename,$start_time,$end_time,$single,$multiple,
+
+    //事件插入
+    public function event_insert($time,$participant_num,$aid,$ename,$start_time,$end_time,$single,$multiple,
             $fill,$judge,$pro_random,$opt_random,$ekind,$answer_time,$single_score,
             $multiple_score,$fill_score,$judge_score,$person_score,
             $team_score,$person_score_up,$team_score_up,$message)

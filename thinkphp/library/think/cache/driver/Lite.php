@@ -2,7 +2,7 @@
 // +----------------------------------------------------------------------
 // | ThinkPHP [ WE CAN DO IT JUST THINK ]
 // +----------------------------------------------------------------------
-// | Copyright (c) 2006~2016 http://thinkphp.cn All rights reserved.
+// | Copyright (c) 2006~2017 http://thinkphp.cn All rights reserved.
 // +----------------------------------------------------------------------
 // | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
 // +----------------------------------------------------------------------
@@ -26,7 +26,7 @@ class Lite extends Driver
     ];
 
     /**
-     * 架构函数
+     * 构造函数
      * @access public
      *
      * @param array $options
@@ -180,6 +180,6 @@ class Lite extends Driver
             $this->rm('tag_' . md5($tag));
             return true;
         }
-        array_map("unlink", glob($this->options['path'] . $this->options['prefix'] . '*.php'));
+        array_map("unlink", glob($this->options['path'] . ($this->options['prefix'] ? $this->options['prefix'] . DS : '') . '*.php'));
     }
 }
