@@ -1,15 +1,15 @@
-ThinkPHP 5.0 
+ThinkPHP 5.0
 ===============
 
-[![Build Status](https://img.shields.io/travis/top-think/framework.svg)](https://travis-ci.org/top-think/framework)
-[![Coverage Status](https://img.shields.io/codecov/c/github/top-think/framework.svg)](https://codecov.io/github/top-think/framework)
-[![Downloads](https://img.shields.io/github/downloads/top-think/framework/total.svg)](https://github.com/top-think/framework/releases)
-[![Releases](https://img.shields.io/github/release/top-think/framework.svg)](https://github.com/top-think/framework/releases/latest)
-[![Releases Downloads](https://img.shields.io/github/downloads/top-think/framework/latest/total.svg)](https://github.com/top-think/framework/releases/latest)
-[![Packagist Status](https://img.shields.io/packagist/v/top-think/framework.svg)](https://packagist.org/packages/topthink/framework)
-[![Packagist Downloads](https://img.shields.io/packagist/dt/top-think/framework.svg)](https://packagist.org/packages/topthink/framework)
+[![StyleCI](https://styleci.io/repos/48530411/shield?style=flat&branch=master)](https://styleci.io/repos/48530411)
+[![Build Status](https://travis-ci.org/top-think/framework.svg?branch=master)](https://travis-ci.org/top-think/framework)
+[![codecov.io](http://codecov.io/github/top-think/framework/coverage.svg?branch=master)](http://codecov.io/github/github/top-think/framework?branch=master)
+[![Total Downloads](https://poser.pugx.org/topthink/framework/downloads)](https://packagist.org/packages/topthink/framework)
+[![Latest Stable Version](https://poser.pugx.org/topthink/framework/v/stable)](https://packagist.org/packages/topthink/framework)
+[![Latest Unstable Version](https://poser.pugx.org/topthink/framework/v/unstable)](https://packagist.org/packages/topthink/framework)
+[![License](https://poser.pugx.org/topthink/framework/license)](https://packagist.org/packages/topthink/framework)
 
-ThinkPHP5在保持快速开发和大道至简的核心理念不变的同时，PHP版本要求提升到5.4，对已有的CBD模式做了更深的强化，优化核心，减少依赖，基于全新的架构思想和命名空间实现，是ThinkPHP突破原有框架思路的颠覆之作，其主要特性包括：
+ThinkPHP5在保持快速开发和大道至简的核心理念不变的同时，PHP版本要求提升到5.4，优化核心，减少依赖，基于全新的架构思想和命名空间实现，是ThinkPHP突破原有框架思路的颠覆之作，其主要特性包括：
 
  + 基于命名空间和众多PHP新特性
  + 核心功能组件化
@@ -28,10 +28,11 @@ ThinkPHP5在保持快速开发和大道至简的核心理念不变的同时，PH
  + 真正惰性加载
  + 分布式环境支持
  + 支持Composer
+ + 支持MongoDb
 
 > ThinkPHP5的运行环境要求PHP5.4以上。
 
-详细开发文档参考 [ThinkPHP5完全开发手册](http://www.kancloud.cn/manual/thinkphp5)
+详细开发文档参考 [ThinkPHP5完全开发手册](http://www.kancloud.cn/manual/thinkphp5) 以及[ThinkPHP5入门系列教程](http://www.kancloud.cn/special/thinkphp5_quickstart)
 
 ## 目录结构
 

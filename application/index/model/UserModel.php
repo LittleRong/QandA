@@ -1,6 +1,7 @@
 <?php
 namespace app\index\model;
 use think\Model;
+use think\Db;
 
 class UserModel extends Model{
     protected $table = 'user';// 对应数据库中的user表
@@ -57,7 +58,41 @@ class UserModel extends Model{
           return null;
       }
       return $result;   //返回用户信息
+    }
 
+    public function add_user($user_name,$login_name,$password,$user_phone_number,$user_job_number,$user_gender){
+        $this->data([
+            'name'  =>  $user_name,
+            'login_name' =>  $login_name,
+            'pwd'  =>  $password,
+            'phone_number' =>  $user_phone_number,
+            'job_number'  =>  $user_job_number,
+            'permission' => 0,
+            'gender' =>  $user_gender,
+            'deleted' => 0
+        ]);
+        $this->save();
+        $new_user_id=$this->id;
+        //查询新信息
+        $query=['id'=>$new_user_id];
+        $result = $this->get($query);
+        if (empty($result)){
+          return null;
+        }else{
+          return $result;
+        }
+    }
+
+    public function update_user($user_id,$user_name,$login_name,$user_phone_number,$user_job_number,$user_gender){
+        $this->save([
+        'name'  =>  $user_name,
+        'login_name' =>  $login_name,
+        'phone_number' =>  $user_phone_number,
+        'job_number'  =>  $user_job_number,
+        'gender' =>  $user_gender
+        ],['id' => $user_id]);
+        $data['result']="更新成功";
+        return $data;
     }
 
 }
