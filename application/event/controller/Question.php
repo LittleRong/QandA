@@ -7,7 +7,7 @@ use app\event\model\ProblemModel;
 
 class Question
 {
-    public function excelReader()
+    public function excelreader()
     {
 
        $filename = __DIR__."/test.xlsx";
@@ -25,18 +25,27 @@ class Question
         array_shift($excel_array);  //删除第一个数组(标题);
         foreach($excel_array as $k=>$v)
         {
-             $id = $v[0];
-             $question = $v[1];
-             $option = json_encode(array('A' => $v[2],'B' => $v[3],'C' => $v[4],'D' =>  $v[5] ));
-             $answer = $v[6];
+             $problem_class = $v[0];
+             $problem_type = $v[1];
+             $question = $v[2];
+             $answer = $v[3];
+
+             $option = array();     //定义选项为一个数组
+             $count_num = count($v);
+             $key = 97;             //key值的为ascii的小写a开始
+             for($i=4;$i<$count_num;$i++)
+             {
+                $choice = array(chr($key) => $v[$i]);
+                if(!empty($v[$i]))
+                {
+                  $option = array_merge($option,$choice);
+                }
+                $key++;
+             }
              $problem_content = json_encode(array('problem' => $question,'option'=>$option,'answer'=>$answer ));
-             $problem_class = $v[7];
-             $problem_type = $v[8];
-
              $model = new ProblemModel();
-             $model->problem_insert((int)$id,$problem_content,$problem_class,(int)$problem_type);
-
-             dump($v);
+             $model->problem_insert($problem_content,$problem_class,(int)$problem_type);
+             dump($problem_content);
         }
         echo "Done";
     }

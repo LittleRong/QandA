@@ -34,11 +34,15 @@
         //  dump($all);
         //  $view = new View();
         //  return $view->fetch('elements',$all[0]);
-        $this->assign('data',$all);
-        return $this->fetch("elements");
+
+        if(empty($all[0]))
+        {
+          $this->assign('data',null);
+        }
+        else
+          $this->assign('data',$all);
+        return $this->fetch("eventmanager");
       }
-
-
 
       //接受ajax数据并写入数据库
       public function manage($time,$participant_num,$ename,$start_time,$end_time,$single,$multiple,
