@@ -4,13 +4,39 @@ namespace app\event\controller;
 use PHPExcel_IOFactory;
 use PHPExcel;
 use app\event\model\ProblemModel;
+use think\View;
+use think\Request;
 
 class Question
 {
-    public function excelreader()
+
+    public function problem_insert()
+    {
+      $view = new View();
+      return $view->fetch('tiku_upload');
+    }
+    //上传文件保存到本地
+    public function upload()
+    {
+      $file = Request::instance()->file('image');
+      //定义最大文件大小，文件后缀格式，保存路径
+      $info = $file->validate(['size'=>15678,'ext'=>'xlsx,xls'])->move(__DIR__.'/../../../public/uploads');
+      if($info)
+      {
+        $this->excelreader($info->getSaveName());
+      }
+      else
+      {
+        echo $file->getError();
+      }
+    }
+
+
+    //excel导入题目到数据库中
+    public function excelreader($filename)
     {
 
-       $filename = __DIR__."/test.xlsx";
+       $filename = __DIR__.'/../../../public/uploads/'.$filename;
        $extension = strtolower( pathinfo($filename, PATHINFO_EXTENSION) );
 
        if($extension == 'xlsx') {

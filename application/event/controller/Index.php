@@ -10,14 +10,14 @@
   class Index extends Controller
   {
         //跳转到事件录入视图
-      public function insertEvent()
+      public function insertevent()
       {
           $view = new View();
           return $view->fetch('event_insert');
       }
 
       //跳转到事件显示视图
-      public function showEvent()
+      public function showevent()
       {
          $model = new EventModel();
          $result = $model->event_checkall();
@@ -41,7 +41,7 @@
         }
         else
           $this->assign('data',$all);
-        return $this->fetch("eventmanager");
+        return $this->fetch("event_manager");
       }
 
       //接受ajax数据并写入数据库
