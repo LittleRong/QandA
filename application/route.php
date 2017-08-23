@@ -8,7 +8,8 @@
 // +----------------------------------------------------------------------
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
-
+use think\Route;
+Route::controller('problem','problem_manage/Problem');
 return [
     '__pattern__' => [
         'name' => '\w+',
