@@ -47,10 +47,10 @@ CREATE TABLE event_problem(
 
 DROP TABLE if exists `team`;
 CREATE TABLE team(
-    `team_id` INT PRIMARY KEY AUTO_INCREMENT COMMENT '组id',
+    `team_id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT '组id',
     `team_name` VARCHAR(50) NOT NULL COMMENT '组名',
     `refer_event_id` INT NOT NULL COMMENT '参见的事件id,关联的事件的id',
-    `team_credit` FLOAT NOT NULL COMMENT '本组在事件中的积分',
+    `team_credit` FLOAT NOT NULL COMMENT '本组在事件中的积分'
 )ENGINE = Innodb default charset utf8 comment '组信息表';
 
 DROP TABLE if exists `item`;
