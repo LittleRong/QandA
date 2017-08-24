@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+</head>
+<body>
+<center>
+<form action="save" method="post">
+<table>
+<tr>
+<td>道具ID</td>
+<td><input type="text" name="item_id" value="{$res['item_id']}"></td>
+</tr>
+<tr>
+<td>道具名称</td>
+<td><input type="text" name="item_name" value="{$res['item_name']}"></td>
+</tr>
+<tr>
+<td>道具描述</td>
+<td><input type="text" name="item_description" value="{$res['item_description']}"></td>
+</tr>
+<tr>
+<td>兑换积分</td>
+<td><input type="text" name="change_rule" value="{$res['change_rule']}"></td>
+</tr>
+<tr>
+<td>道具数量</td>
+<td><input type="text" name="amount" value="{$res['amount']}"></td>
+</tr>
+<tr>
+<td>组可对数量</td>
+<td><input type="text" name="team_amount" value="{$res['team_amount']}"></td>
+</tr>
+
+<tr>
+<td></td>
+<td><input type="submit" value="修改"></td>
+</tr>
+</table>
+</form>
+</center>
+</body>
+</html>
