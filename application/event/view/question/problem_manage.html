@@ -71,14 +71,14 @@
 
 		<title>配置题目</title>
 
-        <link rel="stylesheet" type="text/css" href="../../../../public/event/dist/css/planeui.min.css" />
+        <link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/event/dist/css/planeui.min.css" />
 	</head>
 	<body>
 		<!-- 代码写在这下面 -->
         <div class="pui-grid">
         	<div class="pui-row">
         		<div class="pui-grid-xs-12">
-        			<img src="../../../../public/event/img/header.jpg" style="width: 100%;height: auto;" />
+        			<img src="{$Think.config.web_res_root}/event/img/header.jpg" style="width: 100%;height: auto;" />
         		</div>
         	</div>
         		<div class="pui-row">
@@ -95,7 +95,7 @@
 								<span style=display:none>{$count=0}</span>
 								{foreach $data as $k=>$v}
 								{if condition="($v.problem_type == 1)"}
-								<div><input type="checkbox" name="">{++$count}.{$v.problem}</div>
+								<div><input type="checkbox" id="cbox" name="cbox" value={$v.problem_id}>{++$count}.{$v.problem}</div>
 								<p>
 									{foreach $v.option as $z=>$x}
 									{$z}.{$x}&nbsp;&nbsp;&nbsp;
@@ -157,9 +157,10 @@
 								{/if}
         				{/foreach}
 								{/eq}
-        				<input type="button" class="pui-btn pui-btn-success pui-btn-small active" value="添加">
-        				<input type="button" class="pui-btn pui-btn-warning pui-btn-small active" value="新建">
-        				<hr>0
+								<hr>
+
+        				<input type="button" class="pui-btn pui-btn-success pui-btn-small active" value="添加" id="submit_message" name="submit_message">
+								<br><br>
         				<h5>已添加题目</h5>
         				<hr>
         				<div><input type="checkbox" name="">1.题目XXX</div>
@@ -183,7 +184,71 @@
         		</div>
         </div>
         <!-- 代码写在这上面 -->
-				<script type="text/javascript" src="../../../../public/event/js/jquery.min.js"></script>
-				<script type="text/javascript" src="../../../../public/event/dist/js/planeui.js"></script>
+
+
 	</body>
+
+	<!-- jQuery -->
+	<script type="text/javascript" src="{$Think.config.web_res_root}/event/dist/js/planeui.js"></script>
+	<script src="{$Think.config.web_res_root}/js/jquery.min.js"></script>
+	<script src="{$Think.config.web_res_root}/js/jquery-ui.min.js"></script>
+	<script src="{$Think.config.web_res_root}/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+
+	var problemId;
+	//获取勾选题目
+	function mutil_check()
+	{
+		var arr = [];
+		var obj = document.getElementsByName("cbox");
+		var obj_legth = obj.length;
+		for(var i=0;i<obj_legth;i++)
+		{
+			if(obj[i].checked)
+			{
+				 arr.push(obj[i].value);
+			 }
+		}
+		return arr;
+	}
+
+
+	$(document).ready(function()
+	{
+
+		$("#submit_message").click(function(){
+			var problemId;
+			problemId = mutil_check();
+			alert(problemId);
+			var post_data = {problemId:problemId};
+
+
+			$.ajax({
+					url:"{$Think.config.web_res_root}index.php/event/question/event_problem_relevance",
+					dataType: "json",
+					type: 'POST',
+					data: post_data,
+					async: false,
+					success: function(data){
+							alert("跳转成功!");
+							json_data=eval('('+data+')');
+							alert(data);
+							if(json_data['result']=="录入成功!"){
+									alert(json_data['result']);
+									//登录成功操作......
+							}else{
+									alert("录入失败！");
+									//登录失败操作......
+							}
+					},
+					error: function(data, status, error){
+							alert("跳转失败");
+							alert(error);
+
+					}
+			});
+		});
+	});
+</script>
 </html>
