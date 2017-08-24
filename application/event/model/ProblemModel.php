@@ -15,6 +15,14 @@ class ProblemModel extends Model{
       $this->save();
       echo $this->problem_id;   //获取自增ID
     }
+    public function problem_check()
+    {
+      $result = $this->all();
+      if (empty($result)) {//获取数据，若不存在则返回空
+          return null;
+      }
+      return $result;   //返回用户信息
+    }
 
 
 }
