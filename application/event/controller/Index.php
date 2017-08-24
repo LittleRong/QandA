@@ -28,6 +28,7 @@
             $event_time = json_decode($item['event_time'],true);
             $question_num = json_decode($item['event_num'],true);
             $credit_rule = json_decode($item['credit_rule'],true);
+            unset($item['event_time'],$item['event_num'],$item['credit_rule']);
             $merge_item = array_merge($item,$event_time,$question_num,$credit_rule);
             $all[$i] = $merge_item;
         }

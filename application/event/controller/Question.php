@@ -6,10 +6,12 @@ use PHPExcel;
 use app\event\model\ProblemModel;
 use think\View;
 use think\Request;
+use think\Controller;
 
-class Question
+class Question extends Controller
 {
 
+    //题目导入
     public function problem_insert()
     {
       $view = new View();
@@ -23,19 +25,19 @@ class Question
       $info = $file->validate(['size'=>15678,'ext'=>'xlsx,xls'])->move(__DIR__.'/../../../public/uploads');
       if($info)
       {
+        //参数为保存名字
         $this->excelreader($info->getSaveName());
       }
       else
       {
+        //输出错误信息
         echo $file->getError();
       }
     }
 
-
     //excel导入题目到数据库中
     public function excelreader($filename)
     {
-
        $filename = __DIR__.'/../../../public/uploads/'.$filename;
        $extension = strtolower( pathinfo($filename, PATHINFO_EXTENSION) );
 
@@ -75,5 +77,37 @@ class Question
         }
         echo "Done";
     }
+
+    //题目配置
+    public function problem_manage()
+    {
+      $model = new ProblemModel();
+      $result = $model->problem_check();
+      // dump($result);
+      $all = array(array());
+      $num = count($result);
+
+      for($i=0;$i<$num;$i++)
+      {
+        $getProblem = json_decode($result[$i],true);
+        $problem = json_decode($getProblem['problem_content'],true);
+        // $option = $problem['option'];
+        unset($getProblem['problem_content']);
+        // unset($problem['option']);
+        $merge_item = array_merge($getProblem,$problem);
+        $all[$i] = $merge_item;
+      }
+      // dump($all);
+      if(empty($all[0]))
+      {
+        $this->assign('data',null);
+      }
+      else
+        $this->assign('data',$all);
+      return $this->fetch("problem_manage");
+      // $view = new View();
+      // return $view->fetch('problem_manage');
+    }
+
 
 }
