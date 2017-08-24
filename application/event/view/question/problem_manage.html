@@ -113,7 +113,7 @@
 								<span style=display:none>{$count=0}</span>
 								{foreach $data as $k=>$v}
 								{if condition="($v.problem_type == 2)"}
-								<div><input type="checkbox" name="">{++$count}.{$v.problem}</div>
+								<div><input type="checkbox" id="cbox" name="cbox" value={$v.problem_id}>{++$count}.{$v.problem}</div>
 								<p>
 									{foreach $v.option as $z=>$x}
 									{$z}.{$x}&nbsp;&nbsp;&nbsp;
@@ -131,7 +131,7 @@
 								<span style=display:none>{$count=0}</span>
 								{foreach $data as $k=>$v}
 								{if condition="($v.problem_type == 0)"}
-								<div><input type="checkbox" name="">{++$count}.{$v.problem}</div>
+								<div><input type="checkbox" id="cbox" name="cbox" value={$v.problem_id}>{++$count}.{$v.problem}</div>
 								<p>
 									{foreach $v.option as $z=>$x}
 									{$z}.{$x}&nbsp;&nbsp;&nbsp;
@@ -148,7 +148,7 @@
 								<span style=display:none>{$count=0}</span>
  								{foreach $data as $k=>$v}
 								{if condition="($v.problem_type == 3)"}
- 								<div><input type="checkbox" name="">{++$count}.{$v.problem}</div>
+ 								<div><input type="checkbox" id="cbox" name="cbox" value={$v.problem_id}>{++$count}.{$v.problem}</div>
 								<p>
 									{foreach $v.option as $z=>$x}
 									{$z}.{$x}&nbsp;&nbsp;&nbsp;
@@ -233,7 +233,6 @@
 					success: function(data){
 							alert("跳转成功!");
 							json_data=eval('('+data+')');
-							alert(data);
 							if(json_data['result']=="录入成功!"){
 									alert(json_data['result']);
 									//登录成功操作......

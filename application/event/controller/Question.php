@@ -117,14 +117,14 @@ class Question extends Controller
   public function event_problem_relevance($problemId)
   {
      $event_id = Session::get('myevent_id');
+    //  $event_id = 1;
      $model = new EventProblemModel();
-    //  $problemId = json_decode($problemId,true);
-    //  $num = count($problemId);
-    //  for($i=0;$i<$num;$i++)
-    //  {
-    //    $model->event_problem_insert((int)$problemId[$i],(int)$event_id);
-    //  }
-     $model->event_problem_inserts($problemId,(int)$event_id);
+     $num = count($problemId);
+     for($i=0;$i<$num;$i++)
+     {
+       $model->event_problem_insert((int)$problemId[$i],(int)$event_id);
+     }
+    //  $model->event_problem_inserts($problemId,(int)$event_id);
      $data = array('result'=>'录入成功!');
      return json_encode($data);
 
