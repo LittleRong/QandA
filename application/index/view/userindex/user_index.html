@@ -53,11 +53,11 @@
 	                        			<strong>活动时间：</strong>{$k.start_time}至{$k.end_time}<br>
 	                        			<strong>可兑换道具：</strong>{$k.item}
 	            	                </p>
-	            	                <p class="pui-text-right"><br><a href="#" class="pui-btn pui-btn-default pui-unbordered">详细 &gt;&gt;</a></p>
+	            	                <p class="pui-text-right"><br><a href="{:url('/index/eventmessage/event_message',array('event_id'=>$k.event_id))}" class="pui-btn pui-btn-default pui-unbordered">详细 &gt;&gt;</a></p>
 	            	                </div>
 	                            </div>
                         	{/foreach}
-                    		
+
                         	</li>
                         </ul>
 

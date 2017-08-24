@@ -13,7 +13,7 @@ class EventModel extends Model{
       $sql="select event_id,event_title,event_description,participant_num,event_num,event_time
       from event, participant
       where participant.refer_event_id=event.event_id
-      and participant.user_id=".$user_id;
+       and participant.user_id=".$user_id;
       $result_array = Db::query($sql);
       $count=0;
       $final_result=array();

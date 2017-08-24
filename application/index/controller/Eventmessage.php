@@ -7,11 +7,12 @@ use app\index\model\EventModel;
 use app\index\model\ItemModel;
 use app\index\model\CreditModel;
 use think\Session;
+use think\Request;
 
 class Eventmessage extends Controller{
     public function event_message(){
-      $event_id=33;
-      $user_id=1;
+      $event_id=Request::instance()->param('event_id');
+      $user_id=Session::get('user_id');
       $result=array();
       //获取事件信息
       $event_model = new EventModel();
@@ -26,7 +27,8 @@ class Eventmessage extends Controller{
       $credit_data=$credit_model->getCredit($event_id,$user_id);
       $result['credit_message']=$credit_data;
       dump($result);
-      //return $result;
+      $this->assign('data',$result);
+      return $this->fetch('eventmessage/event_message');
     }
 
 }

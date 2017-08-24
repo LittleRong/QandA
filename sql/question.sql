@@ -31,12 +31,12 @@ CREATE TABLE event(
     `event_title` VARCHAR(50) NOT NULL COMMENT '事件的标题',
     `event_description` TEXT NOT NULL COMMENT '事件的描述',
     `event_time` JSON COMMENT '事件时间,保存为json形式,包括开始时间start_time、结束时间end_time、答题时间time',
-    `event_num` JSON COMMENT '题目数量,保存为json形式,包括单选题数量single_choice_number、多选题数量multiple_choice_number、填空题数量fill_number、判断题数量true_or_false_number',
+    `event_num` JSON COMMENT '题目数量,保存为json形式,包括单选题数量single、多选题数量multiple、填空题数量fill、判断题数量judge',
     `event_type` VARCHAR(50) NOT NULL COMMENT '事件的种类',
     `problem_random` BOOLEAN NOT NULL COMMENT '是否控制题目随机排序,0--否,1--是',
     `option_random` BOOLEAN NOT NULL COMMENT '是否控制选项随机排序,0--否,1--是',
     `answer_time` VARCHAR(20) COMMENT '答题时间配置,答题时的规定完成时间',
-    `credit_rule` JSON NOT NULL COMMENT '积分规则,保存为json形式,包括单选题分数single_choice_score、多选题分数multiple_choice_score、填空题分数fill_score、判断题分数true_or_false_score、当日本人全对额外加分person_score、当日团队全对额外加分team_score、团队总积分上限team_score_up、个人总积分上限person_score_up'
+    `credit_rule` JSON NOT NULL COMMENT '积分规则,保存为json形式,包括单选题分数single_score、多选题分数multiple_score、填空题分数fill_score、判断题分数judge_score、当日本人全对额外加分person_score、当日团队全对额外加分team_score、团队总积分上限team_score_up、个人总积分上限person_score_up'
 )ENGINE = Innodb default charset utf8 comment '事件表,保存发起的比赛信息';
 
 DROP TABLE if exists `event_problem`;
