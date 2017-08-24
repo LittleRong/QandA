@@ -17,7 +17,7 @@
            	<div class="pui-grid-xs-3 pui-grid-xs-push-9 pui-grid-sm-3 pui-grid-sm-push-9 pui-grid-md-3 pui-grid-md-push-9 pui-grid-lg-3 pui-grid-lg-push-9 pui-grid-xl-3 pui-grid-xl-push-9 pui-grid-xxl-3 pui-grid-xxl-push-9 ">
         	   	<ul class="pui-menu pui-menu-justify" style="margin-top:38px;margin-bottom: 0px;">
             	<li>
-                <span>张小蓝222</span>&emsp;<span id="logout_btn">退出</span>
+                <span>{$data.user_message.login_name}</span>&emsp;<span id="logout_btn">退出</span>
             	</li>
 	                	</ul>
            	</div>
@@ -43,35 +43,21 @@
             	<div class="clear pui-card" style="margin-top:20px ">
                         <ul class="pui-list pui-list-line">
                         	<li>
-                    <div class="clear pui-card pui-card-shadow pui-card-radius">
-            	                <div class="pui-card-box">
-            	                    <h1>2017年一叶知秋知识竞赛!!!!!!!!!!!!!<small></small></h1>
-            	                    <p class="pui-text-indent">比赛详情：一叶知秋知识竞赛是中国移动南方基地开展的一项有关员工专业知识的竞赛，主要是为了考擦员工对知识的把握以及应变能力等等，促进员工的学习热情，并给予相当的奖励。</p>
+                        	{foreach $data.event_message as $v=>$k}
+								<div class="clear pui-card pui-card-shadow pui-card-radius">
+            	                	<div class="pui-card-box">
+            	                    <h1>{$k.event_title}<small></small></h1>
+            	                    <p class="pui-text-indent">{$k.event_description}</p>
             	                    <p>
-                        	<strong>参赛形式:</strong> 2-3人团队  <strong>答题规则:</strong>每日10道题量<br>
-                        	<strong>截止日期：</strong>2017年9月30号<br>
-                        	<strong>可兑换道具规则：</strong>复活令牌 有爱令牌
+	                        			<strong>参赛形式:</strong> {$k.participant_num}人<strong>&emsp;答题规则：</strong>总共{$k.fill+$k.judge+$k.single+$k.multiple}道题量。单选题{$k.single}道，判断题{$k.judge}道，多选题{$k.multiple}道，填空题{$k.fill}道<br>
+	                        			<strong>活动时间：</strong>{$k.start_time}至{$k.end_time}<br>
+	                        			<strong>可兑换道具：</strong>{$k.item}
+	            	                </p>
+	            	                <p class="pui-text-right"><br><a href="{:url('/index/eventmessage/event_message',array('event_id'=>$k.event_id))}" class="pui-btn pui-btn-default pui-unbordered">详细 &gt;&gt;</a></p>
+	            	                </div>
+	                            </div>
+                        	{/foreach}
 
-
-            	                    </p>
-            	                    <p class="pui-text-right"><br><a href="#" class="pui-btn pui-btn-default pui-unbordered">详细 &gt;&gt;</a></p>
-            	                </div>
-                            </div>
-
-                            <div class="clear pui-card pui-card-shadow pui-card-radius">
-            	                <div class="pui-card-box">
-            	                    <h1>2017年一叶知秋知识竞赛<small></small></h1>
-            	                    <p class="pui-text-indent">比赛详情：一叶知秋知识竞赛是中国移动南方基地开展的一项有关员工专业知识的竞赛，主要是为了考擦员工对知识的把握以及应变能力等等，促进员工的学习热情，并给予相当的奖励。</p>
-            	                    <p>
-                        	<strong>参赛形式:</strong> 2-3人团队  <strong>答题规则:</strong>每日10道题量<br>
-                        	<strong>截止日期：</strong>2017年9月30号<br>
-                        	<strong>可兑换道具规则：</strong>复活令牌 有爱令牌
-
-
-            	                    </p>
-            	                    <p class="pui-text-right"><br><a href="#" class="pui-btn pui-btn-default pui-unbordered">详细 &gt;&gt;</a></p>
-            	                </div>
-                            </div>
                         	</li>
                         </ul>
 
@@ -84,10 +70,12 @@
                 <div class="pui-card pui-card-shadow pui-card-radius">
                     <div class="pui-card-box">
                         <h1 style="text-align: center;"><img src="img/logo.png" class="pui-img-circle pui-box-shadow-plus"></h1>
-                        <h4 style="text-align: center;"><strong>姓名：</strong>{$data.user_message}</h4>
-                        <h4 style="text-align: center;"><strong>部门：</strong>IT支撑中心</h4>
-                        <h4 style="text-align: center;"><strong>工号：</strong>21011000</h4>
-                        <h4 style="text-align: center;"><strong><a href="{:url('index/login/change_pwd')}">修改密码</a></strong></h4>
+                        <h5 style="text-align: center;"><strong>姓名：</strong>{$data.user_message.name}&emsp;
+                        	{eq name="data.user_message.gender" value="1"}男{else/}女{/eq}
+                        </h5>
+                        <h5 style="text-align: center;"><strong>工号：</strong>{$data.user_message.job_number}</h5>
+                        <h5 style="text-align: center;"><strong>手机号：</strong>{$data.user_message.phone_number}</h5>
+                        <p style="text-align: right;"><a href="{:url('index/login/change_pwd')}">修改密码</a></p>
                     </div>
 	            	</div>
     	   	</div>

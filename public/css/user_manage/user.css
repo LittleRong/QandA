@@ -41,7 +41,7 @@ html, body {
     border-color: #4D3FF7;
     background-color: #4D3FF7;
   }
-  
+
   html.no-touch .pui-btn-primary:hover, .pui-btn-primary.hover, .pui-btn-primary.pui-hover, .pui-btn-primary-active{
     border-color: #3D13BF;
     background-color: #3D13BF;
@@ -59,15 +59,15 @@ html, body {
 	margin-top:1em;
 	line-height:300%;
 	float:left;
-    position:fixed;
+
     background: #FFFFFF;
 }
 
 /* /#SlideMenu */
-	
+
 
 .main-color {
-    background-color: #1D88E6 !important; 
+    background-color: #1D88E6 !important;
 }
 
 .page-header .pui-menubar {
@@ -185,11 +185,11 @@ html.no-touch #go-to-top:hover {
 }
 
 @media (max-width: 320px) {
-    
+
     .features h1 {
         zoom: 1;
     }
-    
+
     .pui-grid-xs-6 {
         width: 100%;
     }
@@ -204,24 +204,24 @@ html.no-touch #go-to-top:hover {
     }
 }
 
-@media (max-width: 480px) {   
+@media (max-width: 480px) {
     .banner-con {
         padding: 120px 0;
     }
-    
+
     .features p {
         padding-left: 0;
         padding-right: 0;
     }
-    
+
     .features h1, .examples h1 {
         zoom: 0.7;
     }
-    
+
     .features h5, .examples h5 {
         font-size: 1.6rem;
     }
-    
+
     #mobile-first {
         margin: 0 0 12px !important;
     }
@@ -260,7 +260,7 @@ html.no-touch #go-to-top:hover {
     .pui-menubar {
         padding-top:15px;
     }
-    
+
     #go-to-top {
         font-size: 2.5em;
     }
@@ -272,7 +272,7 @@ html.no-touch #go-to-top:hover {
         margin: 15px 0 24px !important;
         display: block !important;
     }
-    
+
     #mobile-first a {
         font-size: 99% !important;
     }
@@ -291,7 +291,7 @@ html.no-touch #go-to-top:hover {
         padding: 25px 30px;
 
     }
-    
+
     .main-con {
         padding-left: 3rem;
         padding-right: 3rem;
