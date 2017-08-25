@@ -14,8 +14,10 @@ class PanticipantModel {
 		Return Db :: table('participant') -> where('participant_id',$pant_id) -> setField('waited_answer', $waJson);
 	} 
 
-	public function getWaitedAnswer($pant_id) {
+	public static function getWaitedAnswer($pant_id) {
 		$waited_answer=Db :: table('participant')->field('waited_answer') ->where('participant_id',$pant_id).select();
 		Return waited_answer;
 	}
+
+	
 } 

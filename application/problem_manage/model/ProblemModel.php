@@ -21,7 +21,7 @@ class ProblemModel extends Model {
 		Db :: table('problem') -> insert($data);
 	} 
 	public static function getProblem() {
-		$problems=Db :: table('participant') -> select();
+		$problems=Db :: table('problem') -> select();
 		//$data = ['refer_event_id' => 7, 'user_id' => 3, 'team_id' => 1,'credit'=>0,'leader'=>1];
 		//Db :: table('participant') -> insert($data);
 		LogTool :: record($problems);

@@ -11,8 +11,8 @@ class ProblemController extends Controller{
 	public function index() {
 	} 
 	public function getSy() {
-		echo("sy111");
-		//$a = Db :: table('problem')-> select();
+		echo("sy");
+		$a = Db :: table('problem') -> order('rand()') -> limit(5) -> select();
 		LogTool :: record($a);
 	} 
 
