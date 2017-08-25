@@ -59,7 +59,7 @@ class Usermanage extends Controller{
     public function updateuser(Request $request){
       if($request->isPost()){//判断是否为POST方法
           $data=$request->param();
-          $user_id=$data['user_id'];
+          $user_id=$data['change_id'];
           $user_name=$data['user_name'];
           $login_name=$data['login_name'];
           $user_phone_number=$data['user_phone_number'];

@@ -9,6 +9,7 @@ class ProblemUserModel extends Model{
     //显示所有题目
     public function showAllProblem(){
         $result = $this->select();
+        //解析选项
         return $result;
     }
 

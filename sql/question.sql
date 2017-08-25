@@ -12,7 +12,7 @@ CREATE TABLE user(
     `phone_number` VARCHAR(13) NOT NULL COMMENT '用户的手机号码',
     `job_number` VARCHAR(20) NOT NULL COMMENT '用户的工号',
     `permission` INT NOT NULL COMMENT '管理权限 0是普通用户 1是管理员 2是超级管理员',
-    `gender` INT NOT NULL COMMENT '1 male, 2 female',
+    `gender` INT NOT NULL COMMENT '0 男, 1 女',
     `deleted` BOOLEAN NOT NULL COMMENT '表示员工已经离职'
 )ENGINE = Innodb default charset utf8 comment '用户信息';
 
@@ -73,8 +73,6 @@ CREATE TABLE credit(
     `change_reason` VARCHAR(100) NOT NULL COMMENT '更改原因'
 )ENGINE = Innodb default charset utf8 comment '积分详细信息表';
 
-ALTER TABLE event ADD participant_num INT NOT NULL COMMENT '参加比赛的小组人数';
-
 DROP TABLE if exists `participant`;
 CREATE TABLE participant(
 	  `participant_id` INT PRIMARY KEY AUTO_INCREMENT COMMENT '事件的id',
@@ -95,3 +93,6 @@ CREATE TABLE participant_haved_answer(
    `user_answer` VARCHAR(60) comment '的用户答题结果',
    `true_or_false` boolean comment '的用户答题是否正确'
 )ENGINE = Innodb default charset utf8 comment '保存参加比赛的用户已经答的题';
+
+ALTER TABLE event ADD participant_num INT NOT NULL COMMENT '参加比赛的小组人数';
+ALTER TABLE user CHANGE gender gender VARCHAR(3) NOT NULL COMMENT '性别，男/女';
