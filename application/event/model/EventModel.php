@@ -50,17 +50,18 @@ class EventModel extends Model{
         'manage_id'  =>  $aid,
         'event_title'  => $ename,
         'event_time' => $event_time,
-       'event_num'  => $question_num,
+        'event_num'  => $question_num,
         'event_type'  => $ekind,
         'problem_random'  =>  $pro_random,
         'option_random'  => $opt_random,
-       'credit_rule' => $credit_rule,
+        'credit_rule' => $credit_rule,
         'event_description'  =>  $message,
         'answer_time'  =>  $answer_time,
         'participant_num' => $participant_num
       ]);
 
       $this->save();
+      // echo $this->event_id;   //获取自增ID
     }
 
     //删除数据

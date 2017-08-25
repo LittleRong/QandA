@@ -10,14 +10,14 @@
   class Index extends Controller
   {
         //跳转到事件录入视图
-      public function insertEvent()
+      public function insertevent()
       {
           $view = new View();
           return $view->fetch('event_insert');
       }
 
       //跳转到事件显示视图
-      public function showEvent()
+      public function showevent()
       {
          $model = new EventModel();
          $result = $model->event_checkall();
@@ -28,17 +28,22 @@
             $event_time = json_decode($item['event_time'],true);
             $question_num = json_decode($item['event_num'],true);
             $credit_rule = json_decode($item['credit_rule'],true);
+            unset($item['event_time'],$item['event_num'],$item['credit_rule']);
             $merge_item = array_merge($item,$event_time,$question_num,$credit_rule);
             $all[$i] = $merge_item;
         }
         //  dump($all);
         //  $view = new View();
         //  return $view->fetch('elements',$all[0]);
-        $this->assign('data',$all);
-        return $this->fetch("elements");
+
+        if(empty($all[0]))
+        {
+          $this->assign('data',null);
+        }
+        else
+          $this->assign('data',$all);
+        return $this->fetch("event_manager");
       }
-
-
 
       //接受ajax数据并写入数据库
       public function manage($time,$participant_num,$ename,$start_time,$end_time,$single,$multiple,

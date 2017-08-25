@@ -35,7 +35,7 @@ class ProblemModel extends Model {
 		$waitedQ = array();
 		// $map = ['refer_event_id' => $refer_event_id, 'user_id' => $user_id];
 		$referEvent=Db::table('event')->where('event_id',$refer_event_id)->select();
-		$questNum=$referEvent[0]['event_num'];//每种题目的数量，single_choice_number、多选题数量multiple_choice_number、填空题数量                                                 //fill_number、判断题数量true_or_false_number'
+		//$questNum=$referEvent[0]['event_num'];//每种题目的数量，single_choice_number、多选题数量multiple_choice_number、填空题数量                                                 //fill_number、判断题数量true_or_false_number'
 		$participant = Db :: table('participant') -> where('refer_event_id', $refer_event_id) -> where('user_id', $user_id) -> select();
 
 		$HavedAnswer = Db :: table('participant_haved_answer') -> field('refer_problem_id') -> where('refer_team_id', $participant[0]['team_id']) -> where('answer_date', date('Y-m-d', time())) -> whereOr('refer_participant_id', $participant[0]['participant_id']) -> select(); // 不能选的题目 

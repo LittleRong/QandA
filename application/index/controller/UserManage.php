@@ -59,7 +59,7 @@ class Usermanage extends Controller{
     public function updateuser(Request $request){
       if($request->isPost()){//判断是否为POST方法
           $data=$request->param();
-          $user_id=$data['user_id'];
+          $user_id=$data['change_id'];
           $user_name=$data['user_name'];
           $login_name=$data['login_name'];
           $user_phone_number=$data['user_phone_number'];
@@ -69,6 +69,17 @@ class Usermanage extends Controller{
           $result = $user_model->update_user($user_id,$user_name,$login_name,$user_phone_number,$user_job_number,$user_gender);
           return json_encode($result);
       }
+    }
+
+    //删除用户
+    public function deleteuser(Request $request){
+          if($request->isPost()){//判断是否为POST方法
+            $data=$request->param();
+            $delete_id=$data['delete_id'];
+            $user_model = new UserModel();
+            $result = $user_model->delete_user($delete_id);
+            return json_encode($result);
+          }
     }
 
 }

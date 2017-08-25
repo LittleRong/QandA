@@ -90,9 +90,12 @@ class ProblemController extends Controller{
 			$res=$this -> rebuildQuestion($user_id, $refer_event_id, $pant);
 		} 
 		LogTool :: record(json_encode($res));
-
+		$res = json_decode(json_encode($res),true);//转换为数组，方便传输给页面
+		//echo gettype($res);
+		//dump($res);
+		//$res2= array('single' => 'haha','muti' =>array('aaa' => 'ddd'));
 		$this->assign('data',$res);
-		//$this->fetch('');
+		return $this->fetch('user_problem/user_problem');
 	} 
 
 	public function getNewProblem() { // 写入新题目
