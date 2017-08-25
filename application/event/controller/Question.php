@@ -4,9 +4,11 @@ namespace app\event\controller;
 use PHPExcel_IOFactory;
 use PHPExcel;
 use app\event\model\ProblemModel;
+use app\event\model\EventProblemModel;
 use think\View;
 use think\Request;
 use think\Controller;
+use think\Session;
 
 class Question extends Controller
 {
@@ -81,6 +83,11 @@ class Question extends Controller
     //题目配置
     public function problem_manage()
     {
+      //get方式取回event_id
+      $data = Request::instance()->param('event_id');
+      //设置session
+      Session::set('myevent_id',$data);
+
       $model = new ProblemModel();
       $result = $model->problem_check();
       // dump($result);
@@ -105,9 +112,23 @@ class Question extends Controller
       else
         $this->assign('data',$all);
       return $this->fetch("problem_manage");
-      // $view = new View();
-      // return $view->fetch('problem_manage');
-    }
+  }
+
+  public function event_problem_relevance($problemId)
+  {
+     $event_id = Session::get('myevent_id');
+    //  $event_id = 1;
+     $model = new EventProblemModel();
+     $num = count($problemId);
+     for($i=0;$i<$num;$i++)
+     {
+       $model->event_problem_insert((int)$problemId[$i],(int)$event_id);
+     }
+    //  $model->event_problem_inserts($problemId,(int)$event_id);
+     $data = array('result'=>'录入成功!');
+     return json_encode($data);
+
+  }
 
 
 }
