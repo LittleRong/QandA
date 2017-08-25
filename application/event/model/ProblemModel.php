@@ -13,7 +13,7 @@ class ProblemModel extends Model{
 
       ]);
       $this->save();
-      echo $this->problem_id;   //获取自增ID
+      // echo $this->problem_id;   //获取自增ID
     }
     public function problem_check()
     {

@@ -249,12 +249,9 @@
                     	<input type="text" style="width:20%;">
                     </div>
                 	</div>
-
-											<a href="{$Think.config.web_res_root}index.php/event/question/problem_insert">
                 			<button class="pui-btn pui-btn-primary pui-btn-large pui-btn-block"  id="submit_message" style="margin-bottom: 30px;">
 								下一步
 							</button>
-						</a>
         			</div>
         	</div>
         </div>
@@ -358,7 +355,8 @@
 		                    json_data=eval('('+data+')');
 												if(json_data['result']=="录入成功!"){
 		                        alert(json_data['result']);
-														$("#myform").submit();
+														// $("#myform").submit();
+														self.location='{$Think.config.web_res_root}index.php/event/question/problem_insert';
 		                        //登录成功操作......
 		                    }else{
 		                        alert("录入失败！");

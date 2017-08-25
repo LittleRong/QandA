@@ -26,7 +26,6 @@ class EventModel extends Model{
       return $result;   //返回用户信息
     }
 
-
     //事件插入
     public function event_insert($time,$participant_num,$aid,$ename,$start_time,$end_time,$single,$multiple,
             $fill,$judge,$pro_random,$opt_random,$ekind,$answer_time,$single_score,
@@ -61,7 +60,7 @@ class EventModel extends Model{
       ]);
 
       $this->save();
-      // echo $this->event_id;   //获取自增ID
+      return  $this->event_id;   //获取自增ID
     }
 
     //删除数据

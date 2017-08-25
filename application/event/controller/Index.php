@@ -5,6 +5,7 @@
   use think\Controller;
   use think\View;
   use think\Request;
+  use think\Session;
 
 
   class Index extends Controller
@@ -53,10 +54,13 @@
        {
           $aid = 2;
           $model = new EventModel();
-          $model->event_insert($time,(int)$participant_num,(int)$aid,$ename,$start_time,$end_time,(int)$single,(int)$multiple,
+          //$event_id事件自增ID
+          $event_id = $model->event_insert($time,(int)$participant_num,(int)$aid,$ename,$start_time,$end_time,(int)$single,(int)$multiple,
                   (int)$fill,(int)$judge,(boolean)$pro_random,(boolean)$opt_random,$ekind,$answer_time,(int)$single_score,
                   (int)$multiple_score,(int)$fill_score,(int)$judge_score,(int)$person_score,
                   (int)$team_score,(int)$person_score_up,(int)$team_score_up,$message);
+          Session::set('myevent_id',$event_id);
+          //dump($event_id);
           $data = array('result'=>'录入成功!');
           return json_encode($data);
       }

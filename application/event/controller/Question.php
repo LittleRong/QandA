@@ -16,6 +16,13 @@ class Question extends Controller
     //题目导入
     public function problem_insert()
     {
+      if(!Session::get('myevent_id'))
+      {
+        //get方式取回event_id
+        $data = Request::instance()->param('event_id');
+        //设置session
+        Session::set('myevent_id',$data);
+      }
       $view = new View();
       return $view->fetch('tiku_upload');
     }
@@ -24,11 +31,13 @@ class Question extends Controller
     {
       $file = Request::instance()->file('image');
       //定义最大文件大小，文件后缀格式，保存路径
-      $info = $file->validate(['size'=>15678,'ext'=>'xlsx,xls'])->move(__DIR__.'/../../../public/uploads');
+      $info = $file->validate(['size'=>15678,'ext'=>'xlsx,xls'])->move(__DIR__.'/../../../public/uploads/problem');
       if($info)
       {
         //参数为保存名字
         $this->excelreader($info->getSaveName());
+        //保存题库成功后跳转到题目配置
+        return $this->problem_manage();
       }
       else
       {
@@ -40,7 +49,7 @@ class Question extends Controller
     //excel导入题目到数据库中
     public function excelreader($filename)
     {
-       $filename = __DIR__.'/../../../public/uploads/'.$filename;
+       $filename = __DIR__.'/../../../public/uploads/problem/'.$filename;
        $extension = strtolower( pathinfo($filename, PATHINFO_EXTENSION) );
 
        if($extension == 'xlsx') {
@@ -75,18 +84,14 @@ class Question extends Controller
              $problem_content = json_encode(array('problem' => $question,'option'=>$option,'answer'=>$answer ));
              $model = new ProblemModel();
              $model->problem_insert($problem_content,$problem_class,(int)$problem_type);
-             dump($problem_content);
+            //  dump($problem_content);
         }
-        echo "Done";
+        // echo "Done";
     }
 
     //题目配置
     public function problem_manage()
     {
-      //get方式取回event_id
-      $data = Request::instance()->param('event_id');
-      //设置session
-      Session::set('myevent_id',$data);
 
       $model = new ProblemModel();
       $result = $model->problem_check();
@@ -116,6 +121,12 @@ class Question extends Controller
 
   public function event_problem_relevance($problemId)
   {
+
+    if(empty($problemId))
+    {
+      $data = array('result'=>'请勾选题目!');
+      return json_encode($data);
+    }
      $event_id = Session::get('myevent_id');
     //  $event_id = 1;
      $model = new EventProblemModel();
