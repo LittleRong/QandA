@@ -53,7 +53,7 @@ class ProblemController extends Controller{
 		//**********************************************************//
 		
 		$pum_answer = new ProblemUserModel($singleRes['answer'],$multiRes['answer']);
-		//PanticipantModel :: writeWaitedAnswer($pant['participant_id'], json_encode($pum)); //把生成的题目id和答案保存到数据库
+		PanticipantModel :: writeWaitedAnswer($pant['participant_id'], json_encode($pum_answer)); //把生成的题目id和答案保存到数据库
 		//LogTool :: record(json_encode($pum));
 		$pum_problem=new ProblemUserModel($single_d_pros,$multi_d_pros);
 		Return $pum_problem;
@@ -89,10 +89,10 @@ class ProblemController extends Controller{
 		} else {
 			$res=$this -> rebuildQuestion($user_id, $refer_event_id, $pant);
 		} 
+		$res = json_decode(json_encode($res),true);//转换为数组，方便传输给页面
 		LogTool :: record(json_encode($res));
-
 		$this->assign('data',$res);
-		//$this->fetch('');
+		return $this->fetch('user_problem/user_problem');
 	} 
 
 	public function getNewProblem() { // 写入新题目

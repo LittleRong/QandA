@@ -8,6 +8,28 @@ use app\problem_manage\model\PanticipantModel;
 use app\problem_manage\model\PanticipantHaveAnswerdModel;
 use app\problem_manage\tool\LogTool;
 use think\Db;
+/*
+                           _ooOoo_
+                          o8888888o
+                          88" . "88
+                          (| -_- |)
+                          O\  =  /O
+                       ____/`---'\____
+                     .'  \\|     |//  `.
+                    /  \\|||  :  |||//  \
+                   /  _||||| -:- |||||-  \
+                   |   | \\\  -  /// |   |
+                   | \_|  ''\---/''  |   |
+                   \  .-\__  `-`  ___/-. /
+                 ___`. .'  /--.--\  `. . __
+              ."" '<  `.___\_<|>_/___.'  >'"".
+             | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+             \  \ `-.   \_ __\ /__ _/   .-` /  /
+        ======`-.____`-.___\_____/___.-`____.-'======
+                           `=---='
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 佛祖保佑       永无BUG
+        */
 class AnswerController extends Controller {
 	var $refer_participant_id;
 	var $refer_team_id;
@@ -16,29 +38,45 @@ class AnswerController extends Controller {
 	var $pantHaveAnswerArr = array();
 	public function getSy() {
 		$view = new View();
-        return $view->fetch('sy');
+        return '3333333';
 	}
 	public function postSy2() {
 		LogTool::record($_POST);
 		Return 2;
 	}
-	public function getSubmitAnswer() {
+	public function postSubmitAnswer() {
+		
+		LogTool::record($_POST);
 		// 前端提交json {'single':[{'problem_id':xx,'q_id':xx},{'problem_id':xx,'q_id':xx},......],'multi':[{'problem_id':xx,'q_id':['x','x']},{'problem_id':xx,'q_id':['x','x','x']},......]}  q_id为用户选择的选项的id
-		$this -> refer_participant_id = 7; //参赛人id
+		$this -> refer_participant_id = 3; //参赛人id
 		$this -> refer_team_id = 1; //参赛人队伍的id
-		$allAnswer=json_decode(PanticipantModel::getWaitedAnswer($this -> refer_participant_id));//预存在panticipant表中waitedAnswer的问题id及答案
+		
+		$allSubmit=$_POST;
+		LogTool::record($_POST);
+		$allAnswer=PanticipantModel::getWaitedAnswer($this -> refer_participant_id);//预存在panticipant表中waitedAnswer的问题id及答案
+		if(count($allAnswer)<=0) {
+			LogTool::record('没有找到参赛者，或参赛者中没有预存答案');
+		}else{
+			$allAnswer=json_decode($allAnswer[0]['waited_answer']);
+			$allAnswer=Logtool :: object2array($allAnswer);
+
+		}
+		LogTool::record($allSubmit);
 		//***********单选*************//
-		$singleAnswer = Logtool :: object2array($allAnswer -> single);
-		$singleSubmit=$allSubmit->single;
+		
+		$singleAnswer = Logtool :: object2array($allAnswer['single']);
+		$singleSubmit=$allSubmit['single'];
 		$this->dealSingle($singleSubmit, $singleAnswer);
 		//***********多选***************//
-		$multiAnswer=Logtool :: object2array($allAnswer -> multi);
-		$multiSubmit=$allSubmit->multi;
+		$multiAnswer=Logtool :: object2array($allAnswer['multi']);
+		$multiSubmit=$allSubmit['multi'];
 		$this->dealMulti($multiSubmit, $multiAnswer);
 
 		//***********************************************
 		PanticipantHaveAnswerdModel::savePantHaveAnswerds($this->pantHaveAnswerArr);
-	
+		LogTool::record($_POST);
+		$data=['user_credit'=>$this->userMark]
+		Return json_encode($data);
 	} 
 	private function dealSingle($singleSubmit, $singleAnswer) {
 		// input:singleSubmit:arr=>[{'problem_id':xx,'q_id':xx},{'problem_id':xx,'q_id':xx},......]
@@ -64,8 +102,8 @@ class AnswerController extends Controller {
 		// input:multiSubmit:arr=>[{'problem_id':xx,'q_id':[x,x]},{'problem_id':xx,'q_id':[x,x,x,x]},......]
 		// multiAnswer:arr=>{problem_id:[x,x],problem_id:[x,x,x],....}
 		$multiCredit = $this -> credit_rule['multiple_choice_score'];
-		for($i = 0; $i < count($singleSubmit); $i++) {
-			$submit = $singleSubmit[$i];
+		for($i = 0; $i < count($multiSubmit); $i++) {
+			$submit = $multiSubmit[$i];
 			$submitId = $submit['problem_id'];
 			$submitAnswer = $submit['q_id'];
 			$pantHaveAnswer = new PanticipantHaveAnswerdModel($this -> refer_participant_id, $this -> refer_team_id, $submit['problem_id'], $submitAnswer); 
@@ -73,7 +111,13 @@ class AnswerController extends Controller {
 			$ifRight = 0; 
 			// 策略：错一道全错
 			$rightAnswer = $multiAnswer[$submitId];
-			$diff = array_diff_assoc($submitAnswer, $rightAnswer);
+			try{
+				$diff = array_diff_assoc($submitAnswer, $rightAnswer);
+			}catch(\Exception $e){
+				$diff=[1,2];//有异常，暂时按题目错误处理
+			}
+
+			
 			if (count($diff) == 0) { // 差集为空，完全正确
 				$ifRight = 1;
 			} 

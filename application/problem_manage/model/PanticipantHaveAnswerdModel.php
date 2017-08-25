@@ -11,15 +11,18 @@ class PanticipantHaveAnswerdModel {
 	var $user_answer;
 	var $true_or_false;
 	function __construct($refer_participant_id, $refer_team_id, $refer_problem_id, $user_answer) {
+		LogTool::record($user_answer);
 		$this -> refer_participant_id = $refer_participant_id;
 		$this -> refer_problem_id = $refer_problem_id;
 		$this -> refer_team_id = $refer_team_id;
 		$this -> answer_date=date('Y-m-d', time());
 
 		switch (gettype($user_answer)) {
-			case 'string':$this -> user_answer = $user_answer;
-			case 'array':$this -> user_answer = implode('', $user_answer);
-
+			case 'string':
+				$this -> user_answer = $user_answer;
+				break;
+			case 'array':
+				$this -> user_answer = implode('', $user_answer);
 				break;
 		} 
 	} 

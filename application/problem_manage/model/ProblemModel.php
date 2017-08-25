@@ -40,10 +40,10 @@ class ProblemModel extends Model {
 
 		$HavedAnswer = Db :: table('participant_haved_answer') -> field('refer_problem_id') -> where('refer_team_id', $participant[0]['team_id']) -> where('answer_date', date('Y-m-d', time())) -> whereOr('refer_participant_id', $participant[0]['participant_id']) -> select(); // 不能选的题目 
 		// LogTool::record($teamHaved);
-		$userWaitedSingleQ = Db :: table('problem') -> where('problem_id', 'not in', json_encode($HavedAnswer)) -> where('problem_type', 1) -> order('rand()') -> limit(10)-> select();// 单选 $questNum[1] 
+		$userWaitedSingleQ = Db :: table('problem') -> where('problem_id', 'not in', json_encode($HavedAnswer)) -> where('problem_type', 1) -> order('rand()') -> limit(2)-> select();// 单选 $questNum[1] 
 		$waitedQ ['single']= $userWaitedSingleQ;
 
-		$userWaitedMultiQ=Db :: table('problem') -> where('problem_id', 'not in', json_encode($HavedAnswer)) -> where('problem_type', 2) -> order('rand()') -> limit(5)-> select();// 多选 $questNum[1]
+		$userWaitedMultiQ=Db :: table('problem') -> where('problem_id', 'not in', json_encode($HavedAnswer)) -> where('problem_type', 2) -> order('rand()') -> limit(2)-> select();// 多选 $questNum[1]
 		$waitedQ['multi'] =$userWaitedMultiQ;
 
 		LogTool :: record($waitedQ);

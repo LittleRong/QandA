@@ -15,8 +15,7 @@ class PanticipantModel {
 	} 
 
 	public static function getWaitedAnswer($pant_id) {
-		$waited_answer=Db :: table('participant')->field('waited_answer') ->where('participant_id',$pant_id).select();
-		Return waited_answer;
+		 Return Db :: table('participant')->field('waited_answer') ->where('participant_id',$pant_id)->select();
 	}
 
 	
