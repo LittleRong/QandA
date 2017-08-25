@@ -15,5 +15,4 @@ class EventProblemModel extends Model{
       //$this->save()只适合有主键的数据类型，其他的会出错
       Db::name('event_problem')->insert($data);
     }
-
   }
