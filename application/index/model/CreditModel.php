@@ -17,7 +17,7 @@ class CreditModel extends Model{
       " and participant.refer_event_id=".$event_id.
       " and participant.team_id=team.team_id";
       $result_array = Db::query($sql);
-      dump($sql);
+      //dump($sql);
       if(!empty($result_array)){
         $result['credit']=$result_array[0]['credit'];
         $result['team_credit']=$result_array[0]['team_credit'];

@@ -12,24 +12,12 @@
         <link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/css/planeui.min.css" />
 	</head>
 	<body>
-		<div class="pui-layout pui-bg-blue-500">
-            <header class="pui-center pui-layout-fixed pui-layout-fixed-1200">
-                <div class="pui-row">
-				   	<div class="pui-grid-xs-3 pui-grid-xs-push-9 pui-grid-sm-3 pui-grid-sm-push-9 pui-grid-md-3 pui-grid-md-push-9 pui-grid-lg-3 pui-grid-lg-push-9 pui-grid-xl-3 pui-grid-xl-push-9 pui-grid-xxl-3 pui-grid-xxl-push-9 ">
-					   	<ul class="pui-menu pui-menu-justify" style="margin-top:38px;margin-bottom: 0px;">
-							<li> 
-								<span>张小蓝</span>&emsp;<span>退出</span>
-							</li>
-	                	</ul>
-				   	</div>
-				   	<div class="pui-grid-xs-9 pui-grid-xs-pull-3 pui-grid-sm-9 pui-grid-sm-pull-3 pui-grid-md-9 pui-grid-md-pull-3 pui-grid-lg-9 pui-grid-lg-pull-3 pui-grid-xl-9 pui-grid-xl-pull-3 pui-grid-xxl-9 pui-grid-xxl-pull-3 ">
-                		<h4><img src="img/logo.png">中国移动南方基地知识题库</h4>  
-				   	</div>
-			   	</div>
-                          
-                
-            </header>
-        </div>
+    <div class="pui-layout">
+        <header>
+            <img src="{$Think.config.web_res_root}/img/header2.jpg" style="width:100%;height: auto">
+            <div style="text-align: right">{$data.user_message.login_name}，<a>退出</a>&emsp;</div>
+        </header>
+    </div>
         <div class="pui-layout" style="width:96%;margin-top:30px ">	        
 			<div class="pui-row">
 
