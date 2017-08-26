@@ -96,3 +96,4 @@ CREATE TABLE participant_haved_answer(
 
 ALTER TABLE event ADD participant_num INT NOT NULL COMMENT '参加比赛的小组人数';
 ALTER TABLE user CHANGE gender gender VARCHAR(3) NOT NULL COMMENT '性别，男/女';
+ALTER TABLE team ADD team_score FLOAT NOT NULL COMMENT '小组得分,只用于记录小组的答对情况';

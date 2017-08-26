@@ -82,7 +82,7 @@
 	href="{$Think.config.web_res_root}/css/planeui.min.css" />
 	 <script>
         	function getdata() {
-				
+
 				var item_id = $("#g_id").val();
 				var item_name = $(".pui-dialog #item_name").val();
 				var item_description = $(".pui-dialog #item_description").val();
@@ -126,17 +126,16 @@
 			</div>
 		</div>
 		<div class="pui-row" style="margin: 0;">
-			<div class="pui-grid-xs-2" style="padding-left: 0;">
-				<ul class="pui-list pui-list-line pui-list-stripe pui-list-bordered">
-					<li
-						style="font-size: larger; background-color: #0000FF; color: white; text-align: center;">用户管理</li>
-					<li
-						style="font-size: larger; background-color: #0000FF; color: white; text-align: center;">题目管理</li>
-					<li
-						style="font-size: larger; background-color: #0000FF; color: white; text-align: center;">事件管理</li>
-					<li
-						style="font-size: larger; background-color: #0000FF; color: white; text-align: center;">道具管理</li>
-				</ul>
+			<div class="pui-grid-md-2">
+					<div class="pui-btn-group-vertical pui-btn-gradient pui-btn-shadow ">
+							<div class="pui-btn-group ">
+									<a href="{:url('index/usermanage/user_manage')}" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow pui-btn-primary-active"><i class="fa fa-user fa-large"></i>用户管理</a>
+									<a href="{:url('manage/Problemmanage/problem_manage')}" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow"><i class="fa fa-file-o fa-large"></i>题目管理</a>
+									<a href="{:url('event/index/showevent')}" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow"><i class="fa fa-th fa-large"></i>事件管理</a>
+									<a href="{:url('item_manage/item/index')}" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow"><i class="fa fa-tint fa-large"></i>积分道具管理</a>
+							</div>
+
+					</div>
 			</div>
 			<div class="pui-grid-xs-8">
 				<table
@@ -228,7 +227,7 @@
 		src="{$Think.config.web_res_root}/js/jquery.min.js"></script>
 	<script type="text/javascript"
 		src="{$Think.config.web_res_root}/js/planeui.js"></script>
-	<script type="text/javascript">	
+	<script type="text/javascript">
 		$(document).ready(
 				function() {
 					$("#div_xzdj").hide()
@@ -238,7 +237,7 @@
 					$("#btn_qx").click(function() {
 						$("#div_xzdj").hide();
 					});
-					$('.btn_change').bind($.clickOrTouch(), function(){     
+					$('.btn_change').bind($.clickOrTouch(), function(){
 						var id = $(this).parent().parent().find("td").eq(0).text();
 						var item_id = "t_"+id;
 				        var item_name=$('#'+item_id).find("td").eq(2).text();
@@ -246,8 +245,8 @@
 						var change_rule = $('#'+item_id).find("td").eq(4).text();
 						var amount =$('#'+item_id).find("td").eq(5).text();
 						var team_amount = $('#'+item_id).find("td").eq(6).text();
-						
-						
+
+
 						$('#div_xgdj #item_name').attr("value",item_name);
 						$('#div_xgdj #item_description').attr("value",item_description);
 						$('#div_xgdj #change_rule').attr("value",change_rule);
@@ -311,12 +310,12 @@
 									}
 								});
 							});
-					
+
 				});
 	</script>
 
 	<script type="text/javascript">
-		
+
 	</script>
 
 </body>
