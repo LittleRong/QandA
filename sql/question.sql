@@ -75,7 +75,7 @@ CREATE TABLE credit(
 
 DROP TABLE if exists `participant`;
 CREATE TABLE participant(
-	  `participant_id` INT PRIMARY KEY AUTO_INCREMENT COMMENT '事件的id',
+	  `participant_id` INT PRIMARY KEY AUTO_INCREMENT COMMENT '参赛者id',
     `refer_event_id` INT NOT NULL COMMENT '参见的事件id,关联的事件的id',
     `user_id` INT NOT NULL COMMENT '参赛人id,参加这次比赛的用户的id',
     `team_id` INT NOT NULL COMMENT '组id,所属组id',
@@ -89,9 +89,9 @@ CREATE TABLE participant_haved_answer(
    `refer_participant_id`  INT NOT NULL comment '参赛者id',
    `refer_problem_id`   INT NOT NULL comment '题id',
    `refer_team_id` INT NOT NULL comment '关联的组id',
-   `answer_date` Date not null comment '的用户答题日期',
-   `user_answer` VARCHAR(60) comment '的用户答题结果',
-   `true_or_false` boolean comment '的用户答题是否正确'
+   `answer_date` Date not null comment '用户答题日期',
+   `user_answer` VARCHAR(60) comment '用户答题结果',
+   `true_or_false` boolean comment '用户答题是否正确'
 )ENGINE = Innodb default charset utf8 comment '保存参加比赛的用户已经答的题';
 
 ALTER TABLE event ADD participant_num INT NOT NULL COMMENT '参加比赛的小组人数';
