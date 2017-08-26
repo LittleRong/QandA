@@ -4,8 +4,8 @@ use think\Controller;
 use think\View;
 use app\problem_manage\model\ProblemModel;
 use app\problem_manage\model\ProblemContentModel;
-use app\problem_manage\model\PanticipantModel;
-use app\problem_manage\model\PanticipantHaveAnswerdModel;
+use app\problem_manage\model\ParticipantModel;
+use app\problem_manage\model\ParticipantHaveAnswerdModel;
 use app\problem_manage\tool\LogTool;
 use think\Db;
 /*
@@ -35,7 +35,7 @@ class AnswerController extends Controller {
 	var $refer_team_id;
 	var $userMark = 0;
 	var $credit_rule = array('single_choice_score' => 2,'multiple_choice_score'=>4);
-	var $pantHaveAnswerArr = array();
+	var $partHaveAnswerArr = array();
 	public function getSy() {
 		$view = new View();
         return '3333333';
@@ -53,7 +53,7 @@ class AnswerController extends Controller {
 		
 		$allSubmit=$_POST;
 		LogTool::record($_POST);
-		$allAnswer=PanticipantModel::getWaitedAnswer($this -> refer_participant_id);//预存在panticipant表中waitedAnswer的问题id及答案
+		$allAnswer=ParticipantModel::getWaitedAnswer($this -> refer_participant_id);//预存在participant表中waitedAnswer的问题id及答案
 		if(count($allAnswer)<=0) {
 			LogTool::record('没有找到参赛者，或参赛者中没有预存答案');
 		}else{
@@ -73,7 +73,7 @@ class AnswerController extends Controller {
 		$this->dealMulti($multiSubmit, $multiAnswer);
 
 		//***********************************************
-		PanticipantHaveAnswerdModel::savePantHaveAnswerds($this->pantHaveAnswerArr);
+		ParticipantHaveAnswerdModel::savePantHaveAnswerds($this->pantHaveAnswerArr);
 		LogTool::record($_POST);
 		$data=['user_credit'=>$this->userMark]
 		Return json_encode($data);
@@ -87,7 +87,7 @@ class AnswerController extends Controller {
 			$submit = $singleSubmit[$i];
 			$submitId = $submit['problem_id'];
 			$submitAnswer = $submit['q_id'];
-			$pantHaveAnswer = new PanticipantHaveAnswerdModel($this -> refer_participant_id, $this -> refer_team_id, $submit['problem_id'], $submitAnswer);
+			$pantHaveAnswer = new ParticipantHaveAnswerdModel($this -> refer_participant_id, $this -> refer_team_id, $submit['problem_id'], $submitAnswer);
 			if ($submitAnswer == $singleAnswer[$submitId]) { // 回答正确
 				$pantHaveAnswer -> setTrueOrFalse(1); //设置为回答正确
 				$this -> userMark = $this -> userMark + $singleCredit; //增加积分
@@ -106,7 +106,7 @@ class AnswerController extends Controller {
 			$submit = $multiSubmit[$i];
 			$submitId = $submit['problem_id'];
 			$submitAnswer = $submit['q_id'];
-			$pantHaveAnswer = new PanticipantHaveAnswerdModel($this -> refer_participant_id, $this -> refer_team_id, $submit['problem_id'], $submitAnswer); 
+			$pantHaveAnswer = new ParticipantHaveAnswerdModel($this -> refer_participant_id, $this -> refer_team_id, $submit['problem_id'], $submitAnswer); 
 			// ***********************多选判断是否正确*******************//
 			$ifRight = 0; 
 			// 策略：错一道全错

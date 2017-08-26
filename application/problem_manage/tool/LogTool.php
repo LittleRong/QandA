@@ -6,6 +6,17 @@ class LogTool {
         Log::init([ 'type' => 'File', 'path' => APP_PATH . 'logs/problem_manage/' ]);
         Log::log($ct);
     } 
+	public static function info($ct1,$ct2)
+    {
+        Log::init([ 'type' => 'File', 'path' => APP_PATH . 'logs/problem_manage/' ]);
+        Log::log($ct1);
+		Log::log($ct2);
+    } 
+	public static function error($ct)
+    {
+        Log::init([ 'type' => 'File', 'path' => APP_PATH . 'logs/problem_manage/error/' ]);
+        Log::log($ct);
+    } 
     static function unique_rand($min, $max, $num)
     {
         $count = 0;
