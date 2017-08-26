@@ -71,25 +71,28 @@
 
 		<title>事件管理主页</title>
 
-        <link rel="stylesheet" type="text/css" href="../../../../public/event/dist/css/planeui.min.css" />
+        <link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/event/dist/css/planeui.min.css" />
 	</head>
 	<body>
 		<!-- 代码写在这下面 -->
         <div class="pui-grid"><!-- 响应式布局 -->
         	<div class="pui-row" style="margin-bottom: 0">
         		<div class="pui-grid-xs-12">
-        			<img src="../../../../public/event/img/header.jpg" style="width: 100%;height: auto;" />
+        			<img src="{$Think.config.web_res_root}/event/img/header.jpg" style="width: 100%;height: auto;" />
         		</div>
         	</div>
         	<div class="pui-row" style="margin: 0;">
-        		<div class="pui-grid-xs-2" style="padding-left: 0;">
-        			<ul class="pui-list pui-list-line pui-list-stripe pui-list-bordered">
-                    	<li style="font-size: larger;background-color: #0000FF;color: white;text-align: center;">用户管理</li>
-                    	<li style="font-size: larger;background-color: #0000FF;color: white;text-align: center;">题目管理</li>
-                    	<li style="font-size: larger;background-color: #0000FF;color: white;text-align: center;">事件管理</li>
-                    	<li style="font-size: larger;background-color: #0000FF;color: white;text-align: center;">道具管理</li>
-                	</ul>
-        		</div>
+						<div class="pui-grid-md-2">
+								<div class="pui-btn-group-vertical pui-btn-gradient pui-btn-shadow ">
+										<div class="pui-btn-group ">
+												<a href="{:url('index/usermanage/user_manage')}" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow pui-btn-primary-active"><i class="fa fa-user fa-large"></i>用户管理</a>
+												<a href="{:url('manage/Problemmanage/problem_manage')}" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow"><i class="fa fa-file-o fa-large"></i>题目管理</a>
+												<a href="{:url('event/index/showevent')}" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow"><i class="fa fa-th fa-large"></i>事件管理</a>
+												<a href="{:url('item_manage/item/index')}" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow"><i class="fa fa-tint fa-large"></i>积分道具管理</a>
+										</div>
+
+								</div>
+						</div>
         		<div class="pui-grid-xs-8">
         			<div class="pui-btn-group pui-btn-group-justify" style="width:100% ;">
                     	<button type="button" class="pui-btn pui-btn-default pui-btn-large">
@@ -119,7 +122,7 @@
 												<div class="pui-card-box">
 														<h1>{$v.event_title}<small>{$v.event_type}</small></h1>
 														<p class="pui-text-indent">{$v.event_description}</p>
-														<p class="pui-text-right"><br><a href="#" class="pui-btn pui-btn-default pui-unbordered">配置 &gt;&gt;</a></p>
+														<p class="pui-text-right"><br><a href="{:url('event/Question/problem_manage',array('event_id'=>$v.event_id))}" class="pui-btn pui-btn-default pui-unbordered">配置 &gt;&gt;</a></p>
 												</div>
 												</div>
 												{/foreach}
@@ -128,16 +131,16 @@
 
 
 
-                		<a href="insertEvent">
+
                 			<input type="button" class="pui-btn pui-btn-primary pui-btn-large" value="发起新事件">
-						</a>
+
            			 </div>
            		</div>
         	</div>
         </div>
         <!-- 代码写在这上面 -->
 				<!-- 代码写在这上面 -->
-				<script type="text/javascript" src="../../../../public/event/js/jquery.min.js"></script>
-				<script type="text/javascript" src="../../../../public/event/dist/js/planeui.js"></script>
+				<script type="text/javascript" src="{$Think.config.web_res_root}/event/js/jquery.min.js"></script>
+				<script type="text/javascript" src="{$Think.config.web_res_root}/event/dist/js/planeui.js"></script>
 	</body>
 </html>

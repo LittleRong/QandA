@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <meta http-equiv="Cache-Control" content="no-siteapp"/>
+		<meta name="renderer" content="webkit" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <meta name="description" content="Plane UI" />
+        <meta name="keywords" content="Plane UI" />
+		<meta name="apple-mobile-web-app-title" content="Plane UI" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		</head>
+
+
+
+		<input>
+
+</html>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="{$Think.config.web_res_root}/js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" >
+
+$(document).ready(function(){
+
+
+$.ajax({
+              url:"sy2",
+              dataType: "json",
+              type: 'POST',
+              data: 'hahah',
+              async: false,
+              success: function(data){
+                  alert(data)
+              },
+              error: function(data, status, error){
+				  alert('error')
+              }
+   });
+//alert('fdsfs');
+	})
+</script>
