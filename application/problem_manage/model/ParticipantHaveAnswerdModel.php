@@ -3,7 +3,7 @@ namespace app\problem_manage\model;
 use think\Model;
 use think\Db;
 use app\problem_manage\tool\LogTool;
-class PanticipantHaveAnswerdModel {
+class ParticipantHaveAnswerdModel {
 	var $refer_participant_id;
 	var $refer_problem_id;
 	var $refer_team_id;
@@ -30,7 +30,7 @@ class PanticipantHaveAnswerdModel {
 		$this -> true_or_false = $true_or_false;
 	} 
 	
-	public static function savePantHaveAnswerds($pantHaveAnswerArr) {
+	public static function savePartHaveAnswerds($pantHaveAnswerArr) {
 		for($i=0; $i<count($pantHaveAnswerArr); $i++) {
 			$data=array();
 			$pantHaveAnswer=$pantHaveAnswerArr[$i];

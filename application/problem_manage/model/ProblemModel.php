@@ -30,23 +30,45 @@ class ProblemModel extends Model {
 		$problems=Db :: table('problem') -> where('problem_id', 'in', $problemIds) -> select();
 		Return $problems;
 	} 
+	public function getEventProblem($refer_event_id) {//获得事件关联的题目
+		$eventProblem =Db :: table('event_problem')->field('problem_id') -> where('refer_event_id', $refer_event_id) -> select();
+		
+		$eventProblemArr=array();
+		for($i=0; $i<count($eventProblem); $i++) {
+			array_push($eventProblemArr,$eventProblem[$i]['problem_id']);
+		}
+		Return $eventProblemArr;
 
-	public function getUserWaitedQ($user_id, $refer_event_id) { // 获取参赛者可以答的题目
+	}
+	public function getCantSelectProblem($participant) {//获得不能被用户答的题
+		$cantProblem = Db :: table('participant_haved_answer') -> field('refer_problem_id') -> where('refer_team_id', $participant['team_id']) -> where('answer_date', date('Y-m-d', time())) -> whereOr('refer_participant_id', $participant['participant_id']) -> select(); // 不能选的题目 
+		//取出来把不能选的题目id组成数组
+		$cantProblem_Arr=array();
+		LogTool::info('------------cantProblem sql---------',$cantProblem);
+		for($i=0; $i<count($cantProblem); $i++) {
+			array_push($cantProblem_Arr,$cantProblem[$i]['refer_problem_id']);
+		}
+		Return $cantProblem_Arr;
+	}
+	public function getUserWaitedQ($participant, $cantProblem_json,$eventProblem) { // 获取参赛者可以答的题目
 		$waitedQ = array();
 		// $map = ['refer_event_id' => $refer_event_id, 'user_id' => $user_id];
-		$referEvent=Db::table('event')->where('event_id',$refer_event_id)->select();
-		//$questNum=$referEvent[0]['event_num'];//每种题目的数量，single_choice_number、多选题数量multiple_choice_number、填空题数量                                                 //fill_number、判断题数量true_or_false_number'
-		$participant = Db :: table('participant') -> where('refer_event_id', $refer_event_id) -> where('user_id', $user_id) -> select();
+		$referEvent=Db::table('event')->where('event_id',$participant['refer_event_id'])->select();
+		//$questNum=$referEvent[0]['event_num'];//每种题目的数量，single、多选题数量multiple、填空题数量                                                                           //fill、判断题数量judge'
 
-		$HavedAnswer = Db :: table('participant_haved_answer') -> field('refer_problem_id') -> where('refer_team_id', $participant[0]['team_id']) -> where('answer_date', date('Y-m-d', time())) -> whereOr('refer_participant_id', $participant[0]['participant_id']) -> select(); // 不能选的题目 
-		// LogTool::record($teamHaved);
-		$userWaitedSingleQ = Db :: table('problem') -> where('problem_id', 'not in', json_encode($HavedAnswer)) -> where('problem_type', 1) -> order('rand()') -> limit(2)-> select();// 单选 $questNum[1] 
+		
+		LogTool::info('------------cantProblem_json---------',$cantProblem_json);
+		// ***************获得单选， 题目数量$questNum[1]***********************//
+		$userWaitedSingleQ = Db :: table('problem') -> where('problem_id', 'not in', $cantProblem_json)->where('problem_id', 'in',$eventProblem) -> where('problem_type', 1) -> order('rand()') -> limit(2)-> select(); 
 		$waitedQ ['single']= $userWaitedSingleQ;
-
-		$userWaitedMultiQ=Db :: table('problem') -> where('problem_id', 'not in', json_encode($HavedAnswer)) -> where('problem_type', 2) -> order('rand()') -> limit(2)-> select();// 多选 $questNum[1]
+		// ***************获得多选， 题目数量$questNum['']***********************//
+		$userWaitedMultiQ=Db :: table('problem') -> where('problem_id', 'not in', $cantProblem_json)->where('problem_id', 'in',$eventProblem) -> where('problem_type', 2) -> order('rand()') -> limit(2)-> select();
 		$waitedQ['multi'] =$userWaitedMultiQ;
+		// ***************获得判断题， 题目数量$questNum[1]***********************//
+		$userWaitedJudgeQ=Db :: table('problem') -> where('problem_id', 'not in', $cantProblem_json)->where('problem_id', 'in',$eventProblem) -> where('problem_type', 3) -> order('rand()') -> limit(2)-> select();
+		$waitedQ['judge'] =$userWaitedJudgeQ;
 
-		LogTool :: record($waitedQ);
+		LogTool :: info('--------------生成的题目---------------',$waitedQ);
 		Return $waitedQ;
 	} 
 } 
