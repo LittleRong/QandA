@@ -81,6 +81,18 @@ class Question extends Controller
                 }
                 $key++;
              }
+             if((int)$problem_type == 2)
+             {
+                $answer_num = strlen($answer);
+                $i = 0;
+                $answer_temp = array();
+                for($i=0;$i<$answer_num;$i++)
+                {
+                  array_push($answer_temp,$answer{$i});
+                }
+                $answer = $answer_temp;
+
+             }
              $problem_content = json_encode(array('problem' => $question,'option'=>$option,'answer'=>$answer ));
              $model = new ProblemModel();
              $model->problem_insert($problem_content,$problem_class,(int)$problem_type);
