@@ -17,7 +17,13 @@ class ProblemModel extends Model{
         for($i=0;$i<count($result_array);$i++){
             $content=json_decode($result_array[$i]['problem_content']);
             $result_array[$i]['problem']=$content->problem;
-            $result_array[$i]['answer']=$content->answer;
+            if(is_array($content->answer)){
+                $result_array[$i]['answer']=implode(' ',$content->answer);
+            }else{
+                $result_array[$i]['answer']=$content->answer;
+            }
+
+
             //解析选项
             if (is_object($content->option)) {
                 foreach ($content->option as $key => $value) {
