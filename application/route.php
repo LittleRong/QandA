@@ -9,7 +9,8 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 use think\Route;
-Route::controller('problem','problem_manage/Problem');
+Route::controller('problem','problem_manage/ProblemController');
+Route::controller('answer','problem_manage/AnswerController');
 Route::rule('showevent','event/Index/showevent');
 return [
     '__pattern__' => [

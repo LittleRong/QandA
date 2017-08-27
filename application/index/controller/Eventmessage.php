@@ -26,7 +26,7 @@ class Eventmessage extends Controller{
       $credit_model = new CreditModel();
       $credit_data=$credit_model->getCredit($event_id,$user_id);
       $result['credit_message']=$credit_data;
-      dump($result);
+      //dump($result);
       $this->assign('data',$result);
       return $this->fetch('eventmessage/event_message');
     }

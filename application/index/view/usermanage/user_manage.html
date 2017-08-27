@@ -11,15 +11,6 @@
     <meta name="apple-mobile-web-app-title" content="Plane UI" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
-    <!-- for iOS icons -->
-    <link rel="apple-touch-icon-precomposed" href="../dist/icons/icon-57x57.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../dist/icons/icon-72x72.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../dist/icons/icon-114x114.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../dist/icons/icon-120x120.png">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../dist/icons/icon-144x144.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="../dist/icons/icon-180x180.png">
-
     <meta name="google" value="notranslate" />
 
     <!-- for Android 5 -->
@@ -37,7 +28,6 @@
     <link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/css/planeui.min.css" />
     <link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/css/user_manage/user.css" />
     <link rel="stylesheet" href="{$Think.config.web_res_root}/css/jquery-ui.min.css" />
-    <link rel="stylesheet" href="{$Think.config.web_res_root}/css/ui-lightness/jquery-ui-1.10.3.custom.css" />
 </head>
 <body>
     <a name="top"></a>
@@ -74,10 +64,10 @@
                     <div class="pui-grid-md-2">
                         <div class="pui-btn-group-vertical pui-btn-gradient pui-btn-shadow ">
                             <div class="pui-btn-group ">
-                                <a href="#" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow pui-btn-primary-active"><i class="fa fa-user fa-large"></i>用户管理</a>
-                                <a href="{:url('index/usermanager/questionmaneger')}" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow"><i class="fa fa-file-o fa-large"></i>题目管理</a>
-                                <a href="#" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow"><i class="fa fa-th fa-large"></i>事件管理</a>
-                                <a href="#" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow"><i class="fa fa-tint fa-large"></i>积分道具管理</a>
+                                <a href="{:url('index/usermanage/user_manage')}" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow pui-btn-primary-active"><i class="fa fa-user fa-large"></i>用户管理</a>
+                                <a href="{:url('manage/Problemmanage/problem_manage')}" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow"><i class="fa fa-file-o fa-large"></i>题目管理</a>
+                                <a href="{:url('event/index/showevent')}" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow"><i class="fa fa-th fa-large"></i>事件管理</a>
+                                <a href="{:url('item_manage/item/index')}" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow"><i class="fa fa-tint fa-large"></i>积分道具管理</a>
                             </div>
 
                         </div>
@@ -87,25 +77,78 @@
                             <thead>
                                 <tr>
                                     <th>用户ID</th>
+                                    <th>登录名</th>
                                     <th>姓名</th>
                                     <th>手机号</th>
                                     <th>工号</th>
+                                    <th>性别</th>
                                     <th>编辑</th>
+
                                 </tr>
                             </thead>
                             <tbody>
                             </tbody>
                         </table>
-                        <button id="create-user" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow" onclick="$.openDialog()">创建新用户</button>
-                        <form>
-                            <input type="text" id="user_name" name="user_name" maxlength="16" class="" placeholder="姓名" />
-                            <input type="text" id="login_name" name="login_name" maxlength="16" class="" placeholder="登录名" />
-                            <input type="text" id="user_phone_number" name="user_phone_number" maxlength="16" class="" placeholder="手机号" />
-                            <input type="text" id="user_job_number" name="user_job_number" maxlength="16" class="" placeholder="工号" />
-                            <input type="text" id="user_gender" name="user_gender" maxlength="16" class="" placeholder="性别" />
-                            <button class="pui-btn pui-btn-primary pui-btn-large" id="add_user" name="add_user" onclick="adduser()">确定</button>
-                            <button class="pui-btn pui-btn-primary pui-btn-large">取消</button>
-                        </form>
+                        <button id="create-user" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow">创建新用户</button>
+                        <div id="user_form">
+                            <form>
+                                <div>
+                                    <label>姓名</label>
+                                    <input type="text" id="user_name" name="user_name" maxlength="16" class="" placeholder="姓名" />
+                                </div>
+                                <div>
+                                    <label>登录名</label>
+                                    <input type="text" id="login_name" name="login_name" maxlength="16" class="" placeholder="登录名" />
+                                </div>
+                                <div>
+                                    <label>手机号</label>
+                                    <input type="text" id="user_phone_number" name="user_phone_number" maxlength="16" class="" placeholder="手机号" />
+                                </div>
+                                <div>
+                                    <label>工号</label>
+                                    <input type="text" id="user_job_number" name="user_job_number" maxlength="16" class="" placeholder="工号" />
+                                </div>
+                                <div>
+                                    <label>性别</label>
+                                    <select id="user_gender" name="user_gender">
+                                        <option value="男">男</option>
+                                        <option value="女">女</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <button class="pui-btn pui-btn-primary pui-btn-large" id="add_user" name="add_user" onclick="adduser()">确定</button>
+                                    <input type="button" class="pui-btn pui-btn-warning pui-btn-large active" id="btn_qx" value="取消">
+                                </div>
+                            </form>
+                        </div>
+                        <div id="form_change" class="novisibility">
+                            <form>
+                                <div>
+                                    <label>姓名</label>
+                                    <input type="text" id="change_user_name" name="user_name" maxlength="16" class="" placeholder="姓名" />
+                                </div>
+                                <div>
+                                    <label>登录名</label>
+                                    <input type="text" id="change_login_name" name="login_name" maxlength="16" class="" placeholder="登录名" />
+                                </div>
+                                <div>
+                                    <label>手机号</label>
+                                    <input type="text" id="change_user_phone_number" name="user_phone_number" maxlength="16" class="" placeholder="手机号" />
+                                </div>
+                                <div>
+                                    <label>工号</label>
+                                    <input type="text" id="change_user_job_number" name="user_job_number" maxlength="16" class="" placeholder="工号" />
+                                </div>
+                                <div>
+                                    <label>性别</label>
+                                    <select id="change_user_gender" name="user_gender">
+                                        <option value="男">男</option>
+                                        <option value="女">女</option>
+                                    </select>
+                                </div>
+                                <button class="pui-btn pui-btn-primary pui-btn-large" id="change_user" name="change_user" onclick="changeuser()">确定</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -121,38 +164,43 @@
             <button class="pui-btn pui-btn-primary pui-btn-large" id="confirm">确定</button>
             <button class="pui-btn pui-btn-primary pui-btn-large">取消</button>
         </div>
-        <div class="novisibility" id="user_new">
-            <form id="user_form">
-                <input type="hidden" id="Hidden1" />
-                <input type="hidden" id="Hidden2" />
-                <input type="hidden" id="Hidden3" />
-                <input type="hidden" id="Hidden4" />
-                <input type="hidden" id="Hidden5" />
-
-                <input type="text" id="Duser_name" name="user_name" maxlength="16" class="pui-unbordered" value="11111" />
-
-                <div>
-                    <input type="text" id="Dlogin_name" name="login_name" maxlength="16" class="pui-unbordered" value="11111" placeholder="登陆名" />
-                </div>
-                <div>
-                    <input type="number" id="Duser_phone_number" name="user_phone_number" maxlength="16" value="11111" class="pui-unbordered" placeholder="电话号码" />
-                </div>
-                <div>
-                    <input type="number" id="Duser_job_number" name="user_job_number" maxlength="16" value="11111" class="pui-unbordered" placeholder="工号" />
-                </div>
-                <div>
-                    <input type="number" id="Duser_gender" name="user_gender" maxlength="16" value="1" class="pui-unbordered" placeholder="性别" />
-                </div>
-                <button class="pui-btn pui-btn-primary pui-btn-large" id="Button1" name="add_user" onclick="$.openDialog()">确定</button>
-                <button class="pui-btn pui-btn-primary pui-btn-large">取消</button>
-            </form>
-        </div>
 </body>
 <script type="text/javascript" src="{$Think.config.web_res_root}/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="{$Think.config.web_res_root}/js/planeui.js"></script>
-<script type="text/javascript" src="{$Think.config.web_res_root}/js/dialog-test.js"></script>
 <script type="text/javascript" src="{$Think.config.web_res_root}/js/jquery-1.9.1.js"></script>
-<script type="text/javascript" src="{$Think.config.web_res_root}/js/jquery-ui-1.10.3.custom.js"></script>
+<script type="text/javascript" src="{$Think.config.web_res_root}/js/planeui.js"></script>
+<script>
+    function changeuser() {
+        //var change_id = $(this).parent().parent().find('td').eq(0).html();
+        var user_name = $(".pui-dialog #change_user_name").val();
+        var login_name = $(".pui-dialog #change_login_name").val();
+        var user_phone_number = $(".pui-dialog #change_user_phone_number").val();
+        var user_job_number = $(".pui-dialog #change_user_job_number").val();
+        var user_gender = $(".pui-dialog #change_user_gender").val();
+
+        if (change_user_name == '' || change_login_name == '' || change_user_phone_number == '' || change_user_job_number == '' || change_user_gender == '') {
+            alert("信息不能留空");
+        } else {
+            var post_data = { change_id: change_id, user_name: user_name, login_name: login_name, user_phone_number: user_phone_number, user_job_number: user_job_number, user_gender: user_gender };
+            $.ajax({
+                url: "{:url('index/usermanage/updateuser')}",
+                dataType: "json",
+                type: 'POST',
+                data: post_data,
+                async: false,
+                success: function (data) {
+                    json_data = eval('(' + data + ')');
+                    alert("修改成功");
+                    // alert(json_data['result']);
+                },
+                error: function (data, status, error) {
+                    alert("跳转失败");
+                    alert(error);
+                }
+            });
+        }
+        return false;
+    }
+</script>
 <script>
     function adduser() {
         var user_name = $("#user_name").val();
@@ -172,8 +220,9 @@
                 data: post_data,
                 async: false,
                 success: function (data) {
-                    json_data=eval('('+data+')');
-										alert(json_data['result']);
+                    json_data = eval('(' + data + ')');
+                    alert("添加成功");
+                    // alert(json_data['result']);
                 },
                 error: function (data, status, error) {
                     alert("跳转失败");
@@ -183,12 +232,10 @@
         }
         return false;
     }
+
 </script>
 
 </html>
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<!-- <script src="{$Think.config.web_res_root}/js/jquery-2.1.1.min.js"></script> -->
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -213,6 +260,7 @@
             alert("确认删除");
             var delete_id = $(this).parent().parent().find('td').eq(0).html();
             var post_data = { delete_id: delete_id };
+
             $.ajax({
                 url: "{:url('index/usermanage/deleteuser')}",
                 dataType: "json",
@@ -230,8 +278,23 @@
                 }
             });
         });
-				$(".change_btn").click(function () {
-
+        $(".change_btn").click(function () {
+            change_id = $(this).parent().parent().find('td').eq(0).html();//获取change_id
+            var login_name = $(this).parent().parent().find('td').eq(1).html();
+            var user_name = $(this).parent().parent().find('td').eq(2).html();
+            var user_phone_number = $(this).parent().parent().find('td').eq(3).html();
+            var user_job_number = $(this).parent().parent().find('td').eq(4).html();
+            var user_gender = $(this).parent().parent().find('td').eq(5).html();
+            $.dialog({
+                from: "#form_change",
+                padding: 10
+            });
+            //显示在dialog上
+            $(".pui-dialog #change_login_name").val(login_name);
+            $(".pui-dialog #change_user_name").val(user_name);
+            $(".pui-dialog #change_user_phone_number").val(user_phone_number);
+            $(".pui-dialog #change_user_job_number").val(user_job_number);
+            $(".pui-dialog #change_user_gender").val(user_gender);
         });
     });
     function loadInit() {
@@ -249,10 +312,15 @@
                 //遍历json数组
                 $.each(json_data, function (i, item) {
                     //alert(item.name+" "+item.phone_number+" "+item.job_number);
-                    $('#user_message').append("<tr>" + "<td>" + item.id + "</td><td>" + item.name + "</td><td>" + item.phone_number + "</td><td>" + item.job_number + "</td><td>"
-										+ "<button class='delete_btn'>" + "删除" + "</button>"
-										+ "<button class='change_btn'>" + "修改" + "</button>" + "</td>" + "</tr>");
-
+                    $('#user_message').append("<tr><td>" + item.id + "</td><td>"
+                                                         + item.login_name + "</td><td>"
+                                                         + item.name + "</td><td>"
+                                                         + item.phone_number + "</td><td>"
+                                                         + item.job_number + "</td><td>"
+                                                         + item.gender + "</td><td>"
+                                                         + "<button class='delete_btn'>" + "删除" + "</button>"
+										                                     + "<button class='change_btn'>" + "修改" + "</button>"
+                                                         + "</td></tr>");
                 });
             },
             error: function (data, status, error) {
@@ -261,4 +329,17 @@
             }
         });
     }
+</script>
+
+
+<script>
+    $(document).ready(function () {
+        $("#user_form").hide();
+        $("#create-user").click(function () {
+            $("#user_form").toggle();
+        });
+        $("#btn_qx").click(function () {
+            $("#user_form").hide();
+        });
+    });
 </script>
