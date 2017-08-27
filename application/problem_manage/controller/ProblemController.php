@@ -62,25 +62,43 @@ class ProblemController extends Controller{
 
 		$eventProblem=$this-> pm ->getEventProblem($this->part['refer_event_id']);
 		$cantProblem=$this-> pm ->getCantSelectProblem($this->part);
-		$waitedQ = $this-> pm -> getUserWaitedQ($this->part, $cantProblem,$eventProblem);//得到用户需要答的题目
+		$questNum=['single'=>3,'multiple'=>3,'judge'=>3,'fill'=>3];
+		$pum_answer = new ProblemUserModel();
+		$pum_problem = new ProblemUserModel();
+		//$waitedQ = $this-> pm -> getUserWaitedQ($this->part, $cantProblem,$eventProblem);//得到用户需要答的题目
+		//***********************填空***********************************//
+		if($questNum['fill']>0) {
+			$fill_pros=$this-> pm ->getPartProblem($this->part,0,$questNum['fill'],$cantProblem,$eventProblem);
+			$fillRes = $this -> dealNoOption($fill_pros);
+			$pum_answer->setfill($fillRes['answer']);
+			$pum_problem->setfill($fillRes['problem']);
+		}
 		//**********************单选***********************************//
-		$single_pros = $waitedQ['single'];
-		$singleRes = $this -> buildOption($single_pros);
-		$single_d_pros = $singleRes['problem'];
-		//**********************多选**********************************//
-		$multi_pros = $waitedQ['multi'];
-		$multiRes = $this -> buildOption($multi_pros);
-		$multi_d_pros = $multiRes['problem'];
-		//**********************判断***********************************//
-		$judge_pros=$waitedQ['judge'];
-		$judgeRes = $this -> dealNoOption($multi_pros);
-		$judge_d_pros = $judgeRes['problem'];
-		//**********************************************************//
+		if($questNum['single']>0) {
+			$single_pros = $this-> pm ->getPartProblem($this->part,1,$questNum['single'],$cantProblem,$eventProblem);
+			$singleRes= $this -> buildOption($single_pros);
+			$pum_answer->setSingle($singleRes['answer']);
+			$pum_problem->setSingle($singleRes['problem']);
+		}
 		
-		$pum_answer = new ProblemUserModel($singleRes['answer'],$multiRes['answer'],$judgeRes['answer']);
+		//**********************多选**********************************//
+		if($questNum['multiple']>0) {
+			$multi_pros = $this-> pm ->getPartProblem($this->part,2,$questNum['multiple'],$cantProblem,$eventProblem);
+			$multiRes = $this -> buildOption($multi_pros);
+			$pum_answer->setMulti($multiRes['answer']);
+			$pum_problem->setMulti($multiRes['problem']);
+		}
+		
+		//**********************判断***********************************//
+		if($questNum['judge']>0) {
+			$judge_pros=$this-> pm ->getPartProblem($this->part,3,$questNum['judge'],$cantProblem,$eventProblem);
+			$judgeRes = $this -> dealNoOption($multi_pros);
+			$pum_answer->setJudge($judgeRes['answer']);
+			$pum_problem->setJudge($judgeRes['problem']);
+		}
+
 		ParticipantModel :: writeWaitedAnswer($this->part['participant_id'], json_encode($pum_answer)); //把生成的题目id和答案保存到数据库
-		//LogTool :: record(json_encode($pum));
-		$pum_problem=new ProblemUserModel($single_d_pros,$multi_d_pros,$judge_d_pros);
+		LogTool :: info('------------$pum_answer-------',json_encode($pum_answer));
 		Return $pum_problem;
 
 	} 

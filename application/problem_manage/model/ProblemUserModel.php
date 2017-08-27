@@ -5,12 +5,21 @@ class ProblemUserModel {
 	var $single;
 	var $multi;
 	var $judge;
+	var $fill;
 	var $planDate;//计划答题时间，过了不算
-	function __construct($single,$multi,$judge) {
-		$this -> single = $single;
-		$this -> multi = $multi;
-		$this->judge=$judge;
-
+	function __construct() {
 		$this-> planDate=date('Y-m-d', time());
 	} 
+	public function setSingle($single) {
+		$this -> single = $single;
+	}
+	public function setMulti($multi) {
+		$this -> multi = $multi;
+	}
+	public function setJudge($judge) {
+		$this->judge=$judge;
+	}
+	public function setfill($fill) {
+		$this -> fill = $fill;
+	}
 } 
