@@ -78,7 +78,7 @@
         <div class="pui-grid">
         	<div class="pui-row">
         		<div class="pui-grid-xs-12">
-        			<img src="{$Think.config.web_res_root}/event/event/img/header.jpg" style="width: 100%;height: auto;" />
+        			<img src="{$Think.config.web_res_root}/event/img/header.jpg" style="width: 100%;height: auto;" />
         		</div>
         	</div>
         	<div class="pui-row">
@@ -86,12 +86,13 @@
 
 				<div class="pui-form-group pui-grid-center">
 
-                    <form class="pui-form pui-input-sm-large pui-input-md-large pui-grid" style="text-align: center" action="upload" method="post" enctype="multipart/form-data">
+                    <form class="pui-form pui-input-sm-large pui-input-md-large pui-grid" style="text-align: center" action="{$Think.config.web_res_root}index.php/event/question/upload" method="post" enctype="multipart/form-data">
                     <label>选择上传的文件</label>
 										<a href="{$Think.config.web_res_root}index.php/event/question/problem_manage">
                     <input type="file" name="image" class="pui-input-border-error"> <input type="submit" class="pui-btn pui-btn-success" name="submit" value="Submit" />
 										</a>
                     </form>
+
                 </div>
 
         	</div>
@@ -99,11 +100,15 @@
 
         </div>
         <!-- 代码写在这上面 -->
-				<script type="text/javascript" src="{$Think.config.web_res_root}/event/js/jquery.min.js"></script>
-				<script type="text/javascript" src="{$Think.config.web_res_root}/event/dist/js/planeui.js"></script>
+
 	</body>
 
+		<!-- jQuery -->
+		<script type="text/javascript" src="{$Think.config.web_res_root}/event/dist/js/planeui.js"></script>
+		<script src="{$Think.config.web_res_root}/js/jquery.min.js"></script>
 		<script src="{$Think.config.web_res_root}/js/jquery-ui.min.js"></script>
+		<script src="{$Think.config.web_res_root}/js/bootstrap.min.js"></script>
+
 
 
 </html>

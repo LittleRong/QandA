@@ -6,9 +6,9 @@
   use think\View;
   use think\Request;
 
-  class Item
+  class Participant
   {
-      public function index()
+      public function participant_manage()
       {
           echo "string";
       }

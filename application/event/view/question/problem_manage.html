@@ -175,10 +175,9 @@
         		</div>
         	</div>
         		</div>
-                	<a href="选择用户.html">
                 		<input type="button" class="pui-btn pui-btn-primary pui-btn-large" value="下一步" id="submit_message" name="submit_message" style="width: 40%;">
-					</a>
-					<a href="事件管理主页.html">
+
+					<a href="{$Think.config.web_res_root}index.php/showevent">
 						<input type="button" class="pui-btn pui-btn-error pui-btn-large" value="取消 " style="width: 40%;">
 					</a>
         		</div>
@@ -210,6 +209,10 @@
 				 arr.push(obj[i].value);
 			 }
 		}
+		if(arr.length == 0)
+		{
+			return null;
+		}
 		return arr;
 	}
 
@@ -220,7 +223,6 @@
 		$("#submit_message").click(function(){
 			var problemId;
 			problemId = mutil_check();
-			alert(problemId);
 			var post_data = {problemId:problemId};
 
 
@@ -237,7 +239,7 @@
 									alert(json_data['result']);
 									//登录成功操作......
 							}else{
-									alert("录入失败！");
+									alert(json_data['result']);
 									//登录失败操作......
 							}
 					},
