@@ -22,12 +22,15 @@
                 <div class="pui-article-subtitle">
                      类型：{$data.event_message.event_type}
                 </div>
+								<div class="pui-article-subtitle">
+                     简介：{$data.event_message.event_description}
+                </div>
                 <hr class="pui-hr-dashed">
                 <div class="pui-article-content" style="padding: 0">
-                    <div class="pui-pui-list-group">   
-		                <h5>具体规则：</h5>             
+                    <div class="pui-pui-list-group">
+		                <h5>具体规则：</h5>
 		                <ul class="pui-list pui-list-line pui-list-stripe pui-list-bordered">
-		                    <li>活动时间：{$data.event_message.start_time}至{$data.event_message.end_time}</li>	                     
+		                    <li>活动时间：{$data.event_message.start_time}至{$data.event_message.end_time}</li>
 			                    {if condition="!empty($data.event_message.answer_day)"}
 									<li>答题时间：
 									{foreach $data.event_message.answer_day as $k=>$v}
@@ -35,7 +38,7 @@
 									{/foreach}
 									</li>
 			                    {/if}
-		                    
+
 		                    <li>积分规则：单选题{$data.event_message.single}道，每题{$data.event_message.single_score}分；
 		                    多选题{$data.event_message.multiple}道，每题{$data.event_message.multiple_score}分；判断题{$data.event_message.judge}道，每题{$data.event_message.judge_score}分；填空题{$data.event_message.fill}道，每题{$data.event_message.fill_score}分；当日团队全对额外加{$data.event_message.team_score}分，团队总积分上限{$data.event_message.team_score_up}分，个人总积分上限{$data.event_message.person_score_up}分。</li>
 		                    	{if condition="!empty($data.event_message.item_message)"}
@@ -45,12 +48,13 @@
 									{/foreach}
 									</li>
 			                   	{/if}
-			                
-		                </ul> 
+
+		                </ul>
 		                <h5>得分情况：</h5>
 		                {if condition="!empty($data.credit_message)"}
 							<ul class="pui-list pui-list-line">
-		                    <li>个人积分：{$data.credit_message.credit}</li>
+		                    <li>个人得分：{$data.credit_message.credit}</li>
+												<li>团队得分：{$data.credit_message.team_score}</li>
 		                    <li>团队积分：{$data.credit_message.team_credit}</li>
 		                    {if condition="!empty($data.credit_message.detail_credit)"}
 							<li>积分详情：
@@ -61,31 +65,31 @@
 					                        <th>积分操作</th>
 					                        <th>操作时间</th>
 					                    </tr>
-					                </thead> 
+					                </thead>
 					                <tbody>
 					                    {foreach $data.credit_message.detail_credit as $k=>$v}
 										<tr>
-					                        <td>{$v.user_id}</td>
+					                        <td>{$v.team_id}</td>
 					                        <td>{$v.change_reason}{$v.change_value}分</td>
 					                        <td>{$v.change_time}</td>
 					                    </tr>
 										{/foreach}
 
-					                </tbody>               
+					                </tbody>
 					            </table>
 							</li>
 							{else /}<li>积分详情：暂时没有记录</li>
 		                    {/if}
-		                    
+
 		                </ul>
-		                {else /} 
+		                {else /}
 		                <div class="pui-article-subtitle">
 		                     您暂时没有参与...
 		                </div>
 		                {/if}
 		            </div>
                 </div>
-                
+
             </article>
 	</body>
 </html>

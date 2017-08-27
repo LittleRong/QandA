@@ -14,7 +14,7 @@
     <div class="pui-layout">
         <header>
             <img src="{$Think.config.web_res_root}/img/header2.jpg" style="width:100%;height: auto">
-            <div style="text-align: right">{$data.user_message.login_name}，<a>退出</a>&emsp;</div>
+            <div style="text-align: right">{$data.user_message.login_name}，<a href="{:url('index/Login/logout')}">退出</a>&emsp;</div>
         </header>
 
     </div>
@@ -44,6 +44,7 @@
                                         </p>
                                         <p>
                                             <input type="button" value="兑换道具" onclick="location.href='{:url('/item_manage/exchange/show_item',array('event_id'=>$k.event_id))}'" />
+                                            <input type="button" value="开始答题" onclick="location.href='{:url('/problem/userproblem',array('event_id'=>$k.event_id))}'" />
                                         </p>
                                         <p class="pui-text-right">
                                             <br>
@@ -80,27 +81,4 @@
 
 <script type="text/javascript" src="{$Think.config.web_res_root}/js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="{$Think.config.web_res_root}/js/planeui.js"></script>
-
-<script type="text/javascript">
-    $(document).ready(function () {
-        $("#logout_btn").click(function () {
-            var post_data = {};
-            $.ajax({
-                url: "{:url('index/Login/logout')}",
-                dataType: "json",
-                type: 'POST',
-                data: post_data,
-                async: false,
-                success: function (data) {
-                    window.location.href = "{:url('index/Login/index')}";
-                },
-                error: function (data, status, error) {
-                }
-            });
-            return false;
-        });
-    });
-
-
-</script>
 </html>

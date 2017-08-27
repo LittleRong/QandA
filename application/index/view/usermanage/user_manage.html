@@ -49,7 +49,7 @@
                                 <a href="{:url('index/login/change_pwd')}" id="pwchange">密码修改</a>
                             </li>
                             <li>
-                                <a href="#examples" id="logout_btn">退出</a>
+                                <a href="{:url('index/Login/logout')}">退出</a>
                             </li>
                         </ul>
                     </div>
@@ -240,22 +240,6 @@
 <script type="text/javascript">
     $(document).ready(function () {
         loadInit();
-        $("#logout_btn").click(function () {
-            var post_data = {};
-            $.ajax({
-                url: "{:url('index/Login/logout')}",
-                dataType: "json",
-                type: 'POST',
-                data: post_data,
-                async: false,
-                success: function (data) {
-                    window.location.href = "{:url('index/Login/index')}"
-                },
-                error: function (data, status, error) {
-                }
-            });
-            return false;
-        });
         $(".delete_btn").click(function () {
             alert("确认删除");
             var delete_id = $(this).parent().parent().find('td').eq(0).html();

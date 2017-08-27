@@ -63,8 +63,7 @@ class Login extends Controller{
     public function logout(){
         //注销session
         session(null);
-        $data = array('result'=>'成功退出');
-        return json_encode('$data');
+        return $this->fetch('login/index');
     }
 
     //转到修改密码页面

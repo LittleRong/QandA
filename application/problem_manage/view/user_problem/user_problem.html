@@ -15,10 +15,9 @@
     <div class="pui-layout">
         <header>
             <img src="{$Think.config.web_res_root}/img/header2.jpg" style="width:100%;height: auto">
-            <div style="text-align: right">{$data.user_message.login_name}，<a>退出</a>&emsp;</div>
         </header>
     </div>
-        <div class="pui-layout" style="width:96%;margin-top:30px ">	        
+        <div class="pui-layout" style="width:96%;margin-top:30px ">
 			<div class="pui-row">
 
 			   	<div class="pui-grid-xs-3 pui-grid-xs-push-9 pui-grid-sm-3 pui-grid-sm-push-9 pui-grid-md-3 pui-grid-md-push-9 pui-grid-lg-3 pui-grid-lg-push-9 pui-grid-xl-3 pui-grid-xl-push-9 pui-grid-xxl-3 pui-grid-xxl-push-9 ">
@@ -29,11 +28,11 @@
 						</div>
 			    	</div>
 			   	</div>
-			   
+
 
 				<div class="pui-grid-xs-9 pui-grid-xs-pull-3 pui-grid-sm-9 pui-grid-sm-pull-3 pui-grid-md-9 pui-grid-md-pull-3 pui-grid-lg-9 pui-grid-lg-pull-3 pui-grid-xl-9 pui-grid-xl-pull-3 pui-grid-xxl-9 pui-grid-xxl-pull-3 ">
 					<div>
-				 		<ul class="pui-menu  pui-menu-radius pui-menu-inline pui-menu-bordered pui-text-center" style="margin-bottom: 0px;"> 
+				 		<ul class="pui-menu  pui-menu-radius pui-menu-inline pui-menu-bordered pui-text-center" style="margin-bottom: 0px;">
 				            <li style="width: 25%">
 				                <a href="javascript:;" id="single" class="choose_btn" >单选</a>
 				            </li>
@@ -45,16 +44,16 @@
 				            </li>
 				            <li style="width: 25%">
 				                <a href="javascript:;" id="fill"  class="choose_btn">填空</a>
-				            </li> 
+				            </li>
 				        </ul>
 
 				        <div class="pui-center pui-text-center f24" style="width:70%;">
 							<h6 style="color: #aaa">今日题量：总共10道题，单选5道，多选2道，判断2道，填空1道</h6>
 						</div>
 
-						
-						
-							
+
+
+
 
 							{foreach $data as $v=>$k}
 								{if condition="is_array($k)"}
@@ -63,7 +62,7 @@
 											<div class="timu_item pui-card pui-card-shadow pui-card-radius" id="{$k2.problem_id}">
 				                				<div class="pui-card-box">
 				                    			<h5>{$v2+1}、{$k2.problem}</h5>
-											
+
 												{if condition="array_key_exists('option',$k2)"}
 													{eq name="$v" value="single"}
 														{foreach $k2.option as $v3=>$k3}
@@ -74,24 +73,24 @@
 															<input type="checkbox" name="{$v}_{$k2.problem_id}" id="{$k3.q_id}">{$v3}、{$k3.content} <br>
 														{/foreach}
 													{/eq}
-													
-												{else /} 
+
+												{else /}
 												{/if}
 												</div>
 											</div>
 										{/foreach}
 									</div>
-								{else /} 
+								{else /}
 								{/if}
 							{/foreach}
-							
-						
-					
-					
+
+
+
+
 					<br>
 
 					<script type="text/javascript" src="{$Think.config.web_res_root}/js/jquery-2.1.1.min.js"></script>
-					
+
 					<script type="text/javascript">
 						$(function(){
 							$('.choose_btn').bind('click',function(){
@@ -107,8 +106,8 @@
 
 							$('#submit').bind("click",function(){
 								var user_answer ={} ;
-								var answer_single={};													        
-         
+								var answer_single={};
+
 
 								//获取单选题id以及答案
 								var single_items=new Array();
@@ -117,17 +116,17 @@
 									//s:单选题id;s_answer:单选题答案id
 									var s=$("#single_panel .timu_item").eq(i).attr('id');
 									var s_answer=$("#single_panel .timu_item input[type='radio']:checked").eq(i).attr("id");
-									
+
 									var answer_single={};
 						        	answer_single['problem_id']=s;
 						        	answer_single['q_id']=s_answer;
-									
+
 									single_items[i]=answer_single;
-									
+
 								}
 
 								var multi_items=new Array();
-								//获取多选题id以及答案	
+								//获取多选题id以及答案
 								var multi_length=$("#multi_panel .timu_item").length;
 								for(var i=0;i<multi_length;i++){
 									var m=$("#multi_panel .timu_item").eq(i).attr('id');
@@ -136,29 +135,29 @@
 									var m_answers_lengths=m_answers.length;
 
 									//m:多选题id;id_array：多选题答案数组
-									var id_array=new Array();  
-									$(m_id).each(function(){  
-									    id_array.push($(this).attr('id'));//向数组中添加元素  
-									});  
-									// var idstr=id_array.join(',');//将数组元素连接起来以构建一个字符串  
+									var id_array=new Array();
+									$(m_id).each(function(){
+									    id_array.push($(this).attr('id'));//向数组中添加元素
+									});
+									// var idstr=id_array.join(',');//将数组元素连接起来以构建一个字符串
 									var answer_multi={};
 
 						        	answer_multi['problem_id']=m;
 						        	answer_multi['q_id']=id_array;
 
 						        	multi_items[i]=answer_multi;
-								}		
+								}
 
 								user_answer['single']=	single_items;
 								user_answer['multi']=	multi_items;
 
-								$.ajax({  
-					                type: "POST",  
-					                url: '../answer/SubmitAnswer',  
-					                async: true, //同步  
-					                dataType: "json",  
-					                data:user_answer,  
-					                //后台执行完成后，返回页面处理函数  
+								$.ajax({
+					                type: "POST",
+					                url: '../answer/SubmitAnswer',
+					                async: true, //同步
+					                dataType: "json",
+					                data:user_answer,
+					                //后台执行完成后，返回页面处理函数
 					                success: function(){
 					                	alert("成功");
 					                }
@@ -166,13 +165,13 @@
 							});
 
 						})
-							
-						
+
+
 					</script>
-					
+
 				</div>
-				
-			  </div>    		
+
+			  </div>
 
 	</body>
 </html>
