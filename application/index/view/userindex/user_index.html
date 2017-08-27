@@ -16,7 +16,7 @@
             <img src="{$Think.config.web_res_root}/img/header2.jpg" style="width:100%;height: auto">
             <div style="text-align: right">{$data.user_message.login_name}，<a>退出</a>&emsp;</div>
         </header>
-       
+
     </div>
     <div class="pui-layout" style="width: 96%; margin-top: 30px">
         <div class="pui-row ">
@@ -41,6 +41,9 @@
                                             <strong>参赛形式:</strong> {$k.participant_num}人<strong>&emsp;答题规则：</strong>总共{$k.fill+$k.judge+$k.single+$k.multiple}道题量。单选题{$k.single}道，判断题{$k.judge}道，多选题{$k.multiple}道，填空题{$k.fill}道<br>
                                             <strong>活动时间：</strong>{$k.start_time}至{$k.end_time}<br>
                                             <strong>可兑换道具：</strong>{$k.item}
+                                        </p>
+                                        <p>
+                                            <input type="button" value="兑换道具" onclick="location.href='{:url('/item_manage/exchange/show_item',array('event_id'=>$k.event_id))}'" />
                                         </p>
                                         <p class="pui-text-right">
                                             <br>
