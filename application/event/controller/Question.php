@@ -148,7 +148,6 @@ class Question extends Controller
        $model->event_problem_insert((int)$problemId[$i],(int)$event_id);
      }
     //  $model->event_problem_inserts($problemId,(int)$event_id);
-     Session::delete('myevent_id');
      $data = array('result'=>'录入成功!');
      return json_encode($data);
 
