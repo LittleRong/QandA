@@ -10,8 +10,12 @@ use think\Request;
 use think\Controller;
 use think\Session;
 
+
+
 class Question extends Controller
 {
+    //定义自增ID开始结束的位置
+    protected $start_id,$end_id;
 
     //题目导入
     public function problem_insert()
@@ -49,6 +53,9 @@ class Question extends Controller
     //excel导入题目到数据库中
     public function excelreader($filename)
     {
+       //返回第一个自增ID标志
+       $flag = 1;
+
        $filename = __DIR__.'/../../../public/uploads/problem/'.$filename;
        $extension = strtolower( pathinfo($filename, PATHINFO_EXTENSION) );
 
@@ -96,7 +103,15 @@ class Question extends Controller
                  }
                  $problem_content = json_encode(array('problem' => $question,'option'=>$option,'answer'=>$answer ));
                  $model = new ProblemModel();
-                 $model->problem_insert($problem_content,$problem_class,(int)$problem_type);
+
+                 //获取导入的第一个题目的ID
+                 $temp = $model->problem_insert($problem_content,$problem_class,(int)$problem_type);
+                 if($flag == 1)
+                 {
+                    $this->start_id = $temp;
+                    $flag = 0;
+                 }
+                 $this->end_id = $temp;
                 //  dump($problem_content);
               }
         }
@@ -109,7 +124,9 @@ class Question extends Controller
     {
 
       $model = new ProblemModel();
-      $result = $model->problem_check();
+      // $result = $model->problem_check();
+      // $result = $model->problem_checkByid((int)$this->start_id,(int)$this->end_id);
+      $result = $model->problem_checkByid(422,427);
       // dump($result);
       $all = array(array());
       $num = count($result);
