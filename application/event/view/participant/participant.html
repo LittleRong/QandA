@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		<meta name="renderer" content="webkit" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <meta name="description" content="Plane UI" />
+        <meta name="keywords" content="Plane UI" />
+		<meta name="author" content="Pandao, pandao@vip.qq.com"/>
+		<meta name="robots" content="index,follow" />
+
+		<!-- 禁止百度转码 -->
+        <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+		<!-- 添加到主屏后的标题 iOS6+ -->
+		<meta name="apple-mobile-web-app-title" content="Plane UI" />
+
+		<!-- 是否启用 WebApp 全屏模式 -->
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+
+		<!-- 设置状态栏的背景颜色，只有在 `"apple-mobile-web-app-capable" content="yes"` 时生效 -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<!-- for iOS icons -->
+		<link rel="apple-touch-icon-precomposed" href="app/icons/icon-57x57.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="app/icons/icon-72x72.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="app/icons/icon-114x114.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="120x120" href="app/icons/icon-120x120.png">
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="app/icons/icon-144x144.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="180x180" href="app/icons/icon-180x180.png">
+
+		<!-- for Android 5 -->
+		<meta name="theme-color" content="#0098DF" />
+
+		<!-- Windows 8 metro color -->
+		<meta name="msapplication-TileColor" content="#0098DF" />
+
+		<!-- Windows 8 metro icon -->
+		<meta name="msapplication-TileImage" content="favicon.png" />
+
+		<!-- closed google auto translate -->
+		<meta name="google" value="notranslate" />
+
+		<!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+		<meta name="HandheldFriendly" content="true" />
+
+		<!-- 微软的老式浏览器 -->
+		<meta name="MobileOptimized" content="320" />
+
+		<!-- uc 强制竖屏 -->
+		<meta name="screen-orientation" content="portrait" />
+
+		<!-- QQ 强制竖屏 -->
+		<meta name="x5-orientation" content="portrait" />
+
+		<!-- UC 强制全屏 -->
+		<meta name="full-screen" content="yes" />
+
+		<!-- QQ 强制全屏 -->
+		<meta name="x5-fullscreen" content="true" />
+
+		<!-- UC 应用模式 -->
+		<meta name="browsermode" content="application" />
+
+		<!-- QQ 应用模式 -->
+		<meta name="x5-page-mode" content="app" />
+
+		<!-- windows phone 点击无高光 -->
+		<meta name="msapplication-tap-highlight" content="no" />
+
+		<title>选择用户</title>
+
+        <link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/event/dist/css/planeui.min.css" />
+	</head>
+	<body>
+		<!-- 代码写在这下面 -->
+        <div class="pui-grid">
+        	<div class="pui-row">
+        		<div class="pui-grid-xs-12">
+        			<img src="{$Think.config.web_res_root}/event/img/header.jpg" style="width: 100%;height: auto;" />
+        		</div>
+        	</div>
+        		<div class="pui-row">
+        			<h3 class="pui-text-center">——&nbsp;选择参赛者&nbsp;——</h3>
+        		</div>
+        		<div class="pui-row">
+        			<div class="pui-grid-xs-6" style="margin-left: 15px;">
+
+        				<hr>
+        				<h5>所有参赛者</h5>
+        				<hr>
+								{eq name="data" value=""}
+								<p>无参赛者。</p>
+								{else/}
+								{foreach $data as $k=>$v}
+        				<div id="xcsz"><!--后台获取参赛选手信息-->
+        				<div><input type="checkbox" name="cbox" id="cbox" value={$v.id} >{$v.name}</div>
+        				</div>
+								{/foreach}
+								{/eq}
+        				<input type="button" class="pui-btn pui-btn-success pui-btn-small active" id="sub" value="添加">
+
+        				<hr>
+        				<h5>组信息（请勾选组长）</h5>
+        				<hr>
+        				<div id="xzz">
+
+        				</div>
+        				<input type="button" class="pui-btn pui-btn-success pui-btn-small active" id="finish" value="完成">
+
+        				<hr>
+        				<h5>已添加</h5>
+        				<hr>
+        				<div id="ytj">
+
+        				</div>
+        			</div>
+        			<div class="pui-grid-xs-6">
+
+        			</div>
+        		</div>
+        	</div>
+        	</div>
+                		<input type="button" class="pui-btn pui-btn-primary pui-btn-large"  id="submit_message" value="完成" style="width: 40%;">
+        		</div>
+        </div>
+        <!-- 代码写在这上面 -->
+		<script type="text/javascript" src="{$Think.config.web_res_root}/event/dist/js/planeui.js"></script>
+		<script type="text/javascript" src="{$Think.config.web_res_root}/event/js/jquery.min.js"></script>
+		<script type="text/javascript">//添加参赛者
+			//设置标识符最终组别flag
+            var flag=1;
+						var mydata = [];
+            function deletezu(obj){
+                var flagid=obj.id;
+                $("#"+flagid).parent().remove();
+                flag--;
+								mydata[flag-1] = null;
+            };
+            $(document).ready(function(){
+                //添加参赛者
+                $('#sub').bind('click',function(){
+                    var chk_value =[];  //获取value
+                    var chk_Chinese=[];    //获取中文
+                    $('input[name="cbox"]:checked').each(function(){
+                        chk_value.push($(this).val());
+                        chk_Chinese.push($(this).parent().text());
+                    });
+                    //alert(chk_Chinese.length==0 ?'你还没有选择任何内容！':chk_Chinese);    可以调试的时候打印出该数组的内容
+                    //在面板上加入标签
+                    for(var i=0;i<chk_value.length;i++){
+                        var csz_value=chk_value[i];
+                        var csz_name=chk_Chinese[i];
+                        var e="<div><input type='checkbox' name='checkbox2' value='"+csz_value+"'>"+csz_name+"</div>";
+                        $('#xzz').append(e);
+                    }
+               	});
+               	//选择组长组成队伍
+               	$('#finish').bind('click',function(){
+           		   var id='zu'+flag;
+                   var len = $("input:checkbox[name='checkbox2']:checked").length;
+                   if(len==0){
+                        alert("请选择组员");
+                        return;
+                   }
+                   if(len>1){
+                        alert("只能选一个组长");
+                        return;
+                   }
+                   var zuzhang = $("input:checkbox[name='checkbox2']:checked").parent().text();
+									 var zuzhangid = $("input:checkbox[name='checkbox2']:checked").val();
+									 var zuyuan=[];
+									 var zuyuanid=[];
+                    $('input[name="checkbox2"]').each(function(){
+                        if($(this).parent().text()!=zuzhang){
+                            zuyuan.push($(this).parent().text());
+														zuyuanid.push($(this).val());
+                        }
+                    });
+										var team = [];
+										team.push(zuzhangid,zuyuanid);
+										mydata[flag-1] = team;
+
+                    //添加内容
+										$('#ytj').append("<div><label>组"+flag+"&emsp;</label>组长：" + zuzhang + ",组员："+zuyuan+"<input type='button' id="+id+" class='delete pui-btn pui-btn-primary' value='删除' onClick='javascript:deletezu(this)'></div>");
+                    $("#xzz").empty();
+                    $("#xcsz input:checkbox[name='checkbox1']").removeAttr("checked");
+                    flag++;
+               		})
+
+									$("#submit_message").click(function(){
+									post_data = {mydata:mydata};
+									$.ajax({
+			                url:"participant_insert",
+			                dataType: "json",
+			                type: 'POST',
+			                data: post_data,
+			                async: false,
+			                success: function(data){
+			                    alert("跳转成功");
+			                    json_data=eval('('+data+')');
+													if(json_data['result']=="录入成功!"){
+			                        alert(json_data['result']);
+															// $("#myform").submit();
+															self.location='{$Think.config.web_res_root}index.php/showevent';
+			                        //登录成功操作......
+			                    }else{
+			                        alert("录入失败！");
+			                        //登录失败操作......
+			                    }
+			                },
+			                error: function(data, status, error){
+			                    alert("跳转失败");
+			                    alert(error);
+
+			                }
+			            });
+								});
+            	});
+		</script>
+	</body>
+</html>

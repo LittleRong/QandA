@@ -52,7 +52,7 @@ class AnswerController extends Controller {
 		$this -> refer_team_id = 1; //参赛人队伍的id
 
 		$allSubmit=$_POST;
-		LogTool::info('-------------answer post------------',$_POST);
+		LogTool::record($_POST);
 		$allAnswer=ParticipantModel::getWaitedAnswer($this -> refer_participant_id);//预存在participant表中waitedAnswer的问题id及答案
 		if(count($allAnswer)<=0) {
 			LogTool::record('没有找到参赛者，或参赛者中没有预存答案');
@@ -63,22 +63,17 @@ class AnswerController extends Controller {
 		}
 		LogTool::record($allSubmit);
 		//***********单选*************//
+
 		$singleAnswer = Logtool :: object2array($allAnswer['single']);
 		$singleSubmit=$allSubmit['single'];
 		$this->dealSingle($singleSubmit, $singleAnswer);
-		}catch(\Exception $e){
-				LogTool::record('------answerpost--singleerror-------');
-		}
 		//***********多选***************//
-		try{
 		$multiAnswer=Logtool :: object2array($allAnswer['multi']);
 		$multiSubmit=$allSubmit['multi'];
 		$this->dealMulti($multiSubmit, $multiAnswer);
-		}catch(\Exception $e){
-				LogTool::record('------answerpost--multiple eerror-------');
-		}
+
 		//***********************************************
-		//ParticipantHaveAnswerdModel::savePantHaveAnswerds($this->pantHaveAnswerArr);
+		ParticipantHaveAnswerdModel::savePantHaveAnswerds($this->pantHaveAnswerArr);
 		LogTool::record($_POST);
 		$data=['user_credit'=>$this->userMark];
 		Return json_encode($data);
