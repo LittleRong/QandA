@@ -15,6 +15,8 @@
     <div class="pui-layout">
         <header>
             <img src="{$Think.config.web_res_root}/img/header2.jpg" style="width:100%;height: auto">
+
+            <div style="text-align: right"><a>退出</a>&emsp;</div>
         </header>
     </div>
         <div class="pui-layout" style="width:96%;margin-top:30px ">
@@ -40,7 +42,7 @@
 				                <a href="javascript:;" id="multi"  class="choose_btn">多选</a>
 				            </li>
 				            <li style="width: 25%">
-				                <a href="javascript:;" id="jungle"  class="choose_btn">判断</a>
+				                <a href="javascript:;" id="judge"  class="choose_btn">判断</a>
 				            </li>
 				            <li style="width: 25%">
 				                <a href="javascript:;" id="fill"  class="choose_btn">填空</a>
@@ -73,8 +75,12 @@
 															<input type="checkbox" name="{$v}_{$k2.problem_id}" id="{$k3.q_id}">{$v3}、{$k3.content} <br>
 														{/foreach}
 													{/eq}
-
-												{else /}
+													
+												{else /} 
+													{eq name="$v" value="judge"}
+														<input type="radio" name="{$v}_{$k2.problem_id}" value="1">对<br>
+														<input type="radio" name="{$v}_{$k2.problem_id}" value="0">错
+													{/eq}
 												{/if}
 												</div>
 											</div>
@@ -148,16 +154,32 @@
 						        	multi_items[i]=answer_multi;
 								}
 
+								//获取判断题id以及答案
+								var judge_items=new Array();
+								var judge_length=$("#judge_panel .timu_item").length;
+								for(var i=0;i<judge_length;i++){
+									var j=$("#judge_panel .timu_item").eq(i).attr("id");
+									var j_answer=$("#judge_panel .timu_item input[type='radio']:checked").eq(i).attr("value");
+									
+									var answer_judge={};
+						        	answer_judge['problem_id']=j;
+						        	answer_judge['answer']=j_answer;
+									
+									judge_items[i]=answer_judge;
+
+								}
+
 								user_answer['single']=	single_items;
 								user_answer['multi']=	multi_items;
+								user_answer['judge']=	judge_items;
+								$.ajax({  
+					                type: "POST",  
+					                url: '../answer/SubmitAnswer',  
+					                async: true, //同步  
+					                dataType: "json",  
+					                data:user_answer,  
+					                //后台执行完成后，返回页面处理函数  
 
-								$.ajax({
-					                type: "POST",
-					                url: '../answer/SubmitAnswer',
-					                async: true, //同步
-					                dataType: "json",
-					                data:user_answer,
-					                //后台执行完成后，返回页面处理函数
 					                success: function(){
 					                	alert("成功");
 					                }
