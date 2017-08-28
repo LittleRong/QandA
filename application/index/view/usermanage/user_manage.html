@@ -26,12 +26,14 @@
     <link rel="icon" type="image/png" href="{$Think.config.web_res_root}/image/CM.png" />
     <link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/css/planeui.css" />
     <link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/css/planeui.min.css" />
-    <link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/css/user_manage/user.css" />
+    <link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/css/user_manage/user_manager.css" />
     <link rel="stylesheet" href="{$Think.config.web_res_root}/css/jquery-ui.min.css" />
 </head>
 <body>
     <a name="top"></a>
     <div class="pui-layout">
+
+        <!-- header栏 -->
         <div class="page-header">
             <div class="pui-layout pui-layout-fixed pui-layout-fixed-1200">
                 <div class="pui-menubar pui-menubar-square pui-menubar-header-style pui-bg-none pui-unbordered">
@@ -60,19 +62,20 @@
         <!-- 侧边栏 -->
         <div class="container ">
             <div class="pui-row">
-                <div class="SlideMenu ">
+
                     <div class="pui-grid-md-2">
                         <div class="pui-btn-group-vertical pui-btn-gradient pui-btn-shadow ">
                             <div class="pui-btn-group ">
-                                <a href="{:url('index/usermanage/user_manage')}" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow pui-btn-primary-active"><i class="fa fa-user fa-large"></i>用户管理</a>
-                                <a href="{:url('manage/Problemmanage/problem_manage')}" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow"><i class="fa fa-file-o fa-large"></i>题目管理</a>
-                                <a href="{:url('event/index/showevent')}" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow"><i class="fa fa-th fa-large"></i>事件管理</a>
-                                <a href="{:url('item_manage/item/index')}" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow"><i class="fa fa-tint fa-large"></i>积分道具管理</a>
+                                <a href="{:url('index/usermanage/user_manage')}" ><button class="pui-btn-style  pui-btn pui-btn-primary pui-btn-large pui-text-shadow pui-btn-primary-active"><i class="fa fa-user fa-large"></i> 用户管理</button></a>
+                                <a href="{:url('manage/Problemmanage/problem_manage')}" ><button class="pui-btn-style  pui-btn pui-btn-primary pui-btn-large pui-text-shadow "><i class="fa fa-list-alt fa-large"></i> 题目管理</button></a>
+                                <a href="{:url('event/index/showevent')}"><button class="pui-btn-style  pui-btn pui-btn-primary pui-btn-large pui-text-shadow "><i class="fa fa-file-o fa-large"></i> 事件管理</button></a>
+                                <a href="{:url('item_manage/item/index')}" ><button class="pui-btn-style  pui-btn pui-btn-primary pui-btn-large pui-text-shadow "><i class="fa fa-th fa-large"></i> 道具管理</button></a>
                             </div>
 
                         </div>
                     </div>
-                    <div class="pui-grid-md-10">
+                    <div style="margin-top:1em" class="pui-grid-md-9">
+                        <!-- <button class="create_btn pui-btn pui-btn-primary pui-btn-large pui-text-shadow "><i class="fa fa-user fa-large"></i>创建新用户</button> -->
                         <table id="user_message" class="pui-table pui-table-bordered pui-table-text-center pui-table-thead-bg pui-table-interlaced-color box-shadow-bottom pui-table-gradient">
                             <thead>
                                 <tr>
@@ -89,8 +92,10 @@
                             <tbody>
                             </tbody>
                         </table>
-                        <button id="create-user" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow">创建新用户</button>
-                        <div id="user_form">
+                        <button class="create_btn pui-btn pui-btn-primary pui-btn-large pui-text-shadow "><i class="fa fa-user fa-large"></i>创建新用户</button>
+                        <!-- <button id="create-user" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow">创建新用户</button> -->
+                        <!-- 新建用户表 -->
+                        <div id="user_form" class="novisibility">
                             <form>
                                 <div>
                                     <label>姓名</label>
@@ -121,6 +126,7 @@
                                 </div>
                             </form>
                         </div>
+                        <!-- 修改用户栏 -->
                         <div id="form_change" class="novisibility">
                             <form>
                                 <div>
@@ -150,25 +156,22 @@
                             </form>
                         </div>
                     </div>
-                </div>
+
             </div>
         </div>
-
-
-        <!-- <a href="#top" class="fa fa-arrow-circle-up fa-3x pui-text-blue-400" id="go-to-top"></a> -->
-
-        <div class="novisibility" id="testDialog">
+        <!-- <div class="novisibility" id="testDialog">
             请输入原密码:<input type="password" id="pass0" /><br />
             请输入新密码:<input type="password" id="pass1" /><br />
             再次输入密码:<input type="password" id="pass2"><br />
             <button class="pui-btn pui-btn-primary pui-btn-large" id="confirm">确定</button>
             <button class="pui-btn pui-btn-primary pui-btn-large">取消</button>
-        </div>
+        </div> -->
 </body>
 <script type="text/javascript" src="{$Think.config.web_res_root}/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="{$Think.config.web_res_root}/js/jquery-1.9.1.js"></script>
 <script type="text/javascript" src="{$Think.config.web_res_root}/js/planeui.js"></script>
 <script>
+    //修改用户
     function changeuser() {
         //var change_id = $(this).parent().parent().find('td').eq(0).html();
         var user_name = $(".pui-dialog #change_user_name").val();
@@ -202,12 +205,13 @@
     }
 </script>
 <script>
+    //增加用户
     function adduser() {
-        var user_name = $("#user_name").val();
-        var login_name = $("#login_name").val();
-        var user_phone_number = $("#user_phone_number").val();
-        var user_job_number = $("#user_job_number").val();
-        var user_gender = $("#user_gender").val();
+        var user_name = $(".pui-dialog #user_name").val();
+        var login_name = $(".pui-dialog #login_name").val();
+        var user_phone_number = $(".pui-dialog #user_phone_number").val();
+        var user_job_number = $(".pui-dialog #user_job_number").val();
+        var user_gender = $(".pui-dialog #user_gender").val();
 
         if (user_name == '' || login_name == '' || user_phone_number == '' || user_job_number == '' || user_gender == '') {
             alert("信息不能留空");
@@ -240,6 +244,7 @@
 <script type="text/javascript">
     $(document).ready(function () {
         loadInit();
+        //删除用户
         $(".delete_btn").click(function () {
             alert("确认删除");
             var delete_id = $(this).parent().parent().find('td').eq(0).html();
@@ -262,6 +267,7 @@
                 }
             });
         });
+        //修改用户
         $(".change_btn").click(function () {
             change_id = $(this).parent().parent().find('td').eq(0).html();//获取change_id
             var login_name = $(this).parent().parent().find('td').eq(1).html();
@@ -280,7 +286,16 @@
             $(".pui-dialog #change_user_job_number").val(user_job_number);
             $(".pui-dialog #change_user_gender").val(user_gender);
         });
+        $(".create_btn").click(function again() {
+
+                $.dialog({
+			            from : "#user_form",
+			            padding: 10
+			        });
+
+        });
     });
+    //初始化页面数据
     function loadInit() {
         var post_data = {};
         $.ajax({
@@ -290,10 +305,7 @@
             data: post_data,
             async: false,
             success: function (data) {
-                //alert(data);
                 json_data = eval('(' + data + ')');
-                //alert(json_data[0]['login_name']);
-                //遍历json数组
                 $.each(json_data, function (i, item) {
                     //alert(item.name+" "+item.phone_number+" "+item.job_number);
                     $('#user_message').append("<tr><td>" + item.id + "</td><td>"
@@ -302,8 +314,10 @@
                                                          + item.phone_number + "</td><td>"
                                                          + item.job_number + "</td><td>"
                                                          + item.gender + "</td><td>"
-                                                         + "<button class='delete_btn'>" + "删除" + "</button>"
-										                                     + "<button class='change_btn'>" + "修改" + "</button>"
+
+                                                         + "<button class='change_btn pui-btn pui-btn-error pui-btn-small'>" + "修改" + "</button>"
+                                                         +" "
+                                                         + "<button class='delete_btn pui-btn pui-btn-primary pui-btn-small'>" + "删除" + "</button>"
                                                          + "</td></tr>");
                 });
             },
@@ -316,7 +330,7 @@
 </script>
 
 
-<script>
+<!-- <script>
     $(document).ready(function () {
         $("#user_form").hide();
         $("#create-user").click(function () {
@@ -326,4 +340,4 @@
             $("#user_form").hide();
         });
     });
-</script>
+</script> -->

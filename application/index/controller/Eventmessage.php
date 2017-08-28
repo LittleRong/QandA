@@ -8,8 +8,9 @@ use app\index\model\ItemModel;
 use app\index\model\CreditModel;
 use think\Session;
 use think\Request;
+use app\common\controller\UserController;
 
-class Eventmessage extends Controller{
+class Eventmessage extends UserController{
     public function event_message(){
       $event_id=Request::instance()->param('event_id');
       $user_id=Session::get('user_id');
