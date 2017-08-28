@@ -2,6 +2,7 @@
   namespace app\event\controller;
 
   use app\event\model\EventModel;
+  use app\event\model\ItemModel;
   use think\Controller;
   use think\View;
   use think\Request;
@@ -10,11 +11,32 @@
 
   class Index extends Controller
   {
+
         //跳转到事件录入视图
       public function insertevent()
       {
-          $view = new View();
-          return $view->fetch('event_insert');
+          $model = new ItemModel();
+          $result = $model->item_checkall();
+          $all = array(array());
+          foreach ($result as $key => $value)
+          {
+            $item_id = $value['item_id'];
+            $item_name = $value['item_name'];
+            $item_description = $value['item_description'];
+            $change_rule = $value['change_rule'];
+            $all[$key] = array_merge(['item_id'=>$item_id],['item_name'=>$item_name],
+              ['item_description'=>$item_description],['change_rule'=>$change_rule]);
+          }
+          // dump($all);
+          if(empty($all[0]))
+          {
+            $this->assign('data',null);
+          }
+          else
+            $this->assign('data',$all);
+          return $this->fetch("event_insert");
+          // $view = new View();
+          // return $view->fetch('event_insert');
       }
 
       //跳转到事件显示视图
@@ -52,6 +74,7 @@
               $multiple_score,$fill_score,$judge_score,$person_score,
               $team_score,$person_score_up,$team_score_up,$message)
        {
+          //这里用session获取管理员ID
           $aid = 2;
           $model = new EventModel();
           //$event_id事件自增ID
