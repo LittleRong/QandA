@@ -7,27 +7,16 @@ use think\Request;
 use think\View;
 use app\manage\model\ProblemModel;
 use app\manage\model\UserModel;
+use app\common\controller\ManageController;
 use think\Session;
 
-class Problemmanage extends Controller{
+class Problemmanage extends ManageController{
+
     public function problem_manage(){
-      if(Session::get('user_id')){//用户已经登陆，直接进入用户中心
-          $user_id=Session::get('user_id');
-          $user_model = new UserModel();//实例化用户模型
-          if($user_model->isManager($user_id)){//管理员
-              //获取题目信息
-              $problem_model = new ProblemModel();
-              $data=$problem_model->showAllProblem();
-              $this->assign('data',$data);
-              return $this->fetch('problem_manage');
-          }else{//普通用户
-              //注销session
-              session(null);
-              return $this->fetch('index@login/index');//进入登陆界面
-          }
-      }else{
-          return $this->fetch('index@login/index');//用户未登录，进入登陆界面
-      }
+      $problem_model = new ProblemModel();
+      $data=$problem_model->showAllProblem();
+      $this->assign('data',$data);
+      return $this->fetch('problem_manage');
     }
 
     // //新增题目

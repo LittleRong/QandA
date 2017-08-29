@@ -63,6 +63,8 @@ class AnswerController extends Controller {
 		}
 		LogTool::record($allSubmit);
 		//***********单选*************//
+
+		try{
 		$singleAnswer = Logtool :: object2array($allAnswer['single']);
 		$singleSubmit=$allSubmit['single'];
 		$this->dealSingle($singleSubmit, $singleAnswer);
@@ -81,6 +83,9 @@ class AnswerController extends Controller {
 		//ParticipantHaveAnswerdModel::savePantHaveAnswerds($this->pantHaveAnswerArr);
 		LogTool::record($_POST);
 		$data=['user_credit'=>$this->userMark];
+
+		//$data=['user_credit'=>$this->userMark,'team_credit'=>100,'team_mate'=>[['name'=>'kk','credit'=>20],['name'=>'kk','credit'=>20]];
+
 		Return json_encode($data);
 	}
 	private function dealSingle($singleSubmit, $singleAnswer) {
@@ -93,7 +98,8 @@ class AnswerController extends Controller {
 			$submitId = $submit['problem_id'];
 			$submitAnswer = $submit['q_id'];
 			$pantHaveAnswer = new ParticipantHaveAnswerdModel($this -> refer_participant_id, $this -> refer_team_id, $submit['problem_id'], $submitAnswer);
-      LogTool::info('----------------$singleAnswer-------',$singleAnswer);
+
+			$ifRight = 0; 
 			if ($submitAnswer == $singleAnswer[$submitId]) { // 回答正确
 				$pantHaveAnswer -> setTrueOrFalse(1); //设置为回答正确
 				$this -> userMark = $this -> userMark + $singleCredit; //增加积分

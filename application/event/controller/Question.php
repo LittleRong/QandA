@@ -15,7 +15,7 @@ use think\Session;
 class Question extends Controller
 {
     //定义自增ID开始结束的位置
-    protected $start_id,$end_id;
+    protected $problem_num;
 
     //题目导入
     public function problem_insert()
@@ -54,8 +54,7 @@ class Question extends Controller
     public function excelreader($filename)
     {
        //返回第一个自增ID标志
-       $flag = 1;
-
+       $problem_num = 0;
        $filename = __DIR__.'/../../../public/uploads/problem/'.$filename;
        $extension = strtolower( pathinfo($filename, PATHINFO_EXTENSION) );
 
@@ -105,13 +104,9 @@ class Question extends Controller
                  $model = new ProblemModel();
 
                  //获取导入的第一个题目的ID
-                 $temp = $model->problem_insert($problem_content,$problem_class,(int)$problem_type);
-                 if($flag == 1)
-                 {
-                    $this->start_id = $temp;
-                    $flag = 0;
-                 }
-                 $this->end_id = $temp;
+                 $model->problem_insert($problem_content,$problem_class,(int)$problem_type);
+                 //获取导入数据数量
+                 $this->problem_num++;
                 //  dump($problem_content);
               }
         }
@@ -125,30 +120,31 @@ class Question extends Controller
 
       $model = new ProblemModel();
       // $result = $model->problem_check();
-      // $result = $model->problem_checkByid((int)$this->start_id,(int)$this->end_id);
-      $result = $model->problem_checkByid(422,427);
+      $result = $model->problem_checkByNum($this->problem_num);
       // dump($result);
-      $all = array(array());
-      $num = count($result);
-
-      for($i=0;$i<$num;$i++)
+      if($result!=null)
       {
-        $getProblem = json_decode($result[$i],true);
-        $problem = json_decode($getProblem['problem_content'],true);
-        // $option = $problem['option'];
-        unset($getProblem['problem_content']);
-        // unset($problem['option']);
-        $merge_item = array_merge($getProblem,$problem);
-        $all[$i] = $merge_item;
+          $all = array(array());
+          $num = count($result);
+          for($i=0;$i<$num;$i++)
+          {
+            $getProblem = $result[$i];
+            $problem = json_decode($getProblem['problem_content'],true);
+            // $option = $problem['option'];
+            unset($getProblem['problem_content']);
+            // unset($problem['option']);
+            $merge_item = array_merge($getProblem,$problem);
+            $all[$i] = $merge_item;
+          }
+          // dump($all);
+          if(empty($all[0]))
+          {
+            $this->assign('data',null);
+          }
+          else
+            $this->assign('data',$all);
+          return $this->fetch("problem_manage");
       }
-      // dump($all);
-      if(empty($all[0]))
-      {
-        $this->assign('data',null);
-      }
-      else
-        $this->assign('data',$all);
-      return $this->fetch("problem_manage");
   }
 
   public function event_problem_relevance($problemId)

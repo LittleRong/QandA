@@ -64,6 +64,15 @@ html, body {
 }
 
 /* /#SlideMenu */
+.pui-input-group {
+    height: 100px;
+  }
+.pui-btn-style{
+    height: 100px;
+    text-align: center;
+    display:inline-block;
+    vertical-align:middle;
+}
 
 
 .main-color {
@@ -314,9 +323,6 @@ html.no-touch #go-to-top:hover {
     }
 }
 
-.fa-paper-plane {
-
-}
 
 .pui-row > h2 {
     margin-bottom: 3rem;
