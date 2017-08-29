@@ -66,7 +66,7 @@ CREATE TABLE item(
 
 DROP TABLE if exists `credit`;
 CREATE TABLE credit(
-    `user_id` INT NOT NULL COMMENT '操作人id',
+    `team_id` INT NOT NULL COMMENT '进行操作的组id',
     `refer_event_id` INT NOT NULL COMMENT '参见的事件id,关联的事件的id',
     `change_time` TIMESTAMP NOT NULL COMMENT '操作时间',
     `change_value` FLOAT NOT NULL COMMENT '操作值,更改的值',

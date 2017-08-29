@@ -48,7 +48,7 @@ $(document).ready(function(){
         }else{
             var post_data = {old_password:old_password,new_password:new_password};
             $.ajax({
-                url:"{:url('login/change_pwd_post')}",
+                url:"{:url('index/login/change_pwd_post')}",
                 dataType: "json",
                 type: 'POST',
                 data: post_data,
