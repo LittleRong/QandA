@@ -1,0 +1,1012 @@
+---------------------------------------------------------------
+[ 2017-08-27T10:15:41+08:00 ] ::1 ::1 GET /QandA/public/index.php/index/userindex/user_index.html
+[ info ] localhost/QandA/public/index.php/index/userindex/user_index.html [运行时间：0.023903s][吞吐率：41.84req/s] [内存消耗：1,346.56kb] [文件加载：34]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'userindex',
+    2 => 'user_index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Userindex->user_index[ G:\xampp\htdocs\QandA\application\index\controller\Userindex.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] G:\xampp\htdocs\QandA\public/../application/index\view\login\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-27T10:15:42+08:00 ] ::1 ::1 GET /QandA/public//css/images/bg5.jpg
+[ info ] localhost/QandA/public//css/images/bg5.jpg [运行时间：0.028528s][吞吐率：35.05req/s] [内存消耗：1,034.34kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'css',
+    1 => 'images',
+    2 => 'bg5.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public//css/login/login.css',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=d708mndv5pjktu3nn3c73cq8f4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-27T10:15:42+08:00 ] ::1 ::1 GET /QandA/public//fonts/fontawesome-webfont.woff2?v=4.3.0
+[ info ] localhost/QandA/public//fonts/fontawesome-webfont.woff2?v=4.3.0 [运行时间：0.028362s][吞吐率：35.26req/s] [内存消耗：1,034.88kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'fonts',
+    1 => 'fontawesome-webfont.woff2',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'origin' => 'http://localhost',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/QandA/public//css/planeui.css',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=d708mndv5pjktu3nn3c73cq8f4',
+)
+[ info ] [ PARAM ] array (
+  'v' => '4.3.0',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-27T10:15:42+08:00 ] ::1 ::1 GET /QandA/public//fonts/fontawesome-webfont.woff?v=4.3.0
+[ info ] localhost/QandA/public//fonts/fontawesome-webfont.woff?v=4.3.0 [运行时间：0.026906s][吞吐率：37.17req/s] [内存消耗：1,034.87kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'fonts',
+    1 => 'fontawesome-webfont.woff',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'origin' => 'http://localhost',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/QandA/public//css/planeui.css',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=d708mndv5pjktu3nn3c73cq8f4',
+)
+[ info ] [ PARAM ] array (
+  'v' => '4.3.0',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-27T10:15:42+08:00 ] ::1 ::1 GET /QandA/public//fonts/fontawesome-webfont.ttf?v=4.3.0
+[ info ] localhost/QandA/public//fonts/fontawesome-webfont.ttf?v=4.3.0 [运行时间：0.026012s][吞吐率：38.44req/s] [内存消耗：1,034.83kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'fonts',
+    1 => 'fontawesome-webfont.ttf',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'origin' => 'http://localhost',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/QandA/public//css/planeui.css',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=d708mndv5pjktu3nn3c73cq8f4',
+)
+[ info ] [ PARAM ] array (
+  'v' => '4.3.0',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-27T10:15:50+08:00 ] ::1 ::1 POST /QandA/public/index.php/index/login/check.html
+[ info ] localhost/QandA/public/index.php/index/login/check.html [运行时间：5.014756s][吞吐率：0.20req/s] [内存消耗：2,360.80kb] [文件加载：42]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '27',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/QandA/public/index.php/index/userindex/user_index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=d708mndv5pjktu3nn3c73cq8f4',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'test',
+  'password' => 'test',
+)
+[ info ] [ RUN ] app\index\controller\Login->check[ G:\xampp\htdocs\QandA\application\index\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:4.929226s ] mysql:dbname=question;host=120.77.144.75;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.025931s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `login_name` = 'test'  AND `pwd` = '098f6bcd4621d373cade4e832627b4f6' LIMIT 1 [ RunTime:0.027654s ]
+---------------------------------------------------------------
+[ 2017-08-27T10:15:54+08:00 ] ::1 ::1 GET /QandA/public/index.php/index/userindex/user_index.html
+[ info ] localhost/QandA/public/index.php/index/userindex/user_index.html [运行时间：0.258310s][吞吐率：3.87req/s] [内存消耗：2,607.24kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'userindex',
+    2 => 'user_index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/index/userindex/user_index.html',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=d708mndv5pjktu3nn3c73cq8f4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Userindex->user_index[ G:\xampp\htdocs\QandA\application\index\controller\Userindex.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\QandA\public/../application/index\view\userindex\user_index.html [ array (
+  0 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.048877s ] mysql:dbname=question;host=120.77.144.75;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.032365s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.031126s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.031556s ]
+[ sql ] [ SQL ] select event_id,event_title,event_description,participant_num,event_num,event_time
+      from event, participant
+      where participant.refer_event_id=event.event_id
+       and participant.user_id=1 [ RunTime:0.030814s ]
+[ sql ] [ SQL ] select item_name
+            from item
+            where item.refer_event_id=34 [ RunTime:0.031802s ]
+---------------------------------------------------------------
+[ 2017-08-27T10:15:54+08:00 ] ::1 ::1 GET /QandA/public/index.php/index/userindex/img/logo.png
+[ info ] localhost/QandA/public/index.php/index/userindex/img/logo.png [运行时间：0.040022s][吞吐率：24.99req/s] [内存消耗：1,317.39kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'userindex',
+    2 => 'img',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/index/userindex/user_index.html',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=d708mndv5pjktu3nn3c73cq8f4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-27T10:15:57+08:00 ] ::1 ::1 GET /QandA/public/index.php/index/eventmessage/event_message/event_id/34.html
+[ info ] localhost/QandA/public/index.php/index/eventmessage/event_message/event_id/34.html [运行时间：0.232238s][吞吐率：4.31req/s] [内存消耗：2,560.72kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'eventmessage',
+    2 => 'event_message',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/index/userindex/user_index.html',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=d708mndv5pjktu3nn3c73cq8f4',
+)
+[ info ] [ PARAM ] array (
+  'event_id' => '34',
+)
+[ info ] [ RUN ] app\index\controller\Eventmessage->event_message[ G:\xampp\htdocs\QandA\application\index\controller\Eventmessage.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\QandA\public/../application/index\view\eventmessage\event_message.html [ array (
+  0 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.046189s ] mysql:dbname=question;host=120.77.144.75;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `event` [ RunTime:0.028209s ]
+[ sql ] [ SQL ] SELECT `event_id`,`event_title`,`event_description`,`event_time`,`event_num`,`event_type`,`answer_time`,`credit_rule` FROM `event` WHERE  `event_id` = 34 [ RunTime:0.027523s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `item` [ RunTime:0.027070s ]
+[ sql ] [ SQL ] SELECT * FROM `item` WHERE  `refer_event_id` = 34 LIMIT 1 [ RunTime:0.031338s ]
+[ sql ] [ SQL ] select credit,team_credit
+      from participant,team
+      where participant.user_id=1 and participant.refer_event_id=34 and participant.team_id=team.team_id [ RunTime:0.027241s ]
+---------------------------------------------------------------
+[ 2017-08-27T10:15:58+08:00 ] ::1 ::1 GET /QandA/public/index.php/index/eventmessage/event_message/event_id/favicon.png
+[ info ] localhost/QandA/public/index.php/index/eventmessage/event_message/event_id/favicon.png [运行时间：0.217969s][吞吐率：4.59req/s] [内存消耗：2,446.76kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'eventmessage',
+    2 => 'event_message',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/index/eventmessage/event_message/event_id/34.html',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=d708mndv5pjktu3nn3c73cq8f4',
+)
+[ info ] [ PARAM ] array (
+  'event_id' => 'favicon.png',
+)
+[ info ] [ RUN ] app\index\controller\Eventmessage->event_message[ G:\xampp\htdocs\QandA\application\index\controller\Eventmessage.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.047434s ] mysql:dbname=question;host=120.77.144.75;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `event` [ RunTime:0.032251s ]
+[ sql ] [ SQL ] SELECT `event_id`,`event_title`,`event_description`,`event_time`,`event_num`,`event_type`,`answer_time`,`credit_rule` FROM `event` WHERE  `event_id` = 0 [ RunTime:0.027563s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `item` [ RunTime:0.027350s ]
+[ sql ] [ SQL ] SELECT * FROM `item` WHERE  `refer_event_id` = 0 LIMIT 1 [ RunTime:0.028227s ]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'favicon.png' in 'where clause'[G:\xampp\htdocs\QandA\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2017-08-27T10:16:00+08:00 ] ::1 ::1 GET /QandA/public/index.php/index/userindex/user_index.html
+[ info ] localhost/QandA/public/index.php/index/userindex/user_index.html [运行时间：0.219011s][吞吐率：4.57req/s] [内存消耗：2,456.04kb] [文件加载：44]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'userindex',
+    2 => 'user_index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/index/userindex/user_index.html',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=d708mndv5pjktu3nn3c73cq8f4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Userindex->user_index[ G:\xampp\htdocs\QandA\application\index\controller\Userindex.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\QandA\public/../application/index\view\userindex\user_index.html [ array (
+  0 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.044725s ] mysql:dbname=question;host=120.77.144.75;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.030096s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.025451s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.027477s ]
+[ sql ] [ SQL ] select event_id,event_title,event_description,participant_num,event_num,event_time
+      from event, participant
+      where participant.refer_event_id=event.event_id
+       and participant.user_id=1 [ RunTime:0.027002s ]
+[ sql ] [ SQL ] select item_name
+            from item
+            where item.refer_event_id=34 [ RunTime:0.027737s ]
+---------------------------------------------------------------
+[ 2017-08-27T10:16:06+08:00 ] ::1 ::1 GET /QandA/public/index.php/index/eventmessage/event_message/event_id/34.html
+[ info ] localhost/QandA/public/index.php/index/eventmessage/event_message/event_id/34.html [运行时间：0.247757s][吞吐率：4.04req/s] [内存消耗：2,411.87kb] [文件加载：44]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'eventmessage',
+    2 => 'event_message',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/index/userindex/user_index.html',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=d708mndv5pjktu3nn3c73cq8f4',
+)
+[ info ] [ PARAM ] array (
+  'event_id' => '34',
+)
+[ info ] [ RUN ] app\index\controller\Eventmessage->event_message[ G:\xampp\htdocs\QandA\application\index\controller\Eventmessage.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\QandA\public/../application/index\view\eventmessage\event_message.html [ array (
+  0 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.054008s ] mysql:dbname=question;host=120.77.144.75;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `event` [ RunTime:0.034457s ]
+[ sql ] [ SQL ] SELECT `event_id`,`event_title`,`event_description`,`event_time`,`event_num`,`event_type`,`answer_time`,`credit_rule` FROM `event` WHERE  `event_id` = 34 [ RunTime:0.030544s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `item` [ RunTime:0.031181s ]
+[ sql ] [ SQL ] SELECT * FROM `item` WHERE  `refer_event_id` = 34 LIMIT 1 [ RunTime:0.027506s ]
+[ sql ] [ SQL ] select credit,team_credit
+      from participant,team
+      where participant.user_id=1 and participant.refer_event_id=34 and participant.team_id=team.team_id [ RunTime:0.031214s ]
+---------------------------------------------------------------
+[ 2017-08-27T10:16:06+08:00 ] ::1 ::1 GET /QandA/public/index.php/index/eventmessage/event_message/event_id/favicon.png
+[ info ] localhost/QandA/public/index.php/index/eventmessage/event_message/event_id/favicon.png [运行时间：0.211644s][吞吐率：4.72req/s] [内存消耗：2,446.76kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'eventmessage',
+    2 => 'event_message',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/index/eventmessage/event_message/event_id/34.html',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=d708mndv5pjktu3nn3c73cq8f4',
+)
+[ info ] [ PARAM ] array (
+  'event_id' => 'favicon.png',
+)
+[ info ] [ RUN ] app\index\controller\Eventmessage->event_message[ G:\xampp\htdocs\QandA\application\index\controller\Eventmessage.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.045962s ] mysql:dbname=question;host=120.77.144.75;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `event` [ RunTime:0.028933s ]
+[ sql ] [ SQL ] SELECT `event_id`,`event_title`,`event_description`,`event_time`,`event_num`,`event_type`,`answer_time`,`credit_rule` FROM `event` WHERE  `event_id` = 0 [ RunTime:0.026556s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `item` [ RunTime:0.028824s ]
+[ sql ] [ SQL ] SELECT * FROM `item` WHERE  `refer_event_id` = 0 LIMIT 1 [ RunTime:0.026328s ]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'favicon.png' in 'where clause'[G:\xampp\htdocs\QandA\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2017-08-27T10:16:09+08:00 ] ::1 ::1 GET /QandA/public/index.php/index/userindex/user_index.html
+[ info ] localhost/QandA/public/index.php/index/userindex/user_index.html [运行时间：0.241894s][吞吐率：4.13req/s] [内存消耗：2,456.04kb] [文件加载：44]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'userindex',
+    2 => 'user_index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/index/userindex/user_index.html',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=d708mndv5pjktu3nn3c73cq8f4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Userindex->user_index[ G:\xampp\htdocs\QandA\application\index\controller\Userindex.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\QandA\public/../application/index\view\userindex\user_index.html [ array (
+  0 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.047874s ] mysql:dbname=question;host=120.77.144.75;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.031766s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.031401s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.031129s ]
+[ sql ] [ SQL ] select event_id,event_title,event_description,participant_num,event_num,event_time
+      from event, participant
+      where participant.refer_event_id=event.event_id
+       and participant.user_id=1 [ RunTime:0.030159s ]
+[ sql ] [ SQL ] select item_name
+            from item
+            where item.refer_event_id=34 [ RunTime:0.032320s ]
+---------------------------------------------------------------
+[ 2017-08-27T10:16:15+08:00 ] ::1 ::1 GET /QandA/public/index.php/index/eventmessage/event_message/event_id/34.html
+[ info ] localhost/QandA/public/index.php/index/eventmessage/event_message/event_id/34.html [运行时间：0.223133s][吞吐率：4.48req/s] [内存消耗：2,411.87kb] [文件加载：44]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'eventmessage',
+    2 => 'event_message',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/index/userindex/user_index.html',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=d708mndv5pjktu3nn3c73cq8f4',
+)
+[ info ] [ PARAM ] array (
+  'event_id' => '34',
+)
+[ info ] [ RUN ] app\index\controller\Eventmessage->event_message[ G:\xampp\htdocs\QandA\application\index\controller\Eventmessage.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\QandA\public/../application/index\view\eventmessage\event_message.html [ array (
+  0 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.041872s ] mysql:dbname=question;host=120.77.144.75;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `event` [ RunTime:0.024340s ]
+[ sql ] [ SQL ] SELECT `event_id`,`event_title`,`event_description`,`event_time`,`event_num`,`event_type`,`answer_time`,`credit_rule` FROM `event` WHERE  `event_id` = 34 [ RunTime:0.023638s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `item` [ RunTime:0.026839s ]
+[ sql ] [ SQL ] SELECT * FROM `item` WHERE  `refer_event_id` = 34 LIMIT 1 [ RunTime:0.043450s ]
+[ sql ] [ SQL ] select credit,team_credit
+      from participant,team
+      where participant.user_id=1 and participant.refer_event_id=34 and participant.team_id=team.team_id [ RunTime:0.023191s ]
+---------------------------------------------------------------
+[ 2017-08-27T10:16:15+08:00 ] ::1 ::1 GET /QandA/public/index.php/index/eventmessage/event_message/event_id/favicon.png
+[ info ] localhost/QandA/public/index.php/index/eventmessage/event_message/event_id/favicon.png [运行时间：0.231901s][吞吐率：4.31req/s] [内存消耗：2,446.77kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'eventmessage',
+    2 => 'event_message',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/index/eventmessage/event_message/event_id/34.html',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=d708mndv5pjktu3nn3c73cq8f4',
+)
+[ info ] [ PARAM ] array (
+  'event_id' => 'favicon.png',
+)
+[ info ] [ RUN ] app\index\controller\Eventmessage->event_message[ G:\xampp\htdocs\QandA\application\index\controller\Eventmessage.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.046407s ] mysql:dbname=question;host=120.77.144.75;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `event` [ RunTime:0.032353s ]
+[ sql ] [ SQL ] SELECT `event_id`,`event_title`,`event_description`,`event_time`,`event_num`,`event_type`,`answer_time`,`credit_rule` FROM `event` WHERE  `event_id` = 0 [ RunTime:0.031241s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `item` [ RunTime:0.031585s ]
+[ sql ] [ SQL ] SELECT * FROM `item` WHERE  `refer_event_id` = 0 LIMIT 1 [ RunTime:0.031074s ]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'favicon.png' in 'where clause'[G:\xampp\htdocs\QandA\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2017-08-27T10:16:18+08:00 ] ::1 ::1 GET /QandA/public/index.php/index/userindex/user_index.html
+[ info ] localhost/QandA/public/index.php/index/userindex/user_index.html [运行时间：0.254940s][吞吐率：3.92req/s] [内存消耗：2,456.04kb] [文件加载：44]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'userindex',
+    2 => 'user_index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/index/userindex/user_index.html',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=d708mndv5pjktu3nn3c73cq8f4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Userindex->user_index[ G:\xampp\htdocs\QandA\application\index\controller\Userindex.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\QandA\public/../application/index\view\userindex\user_index.html [ array (
+  0 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.051628s ] mysql:dbname=question;host=120.77.144.75;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.033232s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.034250s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.035136s ]
+[ sql ] [ SQL ] select event_id,event_title,event_description,participant_num,event_num,event_time
+      from event, participant
+      where participant.refer_event_id=event.event_id
+       and participant.user_id=1 [ RunTime:0.030813s ]
+[ sql ] [ SQL ] select item_name
+            from item
+            where item.refer_event_id=34 [ RunTime:0.031800s ]
+---------------------------------------------------------------
+[ 2017-08-27T10:28:29+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/favicon.png
+[ info ] localhost/QandA/public/index.php/problem/favicon.png [运行时间：0.036250s][吞吐率：27.59req/s] [内存消耗：2,351.20kb] [文件加载：44]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'ProblemController',
+    2 => 'getfavicon.png',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=d708mndv5pjktu3nn3c73cq8f4',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'favicon.png',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-27T21:04:03+08:00 ] ::1 ::1 POST /QandA/public/index.php/answer/SubmitAnswer
+[ info ] localhost/QandA/public/index.php/answer/SubmitAnswer [运行时间：0.026476s][吞吐率：37.77req/s] [内存消耗：1,070.51kb] [文件加载：29]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'AnswerController',
+    2 => 'postSubmitAnswer',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '160',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=d708mndv5pjktu3nn3c73cq8f4',
+)
+[ info ] [ PARAM ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '128',
+    ),
+    1 => 
+    array (
+      'problem_id' => '127',
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+    ),
+  ),
+  'judge' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'answer' => '1',
+    ),
+  ),
+  'action' => 'SubmitAnswer',
+)
+[ info ] [ LOG ] INIT File
+[ error ] [4]语法错误: unexpected 'Return' (T_RETURN)[G:\xampp\htdocs\QandA\application\problem_manage\controller\AnswerController.php:79]
+---------------------------------------------------------------
+[ 2017-08-27T21:04:10+08:00 ] ::1 ::1 POST /QandA/public/index.php/answer/SubmitAnswer
+[ info ] localhost/QandA/public/index.php/answer/SubmitAnswer [运行时间：0.020158s][吞吐率：49.61req/s] [内存消耗：1,070.51kb] [文件加载：29]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'AnswerController',
+    2 => 'postSubmitAnswer',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '160',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=d708mndv5pjktu3nn3c73cq8f4',
+)
+[ info ] [ PARAM ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '128',
+    ),
+    1 => 
+    array (
+      'problem_id' => '127',
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+    ),
+  ),
+  'judge' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'answer' => '1',
+    ),
+  ),
+  'action' => 'SubmitAnswer',
+)
+[ info ] [ LOG ] INIT File
+[ error ] [4]语法错误: unexpected 'Return' (T_RETURN)[G:\xampp\htdocs\QandA\application\problem_manage\controller\AnswerController.php:79]
+---------------------------------------------------------------
+[ 2017-08-27T21:04:10+08:00 ] ::1 ::1 POST /QandA/public/index.php/answer/SubmitAnswer
+[ info ] localhost/QandA/public/index.php/answer/SubmitAnswer [运行时间：0.018368s][吞吐率：54.44req/s] [内存消耗：1,070.51kb] [文件加载：29]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'AnswerController',
+    2 => 'postSubmitAnswer',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '160',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=d708mndv5pjktu3nn3c73cq8f4',
+)
+[ info ] [ PARAM ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '128',
+    ),
+    1 => 
+    array (
+      'problem_id' => '127',
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+    ),
+  ),
+  'judge' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'answer' => '1',
+    ),
+  ),
+  'action' => 'SubmitAnswer',
+)
+[ info ] [ LOG ] INIT File
+[ error ] [4]语法错误: unexpected 'Return' (T_RETURN)[G:\xampp\htdocs\QandA\application\problem_manage\controller\AnswerController.php:79]
+---------------------------------------------------------------
+[ 2017-08-27T21:04:10+08:00 ] ::1 ::1 POST /QandA/public/index.php/answer/SubmitAnswer
+[ info ] localhost/QandA/public/index.php/answer/SubmitAnswer [运行时间：0.019015s][吞吐率：52.59req/s] [内存消耗：1,070.51kb] [文件加载：29]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'AnswerController',
+    2 => 'postSubmitAnswer',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '160',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=d708mndv5pjktu3nn3c73cq8f4',
+)
+[ info ] [ PARAM ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '128',
+    ),
+    1 => 
+    array (
+      'problem_id' => '127',
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+    ),
+  ),
+  'judge' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'answer' => '1',
+    ),
+  ),
+  'action' => 'SubmitAnswer',
+)
+[ info ] [ LOG ] INIT File
+[ error ] [4]语法错误: unexpected 'Return' (T_RETURN)[G:\xampp\htdocs\QandA\application\problem_manage\controller\AnswerController.php:79]
+---------------------------------------------------------------
+[ 2017-08-27T21:04:10+08:00 ] ::1 ::1 POST /QandA/public/index.php/answer/SubmitAnswer
+[ info ] localhost/QandA/public/index.php/answer/SubmitAnswer [运行时间：0.017542s][吞吐率：57.01req/s] [内存消耗：1,070.51kb] [文件加载：29]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'AnswerController',
+    2 => 'postSubmitAnswer',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '160',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=d708mndv5pjktu3nn3c73cq8f4',
+)
+[ info ] [ PARAM ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '128',
+    ),
+    1 => 
+    array (
+      'problem_id' => '127',
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+    ),
+  ),
+  'judge' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'answer' => '1',
+    ),
+  ),
+  'action' => 'SubmitAnswer',
+)
+[ info ] [ LOG ] INIT File
+[ error ] [4]语法错误: unexpected 'Return' (T_RETURN)[G:\xampp\htdocs\QandA\application\problem_manage\controller\AnswerController.php:79]
