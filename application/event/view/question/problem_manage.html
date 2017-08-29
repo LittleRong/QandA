@@ -73,6 +73,21 @@
 
         <link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/event/dist/css/planeui.min.css" />
 	</head>
+	<script src="{$Think.config.web_res_root}/js/jquery.min.js"></script>
+	<script type="text/javascript">
+	function ac(d){
+		var classname="."+d;
+		$(classname).each(function(){
+			$(this).attr("checked",'true');
+		});
+	}
+	function dc(d){
+		var classname="."+d;
+		$(classname).each(function(){
+			$(this).removeAttr("checked");
+		});
+	}
+	</script>
 	<body>
 		<!-- 代码写在这下面 -->
         <div class="pui-grid">
@@ -92,10 +107,12 @@
 								{eq name="data" value=""}
 								<p>无单选题。</p>
         				{else/}
+        						<input type="button" class=" pui-btn pui-btn-default" onclick="ac('cbox_1');" value="全选">
+        						<input type="button" class=" pui-btn pui-btn-default" onclick="dc('cbox_1');" value="取消全选">
 								<span style=display:none>{$count=0}</span>
 								{foreach $data as $k=>$v}
 								{if condition="($v.problem_type == 1)"}
-								<div><input type="checkbox" id="cbox" name="cbox" value={$v.problem_id}>{++$count}.{$v.problem}</div>
+								<div><input type="checkbox" class="cbox_1" name="cbox" value={$v.problem_id}>{++$count}.{$v.problem}</div>
 								<p>
 									{foreach $v.option as $z=>$x}
 									{$z}.{$x}&nbsp;&nbsp;&nbsp;
@@ -110,10 +127,12 @@
 								{eq name="data" value=""}
 								<p>无多选题。</p>
 								{else/}
+								<input type="button" class="pui-btn pui-btn-default" onclick="ac('cbox_2');" value="全选">
+								<input type="button" class="pui-btn pui-btn-default" onclick="dc('cbox_2');" value="取消全选">
 								<span style=display:none>{$count=0}</span>
 								{foreach $data as $k=>$v}
 								{if condition="($v.problem_type == 2)"}
-								<div><input type="checkbox" id="cbox" name="cbox" value={$v.problem_id}>{++$count}.{$v.problem}</div>
+								<div><input type="checkbox" class="cbox_2"  name="cbox" value={$v.problem_id}>{++$count}.{$v.problem}</div>
 								<p>
 									{foreach $v.option as $z=>$x}
 									{$z}.{$x}&nbsp;&nbsp;&nbsp;
@@ -129,9 +148,11 @@
 								<p>无填空题。</p>
 								{else/}
 								<span style=display:none>{$count=0}</span>
+								<input type="button" class="pui-btn pui-btn-default"  onclick="ac('cbox_0');" value="全选">
+								<input type="button" class="pui-btn pui-btn-default" onclick="dc('cbox_0');" value="取消全选">
 								{foreach $data as $k=>$v}
 								{if condition="($v.problem_type == 0)"}
-								<div><input type="checkbox" id="cbox" name="cbox" value={$v.problem_id}>{++$count}.{$v.problem}</div>
+								<div><input type="checkbox" class="cbox_0" name="cbox" value={$v.problem_id}>{++$count}.{$v.problem}</div>
 								<p>
 									{foreach $v.option as $z=>$x}
 									{$z}.{$x}&nbsp;&nbsp;&nbsp;
@@ -146,9 +167,11 @@
 								<p>无判断题。</p>
         				{else/}
 								<span style=display:none>{$count=0}</span>
+								<input type="button" class="all_3 pui-btn pui-btn-default" onclick="ac('cbox_3');" value="全选">
+								<input type="button" class="cancelall_3 pui-btn pui-btn-default" onclick="dc('cbox_3');"  value="取消全选">
  								{foreach $data as $k=>$v}
 								{if condition="($v.problem_type == 3)"}
- 								<div><input type="checkbox" id="cbox" name="cbox" value={$v.problem_id}>{++$count}.{$v.problem}</div>
+ 								<div><input type="checkbox" class="cbox_3" name="cbox" value={$v.problem_id}>{++$count}.{$v.problem}</div>
 								<p>
 									{foreach $v.option as $z=>$x}
 									{$z}.{$x}&nbsp;&nbsp;&nbsp;
@@ -158,16 +181,6 @@
         				{/foreach}
 								{/eq}
 								<hr>
-
-        				<input type="button" class="pui-btn pui-btn-success pui-btn-small active" value="添加" >
-								<br><br>
-        				<h5>已添加题目</h5>
-        				<hr>
-        				<div><input type="checkbox" name="">1.题目XXX</div>
-        				<div><input type="checkbox" name="">2.题目XXX</div>
-        				<div><input type="checkbox" name="">3.题目XXX</div>
-        				<div><input type="checkbox" name="">4.题目XXX</div>
-        				<div><input type="checkbox" name="">5.题目XXX</div>
         			</div>
         			<div class="pui-grid-xs-6">
 
@@ -189,9 +202,10 @@
 	</body>
 
 	<!-- jQuery -->
-	<script type="text/javascript" src="{$Think.config.web_res_root}/event/dist/js/planeui.js"></script>
-	<script src="{$Think.config.web_res_root}/js/jquery.min.js"></script>
+	
+	
 	<script src="{$Think.config.web_res_root}/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="{$Think.config.web_res_root}/event/dist/js/planeui.js"></script>
 	<script src="{$Think.config.web_res_root}/js/bootstrap.min.js"></script>
 
 	<script type="text/javascript">

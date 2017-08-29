@@ -85,23 +85,24 @@
         <div class="pui-row" style="margin: 0;">
             <div class="pui-grid-xs-10" style="margin-top: 20px;">
                 <div class="pui-row">
-									<div class="pui-grid-xs-3">
-											<h1 class="pui-text-center">兑换规则
-											</h1>
-											<blockquote>
-													<p>只能由组长兑换</p>
-											</blockquote>
-											<div>
-													可用积分：{$teamCred}<br>
-													已有道具:{if condition="!empty($haveItem)"}
-																		 {foreach $haveItem as $v=>$k}
-																			 {$k.item_name}有{$k.num}个
-																			 <br>
-																		 {/foreach}
-																	 {/if}
-											</div>
+					<div class="pui-grid-xs-3 pui-card pui-card-shadow pui-card-radius">
+							<blockquote>
+								<p>兑换规则</p>                               
+							</blockquote>
+							<div>
+                                <p>只能由组长兑换</p>
+									可用积分：{$teamCred}<br>
+									已有道具:{if condition="!empty($haveItem)"}
+														 {foreach $haveItem as $v=>$k}
+															 {$k.item_name}有{$k.num}个
+															 <br>
+														 {/foreach}
+													 {/if}
 							</div>
-                    <div class="pui-grid-xs-9">
+				</div>
+                    <div class="pui-grid-xs-9 pui-card pui-card-shadow pui-card-radius">
+                        <h2 style="margin-top: 10px;margin-left:20px;text-align: left"><a type="button" class="pui-btn pui-btn-default" href="{:url('index/userindex/user_index')}" >返回</a></h2>
+                        <hr>
                         <div class="pui-row">
                             {if condition="!empty($arr)"}
               {foreach $arr as $v=>$k}

@@ -17,9 +17,13 @@
     </div>
     <div  class="pui-layout">
         <header>
-            <img src="{$Think.config.web_res_root}/img/header2.jpg" style="width:100%;height: auto">
-
-            <div style="text-align: right"><a>退出</a>&emsp;</div>
+            <div style="position: relative;">
+                <img src="{$Think.config.web_res_root}/img/header2.jpg" style="width: 100%;height: auto">
+                <div class="form-group pui-btn-gradient pui-btn-shadow" style="position: absolute;bottom: 10px;right: 20px">
+                    <input type="button" class="pui-btn pui-btn-small pui-btn-default " value="小明">
+                    <a type="button" class="pui-btn pui-btn-small pui-btn-primary " href="{:url('index/Login/logout')}" >退出</a>
+                </div>
+            </div>
         </header>
     </div> 
     <div id="content" class="pui-layout" style="width:96%;margin-top:30px ">
