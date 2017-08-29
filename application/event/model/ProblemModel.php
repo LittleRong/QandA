@@ -15,7 +15,7 @@ class ProblemModel extends Model{
 
       ]);
       $this->save();
-      return $this->problem_id;   //获取自增ID
+      // return $this->problem_id;   //获取自增ID
     }
     public function problem_check()
     {
@@ -31,6 +31,14 @@ class ProblemModel extends Model{
         return  Db::table('problem')
         ->where('problem_id',['>',$start_id],['<>',$end_id],'and')
         ->find();
+    }
+    public function problem_checkByNum($num)
+    {
+      $result =  Db::table('problem')->order('problem_id desc')->limit($num)->select();
+      if (empty($result)) {//获取数据，若不存在则返回空
+          return null;
+      }
+      return $result;   //返回用户信息
     }
 
 
