@@ -36,6 +36,9 @@
 	href="app/icons/icon-144x144.png" />
 <link rel="apple-touch-icon-precomposed" sizes="180x180"
 	href="app/icons/icon-180x180.png">
+<link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/css/planeui.min.css" />
+<link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/css/user_manage/user_manager.css" />
+
 
 <!-- for Android 5 -->
 <meta name="theme-color" content="#0098DF" />
@@ -77,9 +80,6 @@
 <meta name="msapplication-tap-highlight" content="no" />
 
 <title>道具管理</title>
-
-<link rel="stylesheet" type="text/css"
-	href="{$Think.config.web_res_root}/css/planeui.min.css" />
 	 <script>
         	function getdata() {
 
@@ -119,109 +119,143 @@
 <body>
 	<!-- 代码写在这下面 -->
 	<div class="pui-grid">
-		<div class="pui-row" style="margin-bottom: 0">
-			<div class="pui-grid-xs-12">
-				<img src="{$Think.config.web_res_root}/image/header.jpg"
-					style="width: 100%; height: auto;" />
-			</div>
-		</div>
-		<div class="pui-row" style="margin: 0;">
-			<div class="pui-grid-md-2">
-					<div class="pui-btn-group-vertical pui-btn-gradient pui-btn-shadow ">
-							<div class="pui-btn-group ">
-									<a href="{:url('index/usermanage/user_manage')}" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow pui-btn-primary-active"><i class="fa fa-user fa-large"></i>用户管理</a>
-									<a href="{:url('manage/Problemmanage/problem_manage')}" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow"><i class="fa fa-file-o fa-large"></i>题目管理</a>
-									<a href="{:url('event/index/showevent')}" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow"><i class="fa fa-th fa-large"></i>事件管理</a>
-									<a href="{:url('item_manage/item/index')}" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow"><i class="fa fa-tint fa-large"></i>积分道具管理</a>
-							</div>
+				 <!-- header -->
+				 <div class="pui-row" style="padding-bottom: 0">
+					 <div class="pui-grid-xs-12">
+						 <div class="page-header">
+								 <div class="pui-layout pui-layout-fixed pui-layout-fixed-1200">
+										 <div class="pui-menubar pui-menubar-square pui-menubar-header-style pui-bg-none pui-unbordered">
+											 <div class="pui-menubar-aside">
+												 <h2 class="pui-margin-none pui-text-normal page-title" title="中国移动南方基地">
+													 <img src="{$Think.config.web_res_root}/image/CM.png" class="icon-CM" />
+																中国移动南方基地知识题库
+												 </h2>
+									 </div>
+									 <div class="pui-menubar-offside">
+											 <ul class="pui-menu pui-menu-inline pui-menu-simple pui-right">
+													 <li>
+															 <a href="#top">管理员</a>
+													 </li>
+													 <li>
+															 <a href="{:url('index/login/change_pwd')}" id="pwchange">密码修改</a>
+													 </li>
+													 <li>
+															 <a href="{:url('index/Login/logout')}">退出</a>
+													 </li>
+											 </ul>
+									 </div>
+							 </div>
+					 </div>
+			 </div>
+					 </div>
+				 </div>
+				 <!-- header -->
+				 <div class="pui-row" style="margin: 0;">
+					 <div class="pui-grid-xs-2" style="padding-left: 0;">
+					 <!-- 侧栏 -->
+						 <div class="SlideMenu" style="margin-top: 0;">
+						 <div class="pui-btn-group-vertical pui-btn-gradient pui-btn-shadow ">
+													 <div class="pui-btn-group ">
+															 <a href="{:url('index/usermanage/user_manage')}" ><button class="pui-btn-style  pui-btn pui-btn-primary pui-btn-large pui-text-shadow pui-btn-primary-active"><i class="fa fa-user fa-large"></i> 用户管理</button></a>
+															 <a href="{:url('manage/Problemmanage/problem_manage')}" ><button class="pui-btn-style  pui-btn pui-btn-primary pui-btn-large pui-text-shadow "><i class="fa fa-list-alt fa-large"></i> 题目管理</button></a>
+															 <a href="{:url('event/index/showevent')}"><button class="pui-btn-style  pui-btn pui-btn-primary pui-btn-large pui-text-shadow "><i class="fa fa-file-o fa-large"></i> 事件管理</button></a>
+															 <a href="{:url('item_manage/item/index')}" ><button class="pui-btn-style  pui-btn pui-btn-primary pui-btn-large pui-text-shadow "><i class="fa fa-th fa-large"></i> 道具管理</button></a>
+													 </div>
+											</div>
+									 </div>
+									 <!-- 侧栏 -->
+					 </div>
+					 <div class="pui-grid-xs-9">
+						 <table
+				 class="pui-table pui-table-bordered pui-table-text-center pui-table-thead-bg pui-table-interlaced-color box-shadow-bottom pui-table-gradient">
+				 <thead>
+					 <tr>
+						 <th>道具ID</th>
+						 <th>参照事件ID</th>
+						 <th>道具名</th>
+						 <th>道具描述</th>
+						 <th>兑换积分</th>
+						 <th>道具数量</th>
+						 <th>可兑换数量</th>
+						 <th>操作</th>
+					 </tr>
+				 </thead>
+				 <tbody>
+					 {volist name="arr" id="vo"}
+					 <tr id=t_{$vo.item_id}>
+						 <td class="item_id" >{$vo.item_id}</td>
+						 <td>{$vo.refer_event_id}</td>
+						 <td>{$vo.item_name}</td>
+						 <td>{$vo.item_description}</td>
+						 <td>{$vo.change_rule}</td>
+						 <td>{$vo.amount}</td>
+						 <td>{$vo.team_amount}</td>
+						 <td>
+							 <div style="width: 50%;float: left;">
+							     <input type="button" class="pui-btn pui-btn-primary pui-btn-small btn_change" value="修改">
+							 </div>
+							 <div style="width: 50%;float: left;">
+									 <input type="button" class="pui-btn pui-btn-error pui-btn-small btn_delete" value="删除">
+							 </div>
+            </td>
+						 <!--<td><a href="update?id={$vo.item_id}">修改</a><a href="delete?id={$vo.item_id}">删除</a></td>-->
+					 </tr>
+					 {/volist}
+				 </tbody>
+			 </table>
+			 <input type="button" class="pui-btn pui-btn-primary" id="btn_xzdj" value="新增道具" style="margin-bottom: 20px;">
+							 <div id="div_xzdj">
+							 <div class="pui-row">
+								 <div class="pui-grid-xs-3">输入道具名:</div>
+								 <div class="pui-grid-xs-6"><input type="text" name="item_name" id="item_name" value="" /></div>
+							 </div>
+							 <div class="pui-row">
+								 <div class="pui-grid-xs-3">输入描述:</div>
+								 <div class="pui-grid-xs-6"><input type="text" name="item_description" id="item_description" value="" /></div>
+							 </div>
+							 <div class="pui-row">
+								 <div class="pui-grid-xs-3">输入换取积分:</div>
+								 <div class="pui-grid-xs-6"><input type="number" name="change_rule" id="change_rule" value="" /></div>
+							 </div>
+							 <div class="pui-row">
+								 <div class="pui-grid-xs-3">输入总数量:</div>
+								 <div class="pui-grid-xs-6"><input type="number" name="amount" id="amount" value="" /></div>
+							 </div>
+							 <div class="pui-row">
+								 <div class="pui-grid-xs-3">输入每队换取数量:</div>
+								 <div class="pui-grid-xs-6"><input type="number" name="team_amount" id="team_amount" value="" /></div>
+							 </div>
+							 <input type="button" id="add_item_btn" class="pui-btn pui-btn-success pui-btn-small active" value="确定">
+							 <input type="button" class="pui-btn pui-btn-warning pui-btn-small active" id="btn_qx" value="取消">
+							 </div>
+							 <div id="div_xgdj" style="display: none;">
+							 <div class="pui-row">
+								 <div class="pui-grid-xs-3">输入道具名:</div>
+								 <div class="pui-grid-xs-6"><input type="text" name="item_name" id="item_name"  /></div>
+							 </div>
+							 <div class="pui-row">
+								 <div class="pui-grid-xs-3">输入描述:</div>
+								 <div class="pui-grid-xs-6"><input type="text" name="item_description" id="item_description" value="" /></div>
+							 </div>
+							 <div class="pui-row">
+								 <div class="pui-grid-xs-3">输入换取积分:</div>
+								 <div class="pui-grid-xs-6"><input type="number" name="change_rule" id="change_rule" value="" /></div>
+							 </div>
+							 <div class="pui-row">
+								 <div class="pui-grid-xs-3">输入总数量:</div>
+								 <div class="pui-grid-xs-6"><input type="number" name="amount" id="amount" value="" /></div>
+							 </div>
+							 <div class="pui-row">
+								 <div class="pui-grid-xs-3">输入每队换取数量:</div>
+								 <div class="pui-grid-xs-6"><input type="number" name="team_amount" id="team_amount" value="" /></div>
+							 </div>
+							 <input type="button" onclick="getdata(this.v)" class="pui-btn pui-btn-success pui-btn-small active" value="确定">
+							 <input type="hidden" id="g_id" >
+							 </div>
 
-					</div>
-			</div>
-			<div class="pui-grid-xs-8">
-				<table
-					class="pui-table pui-table-bordered pui-table-text-center pui-table-thead-bg pui-table-interlaced-color box-shadow-bottom pui-table-gradient">
-					<thead>
-						<tr>
-							<th>道具ID</th>
-							<th>参照事件ID</th>
-							<th>道具名</th>
-							<th>道具描述</th>
-							<th>兑换积分</th>
-							<th>道具数量</th>
-							<th>可兑换数量</th>
-							<th>操作</th>
-						</tr>
-					</thead>
-					<tbody>
-						{volist name="arr" id="vo"}
-						<tr id=t_{$vo.item_id}>
-							<td class="item_id" >{$vo.item_id}</td>
-							<td>{$vo.refer_event_id}</td>
-							<td>{$vo.item_name}</td>
-							<td>{$vo.item_description}</td>
-							<td>{$vo.change_rule}</td>
-							<td>{$vo.amount}</td>
-							<td>{$vo.team_amount}</td>
-							<td><button class="pui-btn pui-btn-primary pui-btn-small btn_change"  >修改</button>
-								  <button class="delete_btn"
-									class="pui-btn pui-btn-error pui-btn-small">删除</button></td>
-							<!--<td><a href="update?id={$vo.item_id}">修改</a><a href="delete?id={$vo.item_id}">删除</a></td>-->
-						</tr>
-						{/volist}
-					</tbody>
-				</table>
-				<input type="button" class="pui-btn pui-btn-primary" id="btn_xzdj" value="新增道具" style="margin-bottom: 20px;">
-            		<div id="div_xzdj">
-            		<div class="pui-row">
-            			<div class="pui-grid-xs-3">输入道具名:</div>
-            			<div class="pui-grid-xs-6"><input type="text" name="item_name" id="item_name" value="" /></div>
-            		</div>
-            		<div class="pui-row">
-            			<div class="pui-grid-xs-3">输入描述:</div>
-            			<div class="pui-grid-xs-6"><input type="text" name="item_description" id="item_description" value="" /></div>
-            		</div>
-            		<div class="pui-row">
-            			<div class="pui-grid-xs-3">输入换取积分:</div>
-            			<div class="pui-grid-xs-6"><input type="number" name="change_rule" id="change_rule" value="" /></div>
-            		</div>
-            		<div class="pui-row">
-            			<div class="pui-grid-xs-3">输入总数量:</div>
-            			<div class="pui-grid-xs-6"><input type="number" name="amount" id="amount" value="" /></div>
-            		</div>
-            		<div class="pui-row">
-            			<div class="pui-grid-xs-3">输入每队换取数量:</div>
-            			<div class="pui-grid-xs-6"><input type="number" name="team_amount" id="team_amount" value="" /></div>
-            		</div>
-            		<input type="button" id="add_item_btn" class="pui-btn pui-btn-success pui-btn-small active" value="确定">
-            		<input type="button" class="pui-btn pui-btn-warning pui-btn-small active" id="btn_qx" value="取消">
-            		</div>
-            		<div id="div_xgdj" style="display: none;">
-            		<div class="pui-row">
-            			<div class="pui-grid-xs-3">输入道具名:</div>
-            			<div class="pui-grid-xs-6"><input type="text" name="item_name" id="item_name"  /></div>
-            		</div>
-            		<div class="pui-row">
-            			<div class="pui-grid-xs-3">输入描述:</div>
-            			<div class="pui-grid-xs-6"><input type="text" name="item_description" id="item_description" value="" /></div>
-            		</div>
-            		<div class="pui-row">
-            			<div class="pui-grid-xs-3">输入换取积分:</div>
-            			<div class="pui-grid-xs-6"><input type="number" name="change_rule" id="change_rule" value="" /></div>
-            		</div>
-            		<div class="pui-row">
-            			<div class="pui-grid-xs-3">输入总数量:</div>
-            			<div class="pui-grid-xs-6"><input type="number" name="amount" id="amount" value="" /></div>
-            		</div>
-            		<div class="pui-row">
-            			<div class="pui-grid-xs-3">输入每队换取数量:</div>
-            			<div class="pui-grid-xs-6"><input type="number" name="team_amount" id="team_amount" value="" /></div>
-            		</div>
-            		<input type="button" onclick="getdata(this.v)" class="pui-btn pui-btn-success pui-btn-small active" value="确定">
-            		<input type="hidden" id="g_id" >
-            		</div>
-			</div>
-		</div>
-	</div>
+						 </div>
+					 </div>
+			 </div>
 	<!-- 代码写在这上面 -->
 	<script type="text/javascript"
 		src="{$Think.config.web_res_root}/js/jquery.min.js"></script>
@@ -238,7 +272,7 @@
 						$("#div_xzdj").hide();
 					});
 					$('.btn_change').bind($.clickOrTouch(), function(){
-						var id = $(this).parent().parent().find("td").eq(0).text();
+						var id = $(this).parent().parent().parent().find("td").eq(0).text();
 						var item_id = "t_"+id;
 				        var item_name=$('#'+item_id).find("td").eq(2).text();
 				        var item_description = $('#'+item_id).find("td").eq(3).text();
@@ -290,9 +324,9 @@
 							}
 						});
 					});
-					$(".delete_btn").click(
+					$(".btn_delete").click(
 							function() {
-								var item_id = $(this).parent().parent().find("td").eq(0).html();
+								var item_id = $(this).parent().parent().parent().find("td").eq(0).html();
 								var post_data = {item_id : item_id};
 								$.ajax({
 									url : "{:url('item/delete')}",

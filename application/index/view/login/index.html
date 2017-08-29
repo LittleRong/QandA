@@ -12,19 +12,19 @@
 
     <link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/css/planeui.css" />
     <link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/css/login/login.css" />
+
+    <style>
+            img {
+                border-radius: 8px;
+            }
+            </style>
 	</head>
-<body>
-      <!--[if lte IE 9]>
-      <div class="pui-layout pui-browsehappy">
-          <a href="javascript:;" class="pui-close" onclick="document.body.removeChild(this.parentNode);"></a>
-          <p>您正在使用 <strong class="pui-text-yellow pui-text-xl">过时</strong> 的非现代浏览器，<strong class="pui-text-success pui-text-xl">91.23%</strong> 的人选择 <a href="http://browsehappy.com/" target="_blank" class="pui-text-green-400 pui-text-xl"><strong>升级浏览器</strong></a>，获得了更好、更安全的浏览体验！</p>
-      </div>
-      <![endif]-->
-      <a name="top"></a>
-    <div class="pui-layout pui-flexbox pui-flex-column login-layout">
+<body  style="background:url('{$Think.config.web_res_root}image/loginbg.jpg')">
+    <a name="top"></a>
+    <div class="pui-layout pui-flexbox pui-flex-column login-layout ">
         <div class="pui-layout pui-flex login-main">
-            <div class="pui-layout pui-layout-fixed pui-layout-fixed-1200 login-main-con">
-                <div class="login-panel">
+            <div class="pui-layout pui-layout-fixed pui-layout-fixed-1200 login-main-con position">
+                <div class="login-panel ">
                     <form class="pui-form login-form" action="dashboard.html" method="post">
                         <div class="pui-form-group">
                             <h1 class="pui-text-white pui-text-normal">
@@ -45,13 +45,18 @@
                         </div>
                         <div class="pui-form-group">
                             <input type="submit" id="login_btn" name="submit" class="pui-btn pui-btn-default pui-bg-purple-us pui-unbordered" value="登录" />
-                            <input type="submit" name="submit" class="pui-btn pui-btn-default pui-bg-purple-us pui-unbordered" value="忘记密码" />
+                            <!-- <input type="submit" name="submit" class="pui-btn pui-btn-default pui-bg-purple-us pui-unbordered" value="忘记密码" /> -->
                         </div>
                     </form>
+                    <!-- <h1>hello</h1>
+
+                        本地图片<img src="{$Think.config.web_res_root}/image/login_bg.jpg" /><br>
+                        网络图片<img src="http://i.gtimg.cn/music/photo/mid_album_300/w/x/000mR8hY0Kmwwx.jpg" width="160" class="pui-img-radius box-shadow" /> -->
                 </div>
             </div>
         </div>
     </div>
+
 
       <!--[if (gte IE 9) | !(IE)]><!-->
   <script type="text/javascript" src="{$Think.config.web_res_root}/js/jquery-2.1.1.min.js"></script>
@@ -80,7 +85,7 @@ $(document).ready(function(){
         }else{
             var post_data = {username:username,password:password};
             $.ajax({
-                url:"{:url('login/check')}",
+                url:"{:url('index/login/check')}",
                 dataType: "json",
                 type: 'POST',
                 data: post_data,
@@ -89,11 +94,11 @@ $(document).ready(function(){
                     alert("跳转成功");
                     json_data=eval('('+data+')');
                     if(json_data['result']=="管理员"){
-                        window.location.href="{:url('usermanage/user_manage')}";
+                        window.location.href="{:url('index/usermanage/user_manage')}";
                     }else if(json_data['result']=="普通用户"){
-                        window.location.href="{:url('userindex/user_index')}";
+                        window.location.href="{:url('index/userindex/user_index')}";
                     }else if(json_data['result']=="已登陆"){
-                        window.location.href="{:url('userindex/user_index')}";
+                        window.location.href="{:url('index/userindex/user_index')}";
                     }else{
                         alert(json_data['result']);
                         //登录失败操作......

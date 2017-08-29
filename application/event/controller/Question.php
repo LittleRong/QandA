@@ -10,8 +10,12 @@ use think\Request;
 use think\Controller;
 use think\Session;
 
+
+
 class Question extends Controller
 {
+    //定义自增ID开始结束的位置
+    protected $problem_num;
 
     //题目导入
     public function problem_insert()
@@ -49,6 +53,8 @@ class Question extends Controller
     //excel导入题目到数据库中
     public function excelreader($filename)
     {
+       //返回第一个自增ID标志
+       $problem_num = 0;
        $filename = __DIR__.'/../../../public/uploads/problem/'.$filename;
        $extension = strtolower( pathinfo($filename, PATHINFO_EXTENSION) );
 
@@ -68,37 +74,44 @@ class Question extends Controller
              $problem_type = $v[1];
              $question = $v[2];
              $answer = $v[3];
-
-             $option = array();     //定义选项为一个数组
-             $count_num = count($v);
-             $key = 97;             //key值的为ascii的小写a开始
-             for($i=4;$i<$count_num;$i++)
+             if($question != null)
              {
-                $choice = array(chr($key) => $v[$i]);
-                if(!empty($v[$i]))
-                {
-                  $option = array_merge($option,$choice);
-                }
-                $key++;
-             }
-             if((int)$problem_type == 2)
-             {
-                $answer_num = strlen($answer);
-                $i = 0;
-                $answer_temp = array();
-                for($i=0;$i<$answer_num;$i++)
-                {
-                  array_push($answer_temp,$answer{$i});
-                }
-                $answer = $answer_temp;
+                 $option = array();     //定义选项为一个数组
+                 $count_num = count($v);
+                 $key = 97;             //key值的为ascii的小写a开始
+                 for($i=4;$i<$count_num;$i++)
+                 {
+                    $choice = array(chr($key) => $v[$i]);
+                    if(!empty($v[$i]))
+                    {
+                      $option = array_merge($option,$choice);
+                    }
+                    $key++;
+                 }
+                 if((int)$problem_type == 2)
+                 {
+                    $answer_num = strlen($answer);
+                    $i = 0;
+                    $answer_temp = array();
+                    for($i=0;$i<$answer_num;$i++)
+                    {
+                      array_push($answer_temp,$answer{$i});
+                    }
+                    $answer = $answer_temp;
 
-             }
-             $problem_content = json_encode(array('problem' => $question,'option'=>$option,'answer'=>$answer ));
-             $model = new ProblemModel();
-             $model->problem_insert($problem_content,$problem_class,(int)$problem_type);
-            //  dump($problem_content);
+                 }
+                 $problem_content = json_encode(array('problem' => $question,'option'=>$option,'answer'=>$answer ));
+                 $model = new ProblemModel();
+
+                 //获取导入的第一个题目的ID
+                 $model->problem_insert($problem_content,$problem_class,(int)$problem_type);
+                 //获取导入数据数量
+                 $this->problem_num++;
+                //  dump($problem_content);
+              }
         }
         // echo "Done";
+
     }
 
     //题目配置
@@ -106,29 +119,32 @@ class Question extends Controller
     {
 
       $model = new ProblemModel();
-      $result = $model->problem_check();
+      // $result = $model->problem_check();
+      $result = $model->problem_checkByNum($this->problem_num);
       // dump($result);
-      $all = array(array());
-      $num = count($result);
-
-      for($i=0;$i<$num;$i++)
+      if($result!=null)
       {
-        $getProblem = json_decode($result[$i],true);
-        $problem = json_decode($getProblem['problem_content'],true);
-        // $option = $problem['option'];
-        unset($getProblem['problem_content']);
-        // unset($problem['option']);
-        $merge_item = array_merge($getProblem,$problem);
-        $all[$i] = $merge_item;
+          $all = array(array());
+          $num = count($result);
+          for($i=0;$i<$num;$i++)
+          {
+            $getProblem = $result[$i];
+            $problem = json_decode($getProblem['problem_content'],true);
+            // $option = $problem['option'];
+            unset($getProblem['problem_content']);
+            // unset($problem['option']);
+            $merge_item = array_merge($getProblem,$problem);
+            $all[$i] = $merge_item;
+          }
+          // dump($all);
+          if(empty($all[0]))
+          {
+            $this->assign('data',null);
+          }
+          else
+            $this->assign('data',$all);
+          return $this->fetch("problem_manage");
       }
-      // dump($all);
-      if(empty($all[0]))
-      {
-        $this->assign('data',null);
-      }
-      else
-        $this->assign('data',$all);
-      return $this->fetch("problem_manage");
   }
 
   public function event_problem_relevance($problemId)
@@ -148,7 +164,6 @@ class Question extends Controller
        $model->event_problem_insert((int)$problemId[$i],(int)$event_id);
      }
     //  $model->event_problem_inserts($problemId,(int)$event_id);
-     Session::delete('myevent_id');
      $data = array('result'=>'录入成功!');
      return json_encode($data);
 

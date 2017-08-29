@@ -52,7 +52,7 @@ class AnswerController extends Controller {
 		$this -> refer_team_id = 1; //参赛人队伍的id
 
 		$allSubmit=$_POST;
-		LogTool::info('-------------answer post------------',$_POST);
+		LogTool::record($_POST);
 		$allAnswer=ParticipantModel::getWaitedAnswer($this -> refer_participant_id);//预存在participant表中waitedAnswer的问题id及答案
 		if(count($allAnswer)<=0) {
 			LogTool::record('没有找到参赛者，或参赛者中没有预存答案');
@@ -63,26 +63,19 @@ class AnswerController extends Controller {
 		}
 		LogTool::record($allSubmit);
 		//***********单选*************//
-		try{
+
 		$singleAnswer = Logtool :: object2array($allAnswer['single']);
 		$singleSubmit=$allSubmit['single'];
 		$this->dealSingle($singleSubmit, $singleAnswer);
-		}catch(\Exception $e){
-				LogTool::record('------answerpost--singleerror-------');
-		}
 		//***********多选***************//
-		try{
 		$multiAnswer=Logtool :: object2array($allAnswer['multi']);
 		$multiSubmit=$allSubmit['multi'];
 		$this->dealMulti($multiSubmit, $multiAnswer);
-		}catch(\Exception $e){
-				LogTool::record('------answerpost--multiple eerror-------');
-		}
+
 		//***********************************************
-		//ParticipantHaveAnswerdModel::savePantHaveAnswerds($this->pantHaveAnswerArr);
+		ParticipantHaveAnswerdModel::savePantHaveAnswerds($this->pantHaveAnswerArr);
 		LogTool::record($_POST);
 		$data=['user_credit'=>$this->userMark];
-		//$data=['user_credit'=>$this->userMark,'team_credit'=>100,'team_mate'=>[['name'=>'kk','credit'=>20],['name'=>'kk','credit'=>20]];
 		Return json_encode($data);
 	}
 	private function dealSingle($singleSubmit, $singleAnswer) {
@@ -95,7 +88,7 @@ class AnswerController extends Controller {
 			$submitId = $submit['problem_id'];
 			$submitAnswer = $submit['q_id'];
 			$pantHaveAnswer = new ParticipantHaveAnswerdModel($this -> refer_participant_id, $this -> refer_team_id, $submit['problem_id'], $submitAnswer);
-			$ifRight = 0; 
+      LogTool::info('----------------$singleAnswer-------',$singleAnswer);
 			if ($submitAnswer == $singleAnswer[$submitId]) { // 回答正确
 				$pantHaveAnswer -> setTrueOrFalse(1); //设置为回答正确
 				$this -> userMark = $this -> userMark + $singleCredit; //增加积分
