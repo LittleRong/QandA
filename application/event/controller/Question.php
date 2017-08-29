@@ -73,7 +73,7 @@ class Question extends ManageController
              $problem_class = $v[0];
              $problem_type = $v[1];
              $question = $v[2];
-             $answer = $v[3];
+             $answer = strtolower($v[3]);
              if($question != null)
              {
                  $option = array();     //定义选项为一个数组
