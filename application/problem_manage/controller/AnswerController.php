@@ -34,7 +34,7 @@ use think\Db;
 class AnswerController extends Controller {
 	var $refer_participant_id;
 	var $refer_team_id;
-
+	var $pariticipant;
 	var $creditModel;
 	//'{"fill_score": 4, "team_score": 10, "judge_score": 4, "person_score": 10,
 	//"single_score": 4, "team_score_up": 1000, "multiple_score": 4, "person_score_up": 100}'
@@ -56,12 +56,17 @@ class AnswerController extends Controller {
 
 		LogTool::info('-------------------answer-post-信息--------------------',$_POST);
 		// 前端提交json {'single':[{'problem_id':xx,'q_id':xx},{'problem_id':xx,'q_id':xx},......],'multi':[{'problem_id':xx,'q_id':['x','x']},{'problem_id':xx,'q_id':['x','x','x']},......]}  q_id为用户选择的选项的id
-		$this -> refer_participant_id = 6; //参赛人id
-		$this -> refer_team_id = 1; //参赛人队伍的id
-		$this->creditModel=new CreditModel(46,6);
 		$allSubmit=$_POST;
-		//LogTool::record($_POST);
+		$this->pariticipant=$_POST['participant'];
+		$this -> refer_participant_id = $this->pariticipant['participant_id']; //参赛人id
+		$this -> refer_team_id = $this->pariticipant['team_id']; //参赛人队伍的id
+		
+		$this->creditModel=new CreditModel($this->pariticipant['refer_event_id'],$this->pariticipant['participant_id']);
+		
+
+		
 		$allAnswer=ParticipantModel::getWaitedAnswer($this -> refer_participant_id);//预存在participant表中waitedAnswer的问题id及答案
+		//LogTool::info('---------------$allAnswer-----------------',$allAnswer);
 		if(count($allAnswer)<=0) {
 			LogTool::record('没有找到参赛者，或参赛者中没有预存答案');
 		}else{
@@ -71,14 +76,25 @@ class AnswerController extends Controller {
 		}
 
 		//***********单选*************//
+		try{
+			$singleAnswer = Logtool :: object2array($allAnswer['single']);
+			$singleSubmit=$allSubmit['single'];
+			$this->dealSingle($singleSubmit, $singleAnswer);
+		}catch(\Exception $e){
+			LogTool::record('没有dan选题');
 
-		$singleAnswer = Logtool :: object2array($allAnswer['single']);
-		$singleSubmit=$allSubmit['single'];
-		$this->dealSingle($singleSubmit, $singleAnswer);
+		}	
+		
 		//***********多选***************//
-		$multiAnswer=Logtool :: object2array($allAnswer['multi']);
-		$multiSubmit=$allSubmit['multi'];
-		$this->dealMulti($multiSubmit, $multiAnswer);
+		
+		try{
+			$multiAnswer=Logtool :: object2array($allAnswer['multi']);
+			$multiSubmit=$allSubmit['multi'];
+		    $this->dealMulti($multiSubmit, $multiAnswer);
+		}catch(\Exception $e){
+			LogTool::record('没有多选题');
+
+		}		
 
 		//***********************************************
 		//ParticipantHaveAnswerdModel::savePartHaveAnswerds($this->pantHaveAnswerArr);
@@ -95,7 +111,8 @@ class AnswerController extends Controller {
 			$submitAnswer = $submit['q_id'];
 			$pantHaveAnswer = new ParticipantHaveAnswerdModel();
 			$pantHaveAnswer->setPro($this -> refer_participant_id, $this -> refer_team_id, $submit['problem_id'], $submitAnswer);
-
+			LogTool::info('-----------$singleAnswer----------',$singleAnswer);
+			LogTool::info('-----------$submitId----------',$submitId);
 			if ($submitAnswer == $singleAnswer[$submitId]||$submitAnswer==strtolower($singleAnswer[$submitId])) { // 回答正确
 				$pantHaveAnswer -> setTrueOrFalse(1); //设置为回答正确
 				$this->creditModel->dealAnswer(1,'single');

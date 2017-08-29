@@ -10,6 +10,7 @@ use app\problem_manage\model\EventModel;
 use app\problem_manage\tool\LogTool;
 use think\Db;
 use think\Session;
+use think\Request;
 class ProblemController extends Controller{
 	var $partModel ;
 	var $part;//用户所属的参赛者
@@ -69,7 +70,8 @@ class ProblemController extends Controller{
 		$cantProblem=$this-> pm ->getCantSelectProblem($this->part);
 		//$questNum=['single'=>3,'multiple'=>3,'judge'=>3,'fill'=>3];
 		//$questNum=$this->em->getQuestNum($this->part['refer_event_id']);
-		$questNum=$this->event['event_num'];
+		$questNum=json_decode($this->event['event_num'],true);
+		LogTool::info('--------questnum--------------',$questNum);
 		$pum_answer = new ProblemUserModel();
 		$pum_problem = new ProblemUserModel();
 		//$waitedQ = $this-> pm -> getUserWaitedQ($this->part, $cantProblem,$eventProblem);//得到用户需要答的题目
@@ -168,7 +170,7 @@ class ProblemController extends Controller{
 	public function getUserProblem() {
 		//$user_id = 1;
 		$user_id = Session::get('user_id');
-		$refer_event_id = 46;
+		$refer_event_id = Request::instance()->param("event_id");
 		$this->part = $this->partModel -> getParticipant($user_id, $refer_event_id); //array ('participant_id' => 1, 'refer_event_id' => 1, 'user_id' =>
 		$this->event=$this->em->getEvent($this->part['refer_event_id']);
 		$user= $this->partModel->getPartname($user_id);
@@ -198,6 +200,7 @@ class ProblemController extends Controller{
 		$this->assign('data',$res);
 		$this->assign('name',$user_name);
 		$this->assign('time',$this->event['answer_time']);
+		$this->assign('participant',json_encode($this->part));
 		return $this->fetch('user_problem/user_problem');
 	}
 

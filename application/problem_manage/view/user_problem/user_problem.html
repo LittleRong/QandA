@@ -141,8 +141,8 @@
       if(surplusTimes<=0){ 
         console.log('时间到！'); 
         clearInterval(countdowns);
-        alert("时间到，将自动提交答卷");
-        $('#submit').click();
+        //alert("时间到，将自动提交答卷");
+        //$('#submit').click();
 
       } 
     },1000); 
@@ -150,6 +150,7 @@
   
 </script> 
 <script type="text/javascript">
+
 	$(function(){
 		var single_length=$("#single_panel .timu_item").length;
 		$("#single_pr").text(single_length);
@@ -250,6 +251,7 @@
 			user_answer['multi']=	multi_items;
 			user_answer['judge']=	judge_items;
 			user_answer['fill']=	fill_items;
+			user_answer['participant']={$participant};
 			$.ajax({  
                 type: "POST",  
                 url: "{:url('/answer/SubmitAnswer')}",  
