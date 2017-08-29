@@ -1,0 +1,2534 @@
+---------------------------------------------------------------
+[ 2017-08-24T09:53:27+08:00 ] ::1 ::1 GET /QandA/public/index.php/index/login/index
+[ info ] localhost/QandA/public/index.php/index/login/index [运行时间：0.072587s][吞吐率：13.78req/s] [内存消耗：1,496.44kb] [文件加载：36]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Login->index[ G:\xampp\htdocs\QandA\application\index\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] G:\xampp\htdocs\QandA\public/../application/index\view\login\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T09:53:28+08:00 ] ::1 ::1 GET /QandA/public//css/images/bg5.jpg
+[ info ] localhost/QandA/public//css/images/bg5.jpg [运行时间：0.043198s][吞吐率：23.15req/s] [内存消耗：1,027.13kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'css',
+    1 => 'images',
+    2 => 'bg5.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public//css/login/login.css',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=3vq4ba7c2u6o1lqhtu45a59i95',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T09:53:28+08:00 ] ::1 ::1 GET /QandA/public//fonts/fontawesome-webfont.woff2?v=4.3.0
+[ info ] localhost/QandA/public//fonts/fontawesome-webfont.woff2?v=4.3.0 [运行时间：0.040741s][吞吐率：24.55req/s] [内存消耗：1,027.65kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'fonts',
+    1 => 'fontawesome-webfont.woff2',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'origin' => 'http://localhost',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/QandA/public//css/planeui.css',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=3vq4ba7c2u6o1lqhtu45a59i95',
+)
+[ info ] [ PARAM ] array (
+  'v' => '4.3.0',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T09:53:28+08:00 ] ::1 ::1 GET /QandA/public//fonts/fontawesome-webfont.woff?v=4.3.0
+[ info ] localhost/QandA/public//fonts/fontawesome-webfont.woff?v=4.3.0 [运行时间：0.046944s][吞吐率：21.30req/s] [内存消耗：1,027.66kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'fonts',
+    1 => 'fontawesome-webfont.woff',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'origin' => 'http://localhost',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/QandA/public//css/planeui.css',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=3vq4ba7c2u6o1lqhtu45a59i95',
+)
+[ info ] [ PARAM ] array (
+  'v' => '4.3.0',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T09:53:28+08:00 ] ::1 ::1 GET /QandA/public//fonts/fontawesome-webfont.ttf?v=4.3.0
+[ info ] localhost/QandA/public//fonts/fontawesome-webfont.ttf?v=4.3.0 [运行时间：0.037570s][吞吐率：26.62req/s] [内存消耗：1,027.62kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'fonts',
+    1 => 'fontawesome-webfont.ttf',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'origin' => 'http://localhost',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/QandA/public//css/planeui.css',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=3vq4ba7c2u6o1lqhtu45a59i95',
+)
+[ info ] [ PARAM ] array (
+  'v' => '4.3.0',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T09:53:37+08:00 ] ::1 ::1 POST /QandA/public/index.php/index/login/check.html
+[ info ] localhost/QandA/public/index.php/index/login/check.html [运行时间：2.124917s][吞吐率：0.47req/s] [内存消耗：2,353.39kb] [文件加载：42]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '25',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/QandA/public/index.php/index/login/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=3vq4ba7c2u6o1lqhtu45a59i95',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'gan',
+  'password' => 'gan',
+)
+[ info ] [ RUN ] app\index\controller\Login->check[ G:\xampp\htdocs\QandA\application\index\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.925852s ] mysql:dbname=question;host=120.77.144.75;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.073835s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `login_name` = 'gan'  AND `pwd` = 'f1253bc7b6c0b1d62eb9b97cfebf0f63' LIMIT 1 [ RunTime:0.062946s ]
+---------------------------------------------------------------
+[ 2017-08-24T09:53:38+08:00 ] ::1 ::1 GET /QandA/public/index.php/index/usermanage/user_manage.html
+[ info ] localhost/QandA/public/index.php/index/usermanage/user_manage.html [运行时间：0.042656s][吞吐率：23.44req/s] [内存消耗：1,028.24kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'usermanage',
+    2 => 'user_manage',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/index/login/index',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=3vq4ba7c2u6o1lqhtu45a59i95',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T09:56:30+08:00 ] ::1 ::1 GET /QandA/public/index.php/index/userindex/user_index.html
+[ info ] localhost/QandA/public/index.php/index/userindex/user_index.html [运行时间：2.278389s][吞吐率：0.44req/s] [内存消耗：2,562.02kb] [文件加载：45]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'userindex',
+    2 => 'user_index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=3vq4ba7c2u6o1lqhtu45a59i95',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Userindex->user_index[ G:\xampp\htdocs\QandA\application\index\controller\Userindex.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\QandA\public/../application/index\view\usermanage\user_manage.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.932965s ] mysql:dbname=question;host=120.77.144.75;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.105584s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.168084s ]
+---------------------------------------------------------------
+[ 2017-08-24T09:56:30+08:00 ] ::1 ::1 GET /QandA/public//fonts/fontawesome-webfont.woff2?v=4.3.0
+[ info ] localhost/QandA/public//fonts/fontawesome-webfont.woff2?v=4.3.0 [运行时间：0.040697s][吞吐率：24.57req/s] [内存消耗：1,027.68kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'fonts',
+    1 => 'fontawesome-webfont.woff2',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'origin' => 'http://localhost',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/QandA/public//css/planeui.css',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=3vq4ba7c2u6o1lqhtu45a59i95',
+)
+[ info ] [ PARAM ] array (
+  'v' => '4.3.0',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T09:56:30+08:00 ] ::1 ::1 GET /QandA/public//fonts/fontawesome-webfont.woff?v=4.3.0
+[ info ] localhost/QandA/public//fonts/fontawesome-webfont.woff?v=4.3.0 [运行时间：0.050498s][吞吐率：19.80req/s] [内存消耗：1,027.59kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'fonts',
+    1 => 'fontawesome-webfont.woff',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'origin' => 'http://localhost',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/QandA/public//css/planeui.css',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=3vq4ba7c2u6o1lqhtu45a59i95',
+)
+[ info ] [ PARAM ] array (
+  'v' => '4.3.0',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T09:56:30+08:00 ] ::1 ::1 GET /QandA/public/index.php/index/usermanage/show.html
+[ info ] localhost/QandA/public/index.php/index/usermanage/show.html [运行时间：0.034560s][吞吐率：28.94req/s] [内存消耗：1,028.14kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'usermanage',
+    2 => 'show',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'referer' => 'http://localhost/QandA/public/index.php/index/userindex/user_index.html',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=3vq4ba7c2u6o1lqhtu45a59i95',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T09:56:35+08:00 ] ::1 ::1 GET /QandA/public//fonts/fontawesome-webfont.ttf?v=4.3.0
+[ info ] localhost/QandA/public//fonts/fontawesome-webfont.ttf?v=4.3.0 [运行时间：0.050826s][吞吐率：19.68req/s] [内存消耗：1,027.66kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'fonts',
+    1 => 'fontawesome-webfont.ttf',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'origin' => 'http://localhost',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/QandA/public//css/planeui.css',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=3vq4ba7c2u6o1lqhtu45a59i95',
+)
+[ info ] [ PARAM ] array (
+  'v' => '4.3.0',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T09:56:43+08:00 ] ::1 ::1 GET /QandA/public/index.php/index/login/index
+[ info ] localhost/QandA/public/index.php/index/login/index [运行时间：0.366181s][吞吐率：2.73req/s] [内存消耗：2,406.75kb] [文件加载：43]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=3vq4ba7c2u6o1lqhtu45a59i95',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Login->index[ G:\xampp\htdocs\QandA\application\index\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\QandA\public/../application/index\view\usermanage\user_manage.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.166315s ] mysql:dbname=question;host=120.77.144.75;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.067888s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.061167s ]
+---------------------------------------------------------------
+[ 2017-08-24T09:56:43+08:00 ] ::1 ::1 GET /QandA/public//fonts/fontawesome-webfont.woff2?v=4.3.0
+[ info ] localhost/QandA/public//fonts/fontawesome-webfont.woff2?v=4.3.0 [运行时间：0.041839s][吞吐率：23.90req/s] [内存消耗：1,027.64kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'fonts',
+    1 => 'fontawesome-webfont.woff2',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'origin' => 'http://localhost',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/QandA/public//css/planeui.css',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=3vq4ba7c2u6o1lqhtu45a59i95',
+)
+[ info ] [ PARAM ] array (
+  'v' => '4.3.0',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T09:56:43+08:00 ] ::1 ::1 GET /QandA/public/index.php/index/usermanage/show.html
+[ info ] localhost/QandA/public/index.php/index/usermanage/show.html [运行时间：0.030302s][吞吐率：33.00req/s] [内存消耗：1,028.16kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'usermanage',
+    2 => 'show',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'referer' => 'http://localhost/QandA/public/index.php/index/login/index',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=3vq4ba7c2u6o1lqhtu45a59i95',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T09:56:45+08:00 ] ::1 ::1 GET /QandA/public//fonts/fontawesome-webfont.woff?v=4.3.0
+[ info ] localhost/QandA/public//fonts/fontawesome-webfont.woff?v=4.3.0 [运行时间：0.059660s][吞吐率：16.76req/s] [内存消耗：1,027.66kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'fonts',
+    1 => 'fontawesome-webfont.woff',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'origin' => 'http://localhost',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/QandA/public//css/planeui.css',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=3vq4ba7c2u6o1lqhtu45a59i95',
+)
+[ info ] [ PARAM ] array (
+  'v' => '4.3.0',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T09:56:45+08:00 ] ::1 ::1 GET /QandA/public//fonts/fontawesome-webfont.ttf?v=4.3.0
+[ info ] localhost/QandA/public//fonts/fontawesome-webfont.ttf?v=4.3.0 [运行时间：0.054989s][吞吐率：18.19req/s] [内存消耗：1,027.70kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'fonts',
+    1 => 'fontawesome-webfont.ttf',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'origin' => 'http://localhost',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/QandA/public//css/planeui.css',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=3vq4ba7c2u6o1lqhtu45a59i95',
+)
+[ info ] [ PARAM ] array (
+  'v' => '4.3.0',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T09:56:48+08:00 ] ::1 ::1 GET /QandA/public/index.php/index/userindex/user_index.html
+[ info ] localhost/QandA/public/index.php/index/userindex/user_index.html [运行时间：0.330480s][吞吐率：3.03req/s] [内存消耗：2,397.95kb] [文件加载：43]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'userindex',
+    2 => 'user_index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=3vq4ba7c2u6o1lqhtu45a59i95',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Userindex->user_index[ G:\xampp\htdocs\QandA\application\index\controller\Userindex.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\QandA\public/../application/index\view\usermanage\user_manage.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.120115s ] mysql:dbname=question;host=120.77.144.75;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.070546s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.071132s ]
+---------------------------------------------------------------
+[ 2017-08-24T09:56:51+08:00 ] ::1 ::1 GET /QandA/public//fonts/fontawesome-webfont.ttf?v=4.3.0
+[ info ] localhost/QandA/public//fonts/fontawesome-webfont.ttf?v=4.3.0 [运行时间：0.057833s][吞吐率：17.29req/s] [内存消耗：1,027.62kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'fonts',
+    1 => 'fontawesome-webfont.ttf',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'origin' => 'http://localhost',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/QandA/public//css/planeui.css',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=3vq4ba7c2u6o1lqhtu45a59i95',
+)
+[ info ] [ PARAM ] array (
+  'v' => '4.3.0',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T09:57:14+08:00 ] ::1 ::1 GET /QandA/public/index.php/index/userindex/user_index.html
+[ info ] localhost/QandA/public/index.php/index/userindex/user_index.html [运行时间：0.047416s][吞吐率：21.09req/s] [内存消耗：1,339.34kb] [文件加载：34]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'userindex',
+    2 => 'user_index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Userindex->user_index[ G:\xampp\htdocs\QandA\application\index\controller\Userindex.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] G:\xampp\htdocs\QandA\public/../application/index\view\login\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T09:57:14+08:00 ] ::1 ::1 GET /QandA/public//css/images/bg5.jpg
+[ info ] localhost/QandA/public//css/images/bg5.jpg [运行时间：0.046084s][吞吐率：21.70req/s] [内存消耗：1,027.13kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'css',
+    1 => 'images',
+    2 => 'bg5.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public//css/login/login.css',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T09:57:14+08:00 ] ::1 ::1 GET /QandA/public//fonts/fontawesome-webfont.woff2?v=4.3.0
+[ info ] localhost/QandA/public//fonts/fontawesome-webfont.woff2?v=4.3.0 [运行时间：0.050003s][吞吐率：20.00req/s] [内存消耗：1,027.61kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'fonts',
+    1 => 'fontawesome-webfont.woff2',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'origin' => 'http://localhost',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/QandA/public//css/planeui.css',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'v' => '4.3.0',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T09:57:14+08:00 ] ::1 ::1 GET /QandA/public//fonts/fontawesome-webfont.woff?v=4.3.0
+[ info ] localhost/QandA/public//fonts/fontawesome-webfont.woff?v=4.3.0 [运行时间：0.052251s][吞吐率：19.14req/s] [内存消耗：1,027.66kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'fonts',
+    1 => 'fontawesome-webfont.woff',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'origin' => 'http://localhost',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/QandA/public//css/planeui.css',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'v' => '4.3.0',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T09:57:15+08:00 ] ::1 ::1 GET /QandA/public//fonts/fontawesome-webfont.ttf?v=4.3.0
+[ info ] localhost/QandA/public//fonts/fontawesome-webfont.ttf?v=4.3.0 [运行时间：0.073920s][吞吐率：13.53req/s] [内存消耗：1,027.66kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'fonts',
+    1 => 'fontawesome-webfont.ttf',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'origin' => 'http://localhost',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/QandA/public//css/planeui.css',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'v' => '4.3.0',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T09:57:20+08:00 ] ::1 ::1 POST /QandA/public/index.php/index/login/check.html
+[ info ] localhost/QandA/public/index.php/index/login/check.html [运行时间：0.544506s][吞吐率：1.84req/s] [内存消耗：2,353.41kb] [文件加载：42]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '27',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/QandA/public/index.php/index/userindex/user_index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'test',
+  'password' => 'test',
+)
+[ info ] [ RUN ] app\index\controller\Login->check[ G:\xampp\htdocs\QandA\application\index\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.144549s ] mysql:dbname=question;host=120.77.144.75;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.183065s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `login_name` = 'test'  AND `pwd` = '098f6bcd4621d373cade4e832627b4f6' LIMIT 1 [ RunTime:0.153076s ]
+---------------------------------------------------------------
+[ 2017-08-24T09:57:21+08:00 ] ::1 ::1 GET /QandA/public/index.php/index/userindex/user_index.html
+[ info ] localhost/QandA/public/index.php/index/userindex/user_index.html [运行时间：0.669202s][吞吐率：1.49req/s] [内存消耗：2,603.67kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'userindex',
+    2 => 'user_index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/index/userindex/user_index.html',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Userindex->user_index[ G:\xampp\htdocs\QandA\application\index\controller\Userindex.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\QandA\public/../application/index\view\userindex\user_index.html [ array (
+  0 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.152614s ] mysql:dbname=question;host=120.77.144.75;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.075532s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.051540s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.104132s ]
+[ sql ] [ SQL ] select event_id,event_title,event_description,participant_num,event_num,event_time
+      from event, participant
+      where participant.refer_event_id=event.event_id
+      and participant.user_id=1 [ RunTime:0.094425s ]
+[ sql ] [ SQL ] select item_name
+            from item
+            where item.refer_event_id=34 [ RunTime:0.102513s ]
+---------------------------------------------------------------
+[ 2017-08-24T09:57:21+08:00 ] ::1 ::1 GET /QandA/public/index.php/index/userindex/img/logo.png
+[ info ] localhost/QandA/public/index.php/index/userindex/img/logo.png [运行时间：0.053133s][吞吐率：18.82req/s] [内存消耗：1,310.16kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'userindex',
+    2 => 'img',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/index/userindex/user_index.html',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T13:33:50+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.034545s][吞吐率：28.95req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T13:33:50+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/favicon.png
+[ info ] localhost/QandA/public/index.php/problem/favicon.png [运行时间：0.026610s][吞吐率：37.58req/s] [内存消耗：1,328.89kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getfavicon.png',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'favicon.png',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T13:33:59+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.035132s][吞吐率：28.46req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T13:36:05+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.035098s][吞吐率：28.49req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T13:36:44+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.031344s][吞吐率：31.90req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T13:37:42+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.030939s][吞吐率：32.32req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T13:38:11+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.031827s][吞吐率：31.42req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T13:38:38+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.033107s][吞吐率：30.21req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T13:42:49+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.040991s][吞吐率：24.40req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T13:46:39+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.041898s][吞吐率：23.87req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T13:58:56+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.034544s][吞吐率：28.95req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T14:02:07+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.041512s][吞吐率：24.09req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T14:04:27+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.037113s][吞吐率：26.94req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T14:13:22+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.038329s][吞吐率：26.09req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T14:13:32+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.042299s][吞吐率：23.64req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T14:13:48+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.036695s][吞吐率：27.25req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T14:14:24+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.037720s][吞吐率：26.51req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T14:52:01+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/UserProblem
+[ info ] localhost/QandA/public/index.php/problem/UserProblem [运行时间：0.068415s][吞吐率：14.62req/s] [内存消耗：2,019.66kb] [文件加载：41]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getUserProblem',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'UserProblem',
+)
+[ info ] [ RUN ] app\problem_manage\controller\Problem->getUserProblem[ G:\xampp\htdocs\QandA\application\problem_manage\controller\Problem.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] �׽��ֲ�������һ���޷����ӵ�������
+[G:\xampp\htdocs\QandA\thinkphp\library\think\db\Connection.php:293]
+---------------------------------------------------------------
+[ 2017-08-24T14:52:16+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.046503s][吞吐率：21.50req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T14:52:33+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.045161s][吞吐率：22.14req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T15:07:06+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.033421s][吞吐率：29.92req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T15:07:11+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.042778s][吞吐率：23.38req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T15:07:17+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.052160s][吞吐率：19.17req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T15:07:26+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.054623s][吞吐率：18.31req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T15:07:37+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.044940s][吞吐率：22.25req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T15:07:48+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.037644s][吞吐率：26.56req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T15:11:46+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/UserProblem
+[ info ] localhost/QandA/public/index.php/problem/UserProblem [运行时间：0.039503s][吞吐率：25.31req/s] [内存消耗：2,019.66kb] [文件加载：41]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getUserProblem',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'UserProblem',
+)
+[ info ] [ RUN ] app\problem_manage\controller\Problem->getUserProblem[ G:\xampp\htdocs\QandA\application\problem_manage\controller\Problem.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] �׽��ֲ�������һ���޷����ӵ�������
+[G:\xampp\htdocs\QandA\thinkphp\library\think\db\Connection.php:293]
+---------------------------------------------------------------
+[ 2017-08-24T15:11:48+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/UserProblem
+[ info ] localhost/QandA/public/index.php/problem/UserProblem [运行时间：21.045284s][吞吐率：0.05req/s] [内存消耗：2,019.80kb] [文件加载：41]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getUserProblem',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'UserProblem',
+)
+[ info ] [ RUN ] app\problem_manage\controller\Problem->getUserProblem[ G:\xampp\htdocs\QandA\application\problem_manage\controller\Problem.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] �������ӷ���һ��ʱ���û����ȷ�𸴻����ӵ�����û�з�Ӧ�����ӳ���ʧ�ܡ�
+[G:\xampp\htdocs\QandA\thinkphp\library\think\db\Connection.php:293]
+---------------------------------------------------------------
+[ 2017-08-24T15:11:56+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.039364s][吞吐率：25.40req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T15:15:06+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/UserProblem
+[ info ] localhost/QandA/public/index.php/problem/UserProblem [运行时间：16.393731s][吞吐率：0.06req/s] [内存消耗：2,019.70kb] [文件加载：41]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getUserProblem',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'UserProblem',
+)
+[ info ] [ RUN ] app\problem_manage\controller\Problem->getUserProblem[ G:\xampp\htdocs\QandA\application\problem_manage\controller\Problem.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] ��������е�������ֹ��һ���ѽ��������ӡ�
+[G:\xampp\htdocs\QandA\thinkphp\library\think\db\Connection.php:293]
+---------------------------------------------------------------
+[ 2017-08-24T15:15:06+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/UserProblem
+[ info ] localhost/QandA/public/index.php/problem/UserProblem [运行时间：229.052918s][吞吐率：0.00req/s] [内存消耗：2,045.91kb] [文件加载：43]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getUserProblem',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'UserProblem',
+)
+[ info ] [ RUN ] app\problem_manage\controller\Problem->getUserProblem[ G:\xampp\htdocs\QandA\application\problem_manage\controller\Problem.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [1]Maximum execution time of 30 seconds exceeded[G:\xampp\htdocs\QandA\thinkphp\library\think\Error.php:60]
+---------------------------------------------------------------
+[ 2017-08-24T15:15:15+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.036966s][吞吐率：27.05req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T15:16:30+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.039210s][吞吐率：25.50req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T15:32:54+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.038478s][吞吐率：25.99req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T15:33:39+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.041567s][吞吐率：24.06req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T15:34:14+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.043824s][吞吐率：22.82req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T15:34:40+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.044215s][吞吐率：22.62req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T15:38:29+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.044226s][吞吐率：22.61req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T15:39:46+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.046620s][吞吐率：21.45req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T15:43:57+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.049935s][吞吐率：20.03req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T15:54:28+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.041950s][吞吐率：23.84req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T15:54:31+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.038734s][吞吐率：25.82req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T15:55:20+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.037176s][吞吐率：26.90req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T15:55:27+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.039116s][吞吐率：25.57req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T15:59:33+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.044704s][吞吐率：22.37req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T15:59:38+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.038197s][吞吐率：26.18req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T16:00:17+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.047462s][吞吐率：21.07req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T16:00:35+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.036428s][吞吐率：27.45req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T16:02:19+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.040697s][吞吐率：24.57req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T16:02:32+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.039255s][吞吐率：25.47req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T16:03:10+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.038609s][吞吐率：25.90req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T16:04:47+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.038677s][吞吐率：25.86req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T16:15:58+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.050106s][吞吐率：19.96req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T16:25:50+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.065807s][吞吐率：15.20req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T16:26:20+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.038399s][吞吐率：26.04req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T16:26:54+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.049288s][吞吐率：20.29req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T16:27:34+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.030918s][吞吐率：32.34req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-24T16:32:00+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/UserProblem
+[ info ] localhost/QandA/public/index.php/problem/UserProblem [运行时间：0.042369s][吞吐率：23.60req/s] [内存消耗：2,019.66kb] [文件加载：41]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getUserProblem',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'UserProblem',
+)
+[ info ] [ RUN ] app\problem_manage\controller\Problem->getUserProblem[ G:\xampp\htdocs\QandA\application\problem_manage\controller\Problem.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] �׽��ֲ�������һ���޷����ӵ�������
+[G:\xampp\htdocs\QandA\thinkphp\library\think\db\Connection.php:293]
+---------------------------------------------------------------
+[ 2017-08-24T16:32:10+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/img/logo.png
+[ info ] localhost/QandA/public/index.php/problem/img/logo.png [运行时间：0.036145s][吞吐率：27.67req/s] [内存消耗：1,328.93kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'Problem',
+    2 => 'getimg',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=g9f1se59ll9e7ltvbf3jck8375',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'img',
+)
+[ info ] [ LOG ] INIT File

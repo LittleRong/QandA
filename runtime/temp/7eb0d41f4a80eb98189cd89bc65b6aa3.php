@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:94:"G:\xampp\htdocs\QandA\public/../application/problem_manage\view\user_problem\user_problem.html";i:1503988859;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-cn">
 	<head>
@@ -9,7 +10,7 @@
 
 		<title>开始答题</title>
         <link rel="icon" type="image/png" href="favicon.png" />
-        <link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/css/planeui.min.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo \think\Config::get('web_res_root'); ?>/css/planeui.min.css" />
 	</head>
 	<body>
 	<div id="load" style="position: fixed;height: 100%;width:100%;background: #eee;filter:alpha(opacity=50); -moz-opacity:0.5; -khtml-opacity: 0.5; opacity: 0.5;display: none   ">
@@ -18,10 +19,10 @@
     <div  class="pui-layout">
         <header>
             <div style="position: relative;">
-                <img src="{$Think.config.web_res_root}/img/header2.jpg" style="width: 100%;height: auto">
+                <img src="<?php echo \think\Config::get('web_res_root'); ?>/img/header2.jpg" style="width: 100%;height: auto">
                 <div class="form-group pui-btn-gradient pui-btn-shadow" style="position: absolute;bottom: 10px;right: 20px">
                     <input type="button" class="pui-btn pui-btn-small pui-btn-default " value="小明">
-                    <a type="button" class="pui-btn pui-btn-small pui-btn-primary " href="{:url('index/Login/logout')}" >退出</a>
+                    <a type="button" class="pui-btn pui-btn-small pui-btn-primary " href="<?php echo url('index/Login/logout'); ?>" >退出</a>
                 </div>
             </div>
         </header>
@@ -56,41 +57,28 @@
 			        <div class="pui-center pui-text-center f24" style="width:70%;">
 						<h6 style="color: #aaa">今日题量：总共10道题，单选5道，多选2道，判断2道，填空1道</h6>
 					</div>
-						{foreach $data as $v=>$k}
-							{if condition="is_array($k)"}
-								<div id="{$v}_panel" class="tixing_panel pui-layout">
-									{foreach $k as $v2=>$k2}
-										<div class="timu_item pui-card pui-card-shadow pui-card-radius" id="{$k2.problem_id}">
+						<?php foreach($data as $v=>$k): if(is_array($k)): ?>
+								<div id="<?php echo $v; ?>_panel" class="tixing_panel pui-layout">
+									<?php foreach($k as $v2=>$k2): ?>
+										<div class="timu_item pui-card pui-card-shadow pui-card-radius" id="<?php echo $k2['problem_id']; ?>">
 			                				<div class="pui-card-box">
-			                    			<h5>{$v2+1}、{$k2.problem}</h5>
+			                    			<h5><?php echo $v2+1; ?>、<?php echo $k2['problem']; ?></h5>
 
-											{if condition="array_key_exists('option',$k2)"}
-												{eq name="$v" value="single"}
-													{foreach $k2.option as $v3=>$k3}
-														<input type="radio" name="{$v}_{$k2.problem_id}" id="{$k3.q_id}">{$v3}、{$k3.content} <br>
-													{/foreach}
-												{else/}
-													{foreach $k2.option as $v3=>$k3}
-														<input type="checkbox" name="{$v}_{$k2.problem_id}" id="{$k3.q_id}">{$v3}、{$k3.content} <br>
-													{/foreach}
-												{/eq}
-												
-											{else /} 
-												{eq name="$v" value="judge"}
-													<input type="radio" name="{$v}_{$k2.problem_id}" value="1">对<br>
-													<input type="radio" name="{$v}_{$k2.problem_id}" value="0">错
-												{/eq}
-												{eq name="$v" value="fill"}
-													<input type="text" name="{$v}_{$k2.problem_id}" ><br>
-													{/eq}
-											{/if}
+											<?php if(array_key_exists('option',$k2)): if($v == 'single'): foreach($k2['option'] as $v3=>$k3): ?>
+														<input type="radio" name="<?php echo $v; ?>_<?php echo $k2['problem_id']; ?>" id="<?php echo $k3['q_id']; ?>"><?php echo $v3; ?>、<?php echo $k3['content']; ?> <br>
+													<?php endforeach; else: foreach($k2['option'] as $v3=>$k3): ?>
+														<input type="checkbox" name="<?php echo $v; ?>_<?php echo $k2['problem_id']; ?>" id="<?php echo $k3['q_id']; ?>"><?php echo $v3; ?>、<?php echo $k3['content']; ?> <br>
+													<?php endforeach; endif; else: if($v == 'judge'): ?>
+													<input type="radio" name="<?php echo $v; ?>_<?php echo $k2['problem_id']; ?>" value="1">对<br>
+													<input type="radio" name="<?php echo $v; ?>_<?php echo $k2['problem_id']; ?>" value="0">错
+												<?php endif; if($v == 'fill'): ?>
+													<input type="text" name="<?php echo $v; ?>_<?php echo $k2['problem_id']; ?>" ><br>
+													<?php endif; endif; ?>
 											</div>
 										</div>
-									{/foreach}
+									<?php endforeach; ?>
 								</div>
-							{else /}
-							{/if}
-						{/foreach}
+							<?php else: endif; endforeach; ?>
 				<br>
 				</div>
 
@@ -119,7 +107,7 @@
             </div>
         </div>
 	</div>
-<script type="text/javascript" src="{$Think.config.web_res_root}/js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="<?php echo \think\Config::get('web_res_root'); ?>/js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript">
 	$(function(){
 		$('.choose_btn').bind('click',function(){

@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:88:"G:\xampp\htdocs\QandA\public/../application/item_manage\view\exchange\exchange_item.html";i:1503990716;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
@@ -71,80 +72,74 @@
 
     <title>积分兑换</title>
 
-    <link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/css/planeui.min.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo \think\Config::get('web_res_root'); ?>/css/planeui.min.css" />
 </head>
 <body>
     <!-- 事件ID -->
-    <div id="exchange_event" style="display: none;">{$event_id}</div>
-    <div class="pui-grid" >
+    <div id="exchange_event" style="display: none;"><?php echo $event_id; ?></div>
+    <div class="pui-grid">
         <div class="pui-row" style="margin-bottom: 0">
             <div class="pui-grid-xs-12">
-                <img src="{$Think.config.web_res_root}/img/header.jpg" style="width: 100%; height: auto;" />
+                <img src="<?php echo \think\Config::get('web_res_root'); ?>/img/header.jpg" style="width: 100%; height: auto;" />
             </div>
         </div>
         <div class="pui-row" style="margin: 0;">
-            <div class="pui-grid-xs-12" style="margin-top: 20px;">
-                <div class="pui-row" style="padding-left:20px;padding-right:20px">
-					<div class="pui-grid-xs-2 pui-card pui-card-shadow pui-card-radius">
+            <div class="pui-grid-xs-10" style="margin-top: 20px;">
+                <div class="pui-row">
+					<div class="pui-grid-xs-3 pui-card pui-card-shadow pui-card-radius">
 							<blockquote>
 								<p>兑换规则</p>                               
 							</blockquote>
 							<div>
                                 <p>只能由组长兑换</p>
-									可用积分：{$teamCred}<br>
-									已有道具:{if condition="!empty($haveItem)"}
-														 {foreach $haveItem as $v=>$k}
-															 {$k.item_name}有{$k.num}个
+									可用积分：<?php echo $teamCred; ?><br>
+									已有道具:<?php if(!empty($haveItem)): foreach($haveItem as $v=>$k): ?>
+															 <?php echo $k['item_name']; ?>有<?php echo $k['num']; ?>个
 															 <br>
-														 {/foreach}
-													 {/if}
+														 <?php endforeach; endif; ?>
 							</div>
 				</div>
-                    <div class="pui-grid-xs-9 pui-grid-xs-push-1 pui-card pui-card-shadow pui-card-radius">
-                        <h2 style="margin-top: 10px;margin-left:20px;text-align: left"><a type="button" class="pui-btn pui-btn-default" href="{:url('index/userindex/user_index')}" >返回</a></h2>
+                    <div class="pui-grid-xs-9 pui-card pui-card-shadow pui-card-radius">
+                        <h2 style="margin-top: 10px;margin-left:20px;text-align: left"><a type="button" class="pui-btn pui-btn-default" href="<?php echo url('index/userindex/user_index'); ?>" >返回</a></h2>
                         <hr>
                         <div class="pui-row">
-                            {if condition="!empty($arr)"}
-              {foreach $arr as $v=>$k}
+                            <?php if(!empty($arr)): foreach($arr as $v=>$k): ?>
         			<div class="pui-grid-xs-4">
-                        <div class="pui-center pui-text-left">
-                            <img src="{$Think.config.web_res_root}/img/道具.jpg" class="pui-img-thumbnail pui-img-xl" />
+                        <div class="pui-center pui-text-center">
+                            <img src="<?php echo \think\Config::get('web_res_root'); ?>/img/道具.jpg" class="pui-img-thumbnail pui-img-xl" />
                         </div>
-                        <div class="exchange_item" style="display: none;">{$k.item_id}</div>
-                        <div class="pui-center pui-text-left">
-                            道具名：{$k.item_name}
+                        <div class="exchange_item" style="display: none;"><?php echo $k['item_id']; ?></div>
+                        <div class="pui-center pui-text-center">
+                            道具名：<?php echo $k['item_name']; ?>
                         </div>
-                        <div class="pui-center pui-text-left">
-                            道具描述：{$k.item_description}
+                        <div class="pui-center pui-text-center">
+                            道具描述：<?php echo $k['item_description']; ?>
                         </div>
-                        <div class="pui-center pui-text-left">
-                            兑换积分:{$k.change_rule}
+                        <div class="pui-center pui-text-center">
+                            兑换积分:<?php echo $k['change_rule']; ?>
                         </div>
-                        <div class="pui-center pui-text-left">
+                        <div class="pui-center pui-text-center">
                             剩余：
-                  {if condition="!empty($k.amount)"}
-                  {$k.amount}
-                  {else /}
+                  <?php if(!empty($k['amount'])): ?>
+                  <?php echo $k['amount']; else: ?>
                   无限
-                  {/if}
+                  <?php endif; ?>
 
                         </div>
-                        <div class="pui-center pui-text-left">
+                        <div class="pui-center pui-text-center">
                             最多可兑换：
-                  {if condition="!empty($k.team_amount)"}
-                  {$k.team_amount}
-                  {else /}
+                  <?php if(!empty($k['team_amount'])): ?>
+                  <?php echo $k['team_amount']; else: ?>
                   无限
-                  {/if}
+                  <?php endif; ?>
                         </div>
-												{if condition="$isLeader==1"}
-                        <div class="pui-center pui-text-left">
-                            <input type="button" class="exchange_btn pui-btn pui-btn-primary pui-btn-small " value="兑换">
+												<?php if($isLeader==1): ?>
+                        <div class="pui-center pui-text-center">
+                            <input type="button" class="exchange_btn pui-btn pui-btn-primary pui-btn-small" value="兑换">
                         </div>
-												{/if}
+												<?php endif; ?>
                     </div>
-                            {/foreach}
-              {/if}
+                            <?php endforeach; endif; ?>
                         </div>
                     </div>
             </div>
@@ -152,8 +147,8 @@
     </div>
     </div>
         <!-- 代码写在这上面 -->
-    <script type="text/javascript" src="{$Think.config.web_res_root}/js/jquery.min.js"></script>
-    <script type="text/javascript" src="{$Think.config.web_res_root}/js/planeui.js"></script>
+    <script type="text/javascript" src="<?php echo \think\Config::get('web_res_root'); ?>/js/jquery.min.js"></script>
+    <script type="text/javascript" src="<?php echo \think\Config::get('web_res_root'); ?>/js/planeui.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $(".exchange_btn").click(function () {
@@ -161,7 +156,7 @@
                 var exchange_event = $('#exchange_event').html();
                 var post_data = { exchange_item: exchange_item, exchange_event: exchange_event };
                 $.ajax({
-                    url: "{:url('item_manage/Exchange/exchange')}",
+                    url: "<?php echo url('item_manage/Exchange/exchange'); ?>",
                     dataType: "json",
                     type: 'POST',
                     data: post_data,

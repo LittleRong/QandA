@@ -13,10 +13,14 @@
 <body>
     <div class="pui-layout">
         <header>
-            <img src="{$Think.config.web_res_root}/img/header2.jpg" style="width:100%;height: auto">
-            <div style="text-align: right">{$data.user_message.login_name}，<a href="{:url('index/Login/logout')}">退出</a>&emsp;</div>
+            <div style="position: relative;">
+                <img src="{$Think.config.web_res_root}/img/header2.jpg" style="width: 100%;height: auto">
+                <div class="form-group pui-btn-gradient pui-btn-shadow" style="position: absolute;bottom: 10px;right: 20px">
+                    <input type="button" class="pui-btn pui-btn-small pui-btn-default " value="{$data.user_message.login_name}">
+                    <a type="button" class="pui-btn pui-btn-small pui-btn-primary " href="{:url('index/Login/logout')}" >退出</a>
+                </div>
+            </div>
         </header>
-
     </div>
     <div class="pui-layout" style="width: 96%; margin-top: 30px">
         <div class="pui-row ">
@@ -43,8 +47,8 @@
                                             <strong>可兑换道具：</strong>{$k.item}
                                         </p>
                                         <p>
-                                            <input type="button" value="兑换道具" onclick="location.href='{:url('/item_manage/exchange/show_item',array('event_id'=>$k.event_id))}'" />
-                                            <input type="button" value="开始答题" onclick="location.href='{:url('/problem/userproblem',array('event_id'=>$k.event_id))}'" />
+                                            <input type="button" class="pui-btn pui-btn-default" value="兑换道具" onclick="location.href='{:url('/item_manage/exchange/show_item',array('event_id'=>$k.event_id))}'" />
+                                            <input type="button" class="pui-btn pui-btn-default" value="开始答题" onclick="location.href='{:url('/problem/userproblem',array('event_id'=>$k.event_id))}'" />
                                         </p>
                                         <p class="pui-text-right">
                                             <br>
@@ -66,9 +70,13 @@
                 <div class="pui-card pui-card-shadow pui-card-radius">
                     <div class="pui-card-box">
                         <h1 style="text-align: center;">
-                            <img src="img/logo.png" class="pui-img-circle pui-box-shadow-plus"></h1>
-                        <h5 style="text-align: center;"><strong>姓名：</strong>{$data.user_message.name}&emsp;
-                            {eq name="data.user_message.gender" value="1"}男{else/}女{/eq}
+                            {eq name="data.user_message.gender" value="男"}
+                            <img src="{$Think.config.web_res_root}/img/boy.jpg" class="pui-img-circle pui-box-shadow-plus">
+                            {else/}
+                            <img src="{$Think.config.web_res_root}/img/girl.jpg" class="pui-img-circle pui-box-shadow-plus">
+                            {/eq}
+                            </h1>
+                        <h5 style="text-align: center;"><strong>姓名：</strong>{$data.user_message.name}                            
                         </h5>
                         <h5 style="text-align: center;"><strong>工号：</strong>{$data.user_message.job_number}</h5>
                         <h5 style="text-align: center;"><strong>手机号：</strong>{$data.user_message.phone_number}</h5>
