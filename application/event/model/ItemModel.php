@@ -1,6 +1,8 @@
 <?php
 namespace app\event\model;
 use think\Model;
+use think\Db;
+
 class ItemModel extends Model{
     protected $table = 'item';// 对应数据库中的event表
 
@@ -12,5 +14,12 @@ class ItemModel extends Model{
           return null;
       }
       return $result;   //返回用户信息
+    }
+
+    public function item_updata($item_id,$event_id)
+    {
+      Db::table('item')
+      ->where('item_id', $item_id)
+      ->update(['refer_event_id' => $event_id]);
     }
   }

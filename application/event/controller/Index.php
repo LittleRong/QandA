@@ -7,9 +7,10 @@
   use think\View;
   use think\Request;
   use think\Session;
+  use app\common\controller\ManageContrller;
 
 
-  class Index extends Controller
+  class Index extends ManageContrller
   {
 
         //跳转到事件录入视图
@@ -69,13 +70,14 @@
       }
 
       //接受ajax数据并写入数据库
-      public function manage($time,$participant_num,$ename,$start_time,$end_time,$single,$multiple,
+      public function manage($item,$time,$participant_num,$ename,$start_time,$end_time,$single,$multiple,
               $fill,$judge,$pro_random,$opt_random,$ekind,$answer_time,$single_score,
               $multiple_score,$fill_score,$judge_score,$person_score,
               $team_score,$person_score_up,$team_score_up,$message)
        {
           //这里用session获取管理员ID
-          $aid = 2;
+          // $aid = 2;
+          $aid = Session::get('user_id');
           $model = new EventModel();
           //$event_id事件自增ID
           $event_id = $model->event_insert($time,(int)$participant_num,(int)$aid,$ename,$start_time,$end_time,(int)$single,(int)$multiple,
@@ -84,6 +86,11 @@
                   (int)$team_score,(int)$person_score_up,(int)$team_score_up,$message);
           Session::set('myevent_id',$event_id);
           //dump($event_id);
+          $item_model = new ItemModel();
+          foreach ($item as $key => $value)
+          {
+            $item_model->item_updata((int)$value,$event_id);
+          }
           $data = array('result'=>'录入成功!');
           return json_encode($data);
       }

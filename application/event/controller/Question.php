@@ -9,10 +9,10 @@ use think\View;
 use think\Request;
 use think\Controller;
 use think\Session;
+use app\common\controller\ManageContrller;
 
 
-
-class Question extends Controller
+class Question extends ManageContrller
 {
     //定义自增ID开始结束的位置
     protected $problem_num;

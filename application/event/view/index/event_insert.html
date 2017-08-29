@@ -224,7 +224,7 @@
                     </div>
                     <div class="pui-form-group" style="padding-bottom: 15px;">
                     <label>参加道具：</label>
-                                      
+
                 	{if condition="!empty($data)"}
                 		<table class="pui-table pui-table-unbordered  pui-table-compact pui-table-text-left box-shadow-bottom pui-table-gradient" style="margin-top: 0">
                 		<tr>
@@ -235,16 +235,16 @@
                 		</tr>
 
                 		{foreach $data as $k=>$v}
-						<tr> 
-							<td style="text-align: right;width: 0"><input type="checkbox"  id="{$v.item_id}"></td>
+						<tr>
+							<td style="text-align: right;width: 0"><input type="checkbox" name="cbox2" value="{$v.item_id}"></td>
 							<td>{$v.item_name}</td>
 							<td>{$v.item_description}</td>
 							<td>{$v.change_rule}</td>
-		                </tr>	
+		                </tr>
 						{/foreach}
 						</table>
                 	{/if}
-                    
+
                 	</div>
                 			<button class="pui-btn pui-btn-primary pui-btn-large pui-btn-block"  id="submit_message" style="margin-bottom: 30px;">
 								下一步
@@ -294,6 +294,22 @@
 			return arr;
 		}
 
+		//获取什么道具被勾选
+		function mutil_check2()
+		{
+			var arr = [];
+			var obj = document.getElementsByName("cbox2");
+			var obj_legth = obj.length;
+			for(var i=0;i<obj_legth;i++)
+			{
+				if(obj[i].checked)
+				{
+					 arr.push(obj[i].value);
+				 }
+			}
+			return arr;
+		}
+
 		$(document).ready(function(){
 		    $("#submit_message").click(function(){
 						var participant_num = $("#participant_num").val();
@@ -301,7 +317,7 @@
 						var start_time = $("#start_time").val();
 						var end_time = $("#end_time").val();
 						var single = $("#single").val();
-		        		var multiple = $("#multiple").val();
+		        var multiple = $("#multiple").val();
 						var fill = $("#fill").val();
 						var judge = $("#judge").val();
 						var pro_random = 0;
@@ -317,6 +333,7 @@
 						var message = $("#message").val();
 
 						var time;    //答题时间（星期几）
+						var item;    //道具
 
 						if($("#pro_random").is(":checked"))
 						{
@@ -332,12 +349,13 @@
 							mon = 1;
 						}
 
-						 time = mutil_check();
+						time = mutil_check();
+						item = mutil_check2();
 
 					  if(ename == ''){
 				        alert("事件名称不能为空");
 		        }else{
-						    var post_data = {time:time,participant_num:participant_num,ename:ename,start_time:start_time,end_time:end_time,single:single,multiple:multiple,
+						    var post_data = {item:item,time:time,participant_num:participant_num,ename:ename,start_time:start_time,end_time:end_time,single:single,multiple:multiple,
 								fill:fill,judge:judge,pro_random:pro_random,opt_random:opt_random,ekind:ekind,answer_time:answer_time,single_score:single_score,
 							multiple_score:multiple_score,fill_score:fill_score,judge_score:judge_score,person_score:person_score,
 						team_score:team_score,person_score_up:person_score_up,team_score_up:team_score_up,message:message};
@@ -348,7 +366,7 @@
 		                data: post_data,
 		                async: false,
 		                success: function(data){
-		                    alert("跳转成功");
+		                    // alert("跳转成功");
 		                    json_data=eval('('+data+')');
 												if(json_data['result']=="录入成功!"){
 		                        alert(json_data['result']);
