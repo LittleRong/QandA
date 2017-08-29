@@ -1,0 +1,1 @@
+1.判断是否全组全对，需要查表participant_haved_answer,如果同一组两人同时提交答案，会查不到？
