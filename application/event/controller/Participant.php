@@ -7,9 +7,9 @@
   use think\Request;
   use app\index\model\UserModel;
   use think\Session;
-  use app\common\controller\ManageContrller;
+  use app\common\controller\ManageController;
 
-  class Participant extends ManageContrller
+  class Participant extends ManageController
   {
       //发送数据到participant.html上
       public function participant_manage()
