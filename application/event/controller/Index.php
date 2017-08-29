@@ -7,10 +7,10 @@
   use think\View;
   use think\Request;
   use think\Session;
-  use app\common\controller\ManageContrller;
+  use app\common\controller\ManageController;
 
 
-  class Index extends ManageContrller
+  class Index extends ManageController
   {
 
         //跳转到事件录入视图
