@@ -6,6 +6,7 @@ use app\problem_manage\model\ProblemModel;
 use app\problem_manage\model\ProblemContentModel;
 use app\problem_manage\model\ParticipantModel;
 use app\problem_manage\model\ParticipantHaveAnswerdModel;
+use app\problem_manage\model\CreditModel;
 use app\problem_manage\tool\LogTool;
 use think\Db;
 /*
@@ -33,9 +34,16 @@ use think\Db;
 class AnswerController extends Controller {
 	var $refer_participant_id;
 	var $refer_team_id;
-	var $userMark = 0;
-	var $credit_rule = array('single_choice_score' => 2,'multiple_choice_score'=>4);
+
+	var $creditModel;
+	//'{"fill_score": 4, "team_score": 10, "judge_score": 4, "person_score": 10,
+	//"single_score": 4, "team_score_up": 1000, "multiple_score": 4, "person_score_up": 100}'
 	var $partHaveAnswerArr = array();
+	public function _initialize(){
+				$this->partHaveAnswerArr=array();
+
+
+	}
 	public function getSy() {
 		$view = new View();
         return '3333333';
@@ -46,11 +54,11 @@ class AnswerController extends Controller {
 	}
 	public function postSubmitAnswer() {
 
-		LogTool::record($_POST);
+		LogTool::info('-------------------answer-post-信息--------------------',$_POST);
 		// 前端提交json {'single':[{'problem_id':xx,'q_id':xx},{'problem_id':xx,'q_id':xx},......],'multi':[{'problem_id':xx,'q_id':['x','x']},{'problem_id':xx,'q_id':['x','x','x']},......]}  q_id为用户选择的选项的id
 		$this -> refer_participant_id = 6; //参赛人id
 		$this -> refer_team_id = 1; //参赛人队伍的id
-
+		$this->creditModel=new CreditModel(46,6);
 		$allSubmit=$_POST;
 		LogTool::record($_POST);
 		$allAnswer=ParticipantModel::getWaitedAnswer($this -> refer_participant_id);//预存在participant表中waitedAnswer的问题id及答案
@@ -73,16 +81,14 @@ class AnswerController extends Controller {
 		$this->dealMulti($multiSubmit, $multiAnswer);
 
 		//***********************************************
-		ParticipantHaveAnswerdModel::savePantHaveAnswerds($this->pantHaveAnswerArr);
-		LogTool::record($_POST);
-		$data=['user_credit'=>$this->userMark];
-		Return json_encode($data);
+		//ParticipantHaveAnswerdModel::savePartHaveAnswerds($this->pantHaveAnswerArr);
+		$res=$this->creditModel->dealFinal();
+		Return json_encode($res);
 	}
 	private function dealSingle($singleSubmit, $singleAnswer) {
 		// input:singleSubmit:arr=>[{'problem_id':xx,'q_id':xx},{'problem_id':xx,'q_id':xx},......]
 		// singleAnswer:arr=>{problem_id:answer,problem_id:answer,....}
 		// ouput：
-		$singleCredit = $this -> credit_rule['single_choice_score'];
 		for($i = 0; $i < count($singleSubmit); $i++) {
 			$submit = $singleSubmit[$i];
 			$submitId = $submit['problem_id'];
@@ -91,8 +97,10 @@ class AnswerController extends Controller {
       LogTool::info('----------------$singleAnswer-------',$singleAnswer);
 			if ($submitAnswer == $singleAnswer[$submitId]) { // 回答正确
 				$pantHaveAnswer -> setTrueOrFalse(1); //设置为回答正确
-				$this -> userMark = $this -> userMark + $singleCredit; //增加积分
+				$this->creditModel->dealAnswer(1,'single');
+
 			} else {
+				$this->creditModel->dealAnswer(0,'single');
 				$pantHaveAnswer -> setTrueOrFalse(0);
 			}
 			LogTool::info('----------------dealsingle---panthaveAnswer-------',$pantHaveAnswer);
@@ -103,7 +111,7 @@ class AnswerController extends Controller {
 	private function dealMulti($multiSubmit, $multiAnswer) {
 		// input:multiSubmit:arr=>[{'problem_id':xx,'q_id':[x,x]},{'problem_id':xx,'q_id':[x,x,x,x]},......]
 		// multiAnswer:arr=>{problem_id:[x,x],problem_id:[x,x,x],....}
-		$multiCredit = $this -> credit_rule['multiple_choice_score'];
+
 		for($i = 0; $i < count($multiSubmit); $i++) {
 			$submit = $multiSubmit[$i];
 			$submitId = $submit['problem_id'];
@@ -126,14 +134,55 @@ class AnswerController extends Controller {
 			// ***********************************************************
 			if ($ifRight) {
 				$pantHaveAnswer -> setTrueOrFalse(1); //设置为回答正确
-				$this -> userMark = $this -> userMark + $multiCredit; //增加积分
+				$this->creditModel->dealAnswer(1,'multi');
 			} else {
 				$pantHaveAnswer -> setTrueOrFalse(0);
+				$this->creditModel->dealAnswer(0,'multi');
 			}
-			array_push($this -> pantHaveAnswerArr, $pantHaveAnswer); //push到用户答题情况的数组
+			//::info('------------$this -> pantHaveAnswerArr-----------',$this->partHaveAnswerArr);
+			array_push($this->partHaveAnswerArr, $pantHaveAnswer); //push到用户答题情况的数组
 
 		}
 	}
-	private function dealJudge() {
+	private function dealJudge($judgeSubmit, $judgeAnswer) {
+
+			 for($i = 0; $i < count($judgeSubmit); $i++) {
+				 		$submit = $judgeSubmit[$i];
+						$submitId = $submit['problem_id'];
+						$submitAnswer = $submit['q_id'];
+						$pantHaveAnswer = new ParticipantHaveAnswerdModel($this -> refer_participant_id, $this -> refer_team_id, $submit['problem_id'], $submitAnswer);
+						//**************判断正确与否********************//
+						if($submitAnswer==$pantHaveAnswe){
+							$pantHaveAnswer -> setTrueOrFalse(1); //设置为回答正确
+							$this->creditModel->dealAnswer(1,'judge');
+
+						}else {
+							$pantHaveAnswer -> setTrueOrFalse(0);
+							$this->creditModel->dealAnswer(0,'judge');
+						}
+						array_push($this->partHaveAnswerArr, $pantHaveAnswer); //push到用户答题情况的数组
+			 }
+
 	}
+	private function dealFill($fillSubmit, $fillAnswer) {
+
+			 for($i = 0; $i < count($judgeSubmit); $i++) {
+				 		$submit = $judgeSubmit[$i];
+						$submitId = $submit['problem_id'];
+						$submitAnswer = $submit['q_id'];
+						$pantHaveAnswer = new ParticipantHaveAnswerdModel($this -> refer_participant_id, $this -> refer_team_id, $submit['problem_id'], $submitAnswer);
+						//**************判断正确与否********************//
+						if($submitAnswer==$pantHaveAnswe){
+							$pantHaveAnswer -> setTrueOrFalse(1); //设置为回答正确
+							$this->creditModel->dealAnswer(1,'fill');
+
+						}else {
+							$pantHaveAnswer -> setTrueOrFalse(0);
+							$this->creditModel->dealAnswer(0,'fill');
+						}
+						array_push($this->partHaveAnswerArr, $pantHaveAnswer); //push到用户答题情况的数组
+			 }
+
+	}
+
 }

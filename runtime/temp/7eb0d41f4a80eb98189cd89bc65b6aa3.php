@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:94:"G:\xampp\htdocs\QandA\public/../application/problem_manage\view\user_problem\user_problem.html";i:1503988859;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:94:"G:\xampp\htdocs\QandA\public/../application/problem_manage\view\user_problem\user_problem.html";i:1504020930;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-cn">
 	<head>
@@ -12,7 +12,7 @@
         <link rel="icon" type="image/png" href="favicon.png" />
         <link rel="stylesheet" type="text/css" href="<?php echo \think\Config::get('web_res_root'); ?>/css/planeui.min.css" />
 	</head>
-	<body>
+	<body  onload="leftTimer()">
 	<div id="load" style="position: fixed;height: 100%;width:100%;background: #eee;filter:alpha(opacity=50); -moz-opacity:0.5; -khtml-opacity: 0.5; opacity: 0.5;display: none   ">
 		<div class="pui-loading pui-loading-ring-large" style="margin: 0 auto;margin-top:20%"></div>
     </div>
@@ -21,7 +21,7 @@
             <div style="position: relative;">
                 <img src="<?php echo \think\Config::get('web_res_root'); ?>/img/header2.jpg" style="width: 100%;height: auto">
                 <div class="form-group pui-btn-gradient pui-btn-shadow" style="position: absolute;bottom: 10px;right: 20px">
-                    <input type="button" class="pui-btn pui-btn-small pui-btn-default " value="小明">
+                    <input type="button" class="pui-btn pui-btn-small pui-btn-default " value="<?php echo $name; ?>">
                     <a type="button" class="pui-btn pui-btn-small pui-btn-primary " href="<?php echo url('index/Login/logout'); ?>" >退出</a>
                 </div>
             </div>
@@ -31,7 +31,8 @@
 		<div class="pui-row">
 		   	<div class="pui-grid-xs-3 pui-grid-xs-push-9 pui-grid-sm-3 pui-grid-sm-push-9 pui-grid-md-3 pui-grid-md-push-9 pui-grid-lg-3 pui-grid-lg-push-9 pui-grid-xl-3 pui-grid-xl-push-9 pui-grid-xxl-3 pui-grid-xxl-push-9 ">
 		    	<div class="pui-text-center">
-		     		<h4 style="color: #008EE5">倒计时：32分钟</h4>
+		     		<h4 style="color: #008EE5"  id="timer">剩余<span id="left_min"></span>分<span id="left_sec"></span>秒</h4>
+		     		<input type="hidden" id="time" value="<?php echo $time; ?>">
 		    		<div style="text-align:center;">
 						<input type="button" class="pui-btn pui-btn-primary" id="submit" value="交卷">
 					</div>
@@ -55,7 +56,7 @@
 			        </ul>
 
 			        <div class="pui-center pui-text-center f24" style="width:70%;">
-						<h6 style="color: #aaa">今日题量：总共10道题，单选5道，多选2道，判断2道，填空1道</h6>
+						<h6 style="color: #aaa">今日题量：总共<span id="all_pr"></span>道题，单选<span id="single_pr"></span>道，多选<span id="multi_pr"></span>道，判断<span id="judge_pr"></span>道，填空<span id="fill_pr"></span>道</h6>
 					</div>
 						<?php foreach($data as $v=>$k): if(is_array($k)): ?>
 								<div id="<?php echo $v; ?>_panel" class="tixing_panel pui-layout">
@@ -85,31 +86,70 @@
 			</div>
 		</div>
 	</div>
-	<div id="submit_result" style="display:none;width: 90%;margin: 0 auto;">
-		<h5>&emsp;您的得分是：<span id="per_score"></span>；团队总得分：<span id="all_score"></span>
-		<input type="button" class=" pui-btn pui-btn-primary" style="float:right" value="回到个人主页" >
-		</h5>
-		<div class="pui-timeline">
-            <div class="pui-timeline-list"> 
-                <div class="pui-timeline-divider pui-timeline-divider-line">您所在的队伍：</div>
-                <div class="pui-timeline-item pui-timeline-badge-date">
-                    <label class="pui-badge pui-badge-info">2017-12-05</label>
-                    <div class="pui-timeline-item-context">
-                        小明 获得了80分
-                    </div>
-                </div> 
-                <div class="pui-timeline-item pui-timeline-badge-datetime">
-                    <label class="pui-badge pui-badge-info">2017-11-05</label>
-                    <div class="pui-timeline-item-context">
-                        小张 获得了100分
-                    </div>
-                </div> 
+	<div id="submit_result" style="display:none;width: 90%;margin: 0 auto;margin-top: 10px">
+		<a type="button" class=" pui-btn pui-btn-default" style="float:left" href="<?php echo url('index/userindex/user_index'); ?>">返回</a>
+		<h5>&emsp;您的得分是：<span id="per_score"></span>；团队总得分：<span id="all_score"></span></h5>
+		<div class="pui-timeline" >
+            <div class="pui-timeline-list" id="team_mates"> 
+                <div class="pui-timeline-divider pui-timeline-divider-line">您所在的队伍</div>
+                <!-- <div class="pui-timeline-item pui-timeline-badge-date">
+                     <label class="pui-badge pui-badge-info">2017-12-05</label>
+                     <div class="pui-timeline-item-context">
+                         小明 获得了80分
+                     </div>
+                 </div> 
+                 <div class="pui-timeline-item pui-timeline-badge-datetime">
+                     <label class="pui-badge pui-badge-info">2017-11-05</label>
+                     <div class="pui-timeline-item-context">
+                         小张 获得了100分
+                     </div>
+                 </div> --> 
             </div>
-        </div>
+		</div>
 	</div>
 <script type="text/javascript" src="<?php echo \think\Config::get('web_res_root'); ?>/js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript"> 
+	function leftTimer(year,month,day,hour,minute,second){ 
+	    // 准备 
+    var countdownMinute = $("#time").val()*60;;//10分钟倒计时 
+    //alert(countdownMinute);
+    var startTimes = new Date();//开始时间 new Date('2016-11-16 15:21'); 
+    var endTimes = new Date(startTimes.setMinutes(startTimes.getMinutes()+countdownMinute));//结束时间 
+    var curTimes = new Date();//当前时间 
+    var surplusTimes = endTimes.getTime()/1000 - curTimes.getTime()/1000;//结束毫秒-开始毫秒=剩余倒计时间 
+      
+    // 进入倒计时 
+    countdowns = window.setInterval(function(){ 
+      surplusTimes--; 
+      var minu = Math.floor(surplusTimes/60); 
+      var secd = Math.round(surplusTimes%60); 
+      $("#left_min").text(minu);
+      $("#left_sec").text(secd);
+      console.log(minu+':'+secd); 
+      if(surplusTimes<=0){ 
+        console.log('时间到！'); 
+        clearInterval(countdowns);
+        if(confirm("时间到，请确认提交")){
+        	$('#submit').click();
+        } 
+      } 
+    },1000); 
+} 
+  
+</script> 
 <script type="text/javascript">
 	$(function(){
+		var single_length=$("#single_panel .timu_item").length;
+		$("#single_pr").text(single_length);
+		var multi_length=$("#multi_panel .timu_item").length;
+		$("#multi_pr").text(multi_length);
+		var judge_length=$("#judge_panel .timu_item").length;
+		$("#judge_pr").text(judge_length);
+		var fill_length=$("#fill_panel .timu_item").length;
+		$("#fill_pr").text(fill_length);
+		$("#all_pr").text(single_length+multi_length+judge_length+fill_length);
+
+
 		$('.choose_btn').bind('click',function(){
 			var id=$(this).attr('id');
 			var id_panel=id+'_panel';
@@ -128,7 +168,7 @@
 
 			//获取单选题id以及答案
 			var single_items=new Array();
-			var single_length=$("#single_panel .timu_item").length;
+			//var single_length=$("#single_panel .timu_item").length;
 			for(var i=0;i<single_length;i++){
 				//s:单选题id;s_answer:单选题答案id
 				var s=$("#single_panel .timu_item").eq(i).attr('id');
@@ -144,7 +184,7 @@
 
 			var multi_items=new Array();
 			//获取多选题id以及答案
-			var multi_length=$("#multi_panel .timu_item").length;
+			//var multi_length=$("#multi_panel .timu_item").length;
 			for(var i=0;i<multi_length;i++){
 				var m=$("#multi_panel .timu_item").eq(i).attr('id');
 				var m_id='input[name=multi_'+m+']:checked';
@@ -167,7 +207,7 @@
 
 			//获取判断题id以及答案
 			var judge_items=new Array();
-			var judge_length=$("#judge_panel .timu_item").length;
+			//var judge_length=$("#judge_panel .timu_item").length;
 			for(var i=0;i<judge_length;i++){
 				var j=$("#judge_panel .timu_item").eq(i).attr("id");
 				var j_answer=$("#judge_panel .timu_item input[type='radio']:checked").eq(i).attr("value");
@@ -182,11 +222,10 @@
 
 			//获取填空题id以及答案
 			var fill_items=new Array();
-			var fill_length=$("#fill_panel .timu_item").length;
+			//var fill_length=$("#fill_panel .timu_item").length;
 			for(var i=0;i<fill_length;i++){
 				var f=$("#fill_panel .timu_item").eq(i).attr("id");
 				var f_answer=$("#fill_panel .timu_item input[type='text']").eq(i).attr("value");
-				
 				var answer_fill={};
 	        	answer_fill['problem_id']=f;
 	        	answer_fill['answer']=f_answer;
@@ -201,7 +240,7 @@
 			user_answer['fill']=	fill_items;
 			$.ajax({  
                 type: "POST",  
-                url: '../answer/SubmitAnswer',  
+                url: "<?php echo url('/answer/SubmitAnswer'); ?>",  
                 async: true, //同步  
                 dataType: "json",  
                 data:user_answer,  
@@ -215,6 +254,18 @@
                 	var parsedJson = jQuery.parseJSON(results); 
                 	//alert(parsedJson.user_credit);
                 	$("#per_score").text(parsedJson.user_credit);
+                	$("#all_score").text(parsedJson.team);
+
+                	var team_mates=parsedJson.team_mates;
+//$("#all_score").text(JSON.stringify(team_mates));
+                	for(var i=0;i<team_mates.length;i++){
+
+						var credit=team_mates[i].credit;
+						var name=team_mates[i].name;
+						//var participant=team_mates[i].participant;
+						var template="<div class='pui-timeline-item pui-timeline-badge-date'><label class='pui-badge pui-badge-info'>"+name+"</label><div class='pui-timeline-item-context'>累计得分<strong>"+credit+"</strong>分</div></div> ";
+						$("#team_mates").append(template);
+                	}
                 	$("#submit_result").show();
                 }
             });

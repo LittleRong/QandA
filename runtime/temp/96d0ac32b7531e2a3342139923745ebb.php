@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:79:"G:\xampp\htdocs\QandA\public/../application/event\view\index\event_manager.html";i:1503886798;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:79:"G:\xampp\htdocs\QandA\public/../application/event\view\index\event_manager.html";i:1503990917;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-cn">
 	<head>
@@ -72,73 +72,105 @@
 
 		<title>事件管理主页</title>
 
-        <link rel="stylesheet" type="text/css" href="<?php echo \think\Config::get('web_res_root'); ?>/event/dist/css/planeui.min.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo \think\Config::get('web_res_root'); ?>/css/planeui.min.css" />
+				<link rel="stylesheet" type="text/css" href="<?php echo \think\Config::get('web_res_root'); ?>/css/user_manage/user_manager.css" />
 	</head>
 	<body>
 		<!-- 代码写在这下面 -->
-        <div class="pui-grid"><!-- 响应式布局 -->
-        	<div class="pui-row" style="margin-bottom: 0">
-        		<div class="pui-grid-xs-12">
-        			<img src="<?php echo \think\Config::get('web_res_root'); ?>/event/img/header.jpg" style="width: 100%;height: auto;" />
-        		</div>
-        	</div>
-        	<div class="pui-row" style="margin: 0;">
-						<div class="pui-grid-md-2">
-								<div class="pui-btn-group-vertical pui-btn-gradient pui-btn-shadow ">
-										<div class="pui-btn-group ">
-												<a href="<?php echo url('index/usermanage/user_manage'); ?>" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow pui-btn-primary-active"><i class="fa fa-user fa-large"></i>用户管理</a>
-												<a href="<?php echo url('manage/Problemmanage/problem_manage'); ?>" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow"><i class="fa fa-file-o fa-large"></i>题目管理</a>
-												<a href="<?php echo url('event/index/showevent'); ?>" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow"><i class="fa fa-th fa-large"></i>事件管理</a>
-												<a href="<?php echo url('item_manage/item/index'); ?>" class="pui-btn pui-btn-primary pui-btn-large pui-text-shadow"><i class="fa fa-tint fa-large"></i>积分道具管理</a>
-										</div>
-
+		<div class="pui-grid">
+			<!-- header -->
+			<div class="pui-row" style="padding-bottom: 0">
+				<div class="pui-grid-xs-12">
+					<div class="page-header">
+							<div class="pui-layout pui-layout-fixed pui-layout-fixed-1200">
+									<div class="pui-menubar pui-menubar-square pui-menubar-header-style pui-bg-none pui-unbordered">
+										<div class="pui-menubar-aside">
+											<h2 class="pui-margin-none pui-text-normal page-title" title="中国移动南方基地">
+												<img src="<?php echo \think\Config::get('web_res_root'); ?>/image/CM.png" class="icon-CM" />
+																																					中国移动南方基地知识题库
+											</h2>
 								</div>
+								<div class="pui-menubar-offside">
+										<ul class="pui-menu pui-menu-inline pui-menu-simple pui-right">
+												<li>
+														<a href="#top">管理员</a>
+												</li>
+												<li>
+														<a href="<?php echo url('index/login/change_pwd'); ?>" id="pwchange">密码修改</a>
+												</li>
+												<li>
+														<a href="<?php echo url('index/Login/logout'); ?>">退出</a>
+												</li>
+										</ul>
+								</div>
+							</div>
 						</div>
-        		<div class="pui-grid-xs-8">
-        			<div class="pui-btn-group pui-btn-group-justify" style="width:100% ;">
-                    	<button type="button" class="pui-btn pui-btn-default pui-btn-large">
-                        	正在进行
-                    	</button>
-                    	<button type="button" class="pui-btn pui-btn-default pui-btn-large">
-                        	已经过期
-                    	</button>
-                	</div>
-
-                		<!-- <div class="pui-card-box">
-                    	<h1>《八月照相馆》<small>韩国爱情电影</small></h1>
-                    	<p class="pui-text-indent">《八月照相馆》是由许秦豪执导，韩石圭、沈银河主演的爱情电影。影片讲述了一个发生在已经收到死亡宣告的男子温暖而美丽的故事。该片于1998年1月24日在韩国上映。影片获第34届韩国百想艺术大赏和第19届韩国青龙电影奖最佳电影奖。</p>
-                   	 	<p class="pui-text-indent">《八月照相馆》的故事灵感来源于韩国已故歌手金光硕一张表情安详温暖的遗照，而该片的大多数主创人员都是出生在八月，所以片名叫做片名《八月照相馆》。</p>
-                    	<p class="pui-text-right"><br><a href="#" class="pui-btn pui-btn-default pui-unbordered">详细 &gt;&gt;</a></p>
-        			</div> -->
-
-												<?php if($data == ''): ?>
-												<div class="pui-card pui-card-shadow pui-card-radius">
-												<div class="pui-card-box">
-														<h1>当前无事件<small></small></h1>
+				</div>
+		</div>
+				</div>
+			</div>
+			<!-- header -->
+			<div class="pui-row" style="margin: 0;">
+				<div class="pui-grid-xs-2" style="padding-left: 0;">
+				<!-- 侧栏 -->
+					<div class="SlideMenu" style="margin-top: 0;">
+					<div class="pui-btn-group-vertical pui-btn-gradient pui-btn-shadow ">
+												<div class="pui-btn-group ">
+														<a href="<?php echo url('index/usermanage/user_manage'); ?>" ><button class="pui-btn-style  pui-btn pui-btn-primary pui-btn-large pui-text-shadow pui-btn-primary-active"><i class="fa fa-user fa-large"></i> 用户管理</button></a>
+														<a href="<?php echo url('manage/Problemmanage/problem_manage'); ?>" ><button class="pui-btn-style  pui-btn pui-btn-primary pui-btn-large pui-text-shadow "><i class="fa fa-list-alt fa-large"></i> 题目管理</button></a>
+														<a href="<?php echo url('event/index/showevent'); ?>"><button class="pui-btn-style  pui-btn pui-btn-primary pui-btn-large pui-text-shadow "><i class="fa fa-file-o fa-large"></i> 事件管理</button></a>
+														<a href="<?php echo url('item_manage/item/index'); ?>" ><button class="pui-btn-style  pui-btn pui-btn-primary pui-btn-large pui-text-shadow "><i class="fa fa-th fa-large"></i> 道具管理</button></a>
 												</div>
-												</div>
-												<?php else: foreach($data as $k=>$v): ?>
-												<div class="pui-card pui-card-shadow pui-card-radius">
-												<div class="pui-card-box">
-														<h1><?php echo $v['event_title']; ?><small><?php echo $v['event_type']; ?></small></h1>
-														<p class="pui-text-indent"><?php echo $v['event_description']; ?></p>
-														<p class="pui-text-right"><br><a href="<?php echo url('event/Question/problem_insert',array('event_id'=>$v['event_id'])); ?>" class="pui-btn pui-btn-default pui-unbordered">配置 &gt;&gt;</a></p>
-												</div>
-												</div>
-												<?php endforeach; endif; ?>
+									 </div>
+								</div>
+								<!-- 侧栏 -->
+				</div>
+				<br>
+				<div class="pui-grid-xs-9">
+					<div class="pui-btn-group pui-btn-group-justify" style="width:100% ;">
+									<button type="button" class="pui-btn pui-btn-default pui-btn-large">
+											正在进行
+									</button>
+									<button type="button" class="pui-btn pui-btn-default pui-btn-large">
+											已经过期
+									</button>
+							</div>
+
+								<!-- <div class="pui-card-box">
+									<h1>《八月照相馆》<small>韩国爱情电影</small></h1>
+									<p class="pui-text-indent">《八月照相馆》是由许秦豪执导，韩石圭、沈银河主演的爱情电影。影片讲述了一个发生在已经收到死亡宣告的男子温暖而美丽的故事。该片于1998年1月24日在韩国上映。影片获第34届韩国百想艺术大赏和第19届韩国青龙电影奖最佳电影奖。</p>
+									<p class="pui-text-indent">《八月照相馆》的故事灵感来源于韩国已故歌手金光硕一张表情安详温暖的遗照，而该片的大多数主创人员都是出生在八月，所以片名叫做片名《八月照相馆》。</p>
+									<p class="pui-text-right"><br><a href="#" class="pui-btn pui-btn-default pui-unbordered">详细 &gt;&gt;</a></p>
+					</div> -->
+
+										<?php if($data == ''): ?>
+										<div class="pui-card pui-card-shadow pui-card-radius">
+										<div class="pui-card-box">
+												<h1>当前无事件<small></small></h1>
+										</div>
+										</div>
+										<?php else: foreach($data as $k=>$v): ?>
+										<div class="pui-card pui-card-shadow pui-card-radius">
+										<div class="pui-card-box">
+												<h1><?php echo $v['event_title']; ?><small><?php echo $v['event_type']; ?></small></h1>
+												<p class="pui-text-indent"><?php echo $v['event_description']; ?></p>
+												<p class="pui-text-right"><br><a href="<?php echo url('event/Question/problem_insert',array('event_id'=>$v['event_id'])); ?>" class="pui-btn pui-btn-default pui-unbordered">配置 &gt;&gt;</a></p>
+										</div>
+										</div>
+										<?php endforeach; endif; ?>
 
 
 
 
-											<a href="<?php echo \think\Config::get('web_res_root'); ?>index.php/event/index/insertevent">
-                			<input type="button" class="pui-btn pui-btn-primary pui-btn-large" value="发起新事件">
-										</a>
-           			 </div>
-           		</div>
-        	</div>
-        </div>
+									<a href="<?php echo \think\Config::get('web_res_root'); ?>index.php/event/index/insertevent">
+									<input type="button" class="pui-btn pui-btn-primary pui-btn-large" value="发起新事件">
+								</a>
+						 </div>
+
+					</div>
+				</div>
+		</div>
         <!-- 代码写在这上面 -->
-				<!-- 代码写在这上面 -->
 				<script type="text/javascript" src="<?php echo \think\Config::get('web_res_root'); ?>/event/js/jquery.min.js"></script>
 				<script type="text/javascript" src="<?php echo \think\Config::get('web_res_root'); ?>/event/dist/js/planeui.js"></script>
 	</body>

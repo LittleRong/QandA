@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:86:"G:\xampp\htdocs\QandA\public/../application/index\view\eventmessage\event_message.html";i:1503990146;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:86:"G:\xampp\htdocs\QandA\public/../application/index\view\eventmessage\event_message.html";i:1503990156;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-cn">
 	<head>
