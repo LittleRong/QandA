@@ -17,6 +17,10 @@ class ParticipantModel {
 	public static function getWaitedAnswer($pant_id) {
 		 Return Db :: table('participant')->field('waited_answer') ->where('participant_id',$pant_id)->select();
 	}
+
+	public static function getPartname($user_id) {
+		 Return Db :: table('user') ->where('id',$user_id)->select();
+	}
 	
 
 

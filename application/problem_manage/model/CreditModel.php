@@ -107,8 +107,13 @@ class CreditModel {
       -> where('participant_id',$this->participant_id) ->select();
       LogTool::info('--------------$part_final-----------',$part_final);
       $team_final=Db :: table('team') -> where('team_id',$part_res[0]['team_id']) ->select();
+      $team_mates=Db::view('user','name,login_name')
+    ->view('participant','credit','participant.user_id=user.id')
+    -> where('team_id',1)
+    ->select();
       $res_final['user_credit']=$part_final[0]['credit'];
       $res_final['team']=$team_final[0]['team_credit'];
+      $res_final['team_mates']=$team_mates;
       Return $res_final;
 
   }

@@ -12,7 +12,7 @@ class ParticipantHaveAnswerdModel {
 	var $true_or_false;
 
 	public function setPro($refer_participant_id, $refer_team_id, $refer_problem_id, $user_answer){
-		LogTool::record($user_answer);
+		//LogTool::record($user_answer);
 		$this -> refer_participant_id = $refer_participant_id;
 		$this -> refer_problem_id = $refer_problem_id;
 		$this -> refer_team_id = $refer_team_id;

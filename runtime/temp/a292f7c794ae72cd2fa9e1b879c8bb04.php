@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"G:\xampp\htdocs\QandA\public/../application/event\view\question\tiku_upload.html";i:1503938433;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"G:\xampp\htdocs\QandA\public/../application/event\view\question\tiku_upload.html";i:1503990917;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-cn">
 	<head>
@@ -71,17 +71,42 @@
 		<meta name="msapplication-tap-highlight" content="no" />
 
 		<title>发起事件</title>
-
-        <link rel="stylesheet" type="text/css" href="<?php echo \think\Config::get('web_res_root'); ?>/event/dist/css/planeui.min.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo \think\Config::get('web_res_root'); ?>/css/planeui.min.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo \think\Config::get('web_res_root'); ?>/css/user_manage/user_manager.css" />
 	</head>
 	<body>
 		<!-- 代码写在这下面 -->
         <div class="pui-grid">
-        	<div class="pui-row">
-        		<div class="pui-grid-xs-12">
-        			<img src="<?php echo \think\Config::get('web_res_root'); ?>/event/img/header.jpg" style="width: 100%;height: auto;" />
-        		</div>
-        	</div>
+					<!-- header -->
+					<div class="pui-row" style="padding-bottom: 0">
+						<div class="pui-grid-xs-12">
+							<div class="page-header">
+									<div class="pui-layout pui-layout-fixed pui-layout-fixed-1200">
+											<div class="pui-menubar pui-menubar-square pui-menubar-header-style pui-bg-none pui-unbordered">
+												<div class="pui-menubar-aside">
+													<h2 class="pui-margin-none pui-text-normal page-title" title="中国移动南方基地">
+														<img src="<?php echo \think\Config::get('web_res_root'); ?>/image/CM.png" class="icon-CM" />
+																																							中国移动南方基地知识题库
+													</h2>
+										</div>
+										<div class="pui-menubar-offside">
+												<ul class="pui-menu pui-menu-inline pui-menu-simple pui-right">
+														<li>
+																<a href="#top">管理员</a>
+														</li>
+														<li>
+																<a href="<?php echo url('index/login/change_pwd'); ?>" id="pwchange">密码修改</a>
+														</li>
+														<li>
+																<a href="<?php echo url('index/Login/logout'); ?>">退出</a>
+														</li>
+												</ul>
+										</div>
+									</div>
+								</div>
+						</div>
+				</div>
+						</div>
         	<div class="pui-row">
         		<h1 class="pui-text-center">——题库上传——</h1>
 

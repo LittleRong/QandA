@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:88:"G:\xampp\htdocs\QandA\public/../application/item_manage\view\exchange\exchange_item.html";i:1503990716;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:88:"G:\xampp\htdocs\QandA\public/../application/item_manage\view\exchange\exchange_item.html";i:1503991894;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
@@ -77,16 +77,16 @@
 <body>
     <!-- 事件ID -->
     <div id="exchange_event" style="display: none;"><?php echo $event_id; ?></div>
-    <div class="pui-grid">
+    <div class="pui-grid" >
         <div class="pui-row" style="margin-bottom: 0">
             <div class="pui-grid-xs-12">
                 <img src="<?php echo \think\Config::get('web_res_root'); ?>/img/header.jpg" style="width: 100%; height: auto;" />
             </div>
         </div>
         <div class="pui-row" style="margin: 0;">
-            <div class="pui-grid-xs-10" style="margin-top: 20px;">
-                <div class="pui-row">
-					<div class="pui-grid-xs-3 pui-card pui-card-shadow pui-card-radius">
+            <div class="pui-grid-xs-12" style="margin-top: 20px;">
+                <div class="pui-row" style="padding-left:20px;padding-right:20px">
+					<div class="pui-grid-xs-2 pui-card pui-card-shadow pui-card-radius">
 							<blockquote>
 								<p>兑换规则</p>                               
 							</blockquote>
@@ -99,26 +99,26 @@
 														 <?php endforeach; endif; ?>
 							</div>
 				</div>
-                    <div class="pui-grid-xs-9 pui-card pui-card-shadow pui-card-radius">
+                    <div class="pui-grid-xs-9 pui-grid-xs-push-1 pui-card pui-card-shadow pui-card-radius">
                         <h2 style="margin-top: 10px;margin-left:20px;text-align: left"><a type="button" class="pui-btn pui-btn-default" href="<?php echo url('index/userindex/user_index'); ?>" >返回</a></h2>
                         <hr>
                         <div class="pui-row">
                             <?php if(!empty($arr)): foreach($arr as $v=>$k): ?>
         			<div class="pui-grid-xs-4">
-                        <div class="pui-center pui-text-center">
+                        <div class="pui-center pui-text-left">
                             <img src="<?php echo \think\Config::get('web_res_root'); ?>/img/道具.jpg" class="pui-img-thumbnail pui-img-xl" />
                         </div>
                         <div class="exchange_item" style="display: none;"><?php echo $k['item_id']; ?></div>
-                        <div class="pui-center pui-text-center">
+                        <div class="pui-center pui-text-left">
                             道具名：<?php echo $k['item_name']; ?>
                         </div>
-                        <div class="pui-center pui-text-center">
+                        <div class="pui-center pui-text-left">
                             道具描述：<?php echo $k['item_description']; ?>
                         </div>
-                        <div class="pui-center pui-text-center">
+                        <div class="pui-center pui-text-left">
                             兑换积分:<?php echo $k['change_rule']; ?>
                         </div>
-                        <div class="pui-center pui-text-center">
+                        <div class="pui-center pui-text-left">
                             剩余：
                   <?php if(!empty($k['amount'])): ?>
                   <?php echo $k['amount']; else: ?>
@@ -126,7 +126,7 @@
                   <?php endif; ?>
 
                         </div>
-                        <div class="pui-center pui-text-center">
+                        <div class="pui-center pui-text-left">
                             最多可兑换：
                   <?php if(!empty($k['team_amount'])): ?>
                   <?php echo $k['team_amount']; else: ?>
@@ -134,8 +134,8 @@
                   <?php endif; ?>
                         </div>
 												<?php if($isLeader==1): ?>
-                        <div class="pui-center pui-text-center">
-                            <input type="button" class="exchange_btn pui-btn pui-btn-primary pui-btn-small" value="兑换">
+                        <div class="pui-center pui-text-left">
+                            <input type="button" class="exchange_btn pui-btn pui-btn-primary pui-btn-small " value="兑换">
                         </div>
 												<?php endif; ?>
                     </div>

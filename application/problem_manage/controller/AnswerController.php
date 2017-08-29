@@ -60,7 +60,7 @@ class AnswerController extends Controller {
 		$this -> refer_team_id = 1; //参赛人队伍的id
 		$this->creditModel=new CreditModel(46,6);
 		$allSubmit=$_POST;
-		LogTool::record($_POST);
+		//LogTool::record($_POST);
 		$allAnswer=ParticipantModel::getWaitedAnswer($this -> refer_participant_id);//预存在participant表中waitedAnswer的问题id及答案
 		if(count($allAnswer)<=0) {
 			LogTool::record('没有找到参赛者，或参赛者中没有预存答案');
@@ -96,13 +96,16 @@ class AnswerController extends Controller {
 			$pantHaveAnswer = new ParticipantHaveAnswerdModel();
 			$pantHaveAnswer->setPro($this -> refer_participant_id, $this -> refer_team_id, $submit['problem_id'], $submitAnswer);
 
-			if ($submitAnswer == $singleAnswer[$submitId]) { // 回答正确
+			if ($submitAnswer == $singleAnswer[$submitId]||$submitAnswer==strtolower($singleAnswer[$submitId])) { // 回答正确
 				$pantHaveAnswer -> setTrueOrFalse(1); //设置为回答正确
 				$this->creditModel->dealAnswer(1,'single');
+				LogTool::info($submitAnswer,$singleAnswer[$submitId]);
+
 
 			} else {
 				$this->creditModel->dealAnswer(0,'single');
 				$pantHaveAnswer -> setTrueOrFalse(0);
+				LogTool::info($submitAnswer,$singleAnswer[$submitId]);
 			}
 			//LogTool::info('----------------dealsingle---panthaveAnswer-------',$pantHaveAnswer);
 			array_push($this -> partHaveAnswerArr, $pantHaveAnswer); //push到用户答题情况的数组
