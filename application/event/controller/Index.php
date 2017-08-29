@@ -27,7 +27,7 @@
             $all[$key] = array_merge(['item_id'=>$item_id],['item_name'=>$item_name],
               ['item_description'=>$item_description],['change_rule'=>$change_rule]);
           }
-          // dump($all);
+          //dump($all);
           if(empty($all[0]))
           {
             $this->assign('data',null);
