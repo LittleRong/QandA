@@ -103,10 +103,13 @@ class AnswerController extends Controller {
 			if ($submitAnswer == $singleAnswer[$submitId]) { // 回答正确
 				$pantHaveAnswer -> setTrueOrFalse(1); //设置为回答正确
 				$this -> userMark = $this -> userMark + $singleCredit; //增加积分
+				LogTool::info('------------------if right--yes--------------',$singleAnswer[$submitId]);
+
 			} else {
 				$pantHaveAnswer -> setTrueOrFalse(0);
+				LogTool::info('------------------if right--no--------------',$singleAnswer[$submitId]);
 			}
-			LogTool::info('----------------dealsingle---panthaveAnswer-------',$pantHaveAnswer);
+			//LogTool::info('----------------dealsingle---panthaveAnswer-------',$pantHaveAnswer);
 			array_push($this -> partHaveAnswerArr, $pantHaveAnswer); //push到用户答题情况的数组
 
 		}

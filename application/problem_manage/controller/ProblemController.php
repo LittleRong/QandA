@@ -92,7 +92,7 @@ class ProblemController extends Controller{
 		//**********************判断***********************************//
 		if($questNum['judge']>0) {
 			$judge_pros=$this-> pm ->getPartProblem($this->part,3,$questNum['judge'],$cantProblem,$eventProblem);
-			$judgeRes = $this -> dealNoOption($multi_pros);
+			$judgeRes = $this -> dealNoOption($judge_pros);
 			$pum_answer->setJudge($judgeRes['answer']);
 			$pum_problem->setJudge($judgeRes['problem']);
 		}
@@ -133,7 +133,7 @@ class ProblemController extends Controller{
 			$judge_answer = Logtool :: object2array($all_answer -> judge);
 			$judgeProId = array_keys($judge_answer);
 			$judge_pros = ProblemModel :: getProblemFromId($judgeProId); //得到multi的题目
-			$judgeRes = $this -> buildOption($judge_pros);
+			$judgeRes = $this -> dealNoOption($judge_pros);
 			$pum_problem->setJudge($judgeRes['problem']);
 
 		}
@@ -142,8 +142,9 @@ class ProblemController extends Controller{
 			$fill_answer = Logtool :: object2array($all_answer -> fill);
 			$fillProId = array_keys($fill_answer);
 			$fill_pros = ProblemModel :: getProblemFromId($fillProId); //得到multi的题目
-			$fillRes = $this -> buildOption($fill_pros);
-			$pum_problem->setJudge($fillRes['problem']);
+			//LogTool::info('-------------fill--------------',$fill_pros);
+			$fillRes = $this -> dealNoOption($fill_pros);
+			$pum_problem->setFill($fillRes['problem']);
 
 		}
 		//***********************************************************************
