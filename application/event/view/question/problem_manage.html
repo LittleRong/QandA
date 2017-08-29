@@ -161,13 +161,6 @@
 
         				<input type="button" class="pui-btn pui-btn-success pui-btn-small active" value="添加" >
 								<br><br>
-        				<h5>已添加题目</h5>
-        				<hr>
-        				<div><input type="checkbox" name="">1.题目XXX</div>
-        				<div><input type="checkbox" name="">2.题目XXX</div>
-        				<div><input type="checkbox" name="">3.题目XXX</div>
-        				<div><input type="checkbox" name="">4.题目XXX</div>
-        				<div><input type="checkbox" name="">5.题目XXX</div>
         			</div>
         			<div class="pui-grid-xs-6">
 
@@ -234,7 +227,7 @@
 					data: post_data,
 					async: false,
 					success: function(data){
-							alert("跳转成功!");
+							// alert("跳转成功!");
 							json_data=eval('('+data+')');
 							if(json_data['result']=="录入成功!"){
 									alert(json_data['result']);
