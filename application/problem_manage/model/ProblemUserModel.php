@@ -9,7 +9,7 @@ class ProblemUserModel {
 	var $planDate;//计划答题时间，过了不算
 	function __construct() {
 		$this-> planDate=date('Y-m-d', time());
-	} 
+	}
 	public function setSingle($single) {
 		$this -> single = $single;
 	}
@@ -17,9 +17,9 @@ class ProblemUserModel {
 		$this -> multi = $multi;
 	}
 	public function setJudge($judge) {
-		$this->judge=$judge;
+		$this -> judge = $judge;
 	}
 	public function setfill($fill) {
 		$this -> fill = $fill;
 	}
-} 
+}

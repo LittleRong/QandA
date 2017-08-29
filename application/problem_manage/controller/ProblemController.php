@@ -5,17 +5,20 @@ use app\problem_manage\model\ProblemModel;
 use app\problem_manage\model\ProblemContentModel;
 use app\problem_manage\model\ProblemUserModel;
 use app\problem_manage\model\ParticipantModel;
+use app\problem_manage\model\ParticipantHaveAnswerdModel;
+use app\problem_manage\model\EventModel;
 use app\problem_manage\tool\LogTool;
 use think\Db;
 class ProblemController extends Controller{
 	var $partModel ;
 	var $part;//用户所属的参赛者
 	var $pm ;
+	var $em;
 	public function _initialize()
     {
         $this->partModel=new ParticipantModel();
-		$this->pm=new ProblemModel();
-
+				$this->pm=new ProblemModel();
+				$this->em=new EventModel();
     }
 	public function index() {
 	}
@@ -62,7 +65,8 @@ class ProblemController extends Controller{
 
 		$eventProblem=$this-> pm ->getEventProblem($this->part['refer_event_id']);
 		$cantProblem=$this-> pm ->getCantSelectProblem($this->part);
-		$questNum=['single'=>3,'multiple'=>3,'judge'=>3,'fill'=>3];
+		//$questNum=['single'=>3,'multiple'=>3,'judge'=>3,'fill'=>3];
+		$questNum=$this->em->getQuestNum($this->part['refer_event_id']);
 		$pum_answer = new ProblemUserModel();
 		$pum_problem = new ProblemUserModel();
 		//$waitedQ = $this-> pm -> getUserWaitedQ($this->part, $cantProblem,$eventProblem);//得到用户需要答的题目
@@ -143,7 +147,7 @@ class ProblemController extends Controller{
 			$fillProId = array_keys($fill_answer);
 			$fill_pros = ProblemModel :: getProblemFromId($fillProId); //得到multi的题目
 			$fillRes = $this -> buildOption($fill_pros);
-			$pum_problem->setJudge($fillRes['problem']);
+			$pum_problem->setFill($fillRes['problem']);
 
 		}
 		//***********************************************************************
@@ -151,16 +155,21 @@ class ProblemController extends Controller{
 		Return $pum_problem;
 
 
-		//LogTool :: record(json_encode($single_d_pros));
-		// 未完成！！！！
+
 	}
 	public function getUserProblem() {
 		$user_id = 1;
 		$refer_event_id = 46;
 		$this->part = $this->partModel -> getParticipant($user_id, $refer_event_id); //array ('participant_id' => 1, 'refer_event_id' => 1, 'user_id' =>
+
 		// 1,'team_id' => 1,'credit' => 0,'leader' => 0, 'waited_answer' => NULL,
 		$ifRebuild = 0; //用来判断是否重新生成题目
 		// LogTool::record($pant);
+		$pha=ParticipantHaveAnswerdModel::getPardDayAnswer($this->part['participant_id']);
+		if (count($pha)>0){//判断用户是否已经答题,>0表示已经答过题目了
+			LogTool::record('----------------------participant have answered the question today----------------------');
+			Return null;
+		}
 		if ($this->part['waited_answer']) {
 			if (json_decode($this->part['waited_answer']) -> planDate == date('Y-m-d', time())) { // 判断题目是否是当天的
 				$ifRebuild = 1;
