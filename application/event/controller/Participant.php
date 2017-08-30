@@ -40,7 +40,7 @@
           $event_id = Session::get('myevent_id');
           $model = new ParticipantModel();
           $team_model = new TeamModel();
-          $temp = null;
+          $temp = -1;
           foreach ($mydata as $key => $value)
           {
             if($temp != $key)
