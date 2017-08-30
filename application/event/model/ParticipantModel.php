@@ -4,7 +4,7 @@ use think\Model;
 use think\Db;
 
 class ParticipantModel extends Model{
-    protected $table = 'participant';// 对应数据库中的event表
+    protected $table = 'participant';// 对应数据库中的participant表
 
     //插入participant表
     public function participant_insert($refer_event_id,$user_id,$team_id,$leaderid=0)
@@ -19,7 +19,7 @@ class ParticipantModel extends Model{
       ]);
       Db::name('participant')->insert($data);
     }
-    
+
     //获取当前队伍ID最大值
     public function getMax()
     {

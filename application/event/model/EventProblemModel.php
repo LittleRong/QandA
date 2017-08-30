@@ -4,7 +4,7 @@ use think\Model;
 use think\Db;
 
 class EventProblemModel extends Model{
-    protected $table = 'event_problem';// 对应数据库中的event表
+    protected $table = 'event_problem';// 对应数据库中的event_problem表
 
     public function event_problem_insert($problemId,$event_id)
     {
