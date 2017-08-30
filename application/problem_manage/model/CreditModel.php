@@ -86,9 +86,10 @@ class CreditModel {
   }
   public function dealFinal(){
       $part_add_score=$this->answer_score;
-
+      $res_final=array();//最后返回的结果array
       if($this->if_all_right){
-            $part_score=  $part_add_score+$this->person_score;
+            $part_add_score=  $part_add_score+$this->person_score;
+            $res_final['user_all_right']=$this->person_score;
       }
       $part_res=Db :: table('participant') -> where('participant_id',$this->participant_id) -> select();
       //$old_credit=$part_res[0]['credit'];
@@ -96,16 +97,18 @@ class CreditModel {
       //*****************处理team的分数***************************//
 
       $team_add_score=$this->answer_score;
+
       if($this->judgeIfTeamRight($part_res[0]['team_id'])){
-          $team_add_score=$team_add_score+$team_score;
+          $team_add_score=$team_add_score+$this->team_score;
+          $res_final['team_all_right']=$this->team_score;
       }
       Db :: table('team') -> where('team_id',$part_res[0]['team_id']) -> setInc('team_credit', $team_add_score);
       //分数
 
-      $res_final=array();
+
       $part_final=Db :: table('participant')
       -> where('participant_id',$this->participant_id) ->select();
-      
+
       $team_final=Db :: table('team') -> where('team_id',$part_res[0]['team_id']) ->select();
       LogTool::info('--------------$team_final-----------',$team_final);
       $team_mates=Db::view('user','name,login_name')
@@ -115,6 +118,9 @@ class CreditModel {
       $res_final['user_credit']=$part_final[0]['credit'];
       $res_final['team']=$team_final[0]['team_credit'];
       $res_final['team_mates']=$team_mates;
+      $res_final['user_score']=  $part_add_score;//用户当次获得的分数
+
+      LogTool::info('-------------------------creditModel--dealfinal-$res_final----------------------',$res_final);
       Return $res_final;
 
   }
