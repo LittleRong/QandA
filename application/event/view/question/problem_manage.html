@@ -125,7 +125,7 @@
         			<h3 class="pui-text-center">——&nbsp;配置题目&nbsp;——</h3>
         		</div>
         		<div class="pui-row">
-        			<div class="pui-grid-xs-6" style="margin-left: 15px;">
+        			<div class="pui-grid-xs-9 pui-grid-center" >
         				<hr>
         				<h5>单选题</h5>
         				<hr>
@@ -135,16 +135,17 @@
         						<input type="button" class=" pui-btn pui-btn-default" onclick="ac('cbox_1');" value="全选">
         						<input type="button" class=" pui-btn pui-btn-default" onclick="dc('cbox_1');" value="取消全选">
 								<span style=display:none>{$count=0}</span>
+								<table class="pui-table pui-table-bordered">
 								{foreach $data as $k=>$v}
 								{if condition="($v.problem_type == 1)"}
-								<div><input type="checkbox" class="cbox_1" name="cbox" value={$v.problem_id}>{++$count}.{$v.problem}</div>
-								<p>
+								<tr><td><input type="checkbox" class="cbox_1" name="cbox" value={$v.problem_id}>{++$count}.{$v.problem}</td>
 									{foreach $v.option as $z=>$x}
-									{$z}.{$x}&nbsp;&nbsp;&nbsp;
+									<td>{$z}.{$x}</td>
 									{/foreach}
-								</p>
+								</tr>
 								{/if}
-        				{/foreach}
+        						{/foreach}
+        						</table>
 								{/eq}
 								<hr>
         				<h5>多选题</h5>
@@ -155,16 +156,17 @@
 								<input type="button" class="pui-btn pui-btn-default" onclick="ac('cbox_2');" value="全选">
 								<input type="button" class="pui-btn pui-btn-default" onclick="dc('cbox_2');" value="取消全选">
 								<span style=display:none>{$count=0}</span>
+								<table class="pui-table pui-table-bordered">
 								{foreach $data as $k=>$v}
 								{if condition="($v.problem_type == 2)"}
-								<div><input type="checkbox" class="cbox_2"  name="cbox" value={$v.problem_id}>{++$count}.{$v.problem}</div>
-								<p>
+								<tr><td><input type="checkbox" class="cbox_2"  name="cbox" value={$v.problem_id}>{++$count}.{$v.problem}</td>
 									{foreach $v.option as $z=>$x}
-									{$z}.{$x}&nbsp;&nbsp;&nbsp;
+									<td>{$z}.{$x}</td>
 									{/foreach}
-								</p>
+								</tr>
 								{/if}
 								{/foreach}
+								</table>
 								{/eq}
         				<hr>
         				<h5>填空题</h5>
@@ -175,16 +177,17 @@
 								<span style=display:none>{$count=0}</span>
 								<input type="button" class="pui-btn pui-btn-default"  onclick="ac('cbox_0');" value="全选">
 								<input type="button" class="pui-btn pui-btn-default" onclick="dc('cbox_0');" value="取消全选">
+								<table class="pui-table pui-table-bordered">
 								{foreach $data as $k=>$v}
 								{if condition="($v.problem_type == 0)"}
-								<div><input type="checkbox" class="cbox_0" name="cbox" value={$v.problem_id}>{++$count}.{$v.problem}</div>
-								<p>
+								<tr><td><input type="checkbox" class="cbox_0"  name="cbox" value={$v.problem_id}>{++$count}.{$v.problem}</td>
 									{foreach $v.option as $z=>$x}
-									{$z}.{$x}&nbsp;&nbsp;&nbsp;
+									<td>{$z}.{$x}</td>
 									{/foreach}
-								</p>
+								</tr>
 								{/if}
 								{/foreach}
+								</table>
 								{/eq}
         				<h5>判断题</h5>
         				<hr>
@@ -194,16 +197,17 @@
 								<span style=display:none>{$count=0}</span>
 								<input type="button" class="all_3 pui-btn pui-btn-default" onclick="ac('cbox_3');" value="全选">
 								<input type="button" class="cancelall_3 pui-btn pui-btn-default" onclick="dc('cbox_3');"  value="取消全选">
- 								{foreach $data as $k=>$v}
+ 								<table class="pui-table pui-table-bordered">
+								{foreach $data as $k=>$v}
 								{if condition="($v.problem_type == 3)"}
- 								<div><input type="checkbox" class="cbox_3" name="cbox" value={$v.problem_id}>{++$count}.{$v.problem}</div>
-								<p>
+								<tr><td><input type="checkbox" class="cbox_3"  name="cbox" value={$v.problem_id}>{++$count}.{$v.problem}</td>
 									{foreach $v.option as $z=>$x}
-									{$z}.{$x}&nbsp;&nbsp;&nbsp;
+									<td>{$z}.{$x}</td>
 									{/foreach}
-								</p>
+								</tr>
 								{/if}
-        				{/foreach}
+								{/foreach}
+								</table>
 								{/eq}
 								<hr>
 
