@@ -110,7 +110,7 @@ class CreditModel {
       LogTool::info('--------------$team_final-----------',$team_final);
       $team_mates=Db::view('user','name,login_name')
     ->view('participant','credit','participant.user_id=user.id')
-    -> where('team_id',1)
+    -> where('team_id',$part_res[0]['team_id'])
     ->select();
       $res_final['user_credit']=$part_final[0]['credit'];
       $res_final['team']=$team_final[0]['team_credit'];
