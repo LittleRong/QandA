@@ -4,7 +4,7 @@ use think\Model;
 use think\Db;
 
 class ItemModel extends Model{
-    protected $table = 'item';// 对应数据库中的event表
+    protected $table = 'item';// 对应数据库中的item表
 
     //查找item表中所有数据
     public function item_checkall()

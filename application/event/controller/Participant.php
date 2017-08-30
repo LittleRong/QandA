@@ -2,6 +2,7 @@
   namespace app\event\controller;
 
   use app\event\model\ParticipantModel;
+  use app\event\model\TeamModel;
   use think\Controller;
   use think\View;
   use think\Request;
@@ -38,17 +39,16 @@
           // dump($mydata);
           $event_id = Session::get('myevent_id');
           $model = new ParticipantModel();
-          //获取队伍ID最大值
-          $base = $model->getMax();
+          $team_model = new TeamModel();
+          $teamid = $team_model->team_insert($event_id);
           foreach ($mydata as $key => $value)
           {
-            $teamid = $key+1;     //teamid默认应该从1开始
             $leader = $value[0];
             $teamate1 = $value[1][0];
             $teamate2 = $value[1][1];
-            $model->participant_insert((int)$event_id,(int)$leader,(int)$teamid+$base,1);
-            $model->participant_insert((int)$event_id,(int)$teamate1,(int)$teamid+$base,0);
-            $model->participant_insert((int)$event_id,(int)$teamate2,(int)$teamid+$base,0);
+            $model->participant_insert((int)$event_id,(int)$leader,(int)$teamid,1);
+            $model->participant_insert((int)$event_id,(int)$teamate1,(int)$teamid,0);
+            $model->participant_insert((int)$event_id,(int)$teamate2,(int)$teamid,0);
           }
           Session::delete('myevent_id');
           $data = array('result'=>'录入成功!');
