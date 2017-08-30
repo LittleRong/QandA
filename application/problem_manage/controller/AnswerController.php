@@ -76,7 +76,7 @@ class AnswerController extends Controller {
 		}
 
 		//***********单选*************//
-		if(array_key_exists('fill',$allSubmit)){
+		if(array_key_exists('single',$allSubmit)){
 			$singleAnswer = Logtool :: object2array($allAnswer['single']);
 			$singleSubmit=$allSubmit['single'];
 			$this->dealSingle($singleSubmit, $singleAnswer);
@@ -119,7 +119,7 @@ class AnswerController extends Controller {
 		for($i = 0; $i < count($singleSubmit); $i++) {
 			$if_right=0;
 			$submit = $singleSubmit[$i];
-			LogTool::info('---------------------------$submit-------------------------',$submit);
+			//LogTool::info('---------------------------$submit-------------------------',$submit);
 			$submitAnswer="";
 			if(array_key_exists('q_id',$submit)){//不选择的话这里会为空
 					$submitAnswer = $submit['q_id'];
@@ -132,12 +132,14 @@ class AnswerController extends Controller {
 			if ($submitAnswer == $singleAnswer[$submitId]||$submitAnswer==strtolower($singleAnswer[$submitId])) { // 回答正确
 				$pantHaveAnswer -> setTrueOrFalse(1); //设置为回答正确
 				$this->creditModel->dealAnswer(1,'single');
-				//LogTool::info($submitAnswer,$singleAnswer[$submitId]);
+				LogTool::record('-----------single-----right----------------------');
+				LogTool::info($submitAnswer,$singleAnswer[$submitId]);
 
 			} else {
 				$this->creditModel->dealAnswer(0,'single');
 				$pantHaveAnswer -> setTrueOrFalse(0);
-				//LogTool::info($submitAnswer,$singleAnswer[$submitId]);
+				LogTool::record('------------single----error----------------------');
+				LogTool::info($submitAnswer,$singleAnswer[$submitId]);
 			}
 			//LogTool::info('----------------dealsingle---panthaveAnswer-------',$pantHaveAnswer);
 			array_push($this -> partHaveAnswerArr, $pantHaveAnswer); //push到用户答题情况的数组
@@ -151,33 +153,34 @@ class AnswerController extends Controller {
 		for($i = 0; $i < count($multiSubmit); $i++) {
 			$submit = $multiSubmit[$i];
 			$submitId = $submit['problem_id'];
-			$submitAnswer="";
+			$submitAnswer=[];
 			if(array_key_exists('q_id',$submit)){//不选择的话这里会为空
 					$submitAnswer = $submit['q_id'];
 			}
 			$pantHaveAnswer = new ParticipantHaveAnswerdModel();
 			$pantHaveAnswer->setPro($this -> refer_participant_id, $this -> refer_team_id, $submit['problem_id'], $submitAnswer);
 			// ***********************多选判断是否正确*******************//
-			$ifRight = 0;
+			$ifRight = 1;
 			// 策略：错一道全错
 			$rightAnswer = $multiAnswer[$submitId];
-			try{
-				$diff = array_diff_assoc($submitAnswer, $rightAnswer);
-			}catch(\Exception $e){
-				$diff=[1,2];//有异常，暂时按题目错误处理
+
+			if(count($submitAnswer)==0 ||count($submitAnswer)>count($rightAnswer) ){//没有选或者选多了，全错
+					$ifRight = 0;
+			}elseif(count(array_diff($submitAnswer, $rightAnswer))||count(array_diff($rightAnswer,$submitAnswer))){//差集不为空，错
+				  $ifRight = 0;
 			}
 
-
-			if (count($diff) == 0) { // 差集为空，完全正确
-				$ifRight = 1;
-			}
 			// ***********************************************************
 			if ($ifRight) {
 				$pantHaveAnswer -> setTrueOrFalse(1); //设置为回答正确
 				$this->creditModel->dealAnswer(1,'multi');
+				//LogTool::record('-----------multi-----right----------------------');
+				//LogTool::info($submitAnswer,$multiAnswer[$submitId]);
 			} else {
 				$pantHaveAnswer -> setTrueOrFalse(0);
 				$this->creditModel->dealAnswer(0,'multi');
+				//LogTool::record('-----------multi-----error----------------------');
+				//LogTool::info($submitAnswer,$multiAnswer[$submitId]);
 			}
 			//::info('------------$this -> pantHaveAnswerArr-----------',$this->partHaveAnswerArr);
 			array_push($this->partHaveAnswerArr, $pantHaveAnswer); //push到用户答题情况的数组
