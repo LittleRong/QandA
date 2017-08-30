@@ -210,8 +210,8 @@ class AnswerController extends Controller {
 	}
 	private function dealFill($fillSubmit, $fillAnswer) {
 
-			 for($i = 0; $i < count($judgeSubmit); $i++) {
-				 		$submit = $judgeSubmit[$i];
+			 for($i = 0; $i < count($fillSubmit); $i++) {
+				 		$submit = $fillSubmit[$i];
 						$submitId = $submit['problem_id'];
 						$submitAnswer="";
 						if(array_key_exists('answer',$submit)){//不选择的话这里会为空
