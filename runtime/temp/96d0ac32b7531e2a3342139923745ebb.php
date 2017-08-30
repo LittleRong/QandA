@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:79:"G:\xampp\htdocs\QandA\public/../application/event\view\index\event_manager.html";i:1503990917;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-cn">
 	<head>
@@ -71,8 +72,8 @@
 
 		<title>事件管理主页</title>
 
-        <link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/css/planeui.min.css" />
-				<link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/css/user_manage/user_manager.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo \think\Config::get('web_res_root'); ?>/css/planeui.min.css" />
+				<link rel="stylesheet" type="text/css" href="<?php echo \think\Config::get('web_res_root'); ?>/css/user_manage/user_manager.css" />
 	</head>
 	<body>
 		<!-- 代码写在这下面 -->
@@ -85,7 +86,7 @@
 									<div class="pui-menubar pui-menubar-square pui-menubar-header-style pui-bg-none pui-unbordered">
 										<div class="pui-menubar-aside">
 											<h2 class="pui-margin-none pui-text-normal page-title" title="中国移动南方基地">
-												<img src="{$Think.config.web_res_root}/image/CM.png" class="icon-CM" />
+												<img src="<?php echo \think\Config::get('web_res_root'); ?>/image/CM.png" class="icon-CM" />
 																																					中国移动南方基地知识题库
 											</h2>
 								</div>
@@ -95,10 +96,10 @@
 														<a href="#top">管理员</a>
 												</li>
 												<li>
-														<a href="{:url('index/login/change_pwd')}" id="pwchange">密码修改</a>
+														<a href="<?php echo url('index/login/change_pwd'); ?>" id="pwchange">密码修改</a>
 												</li>
 												<li>
-														<a href="{:url('index/Login/logout')}">退出</a>
+														<a href="<?php echo url('index/Login/logout'); ?>">退出</a>
 												</li>
 										</ul>
 								</div>
@@ -115,10 +116,10 @@
 					<div class="SlideMenu" style="margin-top: 0;">
 					<div class="pui-btn-group-vertical pui-btn-gradient pui-btn-shadow ">
 												<div class="pui-btn-group ">
-														<a href="{:url('index/usermanage/user_manage')}" ><button class="pui-btn-style  pui-btn pui-btn-primary pui-btn-large pui-text-shadow"><i class="fa fa-user fa-large"></i> 用户管理</button></a>
-														<a href="{:url('manage/Problemmanage/problem_manage')}" ><button class="pui-btn-style  pui-btn pui-btn-primary pui-btn-large pui-text-shadow "><i class="fa fa-list-alt fa-large"></i> 题目管理</button></a>
-														<a href="{:url('event/index/showevent')}"><button class="pui-btn-style  pui-btn pui-btn-primary pui-btn-large pui-text-shadow pui-btn-primary-active"><i class="fa fa-file-o fa-large"></i> 事件管理</button></a>
-														<a href="{:url('item_manage/item/index')}" ><button class="pui-btn-style  pui-btn pui-btn-primary pui-btn-large pui-text-shadow "><i class="fa fa-th fa-large"></i> 道具管理</button></a>
+														<a href="<?php echo url('index/usermanage/user_manage'); ?>" ><button class="pui-btn-style  pui-btn pui-btn-primary pui-btn-large pui-text-shadow pui-btn-primary-active"><i class="fa fa-user fa-large"></i> 用户管理</button></a>
+														<a href="<?php echo url('manage/Problemmanage/problem_manage'); ?>" ><button class="pui-btn-style  pui-btn pui-btn-primary pui-btn-large pui-text-shadow "><i class="fa fa-list-alt fa-large"></i> 题目管理</button></a>
+														<a href="<?php echo url('event/index/showevent'); ?>"><button class="pui-btn-style  pui-btn pui-btn-primary pui-btn-large pui-text-shadow "><i class="fa fa-file-o fa-large"></i> 事件管理</button></a>
+														<a href="<?php echo url('item_manage/item/index'); ?>" ><button class="pui-btn-style  pui-btn pui-btn-primary pui-btn-large pui-text-shadow "><i class="fa fa-th fa-large"></i> 道具管理</button></a>
 												</div>
 									 </div>
 								</div>
@@ -142,28 +143,26 @@
 									<p class="pui-text-right"><br><a href="#" class="pui-btn pui-btn-default pui-unbordered">详细 &gt;&gt;</a></p>
 					</div> -->
 
-										{eq name="data" value=""}
+										<?php if($data == ''): ?>
 										<div class="pui-card pui-card-shadow pui-card-radius">
 										<div class="pui-card-box">
 												<h1>当前无事件<small></small></h1>
 										</div>
 										</div>
-										{else/}
-										{foreach $data as $k=>$v}
+										<?php else: foreach($data as $k=>$v): ?>
 										<div class="pui-card pui-card-shadow pui-card-radius">
 										<div class="pui-card-box">
-												<h1>{$v.event_title}<small>{$v.event_type}</small></h1>
-												<p class="pui-text-indent">{$v.event_description}</p>
-												<p class="pui-text-right"><br><a href="{:url('event/Question/problem_insert',array('event_id'=>$v.event_id))}" class="pui-btn pui-btn-default pui-unbordered">配置 &gt;&gt;</a></p>
+												<h1><?php echo $v['event_title']; ?><small><?php echo $v['event_type']; ?></small></h1>
+												<p class="pui-text-indent"><?php echo $v['event_description']; ?></p>
+												<p class="pui-text-right"><br><a href="<?php echo url('event/Question/problem_insert',array('event_id'=>$v['event_id'])); ?>" class="pui-btn pui-btn-default pui-unbordered">配置 &gt;&gt;</a></p>
 										</div>
 										</div>
-										{/foreach}
-										{/eq}
+										<?php endforeach; endif; ?>
 
 
 
 
-									<a href="{$Think.config.web_res_root}index.php/event/index/insertevent">
+									<a href="<?php echo \think\Config::get('web_res_root'); ?>index.php/event/index/insertevent">
 									<input type="button" class="pui-btn pui-btn-primary pui-btn-large" value="发起新事件">
 								</a>
 						 </div>
@@ -172,7 +171,7 @@
 				</div>
 		</div>
         <!-- 代码写在这上面 -->
-				<script type="text/javascript" src="{$Think.config.web_res_root}/event/js/jquery.min.js"></script>
-				<script type="text/javascript" src="{$Think.config.web_res_root}/event/dist/js/planeui.js"></script>
+				<script type="text/javascript" src="<?php echo \think\Config::get('web_res_root'); ?>/event/js/jquery.min.js"></script>
+				<script type="text/javascript" src="<?php echo \think\Config::get('web_res_root'); ?>/event/dist/js/planeui.js"></script>
 	</body>
 </html>

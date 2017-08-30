@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:94:"G:\xampp\htdocs\QandA\public/../application/problem_manage\view\user_problem\user_problem.html";i:1504027276;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-cn">
 	<head>
@@ -9,7 +10,7 @@
 
 		<title>开始答题</title>
         <link rel="icon" type="image/png" href="favicon.png" />
-        <link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/css/planeui.min.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo \think\Config::get('web_res_root'); ?>/css/planeui.min.css" />
 	</head>
 	<body  onload="leftTimer()">
 	<div id="load" style="position: fixed;height: 100%;width:100%;background: #eee;filter:alpha(opacity=50); -moz-opacity:0.5; -khtml-opacity: 0.5; opacity: 0.5;display: none   ">
@@ -18,10 +19,10 @@
     <div  class="pui-layout">
         <header>
             <div style="position: relative;">
-                <img src="{$Think.config.web_res_root}/img/header2.jpg" style="width: 100%;height: auto">
+                <img src="<?php echo \think\Config::get('web_res_root'); ?>/img/header2.jpg" style="width: 100%;height: auto">
                 <div class="form-group pui-btn-gradient pui-btn-shadow" style="position: absolute;bottom: 10px;right: 20px">
-                    <input type="button" class="pui-btn pui-btn-small pui-btn-default " value="{$name}">
-                    <a type="button" class="pui-btn pui-btn-small pui-btn-primary " href="{:url('index/Login/logout')}" >退出</a>
+                    <input type="button" class="pui-btn pui-btn-small pui-btn-default " value="<?php echo $name; ?>">
+                    <a type="button" class="pui-btn pui-btn-small pui-btn-primary " href="<?php echo url('index/Login/logout'); ?>" >退出</a>
                 </div>
             </div>
         </header>
@@ -31,7 +32,7 @@
 		   	<div class="pui-grid-xs-3 pui-grid-xs-push-9 pui-grid-sm-3 pui-grid-sm-push-9 pui-grid-md-3 pui-grid-md-push-9 pui-grid-lg-3 pui-grid-lg-push-9 pui-grid-xl-3 pui-grid-xl-push-9 pui-grid-xxl-3 pui-grid-xxl-push-9 ">
 		    	<div class="pui-text-center">
 		     		<h4 style="color: #008EE5"  id="timer">剩余<span id="left_min"></span>分<span id="left_sec"></span>秒</h4>
-		     		<input type="hidden" id="time" value="{$time}">
+		     		<input type="hidden" id="time" value="<?php echo $time; ?>">
 		    		<div style="text-align:center;">
 						<input type="button" class="pui-btn pui-btn-primary" id="submit" value="交卷">
 					</div>
@@ -57,41 +58,28 @@
 			        <div class="pui-center pui-text-center f24" style="width:70%;">
 						<h6 style="color: #aaa">今日题量：总共<span id="all_pr"></span>道题，单选<span id="single_pr"></span>道，多选<span id="multi_pr"></span>道，判断<span id="judge_pr"></span>道，填空<span id="fill_pr"></span>道</h6>
 					</div>
-						{foreach $data as $v=>$k}
-							{if condition="is_array($k)"}
-								<div id="{$v}_panel" class="tixing_panel pui-layout">
-									{foreach $k as $v2=>$k2}
-										<div class="timu_item pui-card pui-card-shadow pui-card-radius" id="{$k2.problem_id}">
+						<?php foreach($data as $v=>$k): if(is_array($k)): ?>
+								<div id="<?php echo $v; ?>_panel" class="tixing_panel pui-layout">
+									<?php foreach($k as $v2=>$k2): ?>
+										<div class="timu_item pui-card pui-card-shadow pui-card-radius" id="<?php echo $k2['problem_id']; ?>">
 			                				<div class="pui-card-box">
-			                    			<h5>{$v2+1}、{$k2.problem}</h5>
+			                    			<h5><?php echo $v2+1; ?>、<?php echo $k2['problem']; ?></h5>
 
-											{if condition="array_key_exists('option',$k2)"}
-												{eq name="$v" value="single"}
-													{foreach $k2.option as $v3=>$k3}
-														<input type="radio" name="{$v}_{$k2.problem_id}" id="{$k3.q_id}">{$v3}、{$k3.content} <br>
-													{/foreach}
-												{else/}
-													{foreach $k2.option as $v3=>$k3}
-														<input type="checkbox" name="{$v}_{$k2.problem_id}" id="{$k3.q_id}">{$v3}、{$k3.content} <br>
-													{/foreach}
-												{/eq}
-												
-											{else /} 
-												{eq name="$v" value="judge"}
-													<input type="radio" name="{$v}_{$k2.problem_id}" value="1">对<br>
-													<input type="radio" name="{$v}_{$k2.problem_id}" value="0">错
-												{/eq}
-												{eq name="$v" value="fill"}
-													<input type="text" name="{$v}_{$k2.problem_id}" ><br>
-													{/eq}
-											{/if}
+											<?php if(array_key_exists('option',$k2)): if($v == 'single'): foreach($k2['option'] as $v3=>$k3): ?>
+														<input type="radio" name="<?php echo $v; ?>_<?php echo $k2['problem_id']; ?>" id="<?php echo $k3['q_id']; ?>"><?php echo $v3; ?>、<?php echo $k3['content']; ?> <br>
+													<?php endforeach; else: foreach($k2['option'] as $v3=>$k3): ?>
+														<input type="checkbox" name="<?php echo $v; ?>_<?php echo $k2['problem_id']; ?>" id="<?php echo $k3['q_id']; ?>"><?php echo $v3; ?>、<?php echo $k3['content']; ?> <br>
+													<?php endforeach; endif; else: if($v == 'judge'): ?>
+													<input type="radio" name="<?php echo $v; ?>_<?php echo $k2['problem_id']; ?>" value="1">对<br>
+													<input type="radio" name="<?php echo $v; ?>_<?php echo $k2['problem_id']; ?>" value="0">错
+												<?php endif; if($v == 'fill'): ?>
+													<input type="text" name="<?php echo $v; ?>_<?php echo $k2['problem_id']; ?>" ><br>
+													<?php endif; endif; ?>
 											</div>
 										</div>
-									{/foreach}
+									<?php endforeach; ?>
 								</div>
-							{else /}
-							{/if}
-						{/foreach}
+							<?php else: endif; endforeach; ?>
 				<br>
 				</div>
 
@@ -99,7 +87,7 @@
 		</div>
 	</div>
 	<div id="submit_result" style="display:none;width: 90%;margin: 0 auto;margin-top: 10px">
-		<a type="button" class=" pui-btn pui-btn-default" style="float:left" href="{:url('index/userindex/user_index')}">返回</a>
+		<a type="button" class=" pui-btn pui-btn-default" style="float:left" href="<?php echo url('index/userindex/user_index'); ?>">返回</a>
 		<h5>&emsp;您的得分是：<span id="per_score"></span>；团队总得分：<span id="all_score"></span></h5>
 		<div class="pui-timeline" >
             <div class="pui-timeline-list" id="team_mates"> 
@@ -119,7 +107,7 @@
             </div>
 		</div>
 	</div>
-<script type="text/javascript" src="{$Think.config.web_res_root}/js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="<?php echo \think\Config::get('web_res_root'); ?>/js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript"> 
 	function leftTimer(year,month,day,hour,minute,second){ 
 	    // 准备 
@@ -141,8 +129,8 @@
       if(surplusTimes<=0){ 
         console.log('时间到！'); 
         clearInterval(countdowns);
-        alert("时间到，将自动提交答卷");
-        $('#submit').click();
+        //alert("时间到，将自动提交答卷");
+        //$('#submit').click();
 
       } 
     },1000); 
@@ -251,10 +239,10 @@
 			user_answer['multi']=	multi_items;
 			user_answer['judge']=	judge_items;
 			user_answer['fill']=	fill_items;
-			user_answer['participant']={$participant};
+			user_answer['participant']=<?php echo $participant; ?>;
 			$.ajax({  
                 type: "POST",  
-                url: "{:url('/answer/SubmitAnswer')}",  
+                url: "<?php echo url('/answer/SubmitAnswer'); ?>",  
                 async: true, //同步  
                 dataType: "json",  
                 data:user_answer,  

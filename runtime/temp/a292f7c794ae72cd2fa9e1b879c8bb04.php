@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"G:\xampp\htdocs\QandA\public/../application/event\view\question\tiku_upload.html";i:1503990917;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-cn">
 	<head>
@@ -70,8 +71,8 @@
 		<meta name="msapplication-tap-highlight" content="no" />
 
 		<title>发起事件</title>
-		<link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/css/planeui.min.css" />
-		<link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/css/user_manage/user_manager.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo \think\Config::get('web_res_root'); ?>/css/planeui.min.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo \think\Config::get('web_res_root'); ?>/css/user_manage/user_manager.css" />
 	</head>
 	<body>
 		<!-- 代码写在这下面 -->
@@ -84,7 +85,7 @@
 											<div class="pui-menubar pui-menubar-square pui-menubar-header-style pui-bg-none pui-unbordered">
 												<div class="pui-menubar-aside">
 													<h2 class="pui-margin-none pui-text-normal page-title" title="中国移动南方基地">
-														<img src="{$Think.config.web_res_root}/image/CM.png" class="icon-CM" />
+														<img src="<?php echo \think\Config::get('web_res_root'); ?>/image/CM.png" class="icon-CM" />
 																																							中国移动南方基地知识题库
 													</h2>
 										</div>
@@ -94,10 +95,10 @@
 																<a href="#top">管理员</a>
 														</li>
 														<li>
-																<a href="{:url('index/login/change_pwd')}" id="pwchange">密码修改</a>
+																<a href="<?php echo url('index/login/change_pwd'); ?>" id="pwchange">密码修改</a>
 														</li>
 														<li>
-																<a href="{:url('index/Login/logout')}">退出</a>
+																<a href="<?php echo url('index/Login/logout'); ?>">退出</a>
 														</li>
 												</ul>
 										</div>
@@ -111,14 +112,13 @@
 
 				<div class="pui-form-group pui-grid-center">
 
-                    <form class="pui-form pui-input-sm-large pui-input-md-large pui-grid" style="text-align: center" action="{$Think.config.web_res_root}index.php/event/question/upload" method="post" enctype="multipart/form-data">
+                    <form class="pui-form pui-input-sm-large pui-input-md-large pui-grid" style="text-align: center" action="<?php echo \think\Config::get('web_res_root'); ?>index.php/event/question/upload" method="post" enctype="multipart/form-data">
                     <label>选择上传的文件</label>
-										<a href="{$Think.config.web_res_root}index.php/event/question/problem_manage">
-                    <input id="uplode_file" type="file" name="image" class="pui-input-border-error">
-										<input id="uplode_btn" type="submit" class="pui-btn pui-btn-success" name="submit" value="提交" />
+										<a href="<?php echo \think\Config::get('web_res_root'); ?>index.php/event/question/problem_manage">
+                    <input type="file" name="image" class="pui-input-border-error"> <input type="submit" class="pui-btn pui-btn-success" name="submit" value="Submit" />
 										</a>
-										<a href="{$Think.config.web_res_root}index.php/event/question/problem_manage">
-                    <input type="button" class="pui-btn pui-btn-success" name="cancel" value="跳过" />
+										<a href="<?php echo \think\Config::get('web_res_root'); ?>index.php/event/question/problem_manage">
+                    <input type="button" class="pui-btn pui-btn-success" name="cancel" value="Cancel" />
 										</a>
                     </form>
 
@@ -133,20 +133,11 @@
 	</body>
 
 		<!-- jQuery -->
-			<script src="{$Think.config.web_res_root}/js/jquery.min.js"></script>
-		<script type="text/javascript" src="{$Think.config.web_res_root}/js/planeui.js"></script>
+		<script type="text/javascript" src="<?php echo \think\Config::get('web_res_root'); ?>/event/dist/js/planeui.js"></script>
+		<script src="<?php echo \think\Config::get('web_res_root'); ?>/js/jquery.min.js"></script>
+		<script src="<?php echo \think\Config::get('web_res_root'); ?>/js/jquery-ui.min.js"></script>
+		<script src="<?php echo \think\Config::get('web_res_root'); ?>/js/bootstrap.min.js"></script>
 
-		<script type="text/javascript">
-		$(document).ready(function(){
-		  $("form").submit(function(e){
-			    var uplode_file = $("#uplode_file").val();
-					if(uplode_file==""){
-						alert("请选择文件");
-						return false;
-					}
-      });
-		});
 
-		</script>
 
 </html>

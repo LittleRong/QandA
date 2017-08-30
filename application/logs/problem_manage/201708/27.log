@@ -1,0 +1,1755 @@
+---------------------------------------------------------------
+[ 2017-08-27T10:16:29+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/UserProblem
+[ info ] localhost/QandA/public/index.php/problem/UserProblem [运行时间：0.148151s][吞吐率：6.75req/s] [内存消耗：2,094.37kb] [文件加载：45]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'ProblemController',
+    2 => 'getUserProblem',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=d708mndv5pjktu3nn3c73cq8f4',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'UserProblem',
+)
+[ info ] [ RUN ] app\problem_manage\controller\ProblemController->getUserProblem[ G:\xampp\htdocs\QandA\application\problem_manage\controller\ProblemController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.048954s ] mysql:dbname=question;host=120.77.144.75;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `participant` [ RunTime:0.031880s ]
+[ sql ] [ SQL ] SELECT * FROM `participant` WHERE  `refer_event_id` = 7  AND `user_id` = 3 [ RunTime:0.027373s ]
+[ log ] array (
+)
+[ error ] [8]未定义数组下标: 0[G:\xampp\htdocs\QandA\application\problem_manage\model\PanticipantModel.php:10]
+---------------------------------------------------------------
+[ 2017-08-27T10:23:47+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/UserProblem
+[ info ] localhost/QandA/public/index.php/problem/UserProblem [运行时间：0.643719s][吞吐率：1.55req/s] [内存消耗：2,718.41kb] [文件加载：54]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'ProblemController',
+    2 => 'getUserProblem',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=d708mndv5pjktu3nn3c73cq8f4',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'UserProblem',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\problem_manage\controller\ProblemController->getUserProblem[ G:\xampp\htdocs\QandA\application\problem_manage\controller\ProblemController.php ]
+[ info ] [ LOG ] INIT File
+[ info ] [ LOG ] INIT File
+[ info ] [ LOG ] INIT File
+[ info ] [ LOG ] INIT File
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ info ] [ VIEW ] G:\xampp\htdocs\QandA\public/../application/problem_manage\view\user_problem\user_problem.html [ array (
+  0 => 'data',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.163735s ] mysql:dbname=question;host=120.77.144.75;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `participant` [ RunTime:0.032205s ]
+[ sql ] [ SQL ] SELECT * FROM `participant` WHERE  `refer_event_id` = 46  AND `user_id` = 1 [ RunTime:0.031421s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `event_problem` [ RunTime:0.032053s ]
+[ sql ] [ SQL ] SELECT `problem_id` FROM `event_problem` WHERE  `refer_event_id` = 46 [ RunTime:0.025782s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `participant_haved_answer` [ RunTime:0.032078s ]
+[ sql ] [ SQL ] SELECT `refer_problem_id` FROM `participant_haved_answer` WHERE  `refer_team_id` = 1  AND `answer_date` = '2017-08-27' OR `refer_participant_id` = 6 [ RunTime:0.031177s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `event` [ RunTime:0.031939s ]
+[ sql ] [ SQL ] SELECT * FROM `event` WHERE  `event_id` = 46 [ RunTime:0.031171s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `problem` [ RunTime:0.031861s ]
+[ sql ] [ SQL ] SELECT * FROM `problem` WHERE  ( `problem_id` NOT IN (15,115,145) AND `problem_id` IN (123,127,128,124,174,129,125) )  AND `problem_type` = 1 ORDER BY rand() LIMIT 2 [ RunTime:0.031717s ]
+[ sql ] [ SQL ] SELECT * FROM `problem` WHERE  ( `problem_id` NOT IN (15,115,145) AND `problem_id` IN (123,127,128,124,174,129,125) )  AND `problem_type` = 2 ORDER BY rand() LIMIT 2 [ RunTime:0.031377s ]
+[ sql ] [ SQL ] SELECT * FROM `problem` WHERE  ( `problem_id` NOT IN (15,115,145) AND `problem_id` IN (123,127,128,124,174,129,125) )  AND `problem_type` = 3 ORDER BY rand() LIMIT 2 [ RunTime:0.031333s ]
+[ sql ] [ SQL ] UPDATE `participant`  SET `waited_answer`='{\"single\":{\"129\":\"\\u662f\",\"127\":\"\\u662f\"},\"multi\":{\"124\":\"D\"},\"judge\":{\"124\":\"D\"},\"planDate\":\"2017-08-27\"}'  WHERE  `participant_id` = 6 [ RunTime:0.030638s ]
+[ log ] array (
+  0 => 
+  array (
+    'participant_id' => 6,
+    'refer_event_id' => 46,
+    'user_id' => 1,
+    'team_id' => 1,
+    'credit' => 0,
+    'leader' => 0,
+    'waited_answer' => '{"judge": {"124": "D"}, "multi": {"124": "D"}, "single": {"123": "D", "127": "是"}, "planDate": "2017-08-27"}',
+  ),
+)
+[ log ] ------------cantProblem sql---------
+[ log ] array (
+  0 => 
+  array (
+    'refer_problem_id' => 15,
+  ),
+  1 => 
+  array (
+    'refer_problem_id' => 115,
+  ),
+  2 => 
+  array (
+    'refer_problem_id' => 145,
+  ),
+)
+[ log ] ------------cantProblem_json---------
+[ log ] array (
+  0 => 15,
+  1 => 115,
+  2 => 145,
+)
+[ log ] --------------生成的题目---------------
+[ log ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 129,
+      'problem_content' => '{"answer": "是", "option": {"a": "确实是", "b": "肯定是", "c": "必须是", "d": "哈哈哈哈"}, "problem": "这东西是不是弱智？"}',
+      'problem_class' => '业务类',
+      'problem_type' => 1,
+    ),
+    1 => 
+    array (
+      'problem_id' => 127,
+      'problem_content' => '{"answer": "是", "option": {"a": "确实是", "b": "肯定是", "c": "必须是", "d": "哈哈哈哈"}, "problem": "你是不是傻逼？"}',
+      'problem_class' => '业务类',
+      'problem_type' => 1,
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 124,
+      'problem_content' => '{"answer": "D", "option": {"a": "是", "b": "确实是", "c": "肯定是", "d": "必须是", "f": "test"}, "problem": "这东西是不是弱智？"}',
+      'problem_class' => '业务类',
+      'problem_type' => 2,
+    ),
+  ),
+  'judge' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 174,
+      'problem_content' => '{"answer": "是", "option": [], "problem": "你是不是傻逼？"}',
+      'problem_class' => '业务类',
+      'problem_type' => 3,
+    ),
+  ),
+)
+[ log ] ----------------getUserProblem最后生成的问题---------------------
+[ log ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 129,
+      'problem' => '这东西是不是弱智？',
+      'option' => 
+      array (
+        'A' => 
+        array (
+          'q_id' => 'a',
+          'content' => '确实是',
+        ),
+        'B' => 
+        array (
+          'q_id' => 'd',
+          'content' => '哈哈哈哈',
+        ),
+        'C' => 
+        array (
+          'q_id' => 'c',
+          'content' => '必须是',
+        ),
+        'D' => 
+        array (
+          'q_id' => 'b',
+          'content' => '肯定是',
+        ),
+      ),
+    ),
+    1 => 
+    array (
+      'problem_id' => 127,
+      'problem' => '你是不是傻逼？',
+      'option' => 
+      array (
+        'A' => 
+        array (
+          'q_id' => 'a',
+          'content' => '确实是',
+        ),
+        'B' => 
+        array (
+          'q_id' => 'c',
+          'content' => '必须是',
+        ),
+        'C' => 
+        array (
+          'q_id' => 'b',
+          'content' => '肯定是',
+        ),
+        'D' => 
+        array (
+          'q_id' => 'd',
+          'content' => '哈哈哈哈',
+        ),
+      ),
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 124,
+      'problem' => '这东西是不是弱智？',
+      'option' => 
+      array (
+        'A' => 
+        array (
+          'q_id' => 'a',
+          'content' => '是',
+        ),
+        'B' => 
+        array (
+          'q_id' => 'c',
+          'content' => '肯定是',
+        ),
+        'C' => 
+        array (
+          'q_id' => 'f',
+          'content' => 'test',
+        ),
+        'D' => 
+        array (
+          'q_id' => 'b',
+          'content' => '确实是',
+        ),
+        'E' => 
+        array (
+          'q_id' => 'd',
+          'content' => '必须是',
+        ),
+      ),
+    ),
+  ),
+  'judge' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 124,
+      'problem' => '这东西是不是弱智？',
+    ),
+  ),
+  'planDate' => '2017-08-27',
+)
+[ error ] [8]未定义数组索引: user_message[G:\xampp\htdocs\QandA\runtime\temp\7eb0d41f4a80eb98189cd89bc65b6aa3.php:19]
+---------------------------------------------------------------
+[ 2017-08-27T10:28:12+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/UserProblem
+[ info ] localhost/QandA/public/index.php/problem/UserProblem [运行时间：3.399068s][吞吐率：0.29req/s] [内存消耗：2,719.82kb] [文件加载：54]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'ProblemController',
+    2 => 'getUserProblem',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=d708mndv5pjktu3nn3c73cq8f4',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'UserProblem',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\problem_manage\controller\ProblemController->getUserProblem[ G:\xampp\htdocs\QandA\application\problem_manage\controller\ProblemController.php ]
+[ info ] [ LOG ] INIT File
+[ info ] [ LOG ] INIT File
+[ info ] [ LOG ] INIT File
+[ info ] [ LOG ] INIT File
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ info ] [ VIEW ] G:\xampp\htdocs\QandA\public/../application/problem_manage\view\user_problem\user_problem.html [ array (
+  0 => 'data',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:2.969761s ] mysql:dbname=question;host=120.77.144.75;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `participant` [ RunTime:0.032025s ]
+[ sql ] [ SQL ] SELECT * FROM `participant` WHERE  `refer_event_id` = 46  AND `user_id` = 1 [ RunTime:0.027314s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `event_problem` [ RunTime:0.026611s ]
+[ sql ] [ SQL ] SELECT `problem_id` FROM `event_problem` WHERE  `refer_event_id` = 46 [ RunTime:0.027308s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `participant_haved_answer` [ RunTime:0.033151s ]
+[ sql ] [ SQL ] SELECT `refer_problem_id` FROM `participant_haved_answer` WHERE  `refer_team_id` = 1  AND `answer_date` = '2017-08-27' OR `refer_participant_id` = 6 [ RunTime:0.030139s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `event` [ RunTime:0.027951s ]
+[ sql ] [ SQL ] SELECT * FROM `event` WHERE  `event_id` = 46 [ RunTime:0.027755s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `problem` [ RunTime:0.027376s ]
+[ sql ] [ SQL ] SELECT * FROM `problem` WHERE  ( `problem_id` NOT IN (15,115,145) AND `problem_id` IN (123,127,128,124,174,129,125) )  AND `problem_type` = 1 ORDER BY rand() LIMIT 2 [ RunTime:0.027540s ]
+[ sql ] [ SQL ] SELECT * FROM `problem` WHERE  ( `problem_id` NOT IN (15,115,145) AND `problem_id` IN (123,127,128,124,174,129,125) )  AND `problem_type` = 2 ORDER BY rand() LIMIT 2 [ RunTime:0.028000s ]
+[ sql ] [ SQL ] SELECT * FROM `problem` WHERE  ( `problem_id` NOT IN (15,115,145) AND `problem_id` IN (123,127,128,124,174,129,125) )  AND `problem_type` = 3 ORDER BY rand() LIMIT 2 [ RunTime:0.030649s ]
+[ sql ] [ SQL ] UPDATE `participant`  SET `waited_answer`='{\"single\":{\"123\":\"D\",\"127\":\"\\u662f\"},\"multi\":{\"124\":\"D\"},\"judge\":{\"124\":\"D\"},\"planDate\":\"2017-08-27\"}'  WHERE  `participant_id` = 6 [ RunTime:0.026725s ]
+[ log ] array (
+  0 => 
+  array (
+    'participant_id' => 6,
+    'refer_event_id' => 46,
+    'user_id' => 1,
+    'team_id' => 1,
+    'credit' => 0,
+    'leader' => 0,
+    'waited_answer' => '{"judge": {"124": "D"}, "multi": {"124": "D"}, "single": {"127": "是", "129": "是"}, "planDate": "2017-08-27"}',
+  ),
+)
+[ log ] ------------cantProblem sql---------
+[ log ] array (
+  0 => 
+  array (
+    'refer_problem_id' => 15,
+  ),
+  1 => 
+  array (
+    'refer_problem_id' => 115,
+  ),
+  2 => 
+  array (
+    'refer_problem_id' => 145,
+  ),
+)
+[ log ] ------------cantProblem_json---------
+[ log ] array (
+  0 => 15,
+  1 => 115,
+  2 => 145,
+)
+[ log ] --------------生成的题目---------------
+[ log ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 123,
+      'problem_content' => '{"answer": "D", "option": {"a": "是", "b": "不是", "c": "就是", "d": "你妈你才是", "e": "测试", "f": "测试", "g": "测试"}, "problem": "你是傻逼吗？"}',
+      'problem_class' => '业务类',
+      'problem_type' => 1,
+    ),
+    1 => 
+    array (
+      'problem_id' => 127,
+      'problem_content' => '{"answer": "是", "option": {"a": "确实是", "b": "肯定是", "c": "必须是", "d": "哈哈哈哈"}, "problem": "你是不是傻逼？"}',
+      'problem_class' => '业务类',
+      'problem_type' => 1,
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 124,
+      'problem_content' => '{"answer": "D", "option": {"a": "是", "b": "确实是", "c": "肯定是", "d": "必须是", "f": "test"}, "problem": "这东西是不是弱智？"}',
+      'problem_class' => '业务类',
+      'problem_type' => 2,
+    ),
+  ),
+  'judge' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 174,
+      'problem_content' => '{"answer": "是", "option": [], "problem": "你是不是傻逼？"}',
+      'problem_class' => '业务类',
+      'problem_type' => 3,
+    ),
+  ),
+)
+[ log ] ----------------getUserProblem最后生成的问题---------------------
+[ log ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 123,
+      'problem' => '你是傻逼吗？',
+      'option' => 
+      array (
+        'A' => 
+        array (
+          'q_id' => 'e',
+          'content' => '测试',
+        ),
+        'B' => 
+        array (
+          'q_id' => 'f',
+          'content' => '测试',
+        ),
+        'C' => 
+        array (
+          'q_id' => 'c',
+          'content' => '就是',
+        ),
+        'D' => 
+        array (
+          'q_id' => 'd',
+          'content' => '你妈你才是',
+        ),
+        'E' => 
+        array (
+          'q_id' => 'a',
+          'content' => '是',
+        ),
+        'F' => 
+        array (
+          'q_id' => 'g',
+          'content' => '测试',
+        ),
+        'G' => 
+        array (
+          'q_id' => 'b',
+          'content' => '不是',
+        ),
+      ),
+    ),
+    1 => 
+    array (
+      'problem_id' => 127,
+      'problem' => '你是不是傻逼？',
+      'option' => 
+      array (
+        'A' => 
+        array (
+          'q_id' => 'a',
+          'content' => '确实是',
+        ),
+        'B' => 
+        array (
+          'q_id' => 'd',
+          'content' => '哈哈哈哈',
+        ),
+        'C' => 
+        array (
+          'q_id' => 'b',
+          'content' => '肯定是',
+        ),
+        'D' => 
+        array (
+          'q_id' => 'c',
+          'content' => '必须是',
+        ),
+      ),
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 124,
+      'problem' => '这东西是不是弱智？',
+      'option' => 
+      array (
+        'A' => 
+        array (
+          'q_id' => 'b',
+          'content' => '确实是',
+        ),
+        'B' => 
+        array (
+          'q_id' => 'd',
+          'content' => '必须是',
+        ),
+        'C' => 
+        array (
+          'q_id' => 'c',
+          'content' => '肯定是',
+        ),
+        'D' => 
+        array (
+          'q_id' => 'f',
+          'content' => 'test',
+        ),
+        'E' => 
+        array (
+          'q_id' => 'a',
+          'content' => '是',
+        ),
+      ),
+    ),
+  ),
+  'judge' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 124,
+      'problem' => '这东西是不是弱智？',
+    ),
+  ),
+  'planDate' => '2017-08-27',
+)
+[ error ] [8]未定义数组索引: user_message[G:\xampp\htdocs\QandA\runtime\temp\7eb0d41f4a80eb98189cd89bc65b6aa3.php:19]
+---------------------------------------------------------------
+[ 2017-08-27T10:28:29+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/UserProblem
+[ info ] localhost/QandA/public/index.php/problem/UserProblem [运行时间：0.480445s][吞吐率：2.08req/s] [内存消耗：2,683.33kb] [文件加载：50]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'ProblemController',
+    2 => 'getUserProblem',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=d708mndv5pjktu3nn3c73cq8f4',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'UserProblem',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\problem_manage\controller\ProblemController->getUserProblem[ G:\xampp\htdocs\QandA\application\problem_manage\controller\ProblemController.php ]
+[ info ] [ LOG ] INIT File
+[ info ] [ LOG ] INIT File
+[ info ] [ LOG ] INIT File
+[ info ] [ LOG ] INIT File
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ info ] [ VIEW ] G:\xampp\htdocs\QandA\public/../application/problem_manage\view\user_problem\user_problem.html [ array (
+  0 => 'data',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.050032s ] mysql:dbname=question;host=120.77.144.75;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `participant` [ RunTime:0.030075s ]
+[ sql ] [ SQL ] SELECT * FROM `participant` WHERE  `refer_event_id` = 46  AND `user_id` = 1 [ RunTime:0.027742s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `event_problem` [ RunTime:0.026265s ]
+[ sql ] [ SQL ] SELECT `problem_id` FROM `event_problem` WHERE  `refer_event_id` = 46 [ RunTime:0.031640s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `participant_haved_answer` [ RunTime:0.027511s ]
+[ sql ] [ SQL ] SELECT `refer_problem_id` FROM `participant_haved_answer` WHERE  `refer_team_id` = 1  AND `answer_date` = '2017-08-27' OR `refer_participant_id` = 6 [ RunTime:0.034238s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `event` [ RunTime:0.025138s ]
+[ sql ] [ SQL ] SELECT * FROM `event` WHERE  `event_id` = 46 [ RunTime:0.030837s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `problem` [ RunTime:0.027952s ]
+[ sql ] [ SQL ] SELECT * FROM `problem` WHERE  ( `problem_id` NOT IN (15,115,145) AND `problem_id` IN (123,127,128,124,174,129,125) )  AND `problem_type` = 1 ORDER BY rand() LIMIT 2 [ RunTime:0.031559s ]
+[ sql ] [ SQL ] SELECT * FROM `problem` WHERE  ( `problem_id` NOT IN (15,115,145) AND `problem_id` IN (123,127,128,124,174,129,125) )  AND `problem_type` = 2 ORDER BY rand() LIMIT 2 [ RunTime:0.027182s ]
+[ sql ] [ SQL ] SELECT * FROM `problem` WHERE  ( `problem_id` NOT IN (15,115,145) AND `problem_id` IN (123,127,128,124,174,129,125) )  AND `problem_type` = 3 ORDER BY rand() LIMIT 2 [ RunTime:0.027345s ]
+[ sql ] [ SQL ] UPDATE `participant`  SET `waited_answer`='{\"single\":{\"128\":\"\\u662f\",\"123\":\"D\"},\"multi\":{\"124\":\"D\"},\"judge\":{\"124\":\"D\"},\"planDate\":\"2017-08-27\"}'  WHERE  `participant_id` = 6 [ RunTime:0.027587s ]
+[ log ] array (
+  0 => 
+  array (
+    'participant_id' => 6,
+    'refer_event_id' => 46,
+    'user_id' => 1,
+    'team_id' => 1,
+    'credit' => 0,
+    'leader' => 0,
+    'waited_answer' => '{"judge": {"124": "D"}, "multi": {"124": "D"}, "single": {"123": "D", "127": "是"}, "planDate": "2017-08-27"}',
+  ),
+)
+[ log ] ------------cantProblem sql---------
+[ log ] array (
+  0 => 
+  array (
+    'refer_problem_id' => 15,
+  ),
+  1 => 
+  array (
+    'refer_problem_id' => 115,
+  ),
+  2 => 
+  array (
+    'refer_problem_id' => 145,
+  ),
+)
+[ log ] ------------cantProblem_json---------
+[ log ] array (
+  0 => 15,
+  1 => 115,
+  2 => 145,
+)
+[ log ] --------------生成的题目---------------
+[ log ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 128,
+      'problem_content' => '{"answer": "是", "option": {"a": "确实是", "b": "肯定是", "c": "必须是", "d": "哈哈哈哈"}, "problem": "你是不是傻逼？"}',
+      'problem_class' => '业务类',
+      'problem_type' => 1,
+    ),
+    1 => 
+    array (
+      'problem_id' => 123,
+      'problem_content' => '{"answer": "D", "option": {"a": "是", "b": "不是", "c": "就是", "d": "你妈你才是", "e": "测试", "f": "测试", "g": "测试"}, "problem": "你是傻逼吗？"}',
+      'problem_class' => '业务类',
+      'problem_type' => 1,
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 124,
+      'problem_content' => '{"answer": "D", "option": {"a": "是", "b": "确实是", "c": "肯定是", "d": "必须是", "f": "test"}, "problem": "这东西是不是弱智？"}',
+      'problem_class' => '业务类',
+      'problem_type' => 2,
+    ),
+  ),
+  'judge' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 174,
+      'problem_content' => '{"answer": "是", "option": [], "problem": "你是不是傻逼？"}',
+      'problem_class' => '业务类',
+      'problem_type' => 3,
+    ),
+  ),
+)
+[ log ] ----------------getUserProblem最后生成的问题---------------------
+[ log ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 128,
+      'problem' => '你是不是傻逼？',
+      'option' => 
+      array (
+        'A' => 
+        array (
+          'q_id' => 'c',
+          'content' => '必须是',
+        ),
+        'B' => 
+        array (
+          'q_id' => 'a',
+          'content' => '确实是',
+        ),
+        'C' => 
+        array (
+          'q_id' => 'b',
+          'content' => '肯定是',
+        ),
+        'D' => 
+        array (
+          'q_id' => 'd',
+          'content' => '哈哈哈哈',
+        ),
+      ),
+    ),
+    1 => 
+    array (
+      'problem_id' => 123,
+      'problem' => '你是傻逼吗？',
+      'option' => 
+      array (
+        'A' => 
+        array (
+          'q_id' => 'b',
+          'content' => '不是',
+        ),
+        'B' => 
+        array (
+          'q_id' => 'a',
+          'content' => '是',
+        ),
+        'C' => 
+        array (
+          'q_id' => 'g',
+          'content' => '测试',
+        ),
+        'D' => 
+        array (
+          'q_id' => 'd',
+          'content' => '你妈你才是',
+        ),
+        'E' => 
+        array (
+          'q_id' => 'e',
+          'content' => '测试',
+        ),
+        'F' => 
+        array (
+          'q_id' => 'f',
+          'content' => '测试',
+        ),
+        'G' => 
+        array (
+          'q_id' => 'c',
+          'content' => '就是',
+        ),
+      ),
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 124,
+      'problem' => '这东西是不是弱智？',
+      'option' => 
+      array (
+        'A' => 
+        array (
+          'q_id' => 'f',
+          'content' => 'test',
+        ),
+        'B' => 
+        array (
+          'q_id' => 'a',
+          'content' => '是',
+        ),
+        'C' => 
+        array (
+          'q_id' => 'd',
+          'content' => '必须是',
+        ),
+        'D' => 
+        array (
+          'q_id' => 'c',
+          'content' => '肯定是',
+        ),
+        'E' => 
+        array (
+          'q_id' => 'b',
+          'content' => '确实是',
+        ),
+      ),
+    ),
+  ),
+  'judge' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 124,
+      'problem' => '这东西是不是弱智？',
+    ),
+  ),
+  'planDate' => '2017-08-27',
+)
+---------------------------------------------------------------
+[ 2017-08-27T18:11:18+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/UserProblem
+[ info ] localhost/QandA/public/index.php/problem/UserProblem [运行时间：2.963446s][吞吐率：0.34req/s] [内存消耗：2,527.15kb] [文件加载：47]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'ProblemController',
+    2 => 'getUserProblem',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=d708mndv5pjktu3nn3c73cq8f4',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'UserProblem',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\problem_manage\controller\ProblemController->getUserProblem[ G:\xampp\htdocs\QandA\application\problem_manage\controller\ProblemController.php ]
+[ info ] [ LOG ] INIT File
+[ info ] [ LOG ] INIT File
+[ info ] [ LOG ] INIT File
+[ info ] [ LOG ] INIT File
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:2.573251s ] mysql:dbname=question;host=120.77.144.75;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `participant` [ RunTime:0.024214s ]
+[ sql ] [ SQL ] SELECT * FROM `participant` WHERE  `refer_event_id` = 46  AND `user_id` = 1 [ RunTime:0.023448s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `event_problem` [ RunTime:0.027027s ]
+[ sql ] [ SQL ] SELECT `problem_id` FROM `event_problem` WHERE  `refer_event_id` = 46 [ RunTime:0.026635s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `participant_haved_answer` [ RunTime:0.023809s ]
+[ sql ] [ SQL ] SELECT `refer_problem_id` FROM `participant_haved_answer` WHERE  `refer_team_id` = 1  AND `answer_date` = '2017-08-27' OR `refer_participant_id` = 6 [ RunTime:0.027438s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `event` [ RunTime:0.024016s ]
+[ sql ] [ SQL ] SELECT * FROM `event` WHERE  `event_id` = 46 [ RunTime:0.027046s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `problem` [ RunTime:0.023889s ]
+[ sql ] [ SQL ] SELECT * FROM `problem` WHERE  ( `problem_id` NOT IN (15,115,145) AND `problem_id` IN (123,127,128,124,174,129,125) )  AND `problem_type` = 1 ORDER BY rand() LIMIT 2 [ RunTime:0.027603s ]
+[ sql ] [ SQL ] SELECT * FROM `problem` WHERE  ( `problem_id` NOT IN (15,115,145) AND `problem_id` IN (123,127,128,124,174,129,125) )  AND `problem_type` = 2 ORDER BY rand() LIMIT 2 [ RunTime:0.027116s ]
+[ sql ] [ SQL ] SELECT * FROM `problem` WHERE  ( `problem_id` NOT IN (15,115,145) AND `problem_id` IN (123,127,128,124,174,129,125) )  AND `problem_type` = 3 ORDER BY rand() LIMIT 2 [ RunTime:0.027341s ]
+[ sql ] [ SQL ] UPDATE `participant`  SET `waited_answer`='{\"single\":{\"123\":\"A\",\"128\":\"A\"},\"multi\":{\"124\":[\"A\",\"C\"]},\"judge\":{\"124\":[\"A\",\"C\"]},\"planDate\":\"2017-08-27\"}'  WHERE  `participant_id` = 6 [ RunTime:0.033937s ]
+[ log ] array (
+  0 => 
+  array (
+    'participant_id' => 6,
+    'refer_event_id' => 46,
+    'user_id' => 1,
+    'team_id' => 1,
+    'credit' => 0,
+    'leader' => 0,
+    'waited_answer' => '{"judge": {"124": ["A", "C"]}, "multi": {"124": ["A", "C"]}, "single": {"123": "A", "127": "A"}, "planDate": "2017-08-27"}',
+  ),
+)
+[ log ] ------------cantProblem sql---------
+[ log ] array (
+  0 => 
+  array (
+    'refer_problem_id' => 15,
+  ),
+  1 => 
+  array (
+    'refer_problem_id' => 115,
+  ),
+  2 => 
+  array (
+    'refer_problem_id' => 145,
+  ),
+  3 => 
+  array (
+    'refer_problem_id' => 145,
+  ),
+)
+[ log ] ------------cantProblem_json---------
+[ log ] array (
+  0 => 15,
+  1 => 115,
+  2 => 145,
+  3 => 145,
+)
+[ log ] --------------生成的题目---------------
+[ log ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 123,
+      'problem_content' => '{"answer": "A", "option": {"a": "是", "b": "确实是", "c": "肯定是", "d": "必须是", "f": "test"}, "problem": "这东西是不是弱智？"}',
+      'problem_class' => '业务类',
+      'problem_type' => 1,
+    ),
+    1 => 
+    array (
+      'problem_id' => 128,
+      'problem_content' => '{"answer": "A", "option": {"a": "是", "b": "确实是", "c": "肯定是", "d": "必须是", "f": "test"}, "problem": "这东西是不是弱智？"}',
+      'problem_class' => '业务类',
+      'problem_type' => 1,
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 124,
+      'problem_content' => '{"answer": ["A", "C"], "option": {"a": "是", "b": "确实是", "c": "肯定是", "d": "必须是", "f": "test"}, "problem": "这东西是不是弱智？"}',
+      'problem_class' => '业务类',
+      'problem_type' => 2,
+    ),
+  ),
+  'judge' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 174,
+      'problem_content' => '{"answer": "是", "option": {}, "problem": "今天天气好吗"}',
+      'problem_class' => '业务类',
+      'problem_type' => 3,
+    ),
+  ),
+)
+[ log ] ----------------getUserProblem最后生成的问题---------------------
+[ log ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 123,
+      'problem' => '这东西是不是弱智？',
+      'option' => 
+      array (
+        'A' => 
+        array (
+          'q_id' => 'c',
+          'content' => '肯定是',
+        ),
+        'B' => 
+        array (
+          'q_id' => 'b',
+          'content' => '确实是',
+        ),
+        'C' => 
+        array (
+          'q_id' => 'f',
+          'content' => 'test',
+        ),
+        'D' => 
+        array (
+          'q_id' => 'a',
+          'content' => '是',
+        ),
+        'E' => 
+        array (
+          'q_id' => 'd',
+          'content' => '必须是',
+        ),
+      ),
+    ),
+    1 => 
+    array (
+      'problem_id' => 128,
+      'problem' => '这东西是不是弱智？',
+      'option' => 
+      array (
+        'A' => 
+        array (
+          'q_id' => 'd',
+          'content' => '必须是',
+        ),
+        'B' => 
+        array (
+          'q_id' => 'f',
+          'content' => 'test',
+        ),
+        'C' => 
+        array (
+          'q_id' => 'c',
+          'content' => '肯定是',
+        ),
+        'D' => 
+        array (
+          'q_id' => 'a',
+          'content' => '是',
+        ),
+        'E' => 
+        array (
+          'q_id' => 'b',
+          'content' => '确实是',
+        ),
+      ),
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 124,
+      'problem' => '这东西是不是弱智？',
+      'option' => 
+      array (
+        'A' => 
+        array (
+          'q_id' => 'f',
+          'content' => 'test',
+        ),
+        'B' => 
+        array (
+          'q_id' => 'd',
+          'content' => '必须是',
+        ),
+        'C' => 
+        array (
+          'q_id' => 'b',
+          'content' => '确实是',
+        ),
+        'D' => 
+        array (
+          'q_id' => 'a',
+          'content' => '是',
+        ),
+        'E' => 
+        array (
+          'q_id' => 'c',
+          'content' => '肯定是',
+        ),
+      ),
+    ),
+  ),
+  'judge' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 124,
+      'problem' => '这东西是不是弱智？',
+    ),
+  ),
+  'planDate' => '2017-08-27',
+)
+---------------------------------------------------------------
+[ 2017-08-27T18:19:34+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/UserProblem
+[ info ] localhost/QandA/public/index.php/problem/UserProblem [运行时间：6.151869s][吞吐率：0.16req/s] [内存消耗：2,683.22kb] [文件加载：50]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'ProblemController',
+    2 => 'getUserProblem',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=d708mndv5pjktu3nn3c73cq8f4',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'UserProblem',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\problem_manage\controller\ProblemController->getUserProblem[ G:\xampp\htdocs\QandA\application\problem_manage\controller\ProblemController.php ]
+[ info ] [ LOG ] INIT File
+[ info ] [ LOG ] INIT File
+[ info ] [ LOG ] INIT File
+[ info ] [ LOG ] INIT File
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ info ] [ VIEW ] G:\xampp\htdocs\QandA\public/../application/problem_manage\view\user_problem\user_problem.html [ array (
+  0 => 'data',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:5.730454s ] mysql:dbname=question;host=120.77.144.75;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `participant` [ RunTime:0.034592s ]
+[ sql ] [ SQL ] SELECT * FROM `participant` WHERE  `refer_event_id` = 46  AND `user_id` = 1 [ RunTime:0.025016s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `event_problem` [ RunTime:0.026530s ]
+[ sql ] [ SQL ] SELECT `problem_id` FROM `event_problem` WHERE  `refer_event_id` = 46 [ RunTime:0.027570s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `participant_haved_answer` [ RunTime:0.031836s ]
+[ sql ] [ SQL ] SELECT `refer_problem_id` FROM `participant_haved_answer` WHERE  `refer_team_id` = 1  AND `answer_date` = '2017-08-27' OR `refer_participant_id` = 6 [ RunTime:0.033749s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `event` [ RunTime:0.025570s ]
+[ sql ] [ SQL ] SELECT * FROM `event` WHERE  `event_id` = 46 [ RunTime:0.027113s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `problem` [ RunTime:0.027897s ]
+[ sql ] [ SQL ] SELECT * FROM `problem` WHERE  ( `problem_id` NOT IN (15,115,145) AND `problem_id` IN (123,127,128,124,174,129,125) )  AND `problem_type` = 1 ORDER BY rand() LIMIT 2 [ RunTime:0.027758s ]
+[ sql ] [ SQL ] SELECT * FROM `problem` WHERE  ( `problem_id` NOT IN (15,115,145) AND `problem_id` IN (123,127,128,124,174,129,125) )  AND `problem_type` = 2 ORDER BY rand() LIMIT 2 [ RunTime:0.027321s ]
+[ sql ] [ SQL ] SELECT * FROM `problem` WHERE  ( `problem_id` NOT IN (15,115,145) AND `problem_id` IN (123,127,128,124,174,129,125) )  AND `problem_type` = 3 ORDER BY rand() LIMIT 2 [ RunTime:0.031437s ]
+[ sql ] [ SQL ] UPDATE `participant`  SET `waited_answer`='{\"single\":{\"127\":\"A\",\"129\":\"A\"},\"multi\":{\"124\":[\"A\",\"C\"]},\"judge\":{\"124\":[\"A\",\"C\"]},\"planDate\":\"2017-08-27\"}'  WHERE  `participant_id` = 6 [ RunTime:0.026737s ]
+[ log ] array (
+  0 => 
+  array (
+    'participant_id' => 6,
+    'refer_event_id' => 46,
+    'user_id' => 1,
+    'team_id' => 1,
+    'credit' => 0,
+    'leader' => 0,
+    'waited_answer' => '{"judge": {"124": ["A", "C"]}, "multi": {"124": ["A", "C"]}, "single": {"123": "A", "128": "A"}, "planDate": "2017-08-27"}',
+  ),
+)
+[ log ] ------------cantProblem sql---------
+[ log ] array (
+  0 => 
+  array (
+    'refer_problem_id' => 15,
+  ),
+  1 => 
+  array (
+    'refer_problem_id' => 115,
+  ),
+  2 => 
+  array (
+    'refer_problem_id' => 145,
+  ),
+  3 => 
+  array (
+    'refer_problem_id' => 145,
+  ),
+)
+[ log ] ------------cantProblem_json---------
+[ log ] array (
+  0 => 15,
+  1 => 115,
+  2 => 145,
+  3 => 145,
+)
+[ log ] --------------生成的题目---------------
+[ log ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 127,
+      'problem_content' => '{"answer": "A", "option": {"a": "是", "b": "确实是", "c": "肯定是", "d": "必须是", "f": "test"}, "problem": "这东西是不是弱智？"}',
+      'problem_class' => '业务类',
+      'problem_type' => 1,
+    ),
+    1 => 
+    array (
+      'problem_id' => 129,
+      'problem_content' => '{"answer": "A", "option": {"a": "是", "b": "确实是", "c": "肯定是", "d": "必须是", "f": "test"}, "problem": "这东西是不是弱智？"}',
+      'problem_class' => '业务类',
+      'problem_type' => 1,
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 124,
+      'problem_content' => '{"answer": ["A", "C"], "option": {"a": "是", "b": "确实是", "c": "肯定是", "d": "必须是", "f": "test"}, "problem": "这东西是不是弱智？"}',
+      'problem_class' => '业务类',
+      'problem_type' => 2,
+    ),
+  ),
+  'judge' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 174,
+      'problem_content' => '{"answer": "是", "option": {}, "problem": "今天天气好吗"}',
+      'problem_class' => '业务类',
+      'problem_type' => 3,
+    ),
+  ),
+)
+[ log ] ----------------getUserProblem最后生成的问题---------------------
+[ log ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 127,
+      'problem' => '这东西是不是弱智？',
+      'option' => 
+      array (
+        'A' => 
+        array (
+          'q_id' => 'f',
+          'content' => 'test',
+        ),
+        'B' => 
+        array (
+          'q_id' => 'b',
+          'content' => '确实是',
+        ),
+        'C' => 
+        array (
+          'q_id' => 'a',
+          'content' => '是',
+        ),
+        'D' => 
+        array (
+          'q_id' => 'c',
+          'content' => '肯定是',
+        ),
+        'E' => 
+        array (
+          'q_id' => 'd',
+          'content' => '必须是',
+        ),
+      ),
+    ),
+    1 => 
+    array (
+      'problem_id' => 129,
+      'problem' => '这东西是不是弱智？',
+      'option' => 
+      array (
+        'A' => 
+        array (
+          'q_id' => 'a',
+          'content' => '是',
+        ),
+        'B' => 
+        array (
+          'q_id' => 'b',
+          'content' => '确实是',
+        ),
+        'C' => 
+        array (
+          'q_id' => 'c',
+          'content' => '肯定是',
+        ),
+        'D' => 
+        array (
+          'q_id' => 'f',
+          'content' => 'test',
+        ),
+        'E' => 
+        array (
+          'q_id' => 'd',
+          'content' => '必须是',
+        ),
+      ),
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 124,
+      'problem' => '这东西是不是弱智？',
+      'option' => 
+      array (
+        'A' => 
+        array (
+          'q_id' => 'd',
+          'content' => '必须是',
+        ),
+        'B' => 
+        array (
+          'q_id' => 'f',
+          'content' => 'test',
+        ),
+        'C' => 
+        array (
+          'q_id' => 'c',
+          'content' => '肯定是',
+        ),
+        'D' => 
+        array (
+          'q_id' => 'b',
+          'content' => '确实是',
+        ),
+        'E' => 
+        array (
+          'q_id' => 'a',
+          'content' => '是',
+        ),
+      ),
+    ),
+  ),
+  'judge' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 124,
+      'problem' => '这东西是不是弱智？',
+    ),
+  ),
+  'planDate' => '2017-08-27',
+)
+---------------------------------------------------------------
+[ 2017-08-27T18:20:23+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/UserProblem
+[ info ] localhost/QandA/public/index.php/problem/UserProblem [运行时间：2.128868s][吞吐率：0.47req/s] [内存消耗：2,683.38kb] [文件加载：50]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'ProblemController',
+    2 => 'getUserProblem',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=d708mndv5pjktu3nn3c73cq8f4',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'UserProblem',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\problem_manage\controller\ProblemController->getUserProblem[ G:\xampp\htdocs\QandA\application\problem_manage\controller\ProblemController.php ]
+[ info ] [ LOG ] INIT File
+[ info ] [ LOG ] INIT File
+[ info ] [ LOG ] INIT File
+[ info ] [ LOG ] INIT File
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ info ] [ VIEW ] G:\xampp\htdocs\QandA\public/../application/problem_manage\view\user_problem\user_problem.html [ array (
+  0 => 'data',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:1.689252s ] mysql:dbname=question;host=120.77.144.75;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `participant` [ RunTime:0.032087s ]
+[ sql ] [ SQL ] SELECT * FROM `participant` WHERE  `refer_event_id` = 46  AND `user_id` = 1 [ RunTime:0.027363s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `event_problem` [ RunTime:0.026270s ]
+[ sql ] [ SQL ] SELECT `problem_id` FROM `event_problem` WHERE  `refer_event_id` = 46 [ RunTime:0.027609s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `participant_haved_answer` [ RunTime:0.031802s ]
+[ sql ] [ SQL ] SELECT `refer_problem_id` FROM `participant_haved_answer` WHERE  `refer_team_id` = 1  AND `answer_date` = '2017-08-27' OR `refer_participant_id` = 6 [ RunTime:0.035527s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `event` [ RunTime:0.027890s ]
+[ sql ] [ SQL ] SELECT * FROM `event` WHERE  `event_id` = 46 [ RunTime:0.027094s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `problem` [ RunTime:0.032558s ]
+[ sql ] [ SQL ] SELECT * FROM `problem` WHERE  ( `problem_id` NOT IN (15,115,145) AND `problem_id` IN (123,127,128,124,174,129,125) )  AND `problem_type` = 1 ORDER BY rand() LIMIT 2 [ RunTime:0.027039s ]
+[ sql ] [ SQL ] SELECT * FROM `problem` WHERE  ( `problem_id` NOT IN (15,115,145) AND `problem_id` IN (123,127,128,124,174,129,125) )  AND `problem_type` = 2 ORDER BY rand() LIMIT 2 [ RunTime:0.031394s ]
+[ sql ] [ SQL ] SELECT * FROM `problem` WHERE  ( `problem_id` NOT IN (15,115,145) AND `problem_id` IN (123,127,128,124,174,129,125) )  AND `problem_type` = 3 ORDER BY rand() LIMIT 2 [ RunTime:0.028198s ]
+[ sql ] [ SQL ] UPDATE `participant`  SET `waited_answer`='{\"single\":{\"127\":\"A\",\"123\":\"A\"},\"multi\":{\"124\":[\"A\",\"C\"]},\"judge\":{\"124\":[\"A\",\"C\"]},\"planDate\":\"2017-08-27\"}'  WHERE  `participant_id` = 6 [ RunTime:0.035118s ]
+[ log ] array (
+  0 => 
+  array (
+    'participant_id' => 6,
+    'refer_event_id' => 46,
+    'user_id' => 1,
+    'team_id' => 1,
+    'credit' => 0,
+    'leader' => 0,
+    'waited_answer' => '{"judge": {"124": ["A", "C"]}, "multi": {"124": ["A", "C"]}, "single": {"127": "A", "129": "A"}, "planDate": "2017-08-27"}',
+  ),
+)
+[ log ] ------------cantProblem sql---------
+[ log ] array (
+  0 => 
+  array (
+    'refer_problem_id' => 15,
+  ),
+  1 => 
+  array (
+    'refer_problem_id' => 115,
+  ),
+  2 => 
+  array (
+    'refer_problem_id' => 145,
+  ),
+  3 => 
+  array (
+    'refer_problem_id' => 145,
+  ),
+)
+[ log ] ------------cantProblem_json---------
+[ log ] array (
+  0 => 15,
+  1 => 115,
+  2 => 145,
+  3 => 145,
+)
+[ log ] --------------生成的题目---------------
+[ log ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 127,
+      'problem_content' => '{"answer": "A", "option": {"a": "是", "b": "确实是", "c": "肯定是", "d": "必须是", "f": "test"}, "problem": "这东西是不是弱智？"}',
+      'problem_class' => '业务类',
+      'problem_type' => 1,
+    ),
+    1 => 
+    array (
+      'problem_id' => 123,
+      'problem_content' => '{"answer": "A", "option": {"a": "是", "b": "确实是", "c": "肯定是", "d": "必须是", "f": "test"}, "problem": "这东西是不是弱智？"}',
+      'problem_class' => '业务类',
+      'problem_type' => 1,
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 124,
+      'problem_content' => '{"answer": ["A", "C"], "option": {"a": "是", "b": "确实是", "c": "肯定是", "d": "必须是", "f": "test"}, "problem": "这东西是不是弱智？"}',
+      'problem_class' => '业务类',
+      'problem_type' => 2,
+    ),
+  ),
+  'judge' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 174,
+      'problem_content' => '{"answer": "是", "option": {}, "problem": "今天天气好吗"}',
+      'problem_class' => '业务类',
+      'problem_type' => 3,
+    ),
+  ),
+)
+[ log ] ----------------getUserProblem最后生成的问题---------------------
+[ log ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 127,
+      'problem' => '这东西是不是弱智？',
+      'option' => 
+      array (
+        'A' => 
+        array (
+          'q_id' => 'b',
+          'content' => '确实是',
+        ),
+        'B' => 
+        array (
+          'q_id' => 'c',
+          'content' => '肯定是',
+        ),
+        'C' => 
+        array (
+          'q_id' => 'd',
+          'content' => '必须是',
+        ),
+        'D' => 
+        array (
+          'q_id' => 'a',
+          'content' => '是',
+        ),
+        'E' => 
+        array (
+          'q_id' => 'f',
+          'content' => 'test',
+        ),
+      ),
+    ),
+    1 => 
+    array (
+      'problem_id' => 123,
+      'problem' => '这东西是不是弱智？',
+      'option' => 
+      array (
+        'A' => 
+        array (
+          'q_id' => 'd',
+          'content' => '必须是',
+        ),
+        'B' => 
+        array (
+          'q_id' => 'a',
+          'content' => '是',
+        ),
+        'C' => 
+        array (
+          'q_id' => 'b',
+          'content' => '确实是',
+        ),
+        'D' => 
+        array (
+          'q_id' => 'c',
+          'content' => '肯定是',
+        ),
+        'E' => 
+        array (
+          'q_id' => 'f',
+          'content' => 'test',
+        ),
+      ),
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 124,
+      'problem' => '这东西是不是弱智？',
+      'option' => 
+      array (
+        'A' => 
+        array (
+          'q_id' => 'a',
+          'content' => '是',
+        ),
+        'B' => 
+        array (
+          'q_id' => 'd',
+          'content' => '必须是',
+        ),
+        'C' => 
+        array (
+          'q_id' => 'b',
+          'content' => '确实是',
+        ),
+        'D' => 
+        array (
+          'q_id' => 'f',
+          'content' => 'test',
+        ),
+        'E' => 
+        array (
+          'q_id' => 'c',
+          'content' => '肯定是',
+        ),
+      ),
+    ),
+  ),
+  'judge' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 124,
+      'problem' => '这东西是不是弱智？',
+    ),
+  ),
+  'planDate' => '2017-08-27',
+)
+---------------------------------------------------------------
+[ 2017-08-27T20:14:16+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/UserProblem
+[ info ] localhost/QandA/public/index.php/problem/UserProblem [运行时间：4.499929s][吞吐率：0.22req/s] [内存消耗：2,684.59kb] [文件加载：50]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'ProblemController',
+    2 => 'getUserProblem',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=d708mndv5pjktu3nn3c73cq8f4',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'UserProblem',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\problem_manage\controller\ProblemController->getUserProblem[ G:\xampp\htdocs\QandA\application\problem_manage\controller\ProblemController.php ]
+[ info ] [ LOG ] INIT File
+[ info ] [ LOG ] INIT File
+[ info ] [ LOG ] INIT File
+[ info ] [ LOG ] INIT File
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ info ] [ VIEW ] G:\xampp\htdocs\QandA\public/../application/problem_manage\view\user_problem\user_problem.html [ array (
+  0 => 'data',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:4.095712s ] mysql:dbname=question;host=120.77.144.75;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `participant` [ RunTime:0.025090s ]
+[ sql ] [ SQL ] SELECT * FROM `participant` WHERE  `refer_event_id` = 46  AND `user_id` = 1 [ RunTime:0.027921s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `event_problem` [ RunTime:0.026404s ]
+[ sql ] [ SQL ] SELECT `problem_id` FROM `event_problem` WHERE  `refer_event_id` = 46 [ RunTime:0.025966s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `participant_haved_answer` [ RunTime:0.023789s ]
+[ sql ] [ SQL ] SELECT `refer_problem_id` FROM `participant_haved_answer` WHERE  `refer_team_id` = 1  AND `answer_date` = '2017-08-27' OR `refer_participant_id` = 6 [ RunTime:0.027130s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `event` [ RunTime:0.024770s ]
+[ sql ] [ SQL ] SELECT * FROM `event` WHERE  `event_id` = 46 [ RunTime:0.030189s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `problem` [ RunTime:0.027282s ]
+[ sql ] [ SQL ] SELECT * FROM `problem` WHERE  ( `problem_id` NOT IN (15,115,145) AND `problem_id` IN (123,127,128,124,174,129,125) )  AND `problem_type` = 1 ORDER BY rand() LIMIT 2 [ RunTime:0.023564s ]
+[ sql ] [ SQL ] SELECT * FROM `problem` WHERE  ( `problem_id` NOT IN (15,115,145) AND `problem_id` IN (123,127,128,124,174,129,125) )  AND `problem_type` = 2 ORDER BY rand() LIMIT 2 [ RunTime:0.027863s ]
+[ sql ] [ SQL ] SELECT * FROM `problem` WHERE  ( `problem_id` NOT IN (15,115,145) AND `problem_id` IN (123,127,128,124,174,129,125) )  AND `problem_type` = 3 ORDER BY rand() LIMIT 2 [ RunTime:0.026208s ]
+[ sql ] [ SQL ] UPDATE `participant`  SET `waited_answer`='{\"single\":{\"128\":\"A\",\"127\":\"A\"},\"multi\":{\"124\":[\"A\",\"C\"]},\"judge\":{\"124\":[\"A\",\"C\"]},\"planDate\":\"2017-08-27\"}'  WHERE  `participant_id` = 6 [ RunTime:0.026840s ]
+[ log ] array (
+  0 => 
+  array (
+    'participant_id' => 6,
+    'refer_event_id' => 46,
+    'user_id' => 1,
+    'team_id' => 1,
+    'credit' => 0,
+    'leader' => 0,
+    'waited_answer' => '{"judge": {"124": ["A", "C"]}, "multi": {"124": ["A", "C"]}, "single": {"123": "A", "127": "A"}, "planDate": "2017-08-27"}',
+  ),
+)
+[ log ] ------------cantProblem sql---------
+[ log ] array (
+  0 => 
+  array (
+    'refer_problem_id' => 15,
+  ),
+  1 => 
+  array (
+    'refer_problem_id' => 115,
+  ),
+  2 => 
+  array (
+    'refer_problem_id' => 145,
+  ),
+  3 => 
+  array (
+    'refer_problem_id' => 145,
+  ),
+)
+[ log ] ------------cantProblem_json---------
+[ log ] array (
+  0 => 15,
+  1 => 115,
+  2 => 145,
+  3 => 145,
+)
+[ log ] --------------生成的题目---------------
+[ log ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 128,
+      'problem_content' => '{"answer": "A", "option": {"a": "是", "b": "确实是", "c": "肯定是", "d": "必须是", "f": "test"}, "problem": "这东西是不是弱智？"}',
+      'problem_class' => '业务类',
+      'problem_type' => 1,
+    ),
+    1 => 
+    array (
+      'problem_id' => 127,
+      'problem_content' => '{"answer": "A", "option": {"a": "是", "b": "确实是", "c": "肯定是", "d": "必须是", "f": "test"}, "problem": "这东西是不是弱智？"}',
+      'problem_class' => '业务类',
+      'problem_type' => 1,
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 124,
+      'problem_content' => '{"answer": ["A", "C"], "option": {"a": "是", "b": "确实是", "c": "肯定是", "d": "必须是", "f": "test"}, "problem": "这东西是不是弱智？"}',
+      'problem_class' => '业务类',
+      'problem_type' => 2,
+    ),
+  ),
+  'judge' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 174,
+      'problem_content' => '{"answer": "是", "option": {}, "problem": "今天天气好吗"}',
+      'problem_class' => '业务类',
+      'problem_type' => 3,
+    ),
+  ),
+)
+[ log ] ----------------getUserProblem最后生成的问题---------------------
+[ log ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 128,
+      'problem' => '这东西是不是弱智？',
+      'option' => 
+      array (
+        'A' => 
+        array (
+          'q_id' => 'a',
+          'content' => '是',
+        ),
+        'B' => 
+        array (
+          'q_id' => 'd',
+          'content' => '必须是',
+        ),
+        'C' => 
+        array (
+          'q_id' => 'c',
+          'content' => '肯定是',
+        ),
+        'D' => 
+        array (
+          'q_id' => 'b',
+          'content' => '确实是',
+        ),
+        'E' => 
+        array (
+          'q_id' => 'f',
+          'content' => 'test',
+        ),
+      ),
+    ),
+    1 => 
+    array (
+      'problem_id' => 127,
+      'problem' => '这东西是不是弱智？',
+      'option' => 
+      array (
+        'A' => 
+        array (
+          'q_id' => 'c',
+          'content' => '肯定是',
+        ),
+        'B' => 
+        array (
+          'q_id' => 'd',
+          'content' => '必须是',
+        ),
+        'C' => 
+        array (
+          'q_id' => 'b',
+          'content' => '确实是',
+        ),
+        'D' => 
+        array (
+          'q_id' => 'a',
+          'content' => '是',
+        ),
+        'E' => 
+        array (
+          'q_id' => 'f',
+          'content' => 'test',
+        ),
+      ),
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 124,
+      'problem' => '这东西是不是弱智？',
+      'option' => 
+      array (
+        'A' => 
+        array (
+          'q_id' => 'c',
+          'content' => '肯定是',
+        ),
+        'B' => 
+        array (
+          'q_id' => 'd',
+          'content' => '必须是',
+        ),
+        'C' => 
+        array (
+          'q_id' => 'b',
+          'content' => '确实是',
+        ),
+        'D' => 
+        array (
+          'q_id' => 'a',
+          'content' => '是',
+        ),
+        'E' => 
+        array (
+          'q_id' => 'f',
+          'content' => 'test',
+        ),
+      ),
+    ),
+  ),
+  'judge' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => 124,
+      'problem' => '这东西是不是弱智？',
+    ),
+  ),
+  'planDate' => '2017-08-27',
+)

@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:83:"G:\xampp\htdocs\QandA\public/../application/event\view\question\problem_manage.html";i:1503991006;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-cn">
 	<head>
@@ -70,10 +71,10 @@
 		<meta name="msapplication-tap-highlight" content="no" />
 
 		<title>配置题目</title>
-		<link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/css/planeui.min.css" />
-		<link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/css/user_manage/user_manager.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo \think\Config::get('web_res_root'); ?>/css/planeui.min.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo \think\Config::get('web_res_root'); ?>/css/user_manage/user_manager.css" />
 	</head>
-	<script src="{$Think.config.web_res_root}/js/jquery.min.js"></script>
+	<script src="<?php echo \think\Config::get('web_res_root'); ?>/js/jquery.min.js"></script>
 	<script type="text/javascript">
 	function ac(d){
 		var classname="."+d;
@@ -99,7 +100,7 @@
 											<div class="pui-menubar pui-menubar-square pui-menubar-header-style pui-bg-none pui-unbordered">
 												<div class="pui-menubar-aside">
 													<h2 class="pui-margin-none pui-text-normal page-title" title="中国移动南方基地">
-														<img src="{$Think.config.web_res_root}/image/CM.png" class="icon-CM" />
+														<img src="<?php echo \think\Config::get('web_res_root'); ?>/image/CM.png" class="icon-CM" />
 																																							中国移动南方基地知识题库
 													</h2>
 										</div>
@@ -109,10 +110,10 @@
 																<a href="#top">管理员</a>
 														</li>
 														<li>
-																<a href="{:url('index/login/change_pwd')}" id="pwchange">密码修改</a>
+																<a href="<?php echo url('index/login/change_pwd'); ?>" id="pwchange">密码修改</a>
 														</li>
 														<li>
-																<a href="{:url('index/Login/logout')}">退出</a>
+																<a href="<?php echo url('index/Login/logout'); ?>">退出</a>
 														</li>
 												</ul>
 										</div>
@@ -129,82 +130,70 @@
         				<hr>
         				<h5>单选题</h5>
         				<hr>
-								{eq name="data" value=""}
+								<?php if($data == ''): ?>
 								<p>无单选题。</p>
-        				{else/}
+        				<?php else: ?>
         						<input type="button" class=" pui-btn pui-btn-default" onclick="ac('cbox_1');" value="全选">
         						<input type="button" class=" pui-btn pui-btn-default" onclick="dc('cbox_1');" value="取消全选">
-								<span style=display:none>{$count=0}</span>
-								{foreach $data as $k=>$v}
-								{if condition="($v.problem_type == 1)"}
-								<div><input type="checkbox" class="cbox_1" name="cbox" value={$v.problem_id}>{++$count}.{$v.problem}</div>
+								<span style=display:none><?php echo $count=0; ?></span>
+								<?php foreach($data as $k=>$v): if(($v['problem_type'] == 1)): ?>
+								<div><input type="checkbox" class="cbox_1" name="cbox" value=<?php echo $v['problem_id']; ?>><?php echo ++$count; ?>.<?php echo $v['problem']; ?></div>
 								<p>
-									{foreach $v.option as $z=>$x}
-									{$z}.{$x}&nbsp;&nbsp;&nbsp;
-									{/foreach}
+									<?php foreach($v['option'] as $z=>$x): ?>
+									<?php echo $z; ?>.<?php echo $x; ?>&nbsp;&nbsp;&nbsp;
+									<?php endforeach; ?>
 								</p>
-								{/if}
-        				{/foreach}
-								{/eq}
+								<?php endif; endforeach; endif; ?>
 								<hr>
         				<h5>多选题</h5>
         				<hr>
-								{eq name="data" value=""}
+								<?php if($data == ''): ?>
 								<p>无多选题。</p>
-								{else/}
+								<?php else: ?>
 								<input type="button" class="pui-btn pui-btn-default" onclick="ac('cbox_2');" value="全选">
 								<input type="button" class="pui-btn pui-btn-default" onclick="dc('cbox_2');" value="取消全选">
-								<span style=display:none>{$count=0}</span>
-								{foreach $data as $k=>$v}
-								{if condition="($v.problem_type == 2)"}
-								<div><input type="checkbox" class="cbox_2"  name="cbox" value={$v.problem_id}>{++$count}.{$v.problem}</div>
+								<span style=display:none><?php echo $count=0; ?></span>
+								<?php foreach($data as $k=>$v): if(($v['problem_type'] == 2)): ?>
+								<div><input type="checkbox" class="cbox_2"  name="cbox" value=<?php echo $v['problem_id']; ?>><?php echo ++$count; ?>.<?php echo $v['problem']; ?></div>
 								<p>
-									{foreach $v.option as $z=>$x}
-									{$z}.{$x}&nbsp;&nbsp;&nbsp;
-									{/foreach}
+									<?php foreach($v['option'] as $z=>$x): ?>
+									<?php echo $z; ?>.<?php echo $x; ?>&nbsp;&nbsp;&nbsp;
+									<?php endforeach; ?>
 								</p>
-								{/if}
-								{/foreach}
-								{/eq}
+								<?php endif; endforeach; endif; ?>
         				<hr>
         				<h5>填空题</h5>
         				<hr>
-								{eq name="data" value=""}
+								<?php if($data == ''): ?>
 								<p>无填空题。</p>
-								{else/}
-								<span style=display:none>{$count=0}</span>
+								<?php else: ?>
+								<span style=display:none><?php echo $count=0; ?></span>
 								<input type="button" class="pui-btn pui-btn-default"  onclick="ac('cbox_0');" value="全选">
 								<input type="button" class="pui-btn pui-btn-default" onclick="dc('cbox_0');" value="取消全选">
-								{foreach $data as $k=>$v}
-								{if condition="($v.problem_type == 0)"}
-								<div><input type="checkbox" class="cbox_0" name="cbox" value={$v.problem_id}>{++$count}.{$v.problem}</div>
+								<?php foreach($data as $k=>$v): if(($v['problem_type'] == 0)): ?>
+								<div><input type="checkbox" class="cbox_0" name="cbox" value=<?php echo $v['problem_id']; ?>><?php echo ++$count; ?>.<?php echo $v['problem']; ?></div>
 								<p>
-									{foreach $v.option as $z=>$x}
-									{$z}.{$x}&nbsp;&nbsp;&nbsp;
-									{/foreach}
+									<?php foreach($v['option'] as $z=>$x): ?>
+									<?php echo $z; ?>.<?php echo $x; ?>&nbsp;&nbsp;&nbsp;
+									<?php endforeach; ?>
 								</p>
-								{/if}
-								{/foreach}
-								{/eq}
+								<?php endif; endforeach; endif; ?>
         				<h5>判断题</h5>
         				<hr>
-								{eq name="data" value=""}
+								<?php if($data == ''): ?>
 								<p>无判断题。</p>
-        				{else/}
-								<span style=display:none>{$count=0}</span>
+        				<?php else: ?>
+								<span style=display:none><?php echo $count=0; ?></span>
 								<input type="button" class="all_3 pui-btn pui-btn-default" onclick="ac('cbox_3');" value="全选">
 								<input type="button" class="cancelall_3 pui-btn pui-btn-default" onclick="dc('cbox_3');"  value="取消全选">
- 								{foreach $data as $k=>$v}
-								{if condition="($v.problem_type == 3)"}
- 								<div><input type="checkbox" class="cbox_3" name="cbox" value={$v.problem_id}>{++$count}.{$v.problem}</div>
+ 								<?php foreach($data as $k=>$v): if(($v['problem_type'] == 3)): ?>
+ 								<div><input type="checkbox" class="cbox_3" name="cbox" value=<?php echo $v['problem_id']; ?>><?php echo ++$count; ?>.<?php echo $v['problem']; ?></div>
 								<p>
-									{foreach $v.option as $z=>$x}
-									{$z}.{$x}&nbsp;&nbsp;&nbsp;
-									{/foreach}
+									<?php foreach($v['option'] as $z=>$x): ?>
+									<?php echo $z; ?>.<?php echo $x; ?>&nbsp;&nbsp;&nbsp;
+									<?php endforeach; ?>
 								</p>
-								{/if}
-        				{/foreach}
-								{/eq}
+								<?php endif; endforeach; endif; ?>
 								<hr>
 
         			</div>
@@ -213,10 +202,10 @@
         			</div>
         		</div>
 
-						<a href="{$Think.config.web_res_root}index.php/event/participant/participant_manage">
+						<a href="<?php echo \think\Config::get('web_res_root'); ?>index.php/event/participant/participant_manage">
                 		<input type="button" class="pui-btn pui-btn-primary pui-btn-large" value="下一步" id="submit_message" name="submit_message" style="width: 40%;">
 						</a>
-					<a href="{$Think.config.web_res_root}index.php/showevent">
+					<a href="<?php echo \think\Config::get('web_res_root'); ?>index.php/showevent">
 						<input type="button" class="pui-btn pui-btn-error pui-btn-large" value="取消 " style="width: 40%;">
 					</a>
         		</div>
@@ -229,9 +218,9 @@
 	<!-- jQuery -->
 	
 	
-	<script src="{$Think.config.web_res_root}/js/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="{$Think.config.web_res_root}/event/dist/js/planeui.js"></script>
-	<script src="{$Think.config.web_res_root}/js/bootstrap.min.js"></script>
+	<script src="<?php echo \think\Config::get('web_res_root'); ?>/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="<?php echo \think\Config::get('web_res_root'); ?>/event/dist/js/planeui.js"></script>
+	<script src="<?php echo \think\Config::get('web_res_root'); ?>/js/bootstrap.min.js"></script>
 
 	<script type="text/javascript">
 
@@ -267,7 +256,7 @@
 
 
 			$.ajax({
-					url:"{$Think.config.web_res_root}index.php/event/question/event_problem_relevance",
+					url:"<?php echo \think\Config::get('web_res_root'); ?>index.php/event/question/event_problem_relevance",
 					dataType: "json",
 					type: 'POST',
 					data: post_data,

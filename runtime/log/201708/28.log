@@ -1,0 +1,2282 @@
+---------------------------------------------------------------
+[ 2017-08-28T10:32:23+08:00 ] ::1 ::1 GET /QandA/public/index.php/answer/useranswer
+[ info ] localhost/QandA/public/index.php/answer/useranswer [运行时间：0.035264s][吞吐率：28.36req/s] [内存消耗：1,070.62kb] [文件加载：29]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'AnswerController',
+    2 => 'getuseranswer',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'useranswer',
+)
+[ info ] [ LOG ] INIT File
+[ error ] [4]语法错误: unexpected 'Return' (T_RETURN)[G:\xampp\htdocs\QandA\application\problem_manage\controller\AnswerController.php:79]
+---------------------------------------------------------------
+[ 2017-08-28T10:34:33+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/UserProblem
+[ info ] localhost/QandA/public/index.php/problem/UserProblem [运行时间：0.073145s][吞吐率：13.67req/s] [内存消耗：2,370.19kb] [文件加载：43]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'ProblemController',
+    2 => 'getUserProblem',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'UserProblem',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\problem_manage\controller\ProblemController->getUserProblem[ G:\xampp\htdocs\QandA\application\problem_manage\controller\ProblemController.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] �׽��ֲ�������һ���޷����ӵ�������
+[G:\xampp\htdocs\QandA\thinkphp\library\think\db\Connection.php:293]
+---------------------------------------------------------------
+[ 2017-08-28T10:34:49+08:00 ] ::1 ::1 GET /QandA/public/index.php/problem/favicon.png
+[ info ] localhost/QandA/public/index.php/problem/favicon.png [运行时间：0.055435s][吞吐率：18.04req/s] [内存消耗：2,363.83kb] [文件加载：44]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'ProblemController',
+    2 => 'getfavicon.png',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'favicon.png',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-28T10:34:58+08:00 ] ::1 ::1 POST /QandA/public/index.php/answer/SubmitAnswer
+[ info ] localhost/QandA/public/index.php/answer/SubmitAnswer [运行时间：0.029948s][吞吐率：33.39req/s] [内存消耗：1,072.85kb] [文件加载：29]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'AnswerController',
+    2 => 'postSubmitAnswer',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '308',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064',
+)
+[ info ] [ PARAM ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '127',
+      'q_id' => 'c',
+    ),
+    1 => 
+    array (
+      'problem_id' => '128',
+      'q_id' => 'd',
+    ),
+    2 => 
+    array (
+      'problem_id' => '123',
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'q_id' => 
+      array (
+        0 => 'b',
+        1 => 'd',
+      ),
+    ),
+  ),
+  'judge' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'answer' => '1',
+    ),
+  ),
+  'action' => 'SubmitAnswer',
+)
+[ info ] [ LOG ] INIT File
+[ error ] [4]语法错误: unexpected 'Return' (T_RETURN)[G:\xampp\htdocs\QandA\application\problem_manage\controller\AnswerController.php:79]
+---------------------------------------------------------------
+[ 2017-08-28T10:35:01+08:00 ] ::1 ::1 POST /QandA/public/index.php/answer/SubmitAnswer
+[ info ] localhost/QandA/public/index.php/answer/SubmitAnswer [运行时间：0.028728s][吞吐率：34.81req/s] [内存消耗：1,072.85kb] [文件加载：29]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'AnswerController',
+    2 => 'postSubmitAnswer',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '308',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064',
+)
+[ info ] [ PARAM ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '127',
+      'q_id' => 'c',
+    ),
+    1 => 
+    array (
+      'problem_id' => '128',
+      'q_id' => 'd',
+    ),
+    2 => 
+    array (
+      'problem_id' => '123',
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'q_id' => 
+      array (
+        0 => 'b',
+        1 => 'd',
+      ),
+    ),
+  ),
+  'judge' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'answer' => '1',
+    ),
+  ),
+  'action' => 'SubmitAnswer',
+)
+[ info ] [ LOG ] INIT File
+[ error ] [4]语法错误: unexpected 'Return' (T_RETURN)[G:\xampp\htdocs\QandA\application\problem_manage\controller\AnswerController.php:79]
+---------------------------------------------------------------
+[ 2017-08-28T10:35:01+08:00 ] ::1 ::1 POST /QandA/public/index.php/answer/SubmitAnswer
+[ info ] localhost/QandA/public/index.php/answer/SubmitAnswer [运行时间：0.028303s][吞吐率：35.33req/s] [内存消耗：1,072.85kb] [文件加载：29]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'AnswerController',
+    2 => 'postSubmitAnswer',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '308',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064',
+)
+[ info ] [ PARAM ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '127',
+      'q_id' => 'c',
+    ),
+    1 => 
+    array (
+      'problem_id' => '128',
+      'q_id' => 'd',
+    ),
+    2 => 
+    array (
+      'problem_id' => '123',
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'q_id' => 
+      array (
+        0 => 'b',
+        1 => 'd',
+      ),
+    ),
+  ),
+  'judge' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'answer' => '1',
+    ),
+  ),
+  'action' => 'SubmitAnswer',
+)
+[ info ] [ LOG ] INIT File
+[ error ] [4]语法错误: unexpected 'Return' (T_RETURN)[G:\xampp\htdocs\QandA\application\problem_manage\controller\AnswerController.php:79]
+---------------------------------------------------------------
+[ 2017-08-28T10:35:01+08:00 ] ::1 ::1 POST /QandA/public/index.php/answer/SubmitAnswer
+[ info ] localhost/QandA/public/index.php/answer/SubmitAnswer [运行时间：0.028756s][吞吐率：34.78req/s] [内存消耗：1,072.85kb] [文件加载：29]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'AnswerController',
+    2 => 'postSubmitAnswer',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '308',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064',
+)
+[ info ] [ PARAM ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '127',
+      'q_id' => 'c',
+    ),
+    1 => 
+    array (
+      'problem_id' => '128',
+      'q_id' => 'd',
+    ),
+    2 => 
+    array (
+      'problem_id' => '123',
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'q_id' => 
+      array (
+        0 => 'b',
+        1 => 'd',
+      ),
+    ),
+  ),
+  'judge' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'answer' => '1',
+    ),
+  ),
+  'action' => 'SubmitAnswer',
+)
+[ info ] [ LOG ] INIT File
+[ error ] [4]语法错误: unexpected 'Return' (T_RETURN)[G:\xampp\htdocs\QandA\application\problem_manage\controller\AnswerController.php:79]
+---------------------------------------------------------------
+[ 2017-08-28T10:35:01+08:00 ] ::1 ::1 POST /QandA/public/index.php/answer/SubmitAnswer
+[ info ] localhost/QandA/public/index.php/answer/SubmitAnswer [运行时间：0.028476s][吞吐率：35.12req/s] [内存消耗：1,072.85kb] [文件加载：29]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'AnswerController',
+    2 => 'postSubmitAnswer',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '308',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064',
+)
+[ info ] [ PARAM ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '127',
+      'q_id' => 'c',
+    ),
+    1 => 
+    array (
+      'problem_id' => '128',
+      'q_id' => 'd',
+    ),
+    2 => 
+    array (
+      'problem_id' => '123',
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'q_id' => 
+      array (
+        0 => 'b',
+        1 => 'd',
+      ),
+    ),
+  ),
+  'judge' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'answer' => '1',
+    ),
+  ),
+  'action' => 'SubmitAnswer',
+)
+[ info ] [ LOG ] INIT File
+[ error ] [4]语法错误: unexpected 'Return' (T_RETURN)[G:\xampp\htdocs\QandA\application\problem_manage\controller\AnswerController.php:79]
+---------------------------------------------------------------
+[ 2017-08-28T11:18:46+08:00 ] ::1 ::1 POST /QandA/public/index.php/answer/SubmitAnswer
+[ info ] localhost/QandA/public/index.php/answer/SubmitAnswer [运行时间：0.032960s][吞吐率：30.34req/s] [内存消耗：1,072.84kb] [文件加载：29]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'AnswerController',
+    2 => 'postSubmitAnswer',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '308',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064',
+)
+[ info ] [ PARAM ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '123',
+      'q_id' => 'f',
+    ),
+    1 => 
+    array (
+      'problem_id' => '129',
+      'q_id' => 'c',
+    ),
+    2 => 
+    array (
+      'problem_id' => '128',
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'q_id' => 
+      array (
+        0 => 'c',
+        1 => 'a',
+      ),
+    ),
+  ),
+  'judge' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'answer' => '0',
+    ),
+  ),
+  'action' => 'SubmitAnswer',
+)
+[ info ] [ LOG ] INIT File
+[ error ] [4]语法错误: unexpected '$res' (T_VARIABLE)[G:\xampp\htdocs\QandA\application\problem_manage\controller\AnswerController.php:79]
+---------------------------------------------------------------
+[ 2017-08-28T11:34:37+08:00 ] ::1 ::1 GET /QandA/public/index.php/index/userindex/user_index.html
+[ info ] localhost/QandA/public/index.php/index/userindex/user_index.html [运行时间：0.039882s][吞吐率：25.07req/s] [内存消耗：1,348.59kb] [文件加载：34]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'userindex',
+    2 => 'user_index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Userindex->user_index[ G:\xampp\htdocs\QandA\application\index\controller\Userindex.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] G:\xampp\htdocs\QandA\public/../application/index\view\login\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-28T11:34:38+08:00 ] ::1 ::1 GET /QandA/public//fonts/fontawesome-webfont.woff2?v=4.3.0
+[ info ] localhost/QandA/public//fonts/fontawesome-webfont.woff2?v=4.3.0 [运行时间：0.038108s][吞吐率：26.24req/s] [内存消耗：1,036.84kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'fonts',
+    1 => 'fontawesome-webfont.woff2',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/QandA/public//css/planeui.css',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '4.3.0',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-28T11:34:38+08:00 ] ::1 ::1 GET /QandA/public//css/images/bg5.jpg
+[ info ] localhost/QandA/public//css/images/bg5.jpg [运行时间：0.044598s][吞吐率：22.42req/s] [内存消耗：1,036.34kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'css',
+    1 => 'images',
+    2 => 'bg5.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public//css/login/login.css',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-28T11:34:38+08:00 ] ::1 ::1 GET /QandA/public//fonts/fontawesome-webfont.woff?v=4.3.0
+[ info ] localhost/QandA/public//fonts/fontawesome-webfont.woff?v=4.3.0 [运行时间：0.046736s][吞吐率：21.40req/s] [内存消耗：1,036.83kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'fonts',
+    1 => 'fontawesome-webfont.woff',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/QandA/public//css/planeui.css',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '4.3.0',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-28T11:34:38+08:00 ] ::1 ::1 GET /QandA/public//fonts/fontawesome-webfont.ttf?v=4.3.0
+[ info ] localhost/QandA/public//fonts/fontawesome-webfont.ttf?v=4.3.0 [运行时间：0.037373s][吞吐率：26.76req/s] [内存消耗：1,036.84kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'fonts',
+    1 => 'fontawesome-webfont.ttf',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/QandA/public//css/planeui.css',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '4.3.0',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-28T11:34:51+08:00 ] ::1 ::1 POST /QandA/public/index.php/index/login/check.html
+[ info ] localhost/QandA/public/index.php/index/login/check.html [运行时间：0.299522s][吞吐率：3.34req/s] [内存消耗：2,360.23kb] [文件加载：42]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '27',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/QandA/public/index.php/index/userindex/user_index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'test',
+  'password' => 'test',
+)
+[ info ] [ RUN ] app\index\controller\Login->check[ G:\xampp\htdocs\QandA\application\index\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.120209s ] mysql:dbname=question;host=120.77.144.75;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.064115s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `login_name` = 'test'  AND `pwd` = '098f6bcd4621d373cade4e832627b4f6' LIMIT 1 [ RunTime:0.057220s ]
+---------------------------------------------------------------
+[ 2017-08-28T11:35:00+08:00 ] ::1 ::1 POST /QandA/public/index.php/index/login/check.html
+[ info ] localhost/QandA/public/index.php/index/login/check.html [运行时间：0.314537s][吞吐率：3.18req/s] [内存消耗：2,360.23kb] [文件加载：42]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '27',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/QandA/public/index.php/index/userindex/user_index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'test',
+  'password' => '1234',
+)
+[ info ] [ RUN ] app\index\controller\Login->check[ G:\xampp\htdocs\QandA\application\index\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.145663s ] mysql:dbname=question;host=120.77.144.75;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.056681s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `login_name` = 'test'  AND `pwd` = '81dc9bdb52d04dc20036dbd8313ed055' LIMIT 1 [ RunTime:0.060255s ]
+---------------------------------------------------------------
+[ 2017-08-28T11:35:06+08:00 ] ::1 ::1 POST /QandA/public/index.php/index/login/check.html
+[ info ] localhost/QandA/public/index.php/index/login/check.html [运行时间：0.339680s][吞吐率：2.94req/s] [内存消耗：2,360.23kb] [文件加载：42]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '27',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/QandA/public/index.php/index/userindex/user_index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'test',
+  'password' => 'test',
+)
+[ info ] [ RUN ] app\index\controller\Login->check[ G:\xampp\htdocs\QandA\application\index\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.167674s ] mysql:dbname=question;host=120.77.144.75;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.056083s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `login_name` = 'test'  AND `pwd` = '098f6bcd4621d373cade4e832627b4f6' LIMIT 1 [ RunTime:0.066069s ]
+---------------------------------------------------------------
+[ 2017-08-28T11:35:34+08:00 ] ::1 ::1 POST /QandA/public/index.php/answer/SubmitAnswer
+[ info ] localhost/QandA/public/index.php/answer/SubmitAnswer [运行时间：0.033359s][吞吐率：29.98req/s] [内存消耗：1,072.83kb] [文件加载：29]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'AnswerController',
+    2 => 'postSubmitAnswer',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '277',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '127',
+      'q_id' => 'd',
+    ),
+    1 => 
+    array (
+      'problem_id' => '128',
+      'q_id' => 'a',
+    ),
+    2 => 
+    array (
+      'problem_id' => '123',
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'q_id' => 
+      array (
+        0 => 'f',
+      ),
+    ),
+  ),
+  'judge' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'answer' => '1',
+    ),
+  ),
+  'action' => 'SubmitAnswer',
+)
+[ info ] [ LOG ] INIT File
+[ error ] [4]语法错误: unexpected '$res' (T_VARIABLE)[G:\xampp\htdocs\QandA\application\problem_manage\controller\AnswerController.php:79]
+---------------------------------------------------------------
+[ 2017-08-28T11:37:15+08:00 ] ::1 ::1 POST /QandA/public/index.php/answer/SubmitAnswer
+[ info ] localhost/QandA/public/index.php/answer/SubmitAnswer [运行时间：0.036748s][吞吐率：27.21req/s] [内存消耗：1,072.87kb] [文件加载：29]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'AnswerController',
+    2 => 'postSubmitAnswer',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '308',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '123',
+      'q_id' => 'f',
+    ),
+    1 => 
+    array (
+      'problem_id' => '129',
+      'q_id' => 'c',
+    ),
+    2 => 
+    array (
+      'problem_id' => '128',
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'q_id' => 
+      array (
+        0 => 'c',
+        1 => 'a',
+      ),
+    ),
+  ),
+  'judge' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'answer' => '0',
+    ),
+  ),
+  'action' => 'SubmitAnswer',
+)
+[ info ] [ LOG ] INIT File
+[ error ] [4]语法错误: unexpected 'Return' (T_RETURN)[G:\xampp\htdocs\QandA\application\problem_manage\controller\AnswerController.php:79]
+---------------------------------------------------------------
+[ 2017-08-28T11:37:30+08:00 ] ::1 ::1 POST /QandA/public/index.php/answer/SubmitAnswer
+[ info ] localhost/QandA/public/index.php/answer/SubmitAnswer [运行时间：0.029831s][吞吐率：33.52req/s] [内存消耗：1,072.51kb] [文件加载：29]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'AnswerController',
+    2 => 'postSubmitAnswer',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '248',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '129',
+      'q_id' => 'a',
+    ),
+    1 => 
+    array (
+      'problem_id' => '128',
+      'q_id' => 'f',
+    ),
+    2 => 
+    array (
+      'problem_id' => '123',
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'q_id' => 
+      array (
+        0 => 'c',
+        1 => 'b',
+      ),
+    ),
+  ),
+  'action' => 'SubmitAnswer',
+)
+[ info ] [ LOG ] INIT File
+[ error ] [4]语法错误: unexpected 'Return' (T_RETURN)[G:\xampp\htdocs\QandA\application\problem_manage\controller\AnswerController.php:79]
+---------------------------------------------------------------
+[ 2017-08-28T11:42:16+08:00 ] ::1 ::1 POST /QandA/public/index.php/answer/postSubmitAnswer
+[ info ] localhost/QandA/public/index.php/answer/postSubmitAnswer [运行时间：0.018817s][吞吐率：53.14req/s] [内存消耗：1,072.72kb] [文件加载：29]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'AnswerController',
+    2 => 'postpostSubmitAnswer',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '305',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '129',
+      'q_id' => 'c',
+    ),
+    1 => 
+    array (
+      'problem_id' => '123',
+      'q_id' => 'c',
+    ),
+    2 => 
+    array (
+      'problem_id' => '128',
+      'q_id' => 'a',
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'q_id' => 
+      array (
+        0 => 'd',
+        1 => 'f',
+        2 => 'b',
+      ),
+    ),
+  ),
+  'action' => 'postSubmitAnswer',
+)
+[ info ] [ LOG ] INIT File
+[ error ] [4]语法错误: unexpected 'Return' (T_RETURN)[G:\xampp\htdocs\QandA\application\problem_manage\controller\AnswerController.php:79]
+---------------------------------------------------------------
+[ 2017-08-28T11:44:13+08:00 ] ::1 ::1 POST /QandA/public/index.php/answer/SubmitAnswer
+[ info ] localhost/QandA/public/index.php/answer/SubmitAnswer [运行时间：0.026940s][吞吐率：37.12req/s] [内存消耗：1,072.64kb] [文件加载：29]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'AnswerController',
+    2 => 'postSubmitAnswer',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '305',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '128',
+      'q_id' => 'b',
+    ),
+    1 => 
+    array (
+      'problem_id' => '123',
+      'q_id' => 'd',
+    ),
+    2 => 
+    array (
+      'problem_id' => '127',
+      'q_id' => 'd',
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'q_id' => 
+      array (
+        0 => 'b',
+        1 => 'a',
+        2 => 'd',
+      ),
+    ),
+  ),
+  'action' => 'SubmitAnswer',
+)
+[ info ] [ LOG ] INIT File
+[ error ] [4]语法错误: unexpected 'Return' (T_RETURN)[G:\xampp\htdocs\QandA\application\problem_manage\controller\AnswerController.php:79]
+---------------------------------------------------------------
+[ 2017-08-28T11:46:58+08:00 ] ::1 ::1 POST /QandA/public/index.php/answer/SubmitAnswer
+[ info ] localhost/QandA/public/index.php/answer/SubmitAnswer [运行时间：0.018683s][吞吐率：53.52req/s] [内存消耗：1,072.57kb] [文件加载：29]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'AnswerController',
+    2 => 'postSubmitAnswer',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '274',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '128',
+      'q_id' => 'f',
+    ),
+    1 => 
+    array (
+      'problem_id' => '127',
+      'q_id' => 'f',
+    ),
+    2 => 
+    array (
+      'problem_id' => '129',
+      'q_id' => 'f',
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'q_id' => 
+      array (
+        0 => 'c',
+        1 => 'd',
+      ),
+    ),
+  ),
+  'action' => 'SubmitAnswer',
+)
+[ info ] [ LOG ] INIT File
+[ error ] [4]语法错误: unexpected 'Return' (T_RETURN)[G:\xampp\htdocs\QandA\application\problem_manage\controller\AnswerController.php:79]
+---------------------------------------------------------------
+[ 2017-08-28T11:48:27+08:00 ] ::1 ::1 POST /QandA/public/index.php/answer/SubmitAnswer
+[ info ] localhost/QandA/public/index.php/answer/SubmitAnswer [运行时间：0.033551s][吞吐率：29.81req/s] [内存消耗：1,294.78kb] [文件加载：32]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'AnswerController',
+    2 => 'postSubmitAnswer',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '274',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '129',
+      'q_id' => 'f',
+    ),
+    1 => 
+    array (
+      'problem_id' => '127',
+      'q_id' => 'f',
+    ),
+    2 => 
+    array (
+      'problem_id' => '128',
+      'q_id' => 'a',
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'q_id' => 
+      array (
+        0 => 'b',
+        1 => 'c',
+      ),
+    ),
+  ),
+  'action' => 'SubmitAnswer',
+)
+[ info ] [ RUN ] app\problem_manage\controller\AnswerController->postSubmitAnswer[ G:\xampp\htdocs\QandA\application\problem_manage\controller\AnswerController.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-28T11:50:34+08:00 ] ::1 ::1 POST /QandA/public/index.php/answer/SubmitAnswer
+[ info ] localhost/QandA/public/index.php/answer/SubmitAnswer [运行时间：0.018000s][吞吐率：55.56req/s] [内存消耗：1,063.70kb] [文件加载：29]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'AnswerController',
+    2 => 'postSubmitAnswer',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '2',
+  'accept' => 'text/plain, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+  'nn' => '',
+  'action' => 'SubmitAnswer',
+)
+[ info ] [ LOG ] INIT File
+[ error ] [4]语法错误: unexpected 'Return' (T_RETURN)[G:\xampp\htdocs\QandA\application\problem_manage\controller\AnswerController.php:79]
+---------------------------------------------------------------
+[ 2017-08-28T11:51:56+08:00 ] ::1 ::1 POST /QandA/public/index.php/answer/SubmitAnswer
+[ info ] localhost/QandA/public/index.php/answer/SubmitAnswer [运行时间：0.033297s][吞吐率：30.03req/s] [内存消耗：1,072.59kb] [文件加载：29]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'AnswerController',
+    2 => 'postSubmitAnswer',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '243',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '129',
+      'q_id' => 'a',
+    ),
+    1 => 
+    array (
+      'problem_id' => '123',
+      'q_id' => 'a',
+    ),
+    2 => 
+    array (
+      'problem_id' => '127',
+      'q_id' => 'a',
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'q_id' => 
+      array (
+        0 => 'a',
+      ),
+    ),
+  ),
+  'action' => 'SubmitAnswer',
+)
+[ info ] [ LOG ] INIT File
+[ error ] [4]语法错误: unexpected 'Return' (T_RETURN)[G:\xampp\htdocs\QandA\application\problem_manage\controller\AnswerController.php:79]
+---------------------------------------------------------------
+[ 2017-08-28T12:29:29+08:00 ] ::1 ::1 POST /QandA/public/index.php/answer/SubmitAnswer
+[ info ] localhost/QandA/public/index.php/answer/SubmitAnswer [运行时间：0.038752s][吞吐率：25.81req/s] [内存消耗：1,072.51kb] [文件加载：29]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'AnswerController',
+    2 => 'postSubmitAnswer',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '248',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '128',
+      'q_id' => 'a',
+    ),
+    1 => 
+    array (
+      'problem_id' => '129',
+      'q_id' => 'f',
+    ),
+    2 => 
+    array (
+      'problem_id' => '123',
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'q_id' => 
+      array (
+        0 => 'd',
+        1 => 'b',
+      ),
+    ),
+  ),
+  'action' => 'SubmitAnswer',
+)
+[ info ] [ LOG ] INIT File
+[ error ] [4]语法错误: unexpected 'Return' (T_RETURN)[G:\xampp\htdocs\QandA\application\problem_manage\controller\AnswerController.php:79]
+---------------------------------------------------------------
+[ 2017-08-28T12:31:44+08:00 ] ::1 ::1 POST /QandA/public/index.php/answer/SubmitAnswer
+[ info ] localhost/QandA/public/index.php/answer/SubmitAnswer [运行时间：0.049355s][吞吐率：20.26req/s] [内存消耗：1,072.61kb] [文件加载：29]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'AnswerController',
+    2 => 'postSubmitAnswer',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '248',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '128',
+      'q_id' => 'a',
+    ),
+    1 => 
+    array (
+      'problem_id' => '129',
+      'q_id' => 'f',
+    ),
+    2 => 
+    array (
+      'problem_id' => '123',
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'q_id' => 
+      array (
+        0 => 'd',
+        1 => 'b',
+      ),
+    ),
+  ),
+  'action' => 'SubmitAnswer',
+)
+[ info ] [ LOG ] INIT File
+[ error ] [4]语法错误: unexpected 'Return' (T_RETURN)[G:\xampp\htdocs\QandA\application\problem_manage\controller\AnswerController.php:79]
+---------------------------------------------------------------
+[ 2017-08-28T14:41:51+08:00 ] ::1 ::1 POST /QandA/public/index.php/answer/SubmitAnswer
+[ info ] localhost/QandA/public/index.php/answer/SubmitAnswer [运行时间：0.019015s][吞吐率：52.59req/s] [内存消耗：1,074.27kb] [文件加载：29]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'AnswerController',
+    2 => 'postSubmitAnswer',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '397',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '129',
+      'q_id' => 'a',
+    ),
+    1 => 
+    array (
+      'problem_id' => '127',
+      'q_id' => 'c',
+    ),
+    2 => 
+    array (
+      'problem_id' => '123',
+      'q_id' => 'b',
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'q_id' => 
+      array (
+        0 => 'f',
+        1 => 'd',
+        2 => 'b',
+      ),
+    ),
+  ),
+  'judge' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'answer' => '1',
+    ),
+  ),
+  'fill' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '125',
+    ),
+  ),
+  'action' => 'SubmitAnswer',
+)
+[ info ] [ LOG ] INIT File
+[ error ] [4]语法错误: unexpected ';', expecting ']'[G:\xampp\htdocs\QandA\application\problem_manage\controller\AnswerController.php:84]
+---------------------------------------------------------------
+[ 2017-08-28T14:42:30+08:00 ] ::1 ::1 POST /QandA/public/index.php/answer/SubmitAnswer
+[ info ] localhost/QandA/public/index.php/answer/SubmitAnswer [运行时间：0.017982s][吞吐率：55.61req/s] [内存消耗：1,073.89kb] [文件加载：29]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'AnswerController',
+    2 => 'postSubmitAnswer',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '334',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '127',
+      'q_id' => 'd',
+    ),
+    1 => 
+    array (
+      'problem_id' => '123',
+      'q_id' => 'a',
+    ),
+    2 => 
+    array (
+      'problem_id' => '128',
+      'q_id' => 'd',
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'q_id' => 
+      array (
+        0 => 'c',
+        1 => 'b',
+      ),
+    ),
+  ),
+  'judge' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'answer' => '1',
+    ),
+  ),
+  'action' => 'SubmitAnswer',
+)
+[ info ] [ LOG ] INIT File
+[ error ] [4]语法错误: unexpected ';', expecting ']'[G:\xampp\htdocs\QandA\application\problem_manage\controller\AnswerController.php:84]
+---------------------------------------------------------------
+[ 2017-08-28T14:44:19+08:00 ] ::1 ::1 POST /QandA/public/index.php/answer/SubmitAnswer
+[ info ] localhost/QandA/public/index.php/answer/SubmitAnswer [运行时间：0.018333s][吞吐率：54.55req/s] [内存消耗：1,073.89kb] [文件加载：29]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'AnswerController',
+    2 => 'postSubmitAnswer',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '334',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '128',
+      'q_id' => 'b',
+    ),
+    1 => 
+    array (
+      'problem_id' => '127',
+      'q_id' => 'f',
+    ),
+    2 => 
+    array (
+      'problem_id' => '123',
+      'q_id' => 'b',
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'q_id' => 
+      array (
+        0 => 'a',
+        1 => 'd',
+      ),
+    ),
+  ),
+  'judge' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'answer' => '0',
+    ),
+  ),
+  'action' => 'SubmitAnswer',
+)
+[ info ] [ LOG ] INIT File
+[ error ] [4]语法错误: unexpected ';', expecting ']'[G:\xampp\htdocs\QandA\application\problem_manage\controller\AnswerController.php:84]
+---------------------------------------------------------------
+[ 2017-08-28T14:45:19+08:00 ] ::1 ::1 POST /QandA/public/index.php/answer/SubmitAnswer
+[ info ] localhost/QandA/public/index.php/answer/SubmitAnswer [运行时间：0.017799s][吞吐率：56.18req/s] [内存消耗：1,074.12kb] [文件加载：29]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'problem_manage',
+    1 => 'AnswerController',
+    2 => 'postSubmitAnswer',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '366',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/QandA/public/index.php/problem/UserProblem',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+  'single' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '123',
+      'q_id' => 'd',
+    ),
+    1 => 
+    array (
+      'problem_id' => '127',
+      'q_id' => 'b',
+    ),
+    2 => 
+    array (
+      'problem_id' => '128',
+      'q_id' => 'd',
+    ),
+  ),
+  'multi' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'q_id' => 
+      array (
+        0 => 'a',
+        1 => 'b',
+      ),
+    ),
+  ),
+  'judge' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '124',
+      'answer' => '1',
+    ),
+  ),
+  'fill' => 
+  array (
+    0 => 
+    array (
+      'problem_id' => '125',
+    ),
+  ),
+  'action' => 'SubmitAnswer',
+)
+[ info ] [ LOG ] INIT File
+[ error ] [4]语法错误: unexpected ';', expecting ']'[G:\xampp\htdocs\QandA\application\problem_manage\controller\AnswerController.php:84]
+---------------------------------------------------------------
+[ 2017-08-28T15:56:40+08:00 ] ::1 ::1 GET /QandA/public/index.php/index/userindex/user_index.html
+[ info ] localhost/QandA/public/index.php/index/userindex/user_index.html [运行时间：0.029411s][吞吐率：34.00req/s] [内存消耗：1,348.57kb] [文件加载：34]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'userindex',
+    2 => 'user_index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Userindex->user_index[ G:\xampp\htdocs\QandA\application\index\controller\Userindex.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] G:\xampp\htdocs\QandA\public/../application/index\view\login\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-28T15:56:40+08:00 ] ::1 ::1 GET /QandA/public//fonts/fontawesome-webfont.woff2?v=4.3.0
+[ info ] localhost/QandA/public//fonts/fontawesome-webfont.woff2?v=4.3.0 [运行时间：0.025571s][吞吐率：39.11req/s] [内存消耗：1,036.95kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'fonts',
+    1 => 'fontawesome-webfont.woff2',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/QandA/public//css/planeui.min.css',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '4.3.0',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-28T15:56:41+08:00 ] ::1 ::1 GET /QandA/public//fonts/fontawesome-webfont.woff?v=4.3.0
+[ info ] localhost/QandA/public//fonts/fontawesome-webfont.woff?v=4.3.0 [运行时间：0.049942s][吞吐率：20.02req/s] [内存消耗：1,036.94kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'fonts',
+    1 => 'fontawesome-webfont.woff',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/QandA/public//css/planeui.min.css',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '4.3.0',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-28T15:56:41+08:00 ] ::1 ::1 GET /QandA/public//fonts/fontawesome-webfont.ttf?v=4.3.0
+[ info ] localhost/QandA/public//fonts/fontawesome-webfont.ttf?v=4.3.0 [运行时间：0.041445s][吞吐率：24.13req/s] [内存消耗：1,036.88kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'fonts',
+    1 => 'fontawesome-webfont.ttf',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/QandA/public//css/planeui.min.css',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '4.3.0',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-28T15:57:17+08:00 ] ::1 ::1 GET /QandA/public/index.php/index/userindex/user_index.html
+[ info ] localhost/QandA/public/index.php/index/userindex/user_index.html [运行时间：0.022567s][吞吐率：44.31req/s] [内存消耗：1,348.57kb] [文件加载：34]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'userindex',
+    2 => 'user_index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Userindex->user_index[ G:\xampp\htdocs\QandA\application\index\controller\Userindex.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] G:\xampp\htdocs\QandA\public/../application/index\view\login\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-28T15:57:17+08:00 ] ::1 ::1 GET /QandA/public//fonts/fontawesome-webfont.woff2?v=4.3.0
+[ info ] localhost/QandA/public//fonts/fontawesome-webfont.woff2?v=4.3.0 [运行时间：0.024557s][吞吐率：40.72req/s] [内存消耗：1,036.95kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'fonts',
+    1 => 'fontawesome-webfont.woff2',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/QandA/public//css/planeui.min.css',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '4.3.0',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-28T15:57:17+08:00 ] ::1 ::1 GET /QandA/public//fonts/fontawesome-webfont.woff?v=4.3.0
+[ info ] localhost/QandA/public//fonts/fontawesome-webfont.woff?v=4.3.0 [运行时间：0.043258s][吞吐率：23.12req/s] [内存消耗：1,036.94kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'fonts',
+    1 => 'fontawesome-webfont.woff',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/QandA/public//css/planeui.min.css',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '4.3.0',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-28T15:57:17+08:00 ] ::1 ::1 GET /QandA/public//fonts/fontawesome-webfont.ttf?v=4.3.0
+[ info ] localhost/QandA/public//fonts/fontawesome-webfont.ttf?v=4.3.0 [运行时间：0.038945s][吞吐率：25.68req/s] [内存消耗：1,036.88kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'fonts',
+    1 => 'fontawesome-webfont.ttf',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/QandA/public//css/planeui.min.css',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '4.3.0',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-28T15:57:21+08:00 ] ::1 ::1 GET /QandA/public/index.php/index/userindex/user_index.html
+[ info ] localhost/QandA/public/index.php/index/userindex/user_index.html [运行时间：0.025746s][吞吐率：38.84req/s] [内存消耗：1,348.57kb] [文件加载：34]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'userindex',
+    2 => 'user_index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Userindex->user_index[ G:\xampp\htdocs\QandA\application\index\controller\Userindex.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] G:\xampp\htdocs\QandA\public/../application/index\view\login\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-28T15:57:24+08:00 ] ::1 ::1 GET /QandA/public/index.php/index/userindex/user_index.html
+[ info ] localhost/QandA/public/index.php/index/userindex/user_index.html [运行时间：0.027116s][吞吐率：36.88req/s] [内存消耗：1,348.57kb] [文件加载：34]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'userindex',
+    2 => 'user_index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Userindex->user_index[ G:\xampp\htdocs\QandA\application\index\controller\Userindex.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] G:\xampp\htdocs\QandA\public/../application/index\view\login\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-28T16:09:37+08:00 ] ::1 ::1 GET /QandA/public/index.php/index/userindex/user_index.html
+[ info ] localhost/QandA/public/index.php/index/userindex/user_index.html [运行时间：0.028099s][吞吐率：35.59req/s] [内存消耗：1,348.57kb] [文件加载：34]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'userindex',
+    2 => 'user_index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Userindex->user_index[ G:\xampp\htdocs\QandA\application\index\controller\Userindex.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] G:\xampp\htdocs\QandA\public/../application/index\view\login\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-28T16:09:37+08:00 ] ::1 ::1 GET /QandA/public//css/images/bg5.jpg
+[ info ] localhost/QandA/public//css/images/bg5.jpg [运行时间：0.028132s][吞吐率：35.55req/s] [内存消耗：1,036.34kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'css',
+    1 => 'images',
+    2 => 'bg5.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://localhost/QandA/public//css/login/login.css',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-28T16:09:37+08:00 ] ::1 ::1 GET /QandA/public//fonts/fontawesome-webfont.woff2?v=4.3.0
+[ info ] localhost/QandA/public//fonts/fontawesome-webfont.woff2?v=4.3.0 [运行时间：0.031284s][吞吐率：31.97req/s] [内存消耗：1,036.84kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'fonts',
+    1 => 'fontawesome-webfont.woff2',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'origin' => 'http://localhost',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/QandA/public//css/planeui.css',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '4.3.0',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-28T16:09:38+08:00 ] ::1 ::1 GET /QandA/public//fonts/fontawesome-webfont.woff?v=4.3.0
+[ info ] localhost/QandA/public//fonts/fontawesome-webfont.woff?v=4.3.0 [运行时间：0.018014s][吞吐率：55.51req/s] [内存消耗：1,036.83kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'fonts',
+    1 => 'fontawesome-webfont.woff',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'origin' => 'http://localhost',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/QandA/public//css/planeui.css',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '4.3.0',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-28T16:09:38+08:00 ] ::1 ::1 GET /QandA/public//fonts/fontawesome-webfont.ttf?v=4.3.0
+[ info ] localhost/QandA/public//fonts/fontawesome-webfont.ttf?v=4.3.0 [运行时间：0.018092s][吞吐率：55.27req/s] [内存消耗：1,036.84kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'fonts',
+    1 => 'fontawesome-webfont.ttf',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'origin' => 'http://localhost',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/QandA/public//css/planeui.css',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+  'v' => '4.3.0',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-28T23:08:19+08:00 ] ::1 ::1 GET /QandA/public/index.php/event/index/insertevent
+[ info ] localhost/QandA/public/index.php/event/index/insertevent [运行时间：0.066670s][吞吐率：15.00req/s] [内存消耗：1,462.66kb] [文件加载：35]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'event',
+    1 => 'index',
+    2 => 'insertevent',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\event\controller\Index->insertevent[ G:\xampp\htdocs\QandA\application\event\controller\Index.php ]
+[ info ] [ VIEW ] G:\xampp\htdocs\QandA\public/../application/event\view\index\event_insert.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-28T23:08:19+08:00 ] ::1 ::1 GET /QandA/public//public/event/dist/js/planeui.js
+[ info ] localhost/QandA/public//public/event/dist/js/planeui.js [运行时间：0.055865s][吞吐率：17.90req/s] [内存消耗：1,036.72kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'public',
+    1 => 'event',
+    2 => 'dist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/QandA/public/index.php/event/index/insertevent',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'planeui.js',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-28T23:08:20+08:00 ] ::1 ::1 GET /QandA/public//public/event/dist/js/planeui.js
+[ info ] localhost/QandA/public//public/event/dist/js/planeui.js [运行时间：0.035662s][吞吐率：28.04req/s] [内存消耗：1,036.72kb] [文件加载：28]
+[ info ] [ LANG ] G:\xampp\htdocs\QandA\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'public',
+    1 => 'event',
+    2 => 'dist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/QandA/public/index.php/event/index/insertevent',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-c745d3f3=89ec4b1a-8121-4b74-96c1-205dcf37ecd1; _ga=GA1.1.1734007425.1490616064; PHPSESSID=msnliposlbmfde7mofr0dq77s3',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'planeui.js',
+)
+[ info ] [ LOG ] INIT File

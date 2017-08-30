@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"G:\xampp\htdocs\QandA\public/../application/event\view\index\event_insert.html";i:1503990917;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-cn">
 	<head>
@@ -70,8 +71,8 @@
 		<meta name="msapplication-tap-highlight" content="no" />
 
 		<title>发起事件</title>
-		<link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/css/planeui.min.css" />
-		<link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/css/user_manage/user_manager.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo \think\Config::get('web_res_root'); ?>/css/planeui.min.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo \think\Config::get('web_res_root'); ?>/css/user_manage/user_manager.css" />
 	</head>
 	<body>
 		<!-- 代码写在这下面 -->
@@ -84,7 +85,7 @@
 											<div class="pui-menubar pui-menubar-square pui-menubar-header-style pui-bg-none pui-unbordered">
 												<div class="pui-menubar-aside">
 													<h2 class="pui-margin-none pui-text-normal page-title" title="中国移动南方基地">
-														<img src="{$Think.config.web_res_root}/image/CM.png" class="icon-CM" />
+														<img src="<?php echo \think\Config::get('web_res_root'); ?>/image/CM.png" class="icon-CM" />
 																																							中国移动南方基地知识题库
 													</h2>
 										</div>
@@ -94,10 +95,10 @@
 																<a href="#top">管理员</a>
 														</li>
 														<li>
-																<a href="{:url('index/login/change_pwd')}" id="pwchange">密码修改</a>
+																<a href="<?php echo url('index/login/change_pwd'); ?>" id="pwchange">密码修改</a>
 														</li>
 														<li>
-																<a href="{:url('index/Login/logout')}">退出</a>
+																<a href="<?php echo url('index/Login/logout'); ?>">退出</a>
 														</li>
 												</ul>
 										</div>
@@ -121,6 +122,7 @@
 								<select name="select_event" id="select_event" onchange="GetSelValue();">
                         <option selected value="选择事件种类">请选择事件种类</option>
                         <option value="业务知识类竞赛">业务知识类竞赛</option>
+                        <option value="种类二">种类二</option>
                     	</select>
                     </div>
                     <label >参赛人员：</label>
@@ -241,15 +243,15 @@
         			<div>
         				<select name="select_time" id="select_time" onchange="GetSelValue();">
                         <option selected value="选择">请选择答题时长</option>
-												<option value="0.5">半小时</option>
-												<option value="1">一小时</option>
-                        <option value="2">两小时</option>
+												<option value="半小时">半小时</option>
+												<option value="一小时">一小时</option>
+                        <option value="两小时">两小时</option>
                     	</select>
                     </div>
                     <div class="pui-form-group" style="padding-bottom: 15px;">
                     <label>参加道具：</label>
 
-                	{if condition="!empty($data)"}
+                	<?php if(!empty($data)): ?>
                 		<table class="pui-table pui-table-unbordered  pui-table-compact pui-table-text-left box-shadow-bottom pui-table-gradient" style="margin-top: 0">
                 		<tr>
 							<th style="width: 20px"></th>
@@ -258,16 +260,16 @@
 							<th>道具规则</th>
                 		</tr>
 
-                		{foreach $data as $k=>$v}
+                		<?php foreach($data as $k=>$v): ?>
 						<tr>
-							<td style="text-align: right;width: 0"><input type="checkbox" name="cbox2" value="{$v.item_id}"></td>
-							<td>{$v.item_name}</td>
-							<td>{$v.item_description}</td>
-							<td>{$v.change_rule}</td>
+							<td style="text-align: right;width: 0"><input type="checkbox" name="cbox2" value="<?php echo $v['item_id']; ?>"></td>
+							<td><?php echo $v['item_name']; ?></td>
+							<td><?php echo $v['item_description']; ?></td>
+							<td><?php echo $v['change_rule']; ?></td>
 		                </tr>
-						{/foreach}
+						<?php endforeach; ?>
 						</table>
-                	{/if}
+                	<?php endif; ?>
 
                 	</div>
                 			<button class="pui-btn pui-btn-primary pui-btn-large pui-btn-block"  id="submit_message" style="margin-bottom: 30px;">
@@ -283,10 +285,10 @@
 
 
 		<!-- jQuery -->
-		<script type="text/javascript" src="{$Think.config.web_res_root}/public/event/dist/js/planeui.js"></script>
-		<script src="{$Think.config.web_res_root}/js/jquery.min.js"></script>
-		<script src="{$Think.config.web_res_root}/js/jquery-ui.min.js"></script>
-		<script src="{$Think.config.web_res_root}/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="<?php echo \think\Config::get('web_res_root'); ?>/public/event/dist/js/planeui.js"></script>
+		<script src="<?php echo \think\Config::get('web_res_root'); ?>/js/jquery.min.js"></script>
+		<script src="<?php echo \think\Config::get('web_res_root'); ?>/js/jquery-ui.min.js"></script>
+		<script src="<?php echo \think\Config::get('web_res_root'); ?>/js/bootstrap.min.js"></script>
 
 		<script type="text/javascript">
 
@@ -395,7 +397,7 @@
 												if(json_data['result']=="录入成功!"){
 		                        alert(json_data['result']);
 														// $("#myform").submit();
-														self.location='{$Think.config.web_res_root}index.php/event/question/problem_insert';
+														self.location='<?php echo \think\Config::get('web_res_root'); ?>index.php/event/question/problem_insert';
 		                        //登录成功操作......
 		                    }else{
 		                        alert("录入失败！");

@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:82:"G:\xampp\htdocs\QandA\public/../application/index\view\usermanage\user_manage.html";i:1503972079;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
@@ -23,11 +24,11 @@
     <meta name="msapplication-TileImage" content="favicon.png" />
 
     <title>南方基地答题系统</title>
-    <link rel="icon" type="image/png" href="{$Think.config.web_res_root}/image/CM.png" />
-    <link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/css/planeui.css" />
-    <link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/css/planeui.min.css" />
-    <link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/css/user_manage/user_manager.css" />
-    <link rel="stylesheet" href="{$Think.config.web_res_root}/css/jquery-ui.min.css" />
+    <link rel="icon" type="image/png" href="<?php echo \think\Config::get('web_res_root'); ?>/image/CM.png" />
+    <link rel="stylesheet" type="text/css" href="<?php echo \think\Config::get('web_res_root'); ?>/css/planeui.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo \think\Config::get('web_res_root'); ?>/css/planeui.min.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo \think\Config::get('web_res_root'); ?>/css/user_manage/user_manager.css" />
+    <link rel="stylesheet" href="<?php echo \think\Config::get('web_res_root'); ?>/css/jquery-ui.min.css" />
 </head>
 <body>
     <a name="top"></a>
@@ -39,7 +40,7 @@
                 <div class="pui-menubar pui-menubar-square pui-menubar-header-style pui-bg-none pui-unbordered">
                     <div class="pui-menubar-aside">
                         <h2 class="pui-margin-none pui-text-normal page-title" title="中国移动南方基地">
-                            <img src="{$Think.config.web_res_root}/image/CM.png" class="icon-CM" />
+                            <img src="<?php echo \think\Config::get('web_res_root'); ?>/image/CM.png" class="icon-CM" />
                             中国移动南方基地知识题库</h2>
                     </div>
                     <div class="pui-menubar-offside">
@@ -48,10 +49,10 @@
                                 <a href="#top">管理员</a>
                             </li>
                             <li>
-                                <a href="{:url('index/login/change_pwd')}" id="pwchange">密码修改</a>
+                                <a href="<?php echo url('index/login/change_pwd'); ?>" id="pwchange">密码修改</a>
                             </li>
                             <li>
-                                <a href="{:url('index/Login/logout')}">退出</a>
+                                <a href="<?php echo url('index/Login/logout'); ?>">退出</a>
                             </li>
                         </ul>
                     </div>
@@ -66,10 +67,10 @@
                     <div class="pui-grid-md-2">
                         <div class="pui-btn-group-vertical pui-btn-gradient pui-btn-shadow ">
                             <div class="pui-btn-group ">
-                                <a href="{:url('index/usermanage/user_manage')}" ><button class="pui-btn-style  pui-btn pui-btn-primary pui-btn-large pui-text-shadow pui-btn-primary-active"><i class="fa fa-user fa-large"></i> 用户管理</button></a>
-                                <a href="{:url('manage/Problemmanage/problem_manage')}" ><button class="pui-btn-style  pui-btn pui-btn-primary pui-btn-large pui-text-shadow "><i class="fa fa-list-alt fa-large"></i> 题目管理</button></a>
-                                <a href="{:url('event/index/showevent')}"><button class="pui-btn-style  pui-btn pui-btn-primary pui-btn-large pui-text-shadow "><i class="fa fa-file-o fa-large"></i> 事件管理</button></a>
-                                <a href="{:url('item_manage/item/index')}" ><button class="pui-btn-style  pui-btn pui-btn-primary pui-btn-large pui-text-shadow "><i class="fa fa-th fa-large"></i> 道具管理</button></a>
+                                <a href="<?php echo url('index/usermanage/user_manage'); ?>" ><button class="pui-btn-style  pui-btn pui-btn-primary pui-btn-large pui-text-shadow pui-btn-primary-active"><i class="fa fa-user fa-large"></i> 用户管理</button></a>
+                                <a href="<?php echo url('manage/Problemmanage/problem_manage'); ?>" ><button class="pui-btn-style  pui-btn pui-btn-primary pui-btn-large pui-text-shadow "><i class="fa fa-list-alt fa-large"></i> 题目管理</button></a>
+                                <a href="<?php echo url('event/index/showevent'); ?>"><button class="pui-btn-style  pui-btn pui-btn-primary pui-btn-large pui-text-shadow "><i class="fa fa-file-o fa-large"></i> 事件管理</button></a>
+                                <a href="<?php echo url('item_manage/item/index'); ?>" ><button class="pui-btn-style  pui-btn pui-btn-primary pui-btn-large pui-text-shadow "><i class="fa fa-th fa-large"></i> 道具管理</button></a>
                             </div>
 
                         </div>
@@ -167,9 +168,9 @@
             <button class="pui-btn pui-btn-primary pui-btn-large">取消</button>
         </div> -->
 </body>
-<script type="text/javascript" src="{$Think.config.web_res_root}/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="{$Think.config.web_res_root}/js/jquery-1.9.1.js"></script>
-<script type="text/javascript" src="{$Think.config.web_res_root}/js/planeui.js"></script>
+<script type="text/javascript" src="<?php echo \think\Config::get('web_res_root'); ?>/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?php echo \think\Config::get('web_res_root'); ?>/js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="<?php echo \think\Config::get('web_res_root'); ?>/js/planeui.js"></script>
 <script>
     //修改用户
     function changeuser() {
@@ -185,7 +186,7 @@
         } else {
             var post_data = { change_id: change_id, user_name: user_name, login_name: login_name, user_phone_number: user_phone_number, user_job_number: user_job_number, user_gender: user_gender };
             $.ajax({
-                url: "{:url('index/usermanage/updateuser')}",
+                url: "<?php echo url('index/usermanage/updateuser'); ?>",
                 dataType: "json",
                 type: 'POST',
                 data: post_data,
@@ -218,7 +219,7 @@
         } else {
             var post_data = { user_name: user_name, login_name: login_name, user_phone_number: user_phone_number, user_job_number: user_job_number, user_gender: user_gender };
             $.ajax({
-                url: "{:url('index/usermanage/adduser')}",
+                url: "<?php echo url('index/usermanage/adduser'); ?>",
                 dataType: "json",
                 type: 'POST',
                 data: post_data,
@@ -246,15 +247,12 @@
         loadInit();
         //删除用户
         $(".delete_btn").click(function () {
-            var mymessage=confirm("确认删除");  
-            if(mymessage==false){
-                return false;
-            }
+            alert("确认删除");
             var delete_id = $(this).parent().parent().find('td').eq(0).html();
             var post_data = { delete_id: delete_id };
 
             $.ajax({
-                url: "{:url('index/usermanage/deleteuser')}",
+                url: "<?php echo url('index/usermanage/deleteuser'); ?>",
                 dataType: "json",
                 type: 'POST',
                 data: post_data,
@@ -302,7 +300,7 @@
     function loadInit() {
         var post_data = {};
         $.ajax({
-            url: "{:url('index/usermanage/show')}",
+            url: "<?php echo url('index/usermanage/show'); ?>",
             dataType: "json",
             type: 'GET',
             data: post_data,

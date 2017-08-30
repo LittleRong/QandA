@@ -10,8 +10,9 @@ class ParticipantHaveAnswerdModel {
 	var $answer_date;
 	var $user_answer;
 	var $true_or_false;
-	function __construct($refer_participant_id, $refer_team_id, $refer_problem_id, $user_answer) {
-		LogTool::record($user_answer);
+
+	public function setPro($refer_participant_id, $refer_team_id, $refer_problem_id, $user_answer){
+		//LogTool::record($user_answer);
 		$this -> refer_participant_id = $refer_participant_id;
 		$this -> refer_problem_id = $refer_problem_id;
 		$this -> refer_team_id = $refer_team_id;
@@ -24,12 +25,12 @@ class ParticipantHaveAnswerdModel {
 			case 'array':
 				$this -> user_answer = implode('', $user_answer);
 				break;
-		} 
-	} 
+		}
+	}
 	public function setTrueOrFalse($true_or_false) {
 		$this -> true_or_false = $true_or_false;
-	} 
-	
+	}
+
 	public static function savePartHaveAnswerds($pantHaveAnswerArr) {
 		for($i=0; $i<count($pantHaveAnswerArr); $i++) {
 			$data=array();
@@ -43,4 +44,13 @@ class ParticipantHaveAnswerdModel {
 			Db :: table('participant_haved_answer') -> insert($data);
 		}
 	}
-} 
+	public static function getPardDayAnswer($pant_id){
+		Return Db::table('participant_haved_answer')->field('answer_date')
+		->where('refer_participant_id',$pant_id)
+		->where('answer_date',date('Y-m-d', time()))
+		->select();
+
+	}
+
+
+}

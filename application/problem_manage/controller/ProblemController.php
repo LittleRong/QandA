@@ -5,17 +5,23 @@ use app\problem_manage\model\ProblemModel;
 use app\problem_manage\model\ProblemContentModel;
 use app\problem_manage\model\ProblemUserModel;
 use app\problem_manage\model\ParticipantModel;
+use app\problem_manage\model\ParticipantHaveAnswerdModel;
+use app\problem_manage\model\EventModel;
 use app\problem_manage\tool\LogTool;
 use think\Db;
+use think\Session;
+use think\Request;
 class ProblemController extends Controller{
 	var $partModel ;
 	var $part;//用户所属的参赛者
 	var $pm ;
+	var $em;
+	var $event;
 	public function _initialize()
     {
         $this->partModel=new ParticipantModel();
-		$this->pm=new ProblemModel();
-
+				$this->pm=new ProblemModel();
+				$this->em=new EventModel();
     }
 	public function index() {
 	}
@@ -62,7 +68,10 @@ class ProblemController extends Controller{
 
 		$eventProblem=$this-> pm ->getEventProblem($this->part['refer_event_id']);
 		$cantProblem=$this-> pm ->getCantSelectProblem($this->part);
-		$questNum=['single'=>3,'multiple'=>3,'judge'=>3,'fill'=>3];
+		//$questNum=['single'=>3,'multiple'=>3,'judge'=>3,'fill'=>3];
+		//$questNum=$this->em->getQuestNum($this->part['refer_event_id']);
+		$questNum=json_decode($this->event['event_num'],true);
+		LogTool::info('--------questnum--------------',$questNum);
 		$pum_answer = new ProblemUserModel();
 		$pum_problem = new ProblemUserModel();
 		//$waitedQ = $this-> pm -> getUserWaitedQ($this->part, $cantProblem,$eventProblem);//得到用户需要答的题目
@@ -92,7 +101,7 @@ class ProblemController extends Controller{
 		//**********************判断***********************************//
 		if($questNum['judge']>0) {
 			$judge_pros=$this-> pm ->getPartProblem($this->part,3,$questNum['judge'],$cantProblem,$eventProblem);
-			$judgeRes = $this -> dealNoOption($multi_pros);
+			$judgeRes = $this -> dealNoOption($judge_pros);
 			$pum_answer->setJudge($judgeRes['answer']);
 			$pum_problem->setJudge($judgeRes['problem']);
 		}
@@ -133,7 +142,7 @@ class ProblemController extends Controller{
 			$judge_answer = Logtool :: object2array($all_answer -> judge);
 			$judgeProId = array_keys($judge_answer);
 			$judge_pros = ProblemModel :: getProblemFromId($judgeProId); //得到multi的题目
-			$judgeRes = $this -> buildOption($judge_pros);
+			$judgeRes = $this -> dealNoOption($judge_pros);
 			$pum_problem->setJudge($judgeRes['problem']);
 
 		}
@@ -142,8 +151,8 @@ class ProblemController extends Controller{
 			$fill_answer = Logtool :: object2array($all_answer -> fill);
 			$fillProId = array_keys($fill_answer);
 			$fill_pros = ProblemModel :: getProblemFromId($fillProId); //得到multi的题目
-			$fillRes = $this -> buildOption($fill_pros);
-			$pum_problem->setJudge($fillRes['problem']);
+			$fillRes = $this -> dealNoOption($fill_pros);
+			$pum_problem->setFill($fillRes['problem']);
 
 		}
 		//***********************************************************************
@@ -151,16 +160,29 @@ class ProblemController extends Controller{
 		Return $pum_problem;
 
 
-		//LogTool :: record(json_encode($single_d_pros));
-		// 未完成！！！！
+
+	}
+	public function getUserProblem2(){
+		LogTool::record('----------------------userproblem test----------------------','');
+		$user_id=Session::get('user_id');
+		Return $user_id;
 	}
 	public function getUserProblem() {
-		$user_id = 1;
-		$refer_event_id = 46;
+		//$user_id = 1;
+		$user_id = Session::get('user_id');
+		$refer_event_id = Request::instance()->param("event_id");
 		$this->part = $this->partModel -> getParticipant($user_id, $refer_event_id); //array ('participant_id' => 1, 'refer_event_id' => 1, 'user_id' =>
+		$this->event=$this->em->getEvent($this->part['refer_event_id']);
+		$user= $this->partModel->getPartname($user_id);
+		$user_name=$user[0]['login_name'];
 		// 1,'team_id' => 1,'credit' => 0,'leader' => 0, 'waited_answer' => NULL,
 		$ifRebuild = 0; //用来判断是否重新生成题目
 		// LogTool::record($pant);
+		$pha=ParticipantHaveAnswerdModel::getPardDayAnswer($this->part['participant_id']);
+		if (count($pha)>0){//判断用户是否已经答题,>0表示已经答过题目了
+			LogTool::record('----------------------participant have answered the question today----------------------');
+			Return null;
+		}
 		if ($this->part['waited_answer']) {
 			if (json_decode($this->part['waited_answer']) -> planDate == date('Y-m-d', time())) { // 判断题目是否是当天的
 				$ifRebuild = 1;
@@ -176,6 +198,9 @@ class ProblemController extends Controller{
 		$res = json_decode(json_encode($res),true);//转换为数组，方便传输给页面
 		LogTool :: info('----------------getUserProblem最后生成的问题---------------------',$res);
 		$this->assign('data',$res);
+		$this->assign('name',$user_name);
+		$this->assign('time',$this->event['answer_time']);
+		$this->assign('participant',json_encode($this->part));
 		return $this->fetch('user_problem/user_problem');
 	}
 
