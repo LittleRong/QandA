@@ -9,7 +9,8 @@ class ItemModel extends Model{
     //查找item表中所有数据
     public function item_checkall()
     {
-      $result = $this->all();
+      // $result = $this->all();
+      $result = Db::table('item')->where('refer_event_id',null)->select();
       if (empty($result)) {//获取数据，若不存在则返回空
           return null;
       }
