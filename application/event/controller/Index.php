@@ -19,14 +19,17 @@
           $model = new ItemModel();
           $result = $model->item_checkall();
           $all = array(array());
-          foreach ($result as $key => $value)
+          if(!empty($result))
           {
-            $item_id = $value['item_id'];
-            $item_name = $value['item_name'];
-            $item_description = $value['item_description'];
-            $change_rule = $value['change_rule'];
-            $all[$key] = array_merge(['item_id'=>$item_id],['item_name'=>$item_name],
-              ['item_description'=>$item_description],['change_rule'=>$change_rule]);
+            foreach ($result as $key => $value)
+            {
+              $item_id = $value['item_id'];
+              $item_name = $value['item_name'];
+              $item_description = $value['item_description'];
+              $change_rule = $value['change_rule'];
+              $all[$key] = array_merge(['item_id'=>$item_id],['item_name'=>$item_name],
+                ['item_description'=>$item_description],['change_rule'=>$change_rule]);
+            }
           }
           //dump($all);
           if(empty($all[0]))
@@ -85,11 +88,13 @@
                   (int)$multiple_score,(int)$fill_score,(int)$judge_score,(int)$person_score,
                   (int)$team_score,(int)$person_score_up,(int)$team_score_up,$message);
           Session::set('myevent_id',$event_id);
-          //dump($event_id);
-          $item_model = new ItemModel();
-          foreach ($item as $key => $value)
+          if(!empty($item))
           {
-            $item_model->item_updata((int)$value,$event_id);
+            $item_model = new ItemModel();
+            foreach ($item as $key => $value)
+            {
+              $item_model->item_updata((int)$value,$event_id);
+            }
           }
           $data = array('result'=>'录入成功!');
           return json_encode($data);
