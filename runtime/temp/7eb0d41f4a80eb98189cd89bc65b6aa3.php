@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:94:"G:\xampp\htdocs\QandA\public/../application/problem_manage\view\user_problem\user_problem.html";i:1504020930;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:94:"G:\xampp\htdocs\QandA\public/../application/problem_manage\view\user_problem\user_problem.html";i:1504027276;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-cn">
 	<head>
@@ -129,15 +129,16 @@
       if(surplusTimes<=0){ 
         console.log('时间到！'); 
         clearInterval(countdowns);
-        if(confirm("时间到，请确认提交")){
-        	$('#submit').click();
-        } 
+        //alert("时间到，将自动提交答卷");
+        //$('#submit').click();
+
       } 
     },1000); 
 } 
   
 </script> 
 <script type="text/javascript">
+
 	$(function(){
 		var single_length=$("#single_panel .timu_item").length;
 		$("#single_pr").text(single_length);
@@ -238,6 +239,7 @@
 			user_answer['multi']=	multi_items;
 			user_answer['judge']=	judge_items;
 			user_answer['fill']=	fill_items;
+			user_answer['participant']=<?php echo $participant; ?>;
 			$.ajax({  
                 type: "POST",  
                 url: "<?php echo url('/answer/SubmitAnswer'); ?>",  

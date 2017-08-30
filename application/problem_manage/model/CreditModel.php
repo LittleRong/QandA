@@ -4,7 +4,7 @@ use think\Model;
 use think\Db;
 use app\problem_manage\tool\LogTool;
 class CreditModel {
-  var $credit_rule = array('single_choice_score' => 2,'multiple_choice_score'=>4);
+  //var $credit_rule = array('single_choice_score' => 2,'multiple_choice_score'=>4);
   var $fill_score;//  填空题分数fill_score
   var $team_score;//当日团队全对额外加分team_score
   var $judge_score;//、判断题分数judge_score、
@@ -49,13 +49,13 @@ class CreditModel {
           $this->answer_score=$this->answer_score+$this->single_score;
           break;
           case 'multi':
-            $this->answer_score=$this->answer_score+$this->$multiple_score;
+            $this->answer_score=$this->answer_score+$this->multiple_score;
             break;
             case 'judge':
-              $this->answer_score=$this->answer_score+$this->$judge_score;
+              $this->answer_score=$this->answer_score+$this->judge_score;
               break;
               case 'fill':
-                $this->answer_score=$this->answer_score+$this->$fill_score;
+                $this->answer_score=$this->answer_score+$this->fill_score;
                 break;
 
       }
@@ -105,8 +105,9 @@ class CreditModel {
       $res_final=array();
       $part_final=Db :: table('participant')
       -> where('participant_id',$this->participant_id) ->select();
-      LogTool::info('--------------$part_final-----------',$part_final);
+      
       $team_final=Db :: table('team') -> where('team_id',$part_res[0]['team_id']) ->select();
+      LogTool::info('--------------$team_final-----------',$team_final);
       $team_mates=Db::view('user','name,login_name')
     ->view('participant','credit','participant.user_id=user.id')
     -> where('team_id',1)
