@@ -40,9 +40,14 @@
           $event_id = Session::get('myevent_id');
           $model = new ParticipantModel();
           $team_model = new TeamModel();
-          $teamid = $team_model->team_insert($event_id);
+          $temp = null;
           foreach ($mydata as $key => $value)
           {
+            if($temp != $key)
+            {
+              $teamid = $team_model->team_insert($event_id);
+              $temp = $key;
+            }
             $leader = $value[0];
             $teamate1 = $value[1][0];
             $teamate2 = $value[1][1];

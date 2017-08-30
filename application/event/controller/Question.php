@@ -120,6 +120,7 @@ class Question extends ManageController
 
       $model = new ProblemModel();
       // $result = $model->problem_check();
+      //根据导入数据数量来显示题目
       $result = $model->problem_checkByNum($this->problem_num);
       // dump($result);
       if($result!=null)
