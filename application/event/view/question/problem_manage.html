@@ -227,8 +227,8 @@
 	</body>
 
 	<!-- jQuery -->
-	
-	
+
+
 	<script src="{$Think.config.web_res_root}/js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="{$Think.config.web_res_root}/event/dist/js/planeui.js"></script>
 	<script src="{$Think.config.web_res_root}/js/bootstrap.min.js"></script>
@@ -263,6 +263,10 @@
 		$("#submit_message").click(function(){
 			var problemId;
 			problemId = mutil_check();
+			if(problemId==null){
+				alert("请勾选题目");
+				return false;
+			}
 			var post_data = {problemId:problemId};
 
 
