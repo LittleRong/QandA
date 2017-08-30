@@ -60,11 +60,11 @@ class AnswerController extends Controller {
 		$this->pariticipant=$_POST['participant'];
 		$this -> refer_participant_id = $this->pariticipant['participant_id']; //参赛人id
 		$this -> refer_team_id = $this->pariticipant['team_id']; //参赛人队伍的id
-		
-		$this->creditModel=new CreditModel($this->pariticipant['refer_event_id'],$this->pariticipant['participant_id']);
-		
 
-		
+		$this->creditModel=new CreditModel($this->pariticipant['refer_event_id'],$this->pariticipant['participant_id']);
+
+
+
 		$allAnswer=ParticipantModel::getWaitedAnswer($this -> refer_participant_id);//预存在participant表中waitedAnswer的问题id及答案
 		//LogTool::info('---------------$allAnswer-----------------',$allAnswer);
 		if(count($allAnswer)<=0) {
@@ -76,25 +76,34 @@ class AnswerController extends Controller {
 		}
 
 		//***********单选*************//
-		try{
+		if(array_key_exists('fill',$allSubmit)){
 			$singleAnswer = Logtool :: object2array($allAnswer['single']);
 			$singleSubmit=$allSubmit['single'];
 			$this->dealSingle($singleSubmit, $singleAnswer);
-		}catch(\Exception $e){
-			LogTool::record('没有dan选题');
+		}
 
-		}	
-		
 		//***********多选***************//
-		
-		try{
-			$multiAnswer=Logtool :: object2array($allAnswer['multi']);
+		//LogTool::info('-----------array_key_exists(multi,$allAnswer)----------',$singleAnswer);
+		if(array_key_exists('multi',$allSubmit)){
+			$multiAnswer=$allAnswer['multi'];
 			$multiSubmit=$allSubmit['multi'];
 		    $this->dealMulti($multiSubmit, $multiAnswer);
-		}catch(\Exception $e){
-			LogTool::record('没有多选题');
+		}
+		//************判断题******************//
+		if(array_key_exists('judge',$allSubmit)){
+			$judgeAnswer=$allAnswer['judge'];
+			$judgeSubmit=$allSubmit['judge'];
+			$this->dealJudge($judgeSubmit,$judgeAnswer);
 
-		}		
+		}
+
+		//************填空题************************//
+		if(array_key_exists('fill',$allSubmit)){
+			$fillAnswer=$allAnswer['fill'];
+			$fillSubmit=$allSubmit['fill'];
+			$this->dealFill($fillSubmit,$fillAnswer);
+		}
+
 
 		//***********************************************
 		//ParticipantHaveAnswerdModel::savePartHaveAnswerds($this->pantHaveAnswerArr);
@@ -105,24 +114,30 @@ class AnswerController extends Controller {
 		// input:singleSubmit:arr=>[{'problem_id':xx,'q_id':xx},{'problem_id':xx,'q_id':xx},......]
 		// singleAnswer:arr=>{problem_id:answer,problem_id:answer,....}
 		// ouput：
+		//LogTool::info('-----------$singleAnswer----------',$singleAnswer);
+		//LogTool::info('-----------$singleSubmit----------',$singleSubmit);
 		for($i = 0; $i < count($singleSubmit); $i++) {
+			$if_right=0;
 			$submit = $singleSubmit[$i];
+			LogTool::info('---------------------------$submit-------------------------',$submit);
+			$submitAnswer="";
+			if(array_key_exists('q_id',$submit)){//不选择的话这里会为空
+					$submitAnswer = $submit['q_id'];
+			}
+
 			$submitId = $submit['problem_id'];
-			$submitAnswer = $submit['q_id'];
 			$pantHaveAnswer = new ParticipantHaveAnswerdModel();
 			$pantHaveAnswer->setPro($this -> refer_participant_id, $this -> refer_team_id, $submit['problem_id'], $submitAnswer);
-			LogTool::info('-----------$singleAnswer----------',$singleAnswer);
-			LogTool::info('-----------$submitId----------',$submitId);
+			//
 			if ($submitAnswer == $singleAnswer[$submitId]||$submitAnswer==strtolower($singleAnswer[$submitId])) { // 回答正确
 				$pantHaveAnswer -> setTrueOrFalse(1); //设置为回答正确
 				$this->creditModel->dealAnswer(1,'single');
-				LogTool::info($submitAnswer,$singleAnswer[$submitId]);
-
+				//LogTool::info($submitAnswer,$singleAnswer[$submitId]);
 
 			} else {
 				$this->creditModel->dealAnswer(0,'single');
 				$pantHaveAnswer -> setTrueOrFalse(0);
-				LogTool::info($submitAnswer,$singleAnswer[$submitId]);
+				//LogTool::info($submitAnswer,$singleAnswer[$submitId]);
 			}
 			//LogTool::info('----------------dealsingle---panthaveAnswer-------',$pantHaveAnswer);
 			array_push($this -> partHaveAnswerArr, $pantHaveAnswer); //push到用户答题情况的数组
@@ -136,7 +151,10 @@ class AnswerController extends Controller {
 		for($i = 0; $i < count($multiSubmit); $i++) {
 			$submit = $multiSubmit[$i];
 			$submitId = $submit['problem_id'];
-			$submitAnswer = $submit['q_id'];
+			$submitAnswer="";
+			if(array_key_exists('q_id',$submit)){//不选择的话这里会为空
+					$submitAnswer = $submit['q_id'];
+			}
 			$pantHaveAnswer = new ParticipantHaveAnswerdModel();
 			$pantHaveAnswer->setPro($this -> refer_participant_id, $this -> refer_team_id, $submit['problem_id'], $submitAnswer);
 			// ***********************多选判断是否正确*******************//
@@ -171,11 +189,14 @@ class AnswerController extends Controller {
 			 for($i = 0; $i < count($judgeSubmit); $i++) {
 				 		$submit = $judgeSubmit[$i];
 						$submitId = $submit['problem_id'];
-						$submitAnswer = $submit['q_id'];
+						$submitAnswer="";
+						if(array_key_exists('answer',$submit)){//不选择的话这里会为空
+								$submitAnswer = $submit['answer'];
+						}
 						$pantHaveAnswer = new ParticipantHaveAnswerdModel();
 						$pantHaveAnswer->setPro($this -> refer_participant_id, $this -> refer_team_id, $submit['problem_id'], $submitAnswer);
 						//**************判断正确与否********************//
-						if($submitAnswer==$pantHaveAnswe){
+						if($submitAnswer==$judgeAnswer[$submitId]){
 							$pantHaveAnswer -> setTrueOrFalse(1); //设置为回答正确
 							$this->creditModel->dealAnswer(1,'judge');
 
@@ -192,11 +213,14 @@ class AnswerController extends Controller {
 			 for($i = 0; $i < count($judgeSubmit); $i++) {
 				 		$submit = $judgeSubmit[$i];
 						$submitId = $submit['problem_id'];
-						$submitAnswer = $submit['q_id'];
+						$submitAnswer="";
+						if(array_key_exists('answer',$submit)){//不选择的话这里会为空
+								$submitAnswer = $submit['answer'];
+						}
 						$pantHaveAnswer = new ParticipantHaveAnswerdModel();
 						$pantHaveAnswer->setPro($this -> refer_participant_id, $this -> refer_team_id, $submit['problem_id'], $submitAnswer);
 						//**************判断正确与否********************//
-						if($submitAnswer==$pantHaveAnswe){
+						if($submitAnswer==$fillAnswer[$submitId]){
 							$pantHaveAnswer -> setTrueOrFalse(1); //设置为回答正确
 							$this->creditModel->dealAnswer(1,'fill');
 
