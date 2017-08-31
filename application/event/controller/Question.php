@@ -20,7 +20,7 @@ class Question extends ManageController
     //题目导入
     public function problem_insert()
     {
-      if(!Session::get('myevent_id'))
+      if(Request::instance()->param('event_id'))
       {
         //get方式取回event_id
         $data = Request::instance()->param('event_id');
@@ -120,6 +120,7 @@ class Question extends ManageController
 
       $model = new ProblemModel();
       // $result = $model->problem_check();
+      //根据导入数据数量来显示题目
       $result = $model->problem_checkByNum($this->problem_num);
       // dump($result);
       if($result!=null)

@@ -375,6 +375,12 @@
 
 						time = mutil_check();
 						item = mutil_check2();
+						if(time.length == 0)
+						{
+								alert("请勾选答题日期！");
+								return false;
+						}
+						if(item.length == 0)item=null;
 
 					  if(ename == ''){
 				        alert("事件名称不能为空");

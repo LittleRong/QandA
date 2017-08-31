@@ -22,17 +22,18 @@ class ProblemController extends Controller{
         $this->partModel=new ParticipantModel();
 				$this->pm=new ProblemModel();
 				$this->em=new EventModel();
+				//$this->error('您已完成今日答题任务了哦！');
     }
-	public function index() {
-	}
+
+
 	public function getSy() {
 		echo("sy");
 		$a = Db :: table('problem') -> order('rand()') -> limit(5) -> select();
 		LogTool :: info('--------------',$a);
 	}
 
-	private function buildOption($single_pros) { // 建立选择题选项，打乱选项
-
+	private function buildOption($single_pros,$option_random) { // 建立选择题选项，打乱选项
+		//option_random：为1表示要打乱题目顺序
 		$shuffled = array();
 		$answer = array(); //答案
 		for($i = 0; $i < count($single_pros);$i++) {
@@ -40,7 +41,10 @@ class ProblemController extends Controller{
 			$option = LogTool :: object2array($problem_content -> option); //取出来是object，转array
 
 			$keys = array_keys($option);
-			shuffle($keys);
+			if($option_random){
+						shuffle($keys);
+			}
+
 			$question_option = array();
 			for($key_i = 0; $key_i < count($keys);$key_i++) {
 				$question_option[chr(65 + $key_i)] = array('q_id' => $keys[$key_i], 'content' => $option[$keys[$key_i]]);
@@ -68,6 +72,7 @@ class ProblemController extends Controller{
 
 		$eventProblem=$this-> pm ->getEventProblem($this->part['refer_event_id']);
 		$cantProblem=$this-> pm ->getCantSelectProblem($this->part);
+		//$option_random=$this->event['option_random'];
 		//$questNum=['single'=>3,'multiple'=>3,'judge'=>3,'fill'=>3];
 		//$questNum=$this->em->getQuestNum($this->part['refer_event_id']);
 		$questNum=json_decode($this->event['event_num'],true);
@@ -77,30 +82,30 @@ class ProblemController extends Controller{
 		//$waitedQ = $this-> pm -> getUserWaitedQ($this->part, $cantProblem,$eventProblem);//得到用户需要答的题目
 		//***********************填空***********************************//
 		if($questNum['fill']>0) {
-			$fill_pros=$this-> pm ->getPartProblem($this->part,0,$questNum['fill'],$cantProblem,$eventProblem);
+			$fill_pros=$this-> pm ->getPartProblem($this->part,0,$questNum['fill'],$cantProblem,$eventProblem,$this->event['problem_random']);
 			$fillRes = $this -> dealNoOption($fill_pros);
 			$pum_answer->setfill($fillRes['answer']);
 			$pum_problem->setfill($fillRes['problem']);
 		}
 		//**********************单选***********************************//
 		if($questNum['single']>0) {
-			$single_pros = $this-> pm ->getPartProblem($this->part,1,$questNum['single'],$cantProblem,$eventProblem);
-			$singleRes= $this -> buildOption($single_pros);
+			$single_pros = $this-> pm ->getPartProblem($this->part,1,$questNum['single'],$cantProblem,$eventProblem,$this->event['problem_random']);
+			$singleRes= $this -> buildOption($single_pros,$this->event['option_random']);
 			$pum_answer->setSingle($singleRes['answer']);
 			$pum_problem->setSingle($singleRes['problem']);
 		}
 
 		//**********************多选**********************************//
 		if($questNum['multiple']>0) {
-			$multi_pros = $this-> pm ->getPartProblem($this->part,2,$questNum['multiple'],$cantProblem,$eventProblem);
-			$multiRes = $this -> buildOption($multi_pros);
+			$multi_pros = $this-> pm ->getPartProblem($this->part,2,$questNum['multiple'],$cantProblem,$eventProblem,$this->event['problem_random']);
+			$multiRes = $this -> buildOption($multi_pros,$this->event['option_random']);
 			$pum_answer->setMulti($multiRes['answer']);
 			$pum_problem->setMulti($multiRes['problem']);
 		}
 
 		//**********************判断***********************************//
 		if($questNum['judge']>0) {
-			$judge_pros=$this-> pm ->getPartProblem($this->part,3,$questNum['judge'],$cantProblem,$eventProblem);
+			$judge_pros=$this-> pm ->getPartProblem($this->part,3,$questNum['judge'],$cantProblem,$eventProblem,$this->event['problem_random']);
 			$judgeRes = $this -> dealNoOption($judge_pros);
 			$pum_answer->setJudge($judgeRes['answer']);
 			$pum_problem->setJudge($judgeRes['problem']);
@@ -122,7 +127,7 @@ class ProblemController extends Controller{
 			//LogTool :: info('-------buildQuestion-----single_answer-------------------',$single_answer);
 			$singleProId = array_keys($single_answer);
 			$single_pros = ProblemModel :: getProblemFromId($singleProId); //得到single的题目
-			$singleRes = $this -> buildOption($single_pros);
+			$singleRes = $this -> buildOption($single_pros,$this->event['option_random']);
 			$pum_problem->setSingle($singleRes['problem']);
 		}
 
@@ -132,7 +137,7 @@ class ProblemController extends Controller{
 			LogTool :: info('-------buildQuestion-----$multi_answer  -------------------',$multi_answer);
 			$multiProId = array_keys($multi_answer);
 			$multi_pros = ProblemModel :: getProblemFromId($multiProId); //得到multi的题目
-			$multiRes = $this -> buildOption($multi_pros);
+			$multiRes = $this -> buildOption($multi_pros,$this->event['option_random']);
 			$pum_problem->setMulti($multiRes['problem']);
 
 		}
@@ -168,7 +173,7 @@ class ProblemController extends Controller{
 		Return $user_id;
 	}
 	public function getUserProblem() {
-		//$user_id = 1;
+
 		$user_id = Session::get('user_id');
 		$refer_event_id = Request::instance()->param("event_id");
 		$this->part = $this->partModel -> getParticipant($user_id, $refer_event_id); //array ('participant_id' => 1, 'refer_event_id' => 1, 'user_id' =>
@@ -177,7 +182,6 @@ class ProblemController extends Controller{
 		$user_name=$user[0]['login_name'];
 		// 1,'team_id' => 1,'credit' => 0,'leader' => 0, 'waited_answer' => NULL,
 		$ifRebuild = 0; //用来判断是否重新生成题目
-		// LogTool::record($pant);
 		$pha=ParticipantHaveAnswerdModel::getPardDayAnswer($this->part['participant_id']);
 		if (count($pha)>0){//判断用户是否已经答题,>0表示已经答过题目了
 			LogTool::record('----------------------participant have answered the question today----------------------');
@@ -200,6 +204,7 @@ class ProblemController extends Controller{
 		$this->assign('data',$res);
 		$this->assign('name',$user_name);
 		$this->assign('time',$this->event['answer_time']);
+		$this->part['waited_answer']=null;//不传答案
 		$this->assign('participant',json_encode($this->part));
 		return $this->fetch('user_problem/user_problem');
 	}
