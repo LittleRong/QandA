@@ -8,13 +8,13 @@ class TeamModel extends Model{
 
     public function team_insert($refer_event_id)
     {
-      $this->data([
+      $data = ([
       'refer_event_id' => $refer_event_id,
       'team_score'  => 0,
       'team_credit'  => 0
       ]);
-      $this->save();
-      return $this->team_id;
+      Db::name('team')->insert($data);
+      return Db::name('team')->getLastInsID();
     }
 
 }
