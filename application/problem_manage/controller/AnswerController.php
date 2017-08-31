@@ -9,6 +9,8 @@ use app\problem_manage\model\ParticipantHaveAnswerdModel;
 use app\problem_manage\model\CreditModel;
 use app\problem_manage\tool\LogTool;
 use think\Db;
+use think\Session;
+use think\Request;
 /*
                            _ooOoo_
                           o8888888o
@@ -41,7 +43,9 @@ class AnswerController extends Controller {
 	var $partHaveAnswerArr = array();
 	public function _initialize(){
 				$this->partHaveAnswerArr=array();
-
+				$refer_event_id = Request::instance()->param("event_id");
+				//$this->error($refer_event_id);
+				
 
 	}
 	public function getSy() {
@@ -68,7 +72,7 @@ class AnswerController extends Controller {
 		$allAnswer=ParticipantModel::getWaitedAnswer($this -> refer_participant_id);//预存在participant表中waitedAnswer的问题id及答案
 		//LogTool::info('---------------$allAnswer-----------------',$allAnswer);
 		if(count($allAnswer)<=0) {
-			LogTool::record('没有找到参赛者，或参赛者中没有预存答案');
+			$this->error('没有找到参赛者，或参赛者中没有预存答案,联系管理员吧！');
 		}else{
 			$allAnswer=json_decode($allAnswer[0]['waited_answer']);
 			$allAnswer=Logtool :: object2array($allAnswer);
@@ -108,6 +112,8 @@ class AnswerController extends Controller {
 		//***********************************************
 		//ParticipantHaveAnswerdModel::savePartHaveAnswerds($this->pantHaveAnswerArr);
 		$res=$this->creditModel->dealFinal();
+		$res['right_answer']=$allAnswer;
+		LogTool::info('-------------------------answer-submit res----------------------',$res);
 		Return json_encode($res);
 	}
 	private function dealSingle($singleSubmit, $singleAnswer) {

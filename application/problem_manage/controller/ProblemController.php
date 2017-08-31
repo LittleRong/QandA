@@ -22,9 +22,10 @@ class ProblemController extends Controller{
         $this->partModel=new ParticipantModel();
 				$this->pm=new ProblemModel();
 				$this->em=new EventModel();
+				//$this->error('您已完成今日答题任务了哦！');
     }
-	public function index() {
-	}
+
+
 	public function getSy() {
 		echo("sy");
 		$a = Db :: table('problem') -> order('rand()') -> limit(5) -> select();
@@ -172,7 +173,7 @@ class ProblemController extends Controller{
 		Return $user_id;
 	}
 	public function getUserProblem() {
-		//$user_id = 1;
+
 		$user_id = Session::get('user_id');
 		$refer_event_id = Request::instance()->param("event_id");
 		$this->part = $this->partModel -> getParticipant($user_id, $refer_event_id); //array ('participant_id' => 1, 'refer_event_id' => 1, 'user_id' =>
@@ -181,7 +182,6 @@ class ProblemController extends Controller{
 		$user_name=$user[0]['login_name'];
 		// 1,'team_id' => 1,'credit' => 0,'leader' => 0, 'waited_answer' => NULL,
 		$ifRebuild = 0; //用来判断是否重新生成题目
-		// LogTool::record($pant);
 		$pha=ParticipantHaveAnswerdModel::getPardDayAnswer($this->part['participant_id']);
 		if (count($pha)>0){//判断用户是否已经答题,>0表示已经答过题目了
 			LogTool::record('----------------------participant have answered the question today----------------------');
@@ -204,6 +204,7 @@ class ProblemController extends Controller{
 		$this->assign('data',$res);
 		$this->assign('name',$user_name);
 		$this->assign('time',$this->event['answer_time']);
+		$this->part['waited_answer']=null;//不传答案
 		$this->assign('participant',json_encode($this->part));
 		return $this->fetch('user_problem/user_problem');
 	}
