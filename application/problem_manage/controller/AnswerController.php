@@ -108,6 +108,8 @@ class AnswerController extends Controller {
 		//***********************************************
 		//ParticipantHaveAnswerdModel::savePartHaveAnswerds($this->pantHaveAnswerArr);
 		$res=$this->creditModel->dealFinal();
+		$res['right_answer']=$allAnswer;
+		LogTool::info('-------------------------answer-submit res----------------------',$res);
 		Return json_encode($res);
 	}
 	private function dealSingle($singleSubmit, $singleAnswer) {

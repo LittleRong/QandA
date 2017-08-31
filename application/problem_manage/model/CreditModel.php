@@ -120,7 +120,7 @@ class CreditModel {
       $res_final['team_mates']=$team_mates;
       $res_final['user_score']=  $part_add_score;//用户当次获得的分数
 
-      LogTool::info('-------------------------creditModel--dealfinal-$res_final----------------------',$res_final);
+    
       Return $res_final;
 
   }
