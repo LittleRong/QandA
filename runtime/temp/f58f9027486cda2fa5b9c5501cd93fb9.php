@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:82:"G:\xampp\htdocs\QandA\public/../application/index\view\usermanage\user_manage.html";i:1503972079;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:82:"G:\xampp\htdocs\QandA\public/../application/index\view\usermanage\user_manage.html";i:1504029673;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
@@ -247,7 +247,10 @@
         loadInit();
         //删除用户
         $(".delete_btn").click(function () {
-            alert("确认删除");
+            var mymessage=confirm("确认删除");  
+            if(mymessage==false){
+                return false;
+            }
             var delete_id = $(this).parent().parent().find('td').eq(0).html();
             var post_data = { delete_id: delete_id };
 

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:83:"G:\xampp\htdocs\QandA\public/../application/event\view\question\problem_manage.html";i:1503991006;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:83:"G:\xampp\htdocs\QandA\public/../application/event\view\question\problem_manage.html";i:1504064753;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-cn">
 	<head>
@@ -88,6 +88,11 @@
 			$(this).removeAttr("checked");
 		});
 	}
+	//伸缩问题
+	function ct(d){
+		var c_id="#"+d;
+		$(c_id).slideToggle("fast");
+	}
 	</script>
 	<body>
 		<!-- 代码写在这下面 -->
@@ -126,9 +131,9 @@
         			<h3 class="pui-text-center">——&nbsp;配置题目&nbsp;——</h3>
         		</div>
         		<div class="pui-row">
-        			<div class="pui-grid-xs-6" style="margin-left: 15px;">
+        			<div class="pui-grid-xs-9 pui-grid-center" >
         				<hr>
-        				<h5>单选题</h5>
+        				<h5>单选题<span onclick="ct('t_1')"><i class="fa fa-fw fa-angle-down pui-text-lg"></i>(可伸缩)</span></h5>
         				<hr>
 								<?php if($data == ''): ?>
 								<p>无单选题。</p>
@@ -136,16 +141,18 @@
         						<input type="button" class=" pui-btn pui-btn-default" onclick="ac('cbox_1');" value="全选">
         						<input type="button" class=" pui-btn pui-btn-default" onclick="dc('cbox_1');" value="取消全选">
 								<span style=display:none><?php echo $count=0; ?></span>
+								<table id="t_1" class="pui-table pui-table-bordered">
 								<?php foreach($data as $k=>$v): if(($v['problem_type'] == 1)): ?>
-								<div><input type="checkbox" class="cbox_1" name="cbox" value=<?php echo $v['problem_id']; ?>><?php echo ++$count; ?>.<?php echo $v['problem']; ?></div>
-								<p>
+								<tr><td><input type="checkbox" class="cbox_1" name="cbox" value=<?php echo $v['problem_id']; ?>><?php echo ++$count; ?>.<?php echo $v['problem']; ?></td>
 									<?php foreach($v['option'] as $z=>$x): ?>
-									<?php echo $z; ?>.<?php echo $x; ?>&nbsp;&nbsp;&nbsp;
+									<td><?php echo $z; ?>.<?php echo $x; ?></td>
 									<?php endforeach; ?>
-								</p>
-								<?php endif; endforeach; endif; ?>
+								</tr>
+								<?php endif; endforeach; ?>
+        						</table>
+								<?php endif; ?>
 								<hr>
-        				<h5>多选题</h5>
+        				<h5>多选题<span onclick="ct('t_2')"><i class="fa fa-fw fa-angle-down pui-text-lg"></i></span></h5>
         				<hr>
 								<?php if($data == ''): ?>
 								<p>无多选题。</p>
@@ -153,16 +160,18 @@
 								<input type="button" class="pui-btn pui-btn-default" onclick="ac('cbox_2');" value="全选">
 								<input type="button" class="pui-btn pui-btn-default" onclick="dc('cbox_2');" value="取消全选">
 								<span style=display:none><?php echo $count=0; ?></span>
+								<table id="t_2" class="pui-table pui-table-bordered">
 								<?php foreach($data as $k=>$v): if(($v['problem_type'] == 2)): ?>
-								<div><input type="checkbox" class="cbox_2"  name="cbox" value=<?php echo $v['problem_id']; ?>><?php echo ++$count; ?>.<?php echo $v['problem']; ?></div>
-								<p>
+								<tr><td><input type="checkbox" class="cbox_2"  name="cbox" value=<?php echo $v['problem_id']; ?>><?php echo ++$count; ?>.<?php echo $v['problem']; ?></td>
 									<?php foreach($v['option'] as $z=>$x): ?>
-									<?php echo $z; ?>.<?php echo $x; ?>&nbsp;&nbsp;&nbsp;
+									<td><?php echo $z; ?>.<?php echo $x; ?></td>
 									<?php endforeach; ?>
-								</p>
-								<?php endif; endforeach; endif; ?>
+								</tr>
+								<?php endif; endforeach; ?>
+								</table>
+								<?php endif; ?>
         				<hr>
-        				<h5>填空题</h5>
+        				<h5>填空题<span onclick="ct('t_0')"><i class="fa fa-fw fa-angle-down pui-text-lg"></i></span></h5>
         				<hr>
 								<?php if($data == ''): ?>
 								<p>无填空题。</p>
@@ -170,15 +179,17 @@
 								<span style=display:none><?php echo $count=0; ?></span>
 								<input type="button" class="pui-btn pui-btn-default"  onclick="ac('cbox_0');" value="全选">
 								<input type="button" class="pui-btn pui-btn-default" onclick="dc('cbox_0');" value="取消全选">
+								<table id="t_0" class="pui-table pui-table-bordered">
 								<?php foreach($data as $k=>$v): if(($v['problem_type'] == 0)): ?>
-								<div><input type="checkbox" class="cbox_0" name="cbox" value=<?php echo $v['problem_id']; ?>><?php echo ++$count; ?>.<?php echo $v['problem']; ?></div>
-								<p>
+								<tr><td><input type="checkbox" class="cbox_0"  name="cbox" value=<?php echo $v['problem_id']; ?>><?php echo ++$count; ?>.<?php echo $v['problem']; ?></td>
 									<?php foreach($v['option'] as $z=>$x): ?>
-									<?php echo $z; ?>.<?php echo $x; ?>&nbsp;&nbsp;&nbsp;
+									<td><?php echo $z; ?>.<?php echo $x; ?></td>
 									<?php endforeach; ?>
-								</p>
-								<?php endif; endforeach; endif; ?>
-        				<h5>判断题</h5>
+								</tr>
+								<?php endif; endforeach; ?>
+								</table>
+								<?php endif; ?>
+        				<h5>判断题<span onclick="ct('t_3')"><i class="fa fa-fw fa-angle-down pui-text-lg"></i></span></h5>
         				<hr>
 								<?php if($data == ''): ?>
 								<p>无判断题。</p>
@@ -186,28 +197,21 @@
 								<span style=display:none><?php echo $count=0; ?></span>
 								<input type="button" class="all_3 pui-btn pui-btn-default" onclick="ac('cbox_3');" value="全选">
 								<input type="button" class="cancelall_3 pui-btn pui-btn-default" onclick="dc('cbox_3');"  value="取消全选">
- 								<?php foreach($data as $k=>$v): if(($v['problem_type'] == 3)): ?>
- 								<div><input type="checkbox" class="cbox_3" name="cbox" value=<?php echo $v['problem_id']; ?>><?php echo ++$count; ?>.<?php echo $v['problem']; ?></div>
-								<p>
+ 								<table id="t_3" class="pui-table pui-table-bordered">
+								<?php foreach($data as $k=>$v): if(($v['problem_type'] == 3)): ?>
+								<tr><td><input type="checkbox" class="cbox_3"  name="cbox" value=<?php echo $v['problem_id']; ?>><?php echo ++$count; ?>.<?php echo $v['problem']; ?></td>
 									<?php foreach($v['option'] as $z=>$x): ?>
-									<?php echo $z; ?>.<?php echo $x; ?>&nbsp;&nbsp;&nbsp;
+									<td><?php echo $z; ?>.<?php echo $x; ?></td>
 									<?php endforeach; ?>
-								</p>
-								<?php endif; endforeach; endif; ?>
+								</tr>
+								<?php endif; endforeach; ?>
+								</table>
+								<?php endif; ?>
 								<hr>
 
-        			</div>
-        			<div class="pui-grid-xs-6">
-
-        			</div>
-        		</div>
-
-						<a href="<?php echo \think\Config::get('web_res_root'); ?>index.php/event/participant/participant_manage">
-                		<input type="button" class="pui-btn pui-btn-primary pui-btn-large" value="下一步" id="submit_message" name="submit_message" style="width: 40%;">
-						</a>
-					<a href="<?php echo \think\Config::get('web_res_root'); ?>index.php/showevent">
-						<input type="button" class="pui-btn pui-btn-error pui-btn-large" value="取消 " style="width: 40%;">
-					</a>
+						<a href="<?php echo \think\Config::get('web_res_root'); ?>index.php/event/participant/participant_manage" class="pui-btn pui-btn-primary ">下一步</a>
+						<a href="<?php echo \think\Config::get('web_res_root'); ?>index.php/showevent" class="pui-btn pui-btn-secondary " style="margin-left: 20px">取消</a>	
+        			</div>		
         		</div>
         </div>
         <!-- 代码写在这上面 -->
