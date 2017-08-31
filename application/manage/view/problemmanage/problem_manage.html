@@ -133,7 +133,14 @@
 																			{volist name="data" id="vo"}
 																			<tr id=t_{$vo.problem_id}>
 																				<td class="problem_id" >{$vo.problem_id}</td>
-																				<td>{$vo.problem_type}</td>
+																				<td>{switch name="$vo.problem_type"}
+																					      {case value="0"}填空题{/case}
+                                                {case value="1"}单选题{/case}
+																								{case value="2"}多选题{/case}
+                                                {case value="3"}判断题{/case}
+                                                {default /}其他
+                                            {/switch}
+																				</td>
 																				<td>{$vo.problem_class}</td>
 																				<td>{$vo.problem}</td>
 																				<td>{$vo.answer}</td>
