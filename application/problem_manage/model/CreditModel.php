@@ -19,16 +19,13 @@ class CreditModel {
   var $if_all_right=1;//判断用户答题是否全对
   var $participant_id;
   var $refer_event_id;
+  var $participant;
   var $answer_num=0;
-  function __construct($refer_event_id,$participant_id) {
-    $this->participant_id=$participant_id;
-      $this->refer_event_id=$refer_event_id;
-      $res=Db :: table('event')->field('credit_rule') ->where('event_id',$refer_event_id)->select();
-    //  $part=Db :: table('participant')->field('credit,team_id') ->where('participant_id',$participant_id)->select();
-      //$this->part_have_score=$part[0]['credit'];//获得参赛者个人积分
-      //$team=Db :: table('team')->where('team_id',$part[0]['team_id'])->select();
-    //  $this->$team_have_score=$team[0]['']
-      //$this->part_have_score=$part[0]['credit'];//获得参赛者个人积分
+  function __construct($participant) {
+      $this->participant=$participant;
+      $this->participant_id=$participant['participant_id'];
+      $this->refer_event_id=$participant['refer_event_id'];
+      $res=Db :: table('event')->field('credit_rule') ->where('event_id',$participant['refer_event_id'])->select();
       $credit_rule=json_decode($res[0]['credit_rule'],true);
       $this->fill_score=$credit_rule['fill_score'];
       $this->team_score=$credit_rule['team_score'];
@@ -84,6 +81,30 @@ class CreditModel {
 
 
   }
+  private function addTeamScore($team,$score){
+        $credit_add=$score;
+        $score_add=$score;
+        if(($team['team_credit']+$score)>$this->team_score_up){
+              $credit_add=$this->team_score_up-$team['team_credit'];
+        }
+        if(($team['team_score']+$score)>$this->team_score_up){
+              $score_add=$this->team_score_up-$team['team_score'];
+        }
+        Db :: table('team') -> where('team_id',$team['team_id'])
+        ->inc('team_score', $score_add)
+        ->inc('team_credit', $credit_add)
+        ->update();
+
+        $data=[];
+        $data['team_id']=$team['team_id'];
+        $data['refer_event_id']=$this->refer_event_id;
+        $data['change_time']=date('Y-m-d H:i:s', time());
+        $data['change_value']=$score;
+        $data['change_reason']='增加';
+        $data['item_id']=0;
+        Db::table('credit')->insert($data);
+
+  }
   public function dealFinal(){
       $part_add_score=$this->answer_score;
       $res_final=array();//最后返回的结果array
@@ -91,32 +112,40 @@ class CreditModel {
             $part_add_score=  $part_add_score+$this->person_score;
             $res_final['user_all_right']=$this->person_score;
       }
-      $part_res=Db :: table('participant') -> where('participant_id',$this->participant_id) -> select();
-      //$old_credit=$part_res[0]['credit'];
-        Db :: table('participant')-> where('participant_id',$this->participant_id) -> setInc('credit', $part_add_score);
-      //*****************处理team的分数***************************//
+      $this->participant['credit']=$this->participant['credit']+$part_add_score;
+      if($this->participant['credit']>$this->person_score_up){
+            Db::table('participant')
+              ->where('participant_id',$this->participant_id)
+              ->update(['credit' => $this->person_score_up]);
 
+      }else{
+            Db :: table('participant')
+              -> where('participant_id',$this->participant_id)
+              -> setInc('credit', $part_add_score);
+      }
+
+
+      //*****************处理team的分数***************************//
+      $team_s=Db :: table('team') -> where('team_id',$this->participant['team_id']) ->select();
+      $team=$team_s[0];
       $team_add_score=$this->answer_score;
 
-      if($this->judgeIfTeamRight($part_res[0]['team_id'])){
+      if($this->judgeIfTeamRight($this->participant['team_id'])){
           $team_add_score=$team_add_score+$this->team_score;
           $res_final['team_all_right']=$this->team_score;
       }
-      Db :: table('team') -> where('team_id',$part_res[0]['team_id']) -> setInc('team_credit', $team_add_score);
-      //分数
 
+      $this->addTeamScore($team,$team_add_score);
 
-      $part_final=Db :: table('participant')
-      -> where('participant_id',$this->participant_id) ->select();
+      //LogTool::info('--------------$team_final-----------',$team);
+      //********************************最后***************************************
 
-      $team_final=Db :: table('team') -> where('team_id',$part_res[0]['team_id']) ->select();
-      LogTool::info('--------------$team_final-----------',$team_final);
       $team_mates=Db::view('user','name,login_name')
-    ->view('participant','credit','participant.user_id=user.id')
-    -> where('team_id',$part_res[0]['team_id'])
-    ->select();
-      $res_final['user_credit']=$part_final[0]['credit'];
-      $res_final['team_credit']=$team_final[0]['team_credit'];
+        ->view('participant','credit','participant.user_id=user.id')
+        -> where('team_id',$this->participant['team_id'])
+        ->select();
+      $res_final['user_credit']=$this->participant['credit']+$part_add_score;
+      $res_final['team_credit']=$team['team_credit'];
       $res_final['team_mates']=$team_mates;
       $res_final['user_score']=  $part_add_score;//用户当次获得的分数
 

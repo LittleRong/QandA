@@ -167,12 +167,12 @@ class ProblemController extends Controller{
 
 
 	}
-	public function getUserProblem2(){
+	public function getUserProblem(){
 		LogTool::record('----------------------userproblem test----------------------','');
-		$user_id=Session::get('user_id');
-		Return $user_id;
+		$user=Session::get('user');
+		Return json_encode($user);
 	}
-	public function getUserProblem() {
+	public function getUserProblem2() {
 
 		$user_id = Session::get('user_id');
 		$refer_event_id = Request::instance()->param("event_id");

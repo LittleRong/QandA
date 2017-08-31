@@ -45,7 +45,7 @@ class AnswerController extends Controller {
 				$this->partHaveAnswerArr=array();
 				$refer_event_id = Request::instance()->param("event_id");
 				//$this->error($refer_event_id);
-				
+
 
 	}
 	public function getSy() {
@@ -65,7 +65,7 @@ class AnswerController extends Controller {
 		$this -> refer_participant_id = $this->pariticipant['participant_id']; //参赛人id
 		$this -> refer_team_id = $this->pariticipant['team_id']; //参赛人队伍的id
 
-		$this->creditModel=new CreditModel($this->pariticipant['refer_event_id'],$this->pariticipant['participant_id']);
+		$this->creditModel=new CreditModel($this->pariticipant);
 
 
 
