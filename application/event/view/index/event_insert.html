@@ -117,16 +117,14 @@
         			<label >事件描述：</label>
         			<textarea id="message" name="message"></textarea>
         			<label >事件类型：</label>
-        			<div>
 								<select name="select_event" id="select_event" onchange="GetSelValue();">
                         <option selected value="选择事件种类">请选择事件种类</option>
                         <option value="业务知识类竞赛">业务知识类竞赛</option>
                     	</select>
-                    </div>
-                    <label >参赛人员：</label>
-                    <div>
-        						<input style="width:20%" type="number" id="participant_num" name="participant_num">人
-                    </div>
+                    <label >参赛人数：</label>
+
+        						<input type="number" id="participant_num" name="participant_num">
+
 								<label >开始时间：</label>
 								<input type="date" id="start_time" name="start_time">
 								<label >结束时间：</label>
@@ -164,7 +162,7 @@
 	        					<div class="pui-grid-xs-4">
 	        						<strong>每天答题数量</strong>
 	        					</div>
-	        					<div class="pui-grid-xs-4">
+	        					<div class="pui-grid-xs-4" id="answer_score">
 	        						<strong>每题获得积分</strong>
 	        					</div>
 	        				</div>
@@ -173,7 +171,7 @@
 										<label>单选题：</label>
         					</div>
         					<div class="pui-grid-xs-4">
-        						<input type="number" id="single" name="single">
+        						<input type="number" id="single" name="single" >
         					</div>
         					<div class="pui-grid-xs-4">
         						<input type="number" id="single_score" name="single_score">
@@ -216,11 +214,11 @@
 
 							<div class="pui-row">
 								<div class="pui-grid-xs-4"><label>当日个人全对额外加分：</label></div>
-								<div class="pui-grid-xs-8"><input type="number" style="width: 100%;" id="person_score" name="person_score"></div>
+								<div class="pui-grid-xs-8"><input type="number" style="width: 100%;" id="person_score" name="person_score" value=0></div>
 							</div>
 							<div class="pui-row">
 								<div class="pui-grid-xs-4"><label>当日团队全对额外加分：</label></div>
-								<div class="pui-grid-xs-8"><input type="number" style="width: 100%;" id="team_score" name="team_score"></div>
+								<div class="pui-grid-xs-8"><input type="number" style="width: 100%;" id="team_score" name="team_score" value=0></div>
 							</div>
 							<div class="pui-row">
 								<div class="pui-grid-xs-4"><label>个人总积分上限：</label></div>
@@ -359,32 +357,47 @@
 						var time;    //答题时间（星期几）
 						var item;    //道具
 
-						if($("#pro_random").is(":checked"))
-						{
-							pro_random = 1;
+						if(ename == ''){
+				        $("#ename").prev("label").append("<span style='color:red'>事件名称不能为空");
+		        }else if(message == ''){
+                $("#message").prev("label").append("<span style='color:red'>事件描述不能为空");
+						}else if(select_event == ''){
+                $("#select_event").prev("label").append("<span style='color:red'>请选择事件类型");
+						}else if(participant_num == ''){
+                $("#participant_num").prev("label").append("<span style='color:red'>参赛人数不能为空");
+						}else if(start_time == ''){
+                $("#start_time").prev("label").append("<span style='color:red'>请选择开始时间");
+						}else if(end_time == ''){
+                $("#end_time").prev("label").append("<span style='color:red'>请选择结束时间");
+						}else if(select_time == ''){
+                $("#select_time").prev("label").append("<span style='color:red'>请选择答题时间");
+						}else if(single== ''||single_score== ''||multiple== ''||multiple_score== ''||fill== ''||fill_score== ''||judge== ''||judge_score == ''||person_score_up== ''||team_score_up== ''){
+                             alert("请填写完题目设置");
 						}
-						if($("#opt_random").is(":checked"))
-						{
-							opt_random = 1;
-						}
+						else{
+							if($("#pro_random").is(":checked"))
+							{
+								pro_random = 1;
+							}
+							if($("#opt_random").is(":checked"))
+							{
+								opt_random = 1;
+							}
 
-						if($("#Mon").is(":checked"))
-						{
-							mon = 1;
-						}
+							if($("#Mon").is(":checked"))
+							{
+								mon = 1;
+							}
 
-						time = mutil_check();
-						item = mutil_check2();
-						if(time.length == 0)
-						{
-								alert("请勾选答题日期！");
-								return false;
-						}
-						if(item.length == 0)item=null;
+							time = mutil_check();
+							item = mutil_check2();
+							if(time.length == 0)
+							{
+									alert("请勾选答题日期！");
+									return false;
+							}
+							if(item.length == 0)item=null;
 
-					  if(ename == ''){
-				        alert("事件名称不能为空");
-		        }else{
 						    var post_data = {item:item,time:time,participant_num:participant_num,ename:ename,start_time:start_time,end_time:end_time,single:single,multiple:multiple,
 								fill:fill,judge:judge,pro_random:pro_random,opt_random:opt_random,ekind:ekind,answer_time:answer_time,single_score:single_score,
 							multiple_score:multiple_score,fill_score:fill_score,judge_score:judge_score,person_score:person_score,
