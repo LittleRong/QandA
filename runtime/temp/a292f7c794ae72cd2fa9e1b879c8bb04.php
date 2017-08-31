@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"G:\xampp\htdocs\QandA\public/../application/event\view\question\tiku_upload.html";i:1503990917;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"G:\xampp\htdocs\QandA\public/../application/event\view\question\tiku_upload.html";i:1504062141;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-cn">
 	<head>
@@ -115,10 +115,11 @@
                     <form class="pui-form pui-input-sm-large pui-input-md-large pui-grid" style="text-align: center" action="<?php echo \think\Config::get('web_res_root'); ?>index.php/event/question/upload" method="post" enctype="multipart/form-data">
                     <label>选择上传的文件</label>
 										<a href="<?php echo \think\Config::get('web_res_root'); ?>index.php/event/question/problem_manage">
-                    <input type="file" name="image" class="pui-input-border-error"> <input type="submit" class="pui-btn pui-btn-success" name="submit" value="Submit" />
+                    <input id="uplode_file" type="file" name="image" class="pui-input-border-error">
+										<input id="uplode_btn" type="submit" class="pui-btn pui-btn-success" name="submit" value="提交" />
 										</a>
 										<a href="<?php echo \think\Config::get('web_res_root'); ?>index.php/event/question/problem_manage">
-                    <input type="button" class="pui-btn pui-btn-success" name="cancel" value="Cancel" />
+                    <input type="button" class="pui-btn pui-btn-success" name="cancel" value="跳过" />
 										</a>
                     </form>
 
@@ -133,11 +134,20 @@
 	</body>
 
 		<!-- jQuery -->
-		<script type="text/javascript" src="<?php echo \think\Config::get('web_res_root'); ?>/event/dist/js/planeui.js"></script>
-		<script src="<?php echo \think\Config::get('web_res_root'); ?>/js/jquery.min.js"></script>
-		<script src="<?php echo \think\Config::get('web_res_root'); ?>/js/jquery-ui.min.js"></script>
-		<script src="<?php echo \think\Config::get('web_res_root'); ?>/js/bootstrap.min.js"></script>
+			<script src="<?php echo \think\Config::get('web_res_root'); ?>/js/jquery.min.js"></script>
+		<script type="text/javascript" src="<?php echo \think\Config::get('web_res_root'); ?>/js/planeui.js"></script>
 
+		<script type="text/javascript">
+		$(document).ready(function(){
+		  $("form").submit(function(e){
+			    var uplode_file = $("#uplode_file").val();
+					if(uplode_file==""){
+						alert("请选择文件");
+						return false;
+					}
+      });
+		});
 
+		</script>
 
 </html>

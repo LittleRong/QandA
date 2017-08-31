@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:94:"G:\xampp\htdocs\QandA\public/../application/problem_manage\view\user_problem\user_problem.html";i:1504027276;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:94:"G:\xampp\htdocs\QandA\public/../application/problem_manage\view\user_problem\user_problem.html";i:1504057181;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-cn">
 	<head>
@@ -129,8 +129,8 @@
       if(surplusTimes<=0){ 
         console.log('时间到！'); 
         clearInterval(countdowns);
-        //alert("时间到，将自动提交答卷");
-        //$('#submit').click();
+        alert("时间到，将自动提交答卷");
+        $('#submit').click();
 
       } 
     },1000); 

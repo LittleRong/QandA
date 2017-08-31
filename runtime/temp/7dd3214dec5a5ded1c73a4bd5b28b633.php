@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"G:\xampp\htdocs\QandA\public/../application/index\view\userindex\user_index.html";i:1503989807;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"G:\xampp\htdocs\QandA\public/../application/index\view\userindex\user_index.html";i:1504029673;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
@@ -75,7 +75,7 @@
                             <img src="<?php echo \think\Config::get('web_res_root'); ?>/img/girl.jpg" class="pui-img-circle pui-box-shadow-plus">
                             <?php endif; ?>
                             </h1>
-                        <h5 style="text-align: center;"><strong>姓名：</strong><?php echo $data['user_message']['name']; ?>                            
+                        <h5 style="text-align: center;"><strong>姓名：</strong><?php echo $data['user_message']['name']; ?>
                         </h5>
                         <h5 style="text-align: center;"><strong>工号：</strong><?php echo $data['user_message']['job_number']; ?></h5>
                         <h5 style="text-align: center;"><strong>手机号：</strong><?php echo $data['user_message']['phone_number']; ?></h5>
