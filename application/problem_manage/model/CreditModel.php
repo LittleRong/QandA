@@ -116,11 +116,11 @@ class CreditModel {
     -> where('team_id',$part_res[0]['team_id'])
     ->select();
       $res_final['user_credit']=$part_final[0]['credit'];
-      $res_final['team']=$team_final[0]['team_credit'];
+      $res_final['team_credit']=$team_final[0]['team_credit'];
       $res_final['team_mates']=$team_mates;
       $res_final['user_score']=  $part_add_score;//用户当次获得的分数
 
-    
+
       Return $res_final;
 
   }
