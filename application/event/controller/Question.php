@@ -20,7 +20,7 @@ class Question extends ManageController
     //题目导入
     public function problem_insert()
     {
-      if(!Session::get('myevent_id'))
+      if(Request::instance()->param('event_id'))
       {
         //get方式取回event_id
         $data = Request::instance()->param('event_id');
