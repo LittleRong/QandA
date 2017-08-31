@@ -25,6 +25,7 @@ class ProblemController extends Controller{
 				//$this->error('您已完成今日答题任务了哦！');
     }
 
+
 	public function getSy() {
 		echo("sy");
 		$a = Db :: table('problem') -> order('rand()') -> limit(5) -> select();
@@ -203,6 +204,7 @@ class ProblemController extends Controller{
 		$this->assign('data',$res);
 		$this->assign('name',$user_name);
 		$this->assign('time',$this->event['answer_time']);
+		$this->part['waited_answer']=null;//不传答案
 		$this->assign('participant',json_encode($this->part));
 		return $this->fetch('user_problem/user_problem');
 	}
