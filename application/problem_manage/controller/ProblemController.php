@@ -22,15 +22,34 @@ class ProblemController extends Controller{
         $this->partModel=new ParticipantModel();
 				$this->pm=new ProblemModel();
 				$this->em=new EventModel();
-				//$this->error('您已完成今日答题任务了哦！');
+				if(!Session::get('user_id')){//用户未登录,进入登录页面
+						$this->redirect('index/login/index');//用户未登录,进入登录页面
+				}
+
     }
+		private function filter($event){
+					$pha=ParticipantHaveAnswerdModel::getPardDayAnswer($this->part['participant_id']);
+					if (count($pha)>0){//判断用户是否已经答题,>0表示已经答过题目了
+						LogTool::info('----------------------participant have answered the question today----------------------',$pha);
+						$this->error('您已完成今日答题任务了哦！');
+					}
+					$event_time=json_decode($event['event_time'],true);
+					$today=date('Y-m-d', time());
+					if(strtotime($today)<strtotime($event_time['start_time'])
+								|| strtotime($today)> strtotime($event_time['end_time'])){
+							$this->error('比赛未开始或已经结束啦！');
+
+					}
+					$event_days=$event_time['time'];//星期
+					if(!array_key_exists((string)date("w"),$event_days)){
+								$this->error('哈哈哈，今天不是答题日哦！！！');
+								//LogTool::info('----------------------not today----------------------',$pha);
+					}
 
 
-	public function getSy() {
-		echo("sy");
-		$a = Db :: table('problem') -> order('rand()') -> limit(5) -> select();
-		LogTool :: info('--------------',$a);
-	}
+
+		}
+
 
 	private function buildOption($single_pros,$option_random) { // 建立选择题选项，打乱选项
 		//option_random：为1表示要打乱题目顺序
@@ -168,25 +187,18 @@ class ProblemController extends Controller{
 
 	}
 	public function getUserProblem2(){
-		LogTool::record('----------------------userproblem test----------------------','');
-		$user_id=Session::get('user_id');
-		Return $user_id;
+		$this->error('您已完成今日答题任务了哦！');
 	}
 	public function getUserProblem() {
 
-		$user_id = Session::get('user_id');
+		$user = Session::get('user');
 		$refer_event_id = Request::instance()->param("event_id");
-		$this->part = $this->partModel -> getParticipant($user_id, $refer_event_id); //array ('participant_id' => 1, 'refer_event_id' => 1, 'user_id' =>
+		$this->part = $this->partModel -> getParticipant($user['id'], $refer_event_id); //array ('participant_id' => 1, 'refer_event_id' => 1, 'user_id' =>
 		$this->event=$this->em->getEvent($this->part['refer_event_id']);
-		$user= $this->partModel->getPartname($user_id);
-		$user_name=$user[0]['login_name'];
+		$this->filter($this->event);//过滤
 		// 1,'team_id' => 1,'credit' => 0,'leader' => 0, 'waited_answer' => NULL,
 		$ifRebuild = 0; //用来判断是否重新生成题目
-		$pha=ParticipantHaveAnswerdModel::getPardDayAnswer($this->part['participant_id']);
-		if (count($pha)>0){//判断用户是否已经答题,>0表示已经答过题目了
-			LogTool::record('----------------------participant have answered the question today----------------------');
-			Return null;
-		}
+
 		if ($this->part['waited_answer']) {
 			if (json_decode($this->part['waited_answer']) -> planDate == date('Y-m-d', time())) { // 判断题目是否是当天的
 				$ifRebuild = 1;
@@ -202,7 +214,7 @@ class ProblemController extends Controller{
 		$res = json_decode(json_encode($res),true);//转换为数组，方便传输给页面
 		LogTool :: info('----------------getUserProblem最后生成的问题---------------------',$res);
 		$this->assign('data',$res);
-		$this->assign('name',$user_name);
+		$this->assign('name',$user['login_name']);
 		$this->assign('time',$this->event['answer_time']);
 		$this->part['waited_answer']=null;//不传答案
 		$this->assign('participant',json_encode($this->part));
