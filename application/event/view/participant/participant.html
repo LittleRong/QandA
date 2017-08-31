@@ -120,7 +120,7 @@
 								{else/}
 								{foreach $data as $k=>$v}
         				<div id="xcsz"><!--后台获取参赛选手信息-->
-        				<div><input type="checkbox" name="cbox" id="cbox" value={$v.id} >{$v.name}</div>
+        				<div><input type="checkbox" name="checkbox1" id="checkbox1" value={$v.id} >{$v.name}</div>
         				</div>
 								{/foreach}
 								{/eq}
@@ -168,7 +168,7 @@
                 $('#sub').bind('click',function(){
                     var chk_value =[];  //获取value
                     var chk_Chinese=[];    //获取中文
-                    $('input[name="cbox"]:checked').each(function(){
+                    $('input[name="checkbox1"]:checked').each(function(){
                         chk_value.push($(this).val());
                         chk_Chinese.push($(this).parent().text());
                     });
