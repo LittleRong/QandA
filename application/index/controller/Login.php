@@ -44,8 +44,9 @@ class Login extends Controller{
                 if(Session::get('user_id')){
                     $data = array('result'=>'已登陆');
                 }else{
-                    Session::set('user_id',$login_result->id); //设置session保存当前登陆用户信息
-                    if($login_result->permission==1){//管理员用户
+                    Session::set('user_id',$login_result['id']); //设置session保存当前登陆用户信息
+                    Session::set('user',$login_result); //设置session保存当前登陆用户信息
+                    if($login_result['permission']==1){//管理员用户
                         $data = array('result'=>'管理员');
                     }else{//普通用户
                         $data = array('result'=>'普通用户');
