@@ -41,9 +41,10 @@ class ProblemController extends Controller{
 
 					}
 					$event_days=$event_time['time'];//星期
-					if(!array_key_exists((string)date("w"),$event_days)){
-								$this->error('哈哈哈，今天不是答题日哦！！！');
-								//LogTool::info('----------------------not today----------------------',$pha);
+					if(!array_search((string)date("w"),$event_days)){
+								LogTool::info('----------------------$event_days----------------------',$event_days);
+								$this->error('今天不是答题日哦！！！');
+
 					}
 
 
