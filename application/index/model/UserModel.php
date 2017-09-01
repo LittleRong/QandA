@@ -11,11 +11,11 @@ class UserModel extends Model{
         $query=['login_name'=>$username,'pwd'=>md5($password)];
         $result = $this->where('login_name',$username)
                        ->where('pwd',md5($password))
-                       ->field('id,login_name,name,phone_number,job_number,gender,permission')->find()->getData();
+                       ->field('id,login_name,name,phone_number,job_number,gender,permission')->find();
         if (empty($result)) {//获取数据，若不存在则返回空
             return null;
         }
-        return $result;   //返回用户信息S
+        return $result->getData();   //返回用户信息S
     }
 
     //修改密码操作
