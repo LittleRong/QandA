@@ -205,11 +205,25 @@ class AnswerController extends Controller {
 						$pantHaveAnswer = new ParticipantHaveAnswerdModel();
 						$pantHaveAnswer->setPro($this -> refer_participant_id, $this -> refer_team_id, $submit['problem_id'], $submitAnswer);
 						//**************判断正确与否********************//
+						if($submitAnswer=='1' ||$submitAnswer=='是' || $submitAnswer=='对'){
+								$submitAnswer=true;
+						}else{
+								$submitAnswer=false;
+						}
+						if($judgeAnswer[$submitId]=='1' ||$judgeAnswer[$submitId]=='是' || $judgeAnswer[$submitId]=='对'){
+								$judgeAnswer[$submitId]=true;
+						}else{
+								$judgeAnswer[$submitId]=false;
+						}
 						if($submitAnswer==$judgeAnswer[$submitId]){
+							LogTool::record('-----------judge-----right----------------------');
+							LogTool::info($submitAnswer,$judgeAnswer[$submitId]);
 							$pantHaveAnswer -> setTrueOrFalse(1); //设置为回答正确
 							$this->creditModel->dealAnswer(1,'judge');
 
 						}else {
+							LogTool::record('-----------judge-----error----------------------');
+							LogTool::info($submitAnswer,$judgeAnswer[$submitId]);
 							$pantHaveAnswer -> setTrueOrFalse(0);
 							$this->creditModel->dealAnswer(0,'judge');
 						}
@@ -230,10 +244,14 @@ class AnswerController extends Controller {
 						$pantHaveAnswer->setPro($this -> refer_participant_id, $this -> refer_team_id, $submit['problem_id'], $submitAnswer);
 						//**************判断正确与否********************//
 						if($submitAnswer==$fillAnswer[$submitId]){
+							LogTool::record('-----------fill-----right----------------------');
+							LogTool::info($submitAnswer,$fillAnswer[$submitId]);
 							$pantHaveAnswer -> setTrueOrFalse(1); //设置为回答正确
 							$this->creditModel->dealAnswer(1,'fill');
 
 						}else {
+							LogTool::record('-----------fill-----error----------------------');
+							LogTool::info($submitAnswer,$fillAnswer[$submitId]);
 							$pantHaveAnswer -> setTrueOrFalse(0);
 							$this->creditModel->dealAnswer(0,'fill');
 						}
