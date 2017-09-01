@@ -8,25 +8,34 @@
     <!-- bootstrap -->
     <link rel="stylesheet" href="{$Think.config.web_res_root}/css/bootstrap.min.css">
     <link rel="stylesheet" href="{$Think.config.web_res_root}/css/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/css/planeui.min.css" />
 </head>
 <body>
-    <form id="login_form" method="post">
-        <h3>修改密码</h3>
-        <div>
+<div  class="pui-layout">
+    <header>
+        <div style="position: relative;">
+            <img src="{$Think.config.web_res_root}/img/header2.jpg" style="width: 100%;height: auto">
+        </div>
+    </header>
+</div> 
+    <form class="pui-form pui-input-sm-large pui-input-md-small pui-grid"  id="login_form" method="post">
+        <h3 style="text-align: left">修改密码</h3>
+        <hr>
+        <div class="pui-row pui-form-group pui-form-group-underline-dashed">
             <label>原密码</label>
             <input type="password" id="old_password" name="old_password"/>
         </div>
-        <div>
+        <div class="pui-row pui-form-group pui-form-group-underline-dashed">
             <label>新密码</label>
             <input type="password" minlength="8" maxlength="20" id="new_password" name="new_password"/>
         </div>
-        <div>
+        <div class="pui-row pui-form-group pui-form-group-underline-dashed">
             <label>新密码确认</label>
             <input type="password" minlength="8" maxlength="20" id="new_password_again" name="new_password_again"/>
         </div>
-        <div>
-            <button id="change_pwd__btn">确认修改</button>
-            <a href="{:url('index/userindex/user_index')}">返回</a>
+        <div class="pui-row pui-form-group pui-form-group-underline-dashed">
+            <button id="change_pwd__btn" class="pui-btn pui-btn-small pui-btn-primary ">确认修改</button>
+            <a class="pui-btn pui-btn-small pui-btn-default " href="{:url('index/userindex/user_index')}">返回</a>
         </div>
     </form>
 </body>
