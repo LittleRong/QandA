@@ -97,8 +97,8 @@
 												
 											{else /} 
 												{eq name="$v" value="judge"}
-													<input type="radio" name="{$v}_{$k2.problem_id}" value="1">对<br>
-													<input type="radio" name="{$v}_{$k2.problem_id}" value="0">错
+													<input type="radio" name="{$v}_{$k2.problem_id}" value="1">是<br>
+													<input type="radio" name="{$v}_{$k2.problem_id}" value="0">否
 												{/eq}
 												{eq name="$v" value="fill"}
 													<input type="text" name="{$v}_{$k2.problem_id}" ><br>
@@ -138,6 +138,10 @@
       $("#left_sec").text(secd);
       //console.log(minu+':'+secd); 
       if(surplusTimes<=0){ 
+      	var display =$('#submit').css('display');
+		if(display == 'none'){
+		   return;
+		}
         console.log('时间到！'); 
         clearInterval(countdowns);
         alert("时间到，将自动提交答卷");
@@ -222,8 +226,8 @@
 			//var judge_length=$("#judge_panel .timu_item").length;
 			for(var i=0;i<judge_length;i++){
 				var j=$("#judge_panel .timu_item").eq(i).attr("id");
-				var j_answer=$("#judge_panel .timu_item input[type='radio']:checked").eq(i).attr("value");
-				
+				var j_answer=$("#judge_panel .timu_item input[type='radio']:checked").eq(i).val();
+				//alert(j_answer);
 				var answer_judge={};
 	        	answer_judge['problem_id']=j;
 	        	answer_judge['answer']=j_answer;
@@ -237,8 +241,9 @@
 			//var fill_length=$("#fill_panel .timu_item").length;
 			for(var i=0;i<fill_length;i++){
 				var f=$("#fill_panel .timu_item").eq(i).attr("id");
-				var f_answer=$("#fill_panel .timu_item input[type='text']").eq(i).attr("value");
+				var f_answer=$("#fill_panel .timu_item input[type='text']").eq(i).val();
 				var answer_fill={};
+				
 	        	answer_fill['problem_id']=f;
 	        	answer_fill['answer']=f_answer;
 				
@@ -300,6 +305,18 @@
                  			for(var prop2 in right_answer.multi){
                  				var id="#multi_panel #"+prop2+" h5 span";
                  				$(id).text(right_answer.multi[prop2]);
+                 			}
+                 		}
+                 		if(prop=="fill"){
+                 			for(var prop2 in right_answer.fill){
+                 				var id="#fill_panel #"+prop2+" h5 span";
+                 				$(id).text(right_answer.fill[prop2]);
+                 			}
+                 		}
+                 		if(prop=="judge"){
+                 			for(var prop2 in right_answer.judge){
+                 				var id="#judge_panel #"+prop2+" h5 span";
+                 				$(id).text(right_answer.judge[prop2]);
                  			}
                  		}
                  	}

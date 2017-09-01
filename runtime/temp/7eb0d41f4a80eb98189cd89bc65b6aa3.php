@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:94:"G:\xampp\htdocs\QandA\public/../application/problem_manage\view\user_problem\user_problem.html";i:1504173840;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:94:"G:\xampp\htdocs\QandA\public/../application/problem_manage\view\user_problem\user_problem.html";i:1504235878;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-cn">
 	<head>
@@ -89,8 +89,8 @@
 													<?php endforeach; else: foreach($k2['option'] as $v3=>$k3): ?>
 														<input type="checkbox" name="<?php echo $v; ?>_<?php echo $k2['problem_id']; ?>" id="<?php echo $k3['q_id']; ?>"><?php echo $v3; ?>、<?php echo $k3['content']; ?> <br>
 													<?php endforeach; endif; else: if($v == 'judge'): ?>
-													<input type="radio" name="<?php echo $v; ?>_<?php echo $k2['problem_id']; ?>" value="1">对<br>
-													<input type="radio" name="<?php echo $v; ?>_<?php echo $k2['problem_id']; ?>" value="0">错
+													<input type="radio" name="<?php echo $v; ?>_<?php echo $k2['problem_id']; ?>" value="1">是<br>
+													<input type="radio" name="<?php echo $v; ?>_<?php echo $k2['problem_id']; ?>" value="0">否
 												<?php endif; if($v == 'fill'): ?>
 													<input type="text" name="<?php echo $v; ?>_<?php echo $k2['problem_id']; ?>" ><br>
 													<?php endif; endif; ?>
@@ -126,6 +126,10 @@
       $("#left_sec").text(secd);
       //console.log(minu+':'+secd); 
       if(surplusTimes<=0){ 
+      	var display =$('#submit').css('display');
+		if(display == 'none'){
+		   return;
+		}
         console.log('时间到！'); 
         clearInterval(countdowns);
         alert("时间到，将自动提交答卷");
@@ -210,8 +214,8 @@
 			//var judge_length=$("#judge_panel .timu_item").length;
 			for(var i=0;i<judge_length;i++){
 				var j=$("#judge_panel .timu_item").eq(i).attr("id");
-				var j_answer=$("#judge_panel .timu_item input[type='radio']:checked").eq(i).attr("value");
-				
+				var j_answer=$("#judge_panel .timu_item input[type='radio']:checked").eq(i).val();
+				//alert(j_answer);
 				var answer_judge={};
 	        	answer_judge['problem_id']=j;
 	        	answer_judge['answer']=j_answer;
@@ -225,8 +229,9 @@
 			//var fill_length=$("#fill_panel .timu_item").length;
 			for(var i=0;i<fill_length;i++){
 				var f=$("#fill_panel .timu_item").eq(i).attr("id");
-				var f_answer=$("#fill_panel .timu_item input[type='text']").eq(i).attr("value");
+				var f_answer=$("#fill_panel .timu_item input[type='text']").eq(i).val();
 				var answer_fill={};
+				
 	        	answer_fill['problem_id']=f;
 	        	answer_fill['answer']=f_answer;
 				
@@ -254,7 +259,7 @@
                 	var parsedJson = jQuery.parseJSON(results); 
                 	//alert(parsedJson.user_credit);
                  	$("#per_score").text(parsedJson.user_score);
-                 	$("#per_score").text(JSON.stringify(results));
+                 	//$("#per_score").text(JSON.stringify(results));
                  	$("#per_credit").text(parsedJson.user_credit);
                  	$("#all_score").text(parsedJson.team_credit);
 
@@ -288,6 +293,18 @@
                  			for(var prop2 in right_answer.multi){
                  				var id="#multi_panel #"+prop2+" h5 span";
                  				$(id).text(right_answer.multi[prop2]);
+                 			}
+                 		}
+                 		if(prop=="fill"){
+                 			for(var prop2 in right_answer.fill){
+                 				var id="#fill_panel #"+prop2+" h5 span";
+                 				$(id).text(right_answer.fill[prop2]);
+                 			}
+                 		}
+                 		if(prop=="judge"){
+                 			for(var prop2 in right_answer.judge){
+                 				var id="#judge_panel #"+prop2+" h5 span";
+                 				$(id).text(right_answer.judge[prop2]);
                  			}
                  		}
                  	}
