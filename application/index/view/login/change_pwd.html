@@ -17,7 +17,7 @@
             <img src="{$Think.config.web_res_root}/img/header2.jpg" style="width: 100%;height: auto">
         </div>
     </header>
-</div> 
+</div>
     <form class="pui-form pui-input-sm-large pui-input-md-small pui-grid"  id="login_form" method="post">
         <h3 style="text-align: left">修改密码</h3>
         <hr>
@@ -47,6 +47,7 @@
 <script type="text/javascript">
 $(document).ready(function(){
     $("#change_pwd__btn").click(function(){
+        $(this).attr("disabled","true"); //设置变灰按钮，防止表单重复提交
         var old_password = $("#old_password").val();
         var new_password = $("#new_password").val();
         var new_password_again = $("#new_password_again").val();

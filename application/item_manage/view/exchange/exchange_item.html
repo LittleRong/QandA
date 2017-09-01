@@ -87,7 +87,7 @@
                 <div class="pui-row" style="padding-left:20px;padding-right:20px">
 					<div class="pui-grid-xs-2 pui-card pui-card-shadow pui-card-radius">
 							<blockquote>
-								<p>兑换规则</p>                               
+								<p>兑换规则</p>
 							</blockquote>
 							<div>
                                 <p>只能由组长兑换</p>
@@ -157,6 +157,11 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $(".exchange_btn").click(function () {
+                var mymessage=confirm("确认兑换");  
+                if(mymessage==false){
+                    return false;
+                }
+                $(this).attr("disabled","true"); //设置变灰按钮，防止表单重复提交
                 var exchange_item = $(this).parent().parent().find('.exchange_item').html();//获取exchange_item
                 var exchange_event = $('#exchange_event').html();
                 var post_data = { exchange_item: exchange_item, exchange_event: exchange_event };
@@ -168,6 +173,7 @@
                     async: false,
                     success: function (data) {
                         json_data = eval('(' + data + ')');
+                        $(this).attr("disabled","false"); 
                         alert(json_data['result']);
                         window.location.reload();
                     },

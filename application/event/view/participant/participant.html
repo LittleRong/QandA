@@ -215,6 +215,7 @@
                		})
 
 									$("#submit_message").click(function(){
+										$(this).attr("disabled","true"); //设置变灰按钮，防止表单重复提交
 									post_data = {mydata:mydata};
 									$.ajax({
 			                url:"participant_insert",

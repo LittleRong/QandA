@@ -78,6 +78,7 @@
 <script type="text/javascript">
 $(document).ready(function(){
     $("#login_btn").click(function(){
+			  $(this).attr("disabled","true"); //设置变灰按钮，防止表单重复提交
         var username = $("#username").val();
         var password = $("#password").val();
         if(username == ''){

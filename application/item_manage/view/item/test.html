@@ -82,7 +82,7 @@
 <title>道具管理</title>
 	 <script>
         	function getdata() {
-
+        $(this).attr("disabled","true"); //设置变灰按钮，防止表单重复提交
 				var item_id = $("#g_id").val();
 				var item_name = $(".pui-dialog #item_name").val();
 				var item_description = $(".pui-dialog #item_description").val();
@@ -293,6 +293,7 @@
 				        });
 				    });
 					$("#add_item_btn").click(function() {
+						$(this).attr("disabled","true"); //设置变灰按钮，防止表单重复提交
 						var item_name = $("#item_name").val();
 						var item_description = $("#item_description").val();
 						var change_rule = $("#change_rule").val();

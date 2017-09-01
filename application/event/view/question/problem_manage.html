@@ -253,7 +253,6 @@
 		{
 			return null;
 		}
-		alert(arr);
 		return arr;
 	}
 
@@ -262,6 +261,7 @@
 	{
 
 		$("#submit_message").click(function(){
+			$(this).attr("disabled","true"); //设置变灰按钮，防止表单重复提交
 			var problemId;
 			problemId = mutil_check();
 			if(problemId==null){
