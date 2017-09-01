@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"G:\xampp\htdocs\QandA\public/../application/index\view\login\index.html";i:1503972079;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"G:\xampp\htdocs\QandA\public/../application/index\view\login\index.html";i:1504029673;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-cn">
 	<head>
@@ -14,23 +14,25 @@
     <link rel="stylesheet" type="text/css" href="<?php echo \think\Config::get('web_res_root'); ?>/css/planeui.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo \think\Config::get('web_res_root'); ?>/css/login/login.css" />
 
+
     <style>
             img {
                 border-radius: 8px;
             }
             </style>
-	</head>
-<body  style="background:url('<?php echo \think\Config::get('web_res_root'); ?>image/loginbg.jpg')">
+    </head>
+    <!-- style="background:url('<?php echo \think\Config::get('web_res_root'); ?>image/loginbg.jpg')" -->
+<body  >
     <a name="top"></a>
     <div class="pui-layout pui-flexbox pui-flex-column login-layout ">
         <div class="pui-layout pui-flex login-main">
-            <div class="pui-layout pui-layout-fixed pui-layout-fixed-1200 login-main-con position">
+            <div class="pui-layout pui-layout-fixed pui-layout-fixed-1200 login-main-con ">
                 <div class="login-panel ">
-                    <form class="pui-form login-form" action="dashboard.html" method="post">
+                    <form class="pui-form login-form position" action="dashboard.html" method="post">
                         <div class="pui-form-group">
-                            <h1 class="pui-text-white pui-text-normal">
+                            <!-- <h1 class="pui-text-white pui-text-normal">
                                 <i class=" pui-text-xxxxxl "></i> 登录 Login
-                            </h1>
+                            </h1> -->
                             <div role="username">
                                 <input type="text" id="username" name="username" maxlength="16" class="pui-unbordered" placeholder="用户名" />
                                 <i class="fa fa-user pui-text-purple-us"></i>
@@ -45,7 +47,7 @@
                         <div class="pui-form-group">
                         </div>
                         <div class="pui-form-group">
-                            <input type="submit" id="login_btn" name="submit" class="pui-btn pui-btn-default pui-bg-purple-us pui-unbordered" value="登录" />
+                            <input type="submit" id="login_btn" name="submit" class="pui-btn  mybtn" value="登录" />
                             <!-- <input type="submit" name="submit" class="pui-btn pui-btn-default pui-bg-purple-us pui-unbordered" value="忘记密码" /> -->
                         </div>
                     </form>
@@ -92,7 +94,6 @@ $(document).ready(function(){
                 data: post_data,
                 async: false,
                 success: function(data){
-                    alert("跳转成功");
                     json_data=eval('('+data+')');
                     if(json_data['result']=="管理员"){
                         window.location.href="<?php echo url('index/usermanage/user_manage'); ?>";

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:94:"G:\xampp\htdocs\QandA\public/../application/problem_manage\view\user_problem\user_problem.html";i:1504027276;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:94:"G:\xampp\htdocs\QandA\public/../application/problem_manage\view\user_problem\user_problem.html";i:1504173840;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-cn">
 	<head>
@@ -26,15 +26,34 @@
                 </div>
             </div>
         </header>
+        <a type="button" class=" pui-btn pui-btn-default" style="float:left;margin-left: 2%;margin-top:10px " href="<?php echo url('index/userindex/user_index'); ?>">返回</a>
     </div> 
-    <div id="content" class="pui-layout" style="width:96%;margin-top:30px ">
+
+    <div id="content" class="pui-layout" style="width:96%;margin-top:10px ">
 		<div class="pui-row">
 		   	<div class="pui-grid-xs-3 pui-grid-xs-push-9 pui-grid-sm-3 pui-grid-sm-push-9 pui-grid-md-3 pui-grid-md-push-9 pui-grid-lg-3 pui-grid-lg-push-9 pui-grid-xl-3 pui-grid-xl-push-9 pui-grid-xxl-3 pui-grid-xxl-push-9 ">
 		    	<div class="pui-text-center">
-		     		<h4 style="color: #008EE5"  id="timer">剩余<span id="left_min"></span>分<span id="left_sec"></span>秒</h4>
+		     		<h4 class="bef" style="color: #008EE5"  id="timer">剩余<span id="left_min"></span>分<span id="left_sec"></span>秒</h4>
 		     		<input type="hidden" id="time" value="<?php echo $time; ?>">
 		    		<div style="text-align:center;">
-						<input type="button" class="pui-btn pui-btn-primary" id="submit" value="交卷">
+						<input type="button" class="bef pui-btn pui-btn-primary" id="submit" value="交卷">
+						<div id="credit_result" style="display: none">
+							<h5>&emsp;您今日得分：<span id="per_score"></span>；累计得分：<span id="per_credit"></span>；团队总得分：<span id="all_score"></span></h5>
+						</div>
+						<div id="submit_result" style="display:none;width: 90%;margin: 0 auto;margin-top: 10px">
+						<div class="pui-timeline" >
+				            <div class="pui-timeline-list" id="team_mates"> 
+				                <div class="pui-timeline-divider pui-timeline-divider-line">您所在的队伍</div>
+				                <!-- <div class="pui-timeline-item pui-timeline-badge-date">
+				                     <label class="pui-badge pui-badge-info">2017-12-05</label>
+				                     <div class="pui-timeline-item-context">
+				                         小明 获得了80分
+				                     </div>
+				                 </div>  -->
+
+				            </div>
+						</div>
+					</div>
 					</div>
 		    	</div>
 		   	</div>
@@ -63,7 +82,7 @@
 									<?php foreach($k as $v2=>$k2): ?>
 										<div class="timu_item pui-card pui-card-shadow pui-card-radius" id="<?php echo $k2['problem_id']; ?>">
 			                				<div class="pui-card-box">
-			                    			<h5><?php echo $v2+1; ?>、<?php echo $k2['problem']; ?></h5>
+			                    			<h5><?php echo $v2+1; ?>、<?php echo $k2['problem']; ?>&emsp;<span style="color: red"></span></h5>
 
 											<?php if(array_key_exists('option',$k2)): if($v == 'single'): foreach($k2['option'] as $v3=>$k3): ?>
 														<input type="radio" name="<?php echo $v; ?>_<?php echo $k2['problem_id']; ?>" id="<?php echo $k3['q_id']; ?>"><?php echo $v3; ?>、<?php echo $k3['content']; ?> <br>
@@ -86,27 +105,7 @@
 			</div>
 		</div>
 	</div>
-	<div id="submit_result" style="display:none;width: 90%;margin: 0 auto;margin-top: 10px">
-		<a type="button" class=" pui-btn pui-btn-default" style="float:left" href="<?php echo url('index/userindex/user_index'); ?>">返回</a>
-		<h5>&emsp;您的得分是：<span id="per_score"></span>；团队总得分：<span id="all_score"></span></h5>
-		<div class="pui-timeline" >
-            <div class="pui-timeline-list" id="team_mates"> 
-                <div class="pui-timeline-divider pui-timeline-divider-line">您所在的队伍</div>
-                <!-- <div class="pui-timeline-item pui-timeline-badge-date">
-                     <label class="pui-badge pui-badge-info">2017-12-05</label>
-                     <div class="pui-timeline-item-context">
-                         小明 获得了80分
-                     </div>
-                 </div> 
-                 <div class="pui-timeline-item pui-timeline-badge-datetime">
-                     <label class="pui-badge pui-badge-info">2017-11-05</label>
-                     <div class="pui-timeline-item-context">
-                         小张 获得了100分
-                     </div>
-                 </div> --> 
-            </div>
-		</div>
-	</div>
+	
 <script type="text/javascript" src="<?php echo \think\Config::get('web_res_root'); ?>/js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript"> 
 	function leftTimer(year,month,day,hour,minute,second){ 
@@ -125,12 +124,12 @@
       var secd = Math.round(surplusTimes%60); 
       $("#left_min").text(minu);
       $("#left_sec").text(secd);
-      console.log(minu+':'+secd); 
+      //console.log(minu+':'+secd); 
       if(surplusTimes<=0){ 
         console.log('时间到！'); 
         clearInterval(countdowns);
-        //alert("时间到，将自动提交答卷");
-        //$('#submit').click();
+        alert("时间到，将自动提交答卷");
+        $('#submit').click();
 
       } 
     },1000); 
@@ -252,22 +251,49 @@
                 },
                 success: function(results){
                 	$("#load").hide();
-                	$("#content").hide();
                 	var parsedJson = jQuery.parseJSON(results); 
                 	//alert(parsedJson.user_credit);
-                	$("#per_score").text(parsedJson.user_credit);
-                	$("#all_score").text(parsedJson.team);
+                 	$("#per_score").text(parsedJson.user_score);
+                 	$("#per_score").text(JSON.stringify(results));
+                 	$("#per_credit").text(parsedJson.user_credit);
+                 	$("#all_score").text(parsedJson.team_credit);
 
-                	var team_mates=parsedJson.team_mates;
-//$("#all_score").text(JSON.stringify(team_mates));
-                	for(var i=0;i<team_mates.length;i++){
-
-						var credit=team_mates[i].credit;
-						var name=team_mates[i].name;
-						//var participant=team_mates[i].participant;
-						var template="<div class='pui-timeline-item pui-timeline-badge-date'><label class='pui-badge pui-badge-info'>"+name+"</label><div class='pui-timeline-item-context'>累计得分<strong>"+credit+"</strong>分</div></div> ";
+                 	if(parsedJson.user_all_right){
+                 		$("#credit_result").append("<h5 style='color:red'>真厉害，您今天答对了所有题，额外加"+parsedJson.user_all_right+"分！！</h5>");
+                 	}
+                 	if(parsedJson.team_all_right){
+                 		$("#credit_result").append("<h5 style='color:red'>真厉害，您所在的队伍今天答对了所有题，额外加"+parsedJson.team_all_right+"分！！</h5>");
+                 	}
+                 	
+                 	
+                 	var team_mates=parsedJson.team_mates;
+					//$("#all_score").text(JSON.stringify(team_mates));
+                 	for(var i=0;i<team_mates.length;i++){
+					 	var credit=team_mates[i].credit;
+					 	var name=team_mates[i].name;
+					 	var participant=team_mates[i].participant;
+					 	var template="<div class='pui-timeline-item pui-timeline-badge-date'><label class='pui-badge pui-badge-info'>"+name+"</label><div class='pui-timeline-item-context'>累计得分<strong>"+credit+"</strong>分</div></div> ";
 						$("#team_mates").append(template);
-                	}
+                 	}
+                 	
+                 	var right_answer=parsedJson.right_answer;
+                 	for(var prop in right_answer){
+                 		if(prop=="single"){
+                 			for(var prop2 in right_answer.single){
+                 				var id="#single_panel #"+prop2+" h5 span";
+                 				$(id).text(right_answer.single[prop2]);
+                 			}
+                 		}
+                 		if(prop=="multi"){
+                 			for(var prop2 in right_answer.multi){
+                 				var id="#multi_panel #"+prop2+" h5 span";
+                 				$(id).text(right_answer.multi[prop2]);
+                 			}
+                 		}
+                 	}
+                 	//alert(JSON.stringify(parsedJson.right_answer));
+                 	$(".bef").hide();
+                 	$("#credit_result").show();
                 	$("#submit_result").show();
                 }
             });
