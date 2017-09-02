@@ -110,7 +110,7 @@ class AnswerController extends Controller {
 
 
 		//***********************************************
-		//ParticipantHaveAnswerdModel::savePartHaveAnswerds($this->pantHaveAnswerArr);
+		ParticipantHaveAnswerdModel::savePartHaveAnswerds($this->partHaveAnswerArr);
 		$res=$this->creditModel->dealFinal();
 		$res['right_answer']=$allAnswer;
 		LogTool::info('-------------------------answer-submit res----------------------',$res);
