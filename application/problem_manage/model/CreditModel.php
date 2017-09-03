@@ -86,6 +86,7 @@ class CreditModel {
         $score_add=$score;
         if(($team['team_credit']+$score)>$this->team_score_up){
               $credit_add=$this->team_score_up-$team['team_credit'];
+              $team['team_credit']=$team['team_credit']+$credit_add;
         }
         if(($team['team_score']+$score)>$this->team_score_up){
               $score_add=$this->team_score_up-$team['team_score'];
@@ -94,7 +95,8 @@ class CreditModel {
         ->inc('team_score', $score_add)
         ->inc('team_credit', $credit_add)
         ->update();
-
+        $team['team_credit']=$team['team_credit']+$credit_add;
+        $team['team_score']=$team['team_score']+$score_add;
         $data=[];
         $data['team_id']=$team['team_id'];
         $data['refer_event_id']=$this->refer_event_id;
@@ -103,7 +105,7 @@ class CreditModel {
         $data['change_reason']='增加';
         $data['item_id']=0;
         Db::table('credit')->insert($data);
-
+        Return $team;
   }
   public function dealFinal(){
       $part_add_score=$this->answer_score;
@@ -135,7 +137,7 @@ class CreditModel {
           $res_final['team_all_right']=$this->team_score;
       }
 
-      $this->addTeamScore($team,$team_add_score);
+      $team=$this->addTeamScore($team,$team_add_score);
 
       //LogTool::info('--------------$team_final-----------',$team);
       //********************************最后***************************************
