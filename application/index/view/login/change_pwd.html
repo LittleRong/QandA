@@ -66,7 +66,9 @@ $(document).ready(function(){
                 success: function(data){
                     json_data=eval('('+data+')');
                     alert(json_data['result']);
-                    window.location.href="{:url('login/index')}"
+                    if(json_data['result']=='修改成功'){
+                        window.location.href="{:url('login/index')}";
+                    }
                 },
                 error: function(data, status, error){
                     alert("跳转失败");
@@ -74,6 +76,7 @@ $(document).ready(function(){
                 }
             });
         }
+        $(this).removeAttr("disabled");
         return false;
     });
 });
