@@ -180,7 +180,7 @@
         var user_job_number = $(".pui-dialog #change_user_job_number").val();
         var user_gender = $(".pui-dialog #change_user_gender").val();
 
-        if (change_user_name == '' || change_login_name == '' || change_user_phone_number == '' || change_user_job_number == '' || change_user_gender == '') {
+        if (user_name == '' || login_name == '' || user_phone_number == '' || user_job_number == '' || user_gender == '') {
             alert("信息不能留空");
         } else {
             var post_data = { change_id: change_id, user_name: user_name, login_name: login_name, user_phone_number: user_phone_number, user_job_number: user_job_number, user_gender: user_gender };
