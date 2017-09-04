@@ -28,12 +28,18 @@ class Usermanage extends ManageController{
           $data=$request->param();
           $user_name=$data['user_name'];
           $login_name=$data['login_name'];
-          $password=md5('gmcc1234');//默认密码gmcc1234
           $user_phone_number=$data['user_phone_number'];
           $user_job_number=$data['user_job_number'];
           $user_gender=$data['user_gender'];
+          $password=md5('gmcc1234');//默认密码gmcc1234
           $user_model = new UserModel();
-          $result = $user_model->add_user($user_name,$login_name,$password,$user_phone_number,$user_job_number,$user_gender);//插入并返回插入的用户信息
+          //判断用户名是否存在
+          $exist=$user_model->loginIsExist($login_name);
+          if($exist==true){
+              $result['result']="登录名已存在，请重新输入";
+          }else{
+              $result = $user_model->add_user($user_name,$login_name,$password,$user_phone_number,$user_job_number,$user_gender);//插入并返回插入的用户信息
+          }
           return json_encode($result);
       }
     }
@@ -49,7 +55,16 @@ class Usermanage extends ManageController{
           $user_job_number=$data['user_job_number'];
           $user_gender=$data['user_gender'];
           $user_model = new UserModel();
-          $result = $user_model->update_user($user_id,$user_name,$login_name,$user_phone_number,$user_job_number,$user_gender);
+          //判断登录名是否更改
+          if($user_model->loginHaveChange($user_id,$login_name)){//已更改
+              //判断登陆名是否存在
+              $exist=$user_model->loginIsExist($login_name);
+              if($exist==true){
+                  $result['result']="登录名已存在，请重新输入";
+              }
+          }else{
+                $result = $user_model->update_user($user_id,$user_name,$login_name,$user_phone_number,$user_job_number,$user_gender);
+          }
           return json_encode($result);
       }
     }

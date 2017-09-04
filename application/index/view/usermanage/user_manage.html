@@ -191,9 +191,11 @@
                 data: post_data,
                 async: false,
                 success: function (data) {
-                    json_data = eval('(' + data + ')');
-                    alert("修改成功");
-                    // alert(json_data['result']);
+                  json_data = eval('(' + data + ')');
+                  alert(json_data['result']);
+                  if(json_data['result']=="更新成功"){
+                    window.location.reload();
+                  }
                 },
                 error: function (data, status, error) {
                     alert("跳转失败");
@@ -226,8 +228,11 @@
                 async: false,
                 success: function (data) {
                     json_data = eval('(' + data + ')');
-                    alert("添加成功");
-                    // alert(json_data['result']);
+                    if(json_data['result']!=undefined && json_data['result']!=null && json_data['result']!=''){
+                      alert(json_data['result']);
+                    }else{
+                      alert("添加成功");
+                    }
                 },
                 error: function (data, status, error) {
                     alert("跳转失败");
@@ -333,16 +338,3 @@
         });
     }
 </script>
-
-
-<!-- <script>
-    $(document).ready(function () {
-        $("#user_form").hide();
-        $("#create-user").click(function () {
-            $("#user_form").toggle();
-        });
-        $("#btn_qx").click(function () {
-            $("#user_form").hide();
-        });
-    });
-</script> -->
