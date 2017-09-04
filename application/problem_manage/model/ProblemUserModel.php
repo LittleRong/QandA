@@ -8,7 +8,7 @@ class ProblemUserModel {
 	var $fill;
 	var $planDate;//计划答题时间，过了不算
 	function __construct() {
-		$this-> planDate=date('Y-m-d', time());
+		$this-> planDate=date('Y-m-d H:i:s', time());
 	}
 	public function setSingle($single) {
 		$this -> single = $single;
