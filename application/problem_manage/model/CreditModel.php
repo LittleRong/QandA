@@ -146,7 +146,7 @@ class CreditModel {
         ->view('participant','credit','participant.user_id=user.id')
         -> where('team_id',$this->participant['team_id'])
         ->select();
-      $res_final['user_credit']=$this->participant['credit']+$part_add_score;
+      $res_final['user_credit']=$this->participant['credit'];
       $res_final['team_credit']=$team['team_credit'];
       $res_final['team_mates']=$team_mates;
       $res_final['user_score']=  $part_add_score;//用户当次获得的分数
