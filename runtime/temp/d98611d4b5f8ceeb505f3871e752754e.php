@@ -1,4 +1,8 @@
+<<<<<<< HEAD:runtime/temp/7eb0d41f4a80eb98189cd89bc65b6aa3.php
 <?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:94:"G:\xampp\htdocs\QandA\public/../application/problem_manage\view\user_problem\user_problem.html";i:1504261365;}*/ ?>
+=======
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:94:"D:\xampp\htdocs\QandA\public/../application/problem_manage\view\user_problem\user_problem.html";i:1504237617;}*/ ?>
+>>>>>>> 5d72c5ea3fb88d2c94a6c0e743c3b8594e055d2d:runtime/temp/d98611d4b5f8ceeb505f3871e752754e.php
 <!DOCTYPE html>
 <html lang="zh-cn">
 	<head>

@@ -45,7 +45,7 @@ class AnswerController extends Controller {
 				$this->partHaveAnswerArr=array();
 				$refer_event_id = Request::instance()->param("event_id");
 				//$this->error($refer_event_id);
-				
+
 
 	}
 	public function getSy() {
@@ -65,7 +65,7 @@ class AnswerController extends Controller {
 		$this -> refer_participant_id = $this->pariticipant['participant_id']; //参赛人id
 		$this -> refer_team_id = $this->pariticipant['team_id']; //参赛人队伍的id
 
-		$this->creditModel=new CreditModel($this->pariticipant['refer_event_id'],$this->pariticipant['participant_id']);
+		$this->creditModel=new CreditModel($this->pariticipant);
 
 
 
@@ -110,7 +110,7 @@ class AnswerController extends Controller {
 
 
 		//***********************************************
-		//ParticipantHaveAnswerdModel::savePartHaveAnswerds($this->pantHaveAnswerArr);
+		ParticipantHaveAnswerdModel::savePartHaveAnswerds($this->partHaveAnswerArr);
 		$res=$this->creditModel->dealFinal();
 		$res['right_answer']=$allAnswer;
 		LogTool::info('-------------------------answer-submit res----------------------',$res);
@@ -205,11 +205,25 @@ class AnswerController extends Controller {
 						$pantHaveAnswer = new ParticipantHaveAnswerdModel();
 						$pantHaveAnswer->setPro($this -> refer_participant_id, $this -> refer_team_id, $submit['problem_id'], $submitAnswer);
 						//**************判断正确与否********************//
+						if($submitAnswer=='1' ||$submitAnswer=='是' || $submitAnswer=='对'){
+								$submitAnswer=true;
+						}else{
+								$submitAnswer=false;
+						}
+						if($judgeAnswer[$submitId]=='1' ||$judgeAnswer[$submitId]=='是' || $judgeAnswer[$submitId]=='对'){
+								$judgeAnswer[$submitId]=true;
+						}else{
+								$judgeAnswer[$submitId]=false;
+						}
 						if($submitAnswer==$judgeAnswer[$submitId]){
+							LogTool::record('-----------judge-----right----------------------');
+							LogTool::info($submitAnswer,$judgeAnswer[$submitId]);
 							$pantHaveAnswer -> setTrueOrFalse(1); //设置为回答正确
 							$this->creditModel->dealAnswer(1,'judge');
 
 						}else {
+							LogTool::record('-----------judge-----error----------------------');
+							LogTool::info($submitAnswer,$judgeAnswer[$submitId]);
 							$pantHaveAnswer -> setTrueOrFalse(0);
 							$this->creditModel->dealAnswer(0,'judge');
 						}
@@ -230,10 +244,14 @@ class AnswerController extends Controller {
 						$pantHaveAnswer->setPro($this -> refer_participant_id, $this -> refer_team_id, $submit['problem_id'], $submitAnswer);
 						//**************判断正确与否********************//
 						if($submitAnswer==$fillAnswer[$submitId]){
+							LogTool::record('-----------fill-----right----------------------');
+							LogTool::info($submitAnswer,$fillAnswer[$submitId]);
 							$pantHaveAnswer -> setTrueOrFalse(1); //设置为回答正确
 							$this->creditModel->dealAnswer(1,'fill');
 
 						}else {
+							LogTool::record('-----------fill-----error----------------------');
+							LogTool::info($submitAnswer,$fillAnswer[$submitId]);
 							$pantHaveAnswer -> setTrueOrFalse(0);
 							$this->creditModel->dealAnswer(0,'fill');
 						}

@@ -121,6 +121,10 @@
 <script type="text/javascript"> 
 	function leftTimer(year,month,day,hour,minute,second){ 
 	    // 准备 
+	if(!$("#time").val()){
+		$("#timer").hide();
+		return;
+	}
     var countdownMinute = $("#time").val()*60;;//10分钟倒计时 
     //alert(countdownMinute);
     var startTimes = new Date();//开始时间 new Date('2016-11-16 15:21'); 

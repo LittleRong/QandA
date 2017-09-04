@@ -207,6 +207,7 @@
 <script>
     //增加用户
     function adduser() {
+        $(this).attr("disabled","true"); //设置变灰按钮，防止表单重复提交
         var user_name = $(".pui-dialog #user_name").val();
         var login_name = $(".pui-dialog #login_name").val();
         var user_phone_number = $(".pui-dialog #user_phone_number").val();
@@ -272,6 +273,7 @@
         });
         //修改用户
         $(".change_btn").click(function () {
+            $(this).attr("disabled","true"); //设置变灰按钮，防止表单重复提交
             change_id = $(this).parent().parent().find('td').eq(0).html();//获取change_id
             var login_name = $(this).parent().parent().find('td').eq(1).html();
             var user_name = $(this).parent().parent().find('td').eq(2).html();

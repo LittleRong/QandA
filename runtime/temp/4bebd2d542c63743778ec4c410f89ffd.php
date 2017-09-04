@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"D:\xampp\htdocs\QandA\public/../application/index\view\login\change_pwd.html";i:1504237617;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
@@ -6,18 +7,18 @@
     <title>答题系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- bootstrap -->
-    <link rel="stylesheet" href="{$Think.config.web_res_root}/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{$Think.config.web_res_root}/css/jquery-ui.min.css">
-    <link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/css/planeui.min.css" />
+    <link rel="stylesheet" href="<?php echo \think\Config::get('web_res_root'); ?>/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo \think\Config::get('web_res_root'); ?>/css/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo \think\Config::get('web_res_root'); ?>/css/planeui.min.css" />
 </head>
 <body>
 <div  class="pui-layout">
     <header>
         <div style="position: relative;">
-            <img src="{$Think.config.web_res_root}/img/header2.jpg" style="width: 100%;height: auto">
+            <img src="<?php echo \think\Config::get('web_res_root'); ?>/img/header2.jpg" style="width: 100%;height: auto">
         </div>
     </header>
-</div>
+</div> 
     <form class="pui-form pui-input-sm-large pui-input-md-small pui-grid"  id="login_form" method="post">
         <h3 style="text-align: left">修改密码</h3>
         <hr>
@@ -35,19 +36,18 @@
         </div>
         <div class="pui-row pui-form-group pui-form-group-underline-dashed">
             <button id="change_pwd__btn" class="pui-btn pui-btn-small pui-btn-primary ">确认修改</button>
-            <a class="pui-btn pui-btn-small pui-btn-default " href="{:url('index/userindex/user_index')}">返回</a>
+            <a class="pui-btn pui-btn-small pui-btn-default " href="<?php echo url('index/userindex/user_index'); ?>">返回</a>
         </div>
     </form>
 </body>
 <!-- jQuery -->
-<script src="{$Think.config.web_res_root}/js/jquery.min.js"></script>
-<script src="{$Think.config.web_res_root}/js/jquery-ui.min.js"></script>
-<script src="{$Think.config.web_res_root}/js/bootstrap.min.js"></script>
+<script src="<?php echo \think\Config::get('web_res_root'); ?>/js/jquery.min.js"></script>
+<script src="<?php echo \think\Config::get('web_res_root'); ?>/js/jquery-ui.min.js"></script>
+<script src="<?php echo \think\Config::get('web_res_root'); ?>/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function(){
     $("#change_pwd__btn").click(function(){
-        $(this).attr("disabled","true"); //设置变灰按钮，防止表单重复提交
         var old_password = $("#old_password").val();
         var new_password = $("#new_password").val();
         var new_password_again = $("#new_password_again").val();
@@ -58,7 +58,7 @@ $(document).ready(function(){
         }else{
             var post_data = {old_password:old_password,new_password:new_password};
             $.ajax({
-                url:"{:url('index/login/change_pwd_post')}",
+                url:"<?php echo url('index/login/change_pwd_post'); ?>",
                 dataType: "json",
                 type: 'POST',
                 data: post_data,
@@ -66,7 +66,7 @@ $(document).ready(function(){
                 success: function(data){
                     json_data=eval('('+data+')');
                     alert(json_data['result']);
-                    window.location.href="{:url('login/index')}"
+                    window.location.href="<?php echo url('login/index'); ?>"
                 },
                 error: function(data, status, error){
                     alert("跳转失败");
