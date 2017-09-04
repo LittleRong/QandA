@@ -1,4 +1,8 @@
+<<<<<<< HEAD:runtime/temp/7eb0d41f4a80eb98189cd89bc65b6aa3.php
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:94:"G:\xampp\htdocs\QandA\public/../application/problem_manage\view\user_problem\user_problem.html";i:1504261365;}*/ ?>
+=======
 <?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:94:"D:\xampp\htdocs\QandA\public/../application/problem_manage\view\user_problem\user_problem.html";i:1504237617;}*/ ?>
+>>>>>>> 5d72c5ea3fb88d2c94a6c0e743c3b8594e055d2d:runtime/temp/d98611d4b5f8ceeb505f3871e752754e.php
 <!DOCTYPE html>
 <html lang="zh-cn">
 	<head>
@@ -9,7 +13,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
 		<title>开始答题</title>
-        <link rel="icon" type="image/png" href="favicon.png" />
         <link rel="stylesheet" type="text/css" href="<?php echo \think\Config::get('web_res_root'); ?>/css/planeui.min.css" />
 	</head>
 	<body  onload="leftTimer()">
@@ -82,12 +85,12 @@
 									<?php foreach($k as $v2=>$k2): ?>
 										<div class="timu_item pui-card pui-card-shadow pui-card-radius" id="<?php echo $k2['problem_id']; ?>">
 			                				<div class="pui-card-box">
-			                    			<h5><?php echo $v2+1; ?>、<?php echo $k2['problem']; ?>&emsp;<span style="color: red"></span></h5>
+			                    			<h5><?php echo $v2+1; ?>、<?php echo $k2['problem']; ?>&emsp;</h5>
 
 											<?php if(array_key_exists('option',$k2)): if($v == 'single'): foreach($k2['option'] as $v3=>$k3): ?>
-														<input type="radio" name="<?php echo $v; ?>_<?php echo $k2['problem_id']; ?>" id="<?php echo $k3['q_id']; ?>"><?php echo $v3; ?>、<?php echo $k3['content']; ?> <br>
+														<input type="radio" name="<?php echo $v; ?>_<?php echo $k2['problem_id']; ?>" id="<?php echo $k3['q_id']; ?>" value="<?php echo $v3; ?>"><?php echo $v3; ?>、<?php echo $k3['content']; ?> <br>
 													<?php endforeach; else: foreach($k2['option'] as $v3=>$k3): ?>
-														<input type="checkbox" name="<?php echo $v; ?>_<?php echo $k2['problem_id']; ?>" id="<?php echo $k3['q_id']; ?>"><?php echo $v3; ?>、<?php echo $k3['content']; ?> <br>
+														<input type="checkbox" name="<?php echo $v; ?>_<?php echo $k2['problem_id']; ?>" id="<?php echo $k3['q_id']; ?>" value="<?php echo $v3; ?>"><?php echo $v3; ?>、<?php echo $k3['content']; ?> <br>
 													<?php endforeach; endif; else: if($v == 'judge'): ?>
 													<input type="radio" name="<?php echo $v; ?>_<?php echo $k2['problem_id']; ?>" value="1">是<br>
 													<input type="radio" name="<?php echo $v; ?>_<?php echo $k2['problem_id']; ?>" value="0">否
@@ -168,8 +171,6 @@
 		$('#submit').bind("click",function(){
 			var user_answer ={} ;
 			var answer_single={};
-
-
 			//获取单选题id以及答案
 			var single_items=new Array();
 			//var single_length=$("#single_panel .timu_item").length;
@@ -177,13 +178,11 @@
 				//s:单选题id;s_answer:单选题答案id
 				var s=$("#single_panel .timu_item").eq(i).attr('id');
 				var s_answer=$("#single_panel .timu_item input[type='radio']:checked").eq(i).attr("id");
-
 				var answer_single={};
 	        	answer_single['problem_id']=s;
 	        	answer_single['q_id']=s_answer;
 
 				single_items[i]=answer_single;
-
 			}
 
 			var multi_items=new Array();
@@ -194,7 +193,6 @@
 				var m_id='input[name=multi_'+m+']:checked';
 				var m_answers=$("#multi_panel .timu_item").eq(i);
 				var m_answers_lengths=m_answers.length;
-
 				//m:多选题id;id_array：多选题答案数组
 				var id_array=new Array();
 				$(m_id).each(function(){
@@ -202,7 +200,6 @@
 				});
 				// var idstr=id_array.join(',');//将数组元素连接起来以构建一个字符串
 				var answer_multi={};
-
 	        	answer_multi['problem_id']=m;
 	        	answer_multi['q_id']=id_array;
 
@@ -285,26 +282,79 @@
                  	for(var prop in right_answer){
                  		if(prop=="single"){
                  			for(var prop2 in right_answer.single){
-                 				var id="#single_panel #"+prop2+" h5 span";
-                 				$(id).text(right_answer.single[prop2]);
+                 				//答案id与选择的选项id做对比
+                 				var choose_id="#single_panel input[name='single_"+prop2+"']:checked";
+                 				var choose_answer_id=$(choose_id).attr("id");                 				
+                 				var right_answer_id=right_answer.single[prop2];
+                 				var right_answer_id2="#single_panel input[name='single_"+prop2+"'][id='"+right_answer_id+"']";
+                 				var right_answer_content=$(right_answer_id2).val();
+                 				var out_id="#single_panel #"+prop2+" h5";
+                 				if(choose_answer_id==right_answer.single[prop2]){
+									$(out_id).append("<span><i  style='color: #0ca566;' class='fa fa-check fa-2px'></i></span>");
+                 				}else{
+                 					$(out_id).append("<span><i style='color:red' class='fa fa-close fa-2px'></i></span><span style='color:red'>正确答案："+right_answer_content+"</span>");
+                 				}
+                 				
                  			}
                  		}
                  		if(prop=="multi"){
                  			for(var prop2 in right_answer.multi){
-                 				var id="#multi_panel #"+prop2+" h5 span";
-                 				$(id).text(right_answer.multi[prop2]);
+                 				//right_answer.multi[prop2]=bc
+                 				var choose_ids="#multi_panel input[name='multi_"+prop2+"']:checked";
+                 				//console.log("choose_ids:"+choose_ids);
+                 				var choose_answer_id="";
+                 				var choose_answer_content="";
+                 				var out_id="#multi_panel #"+prop2+" h5";
+                 				$(choose_ids).each(function(){
+                 					choose_answer_id+=$(this).attr("id");
+                 				});
+                 				//console.log("choose_answer_id:"+choose_answer_id);
+								//console.log("choose_content:"+choose_answer_content);
+								var right_answer_content="";
+								var right_answer_id="";
+								for(var i=0;i<right_answer.multi[prop2].length;i++){
+									var right_answer_id2="#multi_panel input[name='multi_"+prop2+"'][id='"+right_answer.multi[prop2][i]+"']";
+									right_answer_id+=right_answer.multi[prop2][i];
+									right_answer_content+=$(right_answer_id2).val();
+									//console.log("right_answer_content:"+$(right_answer_id2).val());
+								}
+								//console.log("right_answer_content"+right_answer_content);
+								//按照字母排序
+								var choose_answer_id=choose_answer_id.split("").sort().join("");
+								var right_answer_id=right_answer_id.split("").sort().join("");
+								var right_answer_content=right_answer_content.split("").sort().join("");
+								console.log("choose_answer_id:"+choose_answer_id);
+                 				console.log("right_answer_id:"+right_answer_id);
+                 				if(choose_answer_id==right_answer_id){
+									$(out_id).append("<span><i  style='color: #0ca566;' class='fa fa-check fa-2px'></i></span>");
+                 				}else{
+                 					$(out_id).append("<span><i style='color:red' class='fa fa-close fa-2px'></i></span><span style='color:red'>正确答案："+right_answer_content+"</span>");
+                 				}
                  			}
                  		}
                  		if(prop=="fill"){
                  			for(var prop2 in right_answer.fill){
-                 				var id="#fill_panel #"+prop2+" h5 span";
-                 				$(id).text(right_answer.fill[prop2]);
+                 				var fill_id="#fill_panel input[name='fill_"+prop2+"']";
+                 				var fill_content=$(fill_id).val();
+                 				var out_id="#fill_panel #"+prop2+" h5";
+                 				if(right_answer.fill[prop2]==fill_content){
+									$(out_id).append("<span><i  style='color: #0ca566;' class='fa fa-check fa-2px'></i></span>");
+                 				}else{
+                 					$(out_id).append("<span><i style='color:red' class='fa fa-close fa-2px'></i></span><span style='color:red'>正确答案："+right_answer.fill[prop2]+"</span>");
+                 				}
                  			}
                  		}
                  		if(prop=="judge"){
                  			for(var prop2 in right_answer.judge){
-                 				var id="#judge_panel #"+prop2+" h5 span";
-                 				$(id).text(right_answer.judge[prop2]);
+                 				var judge_id="#judge_panel input[name='judge_"+prop2+"']:checked";
+                 				var judge_content=$(judge_id).val();
+                 				(judge_content == 1) ? judge_content="是" : judge_content="否";
+                 				var out_id="#judge_panel #"+prop2+" h5";
+                 				if(right_answer.judge[prop2]==judge_content){
+									$(out_id).append("<span><i  style='color: #0ca566;' class='fa fa-check fa-2px'></i></span>");
+                 				}else{
+                 					$(out_id).append("<span><i style='color:red' class='fa fa-close fa-2px'></i></span><span style='color:red'>正确答案："+right_answer.judge[prop2]+"</span>");
+                 				}
                  			}
                  		}
                  	}
