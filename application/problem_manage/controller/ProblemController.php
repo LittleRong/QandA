@@ -41,7 +41,8 @@ class ProblemController extends Controller{
 
 					}
 					$event_days=$event_time['time'];//星期
-					if(!array_search((string)date("w"),$event_days)){
+					$if_answer_day=array_search((string)date("w"),$event_days);//查到返回数字，没查到返回boolean
+					if(gettype($if_answer_day)=='boolean'){
 								LogTool::info('----------------------$event_days----------------------',$event_days);
 								LogTool::info(array_search((string)date("w"),$event_days),(string)date("w"));
 								$this->error('今天不是答题日哦！！！');
