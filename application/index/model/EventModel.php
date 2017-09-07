@@ -25,7 +25,7 @@ class EventModel extends Model{
           $end_time=$time->end_time;//结束时间
           $now_time=date("y-m-d");//获取现在时间
           //筛选在有效时间内的事件
-          if(strtotime($now_time)<strtotime($end_time)&&strtotime($now_time)>strtotime($start_time)){
+          if(strtotime($now_time)<=strtotime($end_time)&&strtotime($now_time)>=strtotime($start_time)){
             //添加元素
             $event_id=$result['event_id'];//事件id
             $result['start_time']=$start_time;

@@ -41,7 +41,8 @@ class ProblemController extends Controller{
 
 					}
 					$event_days=$event_time['time'];//星期
-					if(!array_search((string)date("w"),$event_days)){
+					$if_answer_day=array_search((string)date("w"),$event_days);//查到返回数字，没查到返回boolean
+					if(gettype($if_answer_day)=='boolean'){
 								LogTool::info('----------------------$event_days----------------------',$event_days);
 								LogTool::info(array_search((string)date("w"),$event_days),(string)date("w"));
 								$this->error('今天不是答题日哦！！！');
@@ -200,10 +201,22 @@ class ProblemController extends Controller{
 		$this->filter($this->event);//过滤
 		// 1,'team_id' => 1,'credit' => 0,'leader' => 0, 'waited_answer' => NULL,
 		$ifRebuild = 0; //用来判断是否重新生成题目
-
+		$answer_time=(float)$this->event['answer_time'];
 		if ($this->part['waited_answer']) {
-			if (json_decode($this->part['waited_answer']) -> planDate == date('Y-m-d', time())) { // 判断题目是否是当天的
+			$user_begin_time=json_decode($this->part['waited_answer']) -> planDate;
+			$now_time=date('Y-m-d H:i:s');
+			$d_hour=(strtotime($now_time)-strtotime($user_begin_time))%86400/3600;
+
+			LogTool::info('----------------------$user_begin_time----------------------',$user_begin_time);
+			LogTool::info('----------------------$now_time----------------------',$now_time);
+			LogTool::info('----------------------$d_hour----------------------',$d_hour);
+
+			if (explode(' ',$now_time)[0]==explode(' ',$user_begin_time)[0]) { // 判断题目是否是当天的
 				$ifRebuild = 1;
+				$answer_time=$answer_time-$d_hour;
+				if($answer_time<0){
+						$this->error('您的答题时间已经用完了哦！');
+				}
 				LogTool::record('----------------------haven t rebuild the problem----------------------');
 			}
 		}
@@ -214,10 +227,10 @@ class ProblemController extends Controller{
 			$res=$this -> rebuildQuestion();
 		}
 		$res = json_decode(json_encode($res),true);//转换为数组，方便传输给页面
-		LogTool :: info('----------------getUserProblem最后生成的问题---------------------',$res);
+		//LogTool :: info('----------------getUserProblem最后生成的问题---------------------',$res);
 		$this->assign('data',$res);
 		$this->assign('name',$user['login_name']);
-		$this->assign('time',$this->event['answer_time']);
+		$this->assign('time',$answer_time);
 		$this->part['waited_answer']=null;//不传答案
 		$this->assign('participant',json_encode($this->part));
 		return $this->fetch('user_problem/user_problem');

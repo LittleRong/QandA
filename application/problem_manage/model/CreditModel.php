@@ -131,6 +131,9 @@ class CreditModel {
       $team_s=Db :: table('team') -> where('team_id',$this->participant['team_id']) ->select();
       $team=$team_s[0];
       $team_add_score=$this->answer_score;
+      if($this->if_all_right){//全对的话，个人额外加的分数也要加到团队中
+          $team_add_score=$team_add_score+$this->person_score;
+      }
 
       if($this->judgeIfTeamRight($this->participant['team_id'])){
           $team_add_score=$team_add_score+$this->team_score;
@@ -146,7 +149,7 @@ class CreditModel {
         ->view('participant','credit','participant.user_id=user.id')
         -> where('team_id',$this->participant['team_id'])
         ->select();
-      $res_final['user_credit']=$this->participant['credit']+$part_add_score;
+      $res_final['user_credit']=$this->participant['credit'];
       $res_final['team_credit']=$team['team_credit'];
       $res_final['team_mates']=$team_mates;
       $res_final['user_score']=  $part_add_score;//用户当次获得的分数

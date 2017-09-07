@@ -27,7 +27,7 @@
         <div class="pui-layout pui-flex login-main">
             <div class="pui-layout pui-layout-fixed pui-layout-fixed-1200 login-main-con ">
                 <div class="login-panel ">
-                    <form class="pui-form login-form position" action="dashboard.html" method="post">
+                    <form class="pui-form login-form position">
                         <div class="pui-form-group">
                             <!-- <h1 class="pui-text-white pui-text-normal">
                                 <i class=" pui-text-xxxxxl "></i> 登录 Login
@@ -42,8 +42,7 @@
                                 <input type="password" id="password" name="password" maxlength="16" class="pui-unbordered" placeholder="密码" />
                                 <i class="fa fa-lock pui-text-purple-us"></i>
                             </div>
-                        </div>
-                        <div class="pui-form-group">
+														<p><strong><font color="red">请勿使用IE浏览器,推荐使用chrome浏览器</font></strong></p>
                         </div>
                         <div class="pui-form-group">
                             <input type="submit" id="login_btn" name="submit" class="pui-btn  mybtn" value="登录" />
@@ -78,7 +77,7 @@
 <script type="text/javascript">
 $(document).ready(function(){
     $("#login_btn").click(function(){
-			  //$(this).attr("disabled","true"); //设置变灰按钮，防止表单重复提交
+			  $(this).attr("disabled","true"); //设置变灰按钮，防止表单重复提交
         var username = $("#username").val();
         var password = $("#password").val();
         if(username == ''){
@@ -113,6 +112,7 @@ $(document).ready(function(){
                 }
             });
         }
+				$(this).removeAttr("disabled");
         return false;
     });
 });
