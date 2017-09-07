@@ -17,7 +17,7 @@
     <div  class="pui-layout">
         <header>
             <div style="position: relative;">
-                <img src="{$Think.config.web_res_root}/img/header2.jpg" style="width: 100%;height: auto">
+                <img src="{$Think.config.web_res_root}/img/header2.jpg" style="width: 100%;height: auto;min-height: 50px">
                 <div class="form-group pui-btn-gradient pui-btn-shadow" style="position: absolute;bottom: 10px;right: 20px">
                     <input type="button" class="pui-btn pui-btn-small pui-btn-default " value="{$name}">
                     <a type="button" class="pui-btn pui-btn-small pui-btn-primary " href="{:url('index/Login/logout')}" >退出</a>
@@ -29,7 +29,7 @@
 
     <div id="content" class="pui-layout" style="width:96%;margin-top:10px ">
 		<div class="pui-row">
-		   	<div class="pui-grid-xs-3 pui-grid-xs-push-9 pui-grid-sm-3 pui-grid-sm-push-9 pui-grid-md-3 pui-grid-md-push-9 pui-grid-lg-3 pui-grid-lg-push-9 pui-grid-xl-3 pui-grid-xl-push-9 pui-grid-xxl-3 pui-grid-xxl-push-9 ">
+		   	<div class="pui-grid-xs-12 pui-grid-sm-3 pui-grid-sm-push-9 pui-grid-md-3 pui-grid-md-push-9 pui-grid-lg-3 pui-grid-lg-push-9 pui-grid-xl-3 pui-grid-xl-push-9 pui-grid-xxl-3 pui-grid-xxl-push-9 ">
 		    	<div class="pui-text-center">
 		     		<h4 class="bef" style="color: #008EE5"  id="timer">剩余<span id="left_min"></span>分<span id="left_sec"></span>秒</h4>
 		     		<input type="hidden" id="time" value="{$time}">
@@ -55,7 +55,7 @@
 					</div>
 		    	</div>
 		   	</div>
-			<div class="pui-grid-xs-9 pui-grid-xs-pull-3 pui-grid-sm-9 pui-grid-sm-pull-3 pui-grid-md-9 pui-grid-md-pull-3 pui-grid-lg-9 pui-grid-lg-pull-3 pui-grid-xl-9 pui-grid-xl-pull-3 pui-grid-xxl-9 pui-grid-xxl-pull-3 ">
+			<div class="pui-grid-xs-12 pui-grid-sm-9 pui-grid-sm-pull-3 pui-grid-md-9 pui-grid-md-pull-3 pui-grid-lg-9 pui-grid-lg-pull-3 pui-grid-xl-9 pui-grid-xl-pull-3 pui-grid-xxl-9 pui-grid-xxl-pull-3 ">
 				<div>
 			 		<ul class="pui-menu  pui-menu-radius pui-menu-inline pui-menu-bordered pui-text-center" style="margin-bottom: 0px;">
 			            <li style="width: 25%">
@@ -72,8 +72,8 @@
 			            </li>
 			        </ul>
 
-			        <div class="pui-center pui-text-center f24" style="width:70%;">
-						<h6 style="color: #aaa">今日题量：总共<span id="all_pr"></span>道题，单选<span id="single_pr"></span>道，多选<span id="multi_pr"></span>道，判断<span id="judge_pr"></span>道，填空<span id="fill_pr"></span>道</h6>
+			        <div class="pui-center pui-text-center f24" >
+						<h7 style="color: #aaa">今日题量：总共<span id="all_pr"></span>道题，单选<span id="single_pr"></span>道，多选<span id="multi_pr"></span>道，判断<span id="judge_pr"></span>道，填空<span id="fill_pr"></span>道</h7>
 					</div>
 						{foreach $data as $v=>$k}
 							{if condition="is_array($k)"}
@@ -274,7 +274,7 @@
 	                 	$("#all_score").text(parsedJson.team_credit);
 
 	                 	if(parsedJson.user_all_right){
-	                 		$("#credit_result").append("<h5 style='color:red'>真厉害，您今天答对了所有题，额外加"+parsedJson.user_all_right+"分！！</h5>");
+	                 		$("#credit_result").append("<h5 style='color:red;font-size:1.4rem'>真厉害，您今天答对了所有题，额外加"+parsedJson.user_all_right+"分！！</h5>");
 	                 	}
 	                 	if(parsedJson.team_all_right){
 	                 		$("#credit_result").append("<h5 style='color:red'>真厉害，您所在的队伍今天答对了所有题，额外加"+parsedJson.team_all_right+"分！！</h5>");
