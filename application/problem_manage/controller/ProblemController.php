@@ -206,12 +206,12 @@ class ProblemController extends Controller{
 			$user_begin_time=json_decode($this->part['waited_answer']) -> planDate;
 			$now_time=date('Y-m-d H:i:s');
 			$d_hour=(strtotime($now_time)-strtotime($user_begin_time))%86400/3600;
-			$d_day=(strtotime($now_time)-strtotime($user_begin_time))/8640;//时差，单位天
+
 			LogTool::info('----------------------$user_begin_time----------------------',$user_begin_time);
 			LogTool::info('----------------------$now_time----------------------',$now_time);
 			LogTool::info('----------------------$d_hour----------------------',$d_hour);
-			LogTool::info('----------------------$d_day----------------------',$d_day);
-			if ( $d_day<1) { // 判断题目是否是当天的
+
+			if (explode(' ',$now_time)[0]==explode(' ',$user_begin_time)[0]) { // 判断题目是否是当天的
 				$ifRebuild = 1;
 				$answer_time=$answer_time-$d_hour;
 				if($answer_time<0){
