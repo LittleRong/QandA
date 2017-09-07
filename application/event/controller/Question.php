@@ -35,7 +35,7 @@ class Question extends ManageController
     {
       $file = Request::instance()->file('image');
       //定义最大文件大小，文件后缀格式，保存路径
-      $info = $file->validate(['size'=>15678,'ext'=>'xlsx,xls'])->move(__DIR__.'/../../../public/uploads/problem');
+      $info = $file->validate(['size'=>15678000,'ext'=>'xlsx,xls'])->move(__DIR__.'/../../../public/uploads/problem');
       if($info)
       {
         //参数为保存名字
