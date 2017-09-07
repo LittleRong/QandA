@@ -9,6 +9,8 @@ use app\problem_manage\model\ParticipantHaveAnswerdModel;
 use app\problem_manage\model\CreditModel;
 use app\problem_manage\tool\LogTool;
 use think\Db;
+use think\Session;
+use think\Request;
 /*
                            _ooOoo_
                           o8888888o
@@ -41,6 +43,8 @@ class AnswerController extends Controller {
 	var $partHaveAnswerArr = array();
 	public function _initialize(){
 				$this->partHaveAnswerArr=array();
+				$refer_event_id = Request::instance()->param("event_id");
+				//$this->error($refer_event_id);
 
 
 	}
@@ -61,14 +65,14 @@ class AnswerController extends Controller {
 		$this -> refer_participant_id = $this->pariticipant['participant_id']; //参赛人id
 		$this -> refer_team_id = $this->pariticipant['team_id']; //参赛人队伍的id
 
-		$this->creditModel=new CreditModel($this->pariticipant['refer_event_id'],$this->pariticipant['participant_id']);
+		$this->creditModel=new CreditModel($this->pariticipant);
 
 
 
 		$allAnswer=ParticipantModel::getWaitedAnswer($this -> refer_participant_id);//预存在participant表中waitedAnswer的问题id及答案
 		//LogTool::info('---------------$allAnswer-----------------',$allAnswer);
 		if(count($allAnswer)<=0) {
-			LogTool::record('没有找到参赛者，或参赛者中没有预存答案');
+			$this->error('没有找到参赛者，或参赛者中没有预存答案,联系管理员吧！');
 		}else{
 			$allAnswer=json_decode($allAnswer[0]['waited_answer']);
 			$allAnswer=Logtool :: object2array($allAnswer);
@@ -106,8 +110,10 @@ class AnswerController extends Controller {
 
 
 		//***********************************************
-		//ParticipantHaveAnswerdModel::savePartHaveAnswerds($this->pantHaveAnswerArr);
+		ParticipantHaveAnswerdModel::savePartHaveAnswerds($this->partHaveAnswerArr);
 		$res=$this->creditModel->dealFinal();
+		$res['right_answer']=$allAnswer;
+		LogTool::info('-------------------------answer-submit res----------------------',$res);
 		Return json_encode($res);
 	}
 	private function dealSingle($singleSubmit, $singleAnswer) {
@@ -199,11 +205,25 @@ class AnswerController extends Controller {
 						$pantHaveAnswer = new ParticipantHaveAnswerdModel();
 						$pantHaveAnswer->setPro($this -> refer_participant_id, $this -> refer_team_id, $submit['problem_id'], $submitAnswer);
 						//**************判断正确与否********************//
+						if($submitAnswer=='1' ||$submitAnswer=='是' || $submitAnswer=='对'){
+								$submitAnswer=true;
+						}else{
+								$submitAnswer=false;
+						}
+						if($judgeAnswer[$submitId]=='1' ||$judgeAnswer[$submitId]=='是' || $judgeAnswer[$submitId]=='对'){
+								$judgeAnswer[$submitId]=true;
+						}else{
+								$judgeAnswer[$submitId]=false;
+						}
 						if($submitAnswer==$judgeAnswer[$submitId]){
+							LogTool::record('-----------judge-----right----------------------');
+							LogTool::info($submitAnswer,$judgeAnswer[$submitId]);
 							$pantHaveAnswer -> setTrueOrFalse(1); //设置为回答正确
 							$this->creditModel->dealAnswer(1,'judge');
 
 						}else {
+							LogTool::record('-----------judge-----error----------------------');
+							LogTool::info($submitAnswer,$judgeAnswer[$submitId]);
 							$pantHaveAnswer -> setTrueOrFalse(0);
 							$this->creditModel->dealAnswer(0,'judge');
 						}
@@ -224,10 +244,14 @@ class AnswerController extends Controller {
 						$pantHaveAnswer->setPro($this -> refer_participant_id, $this -> refer_team_id, $submit['problem_id'], $submitAnswer);
 						//**************判断正确与否********************//
 						if($submitAnswer==$fillAnswer[$submitId]){
+							LogTool::record('-----------fill-----right----------------------');
+							LogTool::info($submitAnswer,$fillAnswer[$submitId]);
 							$pantHaveAnswer -> setTrueOrFalse(1); //设置为回答正确
 							$this->creditModel->dealAnswer(1,'fill');
 
 						}else {
+							LogTool::record('-----------fill-----error----------------------');
+							LogTool::info($submitAnswer,$fillAnswer[$submitId]);
 							$pantHaveAnswer -> setTrueOrFalse(0);
 							$this->creditModel->dealAnswer(0,'fill');
 						}

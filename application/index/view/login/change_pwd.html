@@ -8,25 +8,34 @@
     <!-- bootstrap -->
     <link rel="stylesheet" href="{$Think.config.web_res_root}/css/bootstrap.min.css">
     <link rel="stylesheet" href="{$Think.config.web_res_root}/css/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="{$Think.config.web_res_root}/css/planeui.min.css" />
 </head>
 <body>
-    <form id="login_form" method="post">
-        <h3>修改密码</h3>
-        <div>
+<div  class="pui-layout">
+    <header>
+        <div style="position: relative;">
+            <img src="{$Think.config.web_res_root}/img/header2.jpg" style="width: 100%;height: auto">
+        </div>
+    </header>
+</div>
+    <form class="pui-form pui-input-sm-large pui-input-md-small pui-grid"  id="login_form" method="post">
+        <h3 style="text-align: left">修改密码</h3>
+        <hr>
+        <div class="pui-row pui-form-group pui-form-group-underline-dashed">
             <label>原密码</label>
             <input type="password" id="old_password" name="old_password"/>
         </div>
-        <div>
+        <div class="pui-row pui-form-group pui-form-group-underline-dashed">
             <label>新密码</label>
             <input type="password" minlength="8" maxlength="20" id="new_password" name="new_password"/>
         </div>
-        <div>
+        <div class="pui-row pui-form-group pui-form-group-underline-dashed">
             <label>新密码确认</label>
             <input type="password" minlength="8" maxlength="20" id="new_password_again" name="new_password_again"/>
         </div>
-        <div>
-            <button id="change_pwd__btn">确认修改</button>
-            <a href="{:url('index/userindex/user_index')}">返回</a>
+        <div class="pui-row pui-form-group pui-form-group-underline-dashed">
+            <button id="change_pwd__btn" class="pui-btn pui-btn-small pui-btn-primary ">确认修改</button>
+            <a class="pui-btn pui-btn-small pui-btn-default " href="{:url('index/userindex/user_index')}">返回</a>
         </div>
     </form>
 </body>
@@ -38,12 +47,15 @@
 <script type="text/javascript">
 $(document).ready(function(){
     $("#change_pwd__btn").click(function(){
+        $(this).attr("disabled","true"); //设置变灰按钮，防止表单重复提交
         var old_password = $("#old_password").val();
         var new_password = $("#new_password").val();
         var new_password_again = $("#new_password_again").val();
 
         //验证两次新密码输入是否相同
-        if(new_password!=new_password_again){
+        if(old_password==""||new_passwordd==""||new_password_againd==""){
+            alert("两次密码不相同，请重新输入");
+        }else if(new_password!=new_password_again){
             alert("两次密码不相同，请重新输入");
         }else{
             var post_data = {old_password:old_password,new_password:new_password};
@@ -56,7 +68,9 @@ $(document).ready(function(){
                 success: function(data){
                     json_data=eval('('+data+')');
                     alert(json_data['result']);
-                    window.location.href="{:url('login/index')}"
+                    if(json_data['result']=='修改成功'){
+                        window.location.href="{:url('login/index')}";
+                    }
                 },
                 error: function(data, status, error){
                     alert("跳转失败");
@@ -64,6 +78,7 @@ $(document).ready(function(){
                 }
             });
         }
+        $(this).removeAttr("disabled");
         return false;
     });
 });

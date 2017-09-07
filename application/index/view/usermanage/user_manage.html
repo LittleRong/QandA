@@ -180,7 +180,7 @@
         var user_job_number = $(".pui-dialog #change_user_job_number").val();
         var user_gender = $(".pui-dialog #change_user_gender").val();
 
-        if (change_user_name == '' || change_login_name == '' || change_user_phone_number == '' || change_user_job_number == '' || change_user_gender == '') {
+        if (user_name == '' || login_name == '' || user_phone_number == '' || user_job_number == '' || user_gender == '') {
             alert("信息不能留空");
         } else {
             var post_data = { change_id: change_id, user_name: user_name, login_name: login_name, user_phone_number: user_phone_number, user_job_number: user_job_number, user_gender: user_gender };
@@ -191,9 +191,11 @@
                 data: post_data,
                 async: false,
                 success: function (data) {
-                    json_data = eval('(' + data + ')');
-                    alert("修改成功");
-                    // alert(json_data['result']);
+                  json_data = eval('(' + data + ')');
+                  alert(json_data['result']);
+                  if(json_data['result']=="更新成功"){
+                    window.location.reload();
+                  }
                 },
                 error: function (data, status, error) {
                     alert("跳转失败");
@@ -207,6 +209,7 @@
 <script>
     //增加用户
     function adduser() {
+        $(this).attr("disabled","true"); //设置变灰按钮，防止表单重复提交
         var user_name = $(".pui-dialog #user_name").val();
         var login_name = $(".pui-dialog #login_name").val();
         var user_phone_number = $(".pui-dialog #user_phone_number").val();
@@ -225,8 +228,11 @@
                 async: false,
                 success: function (data) {
                     json_data = eval('(' + data + ')');
-                    alert("添加成功");
-                    // alert(json_data['result']);
+                    if(json_data['result']!=undefined && json_data['result']!=null && json_data['result']!=''){
+                      alert(json_data['result']);
+                    }else{
+                      alert("添加成功");
+                    }
                 },
                 error: function (data, status, error) {
                     alert("跳转失败");
@@ -272,6 +278,7 @@
         });
         //修改用户
         $(".change_btn").click(function () {
+            $(this).attr("disabled","true"); //设置变灰按钮，防止表单重复提交
             change_id = $(this).parent().parent().find('td').eq(0).html();//获取change_id
             var login_name = $(this).parent().parent().find('td').eq(1).html();
             var user_name = $(this).parent().parent().find('td').eq(2).html();
@@ -331,16 +338,3 @@
         });
     }
 </script>
-
-
-<!-- <script>
-    $(document).ready(function () {
-        $("#user_form").hide();
-        $("#create-user").click(function () {
-            $("#user_form").toggle();
-        });
-        $("#btn_qx").click(function () {
-            $("#user_form").hide();
-        });
-    });
-</script> -->

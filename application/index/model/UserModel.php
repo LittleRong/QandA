@@ -9,11 +9,13 @@ class UserModel extends Model{
     //登录查询
     public function login($username,$password){
         $query=['login_name'=>$username,'pwd'=>md5($password)];
-        $result = $this->get($query);
+        $result = $this->where('login_name',$username)
+                       ->where('pwd',md5($password))
+                       ->field('id,login_name,name,phone_number,job_number,gender,permission')->find();
         if (empty($result)) {//获取数据，若不存在则返回空
             return null;
         }
-        return $result;   //返回用户信息
+        return $result->getData();   //返回用户信息
     }
 
     //修改密码操作
@@ -102,6 +104,24 @@ class UserModel extends Model{
         $this->destroy(['id' => $delete_id]);
         $data['result']="删除成功";
         return $data;
+    }
+
+    //判断登录名是否已经存在
+    public function loginIsExist($login_name){
+      $result = $this->where('login_name',$login_name)->where('deleted',0)->find();
+      if (empty($result)) {//不存在
+          return false;
+      }
+      return true;   //存在
+    }
+
+    //判断登录名是否更改
+    public function loginHaveChange($user_id,$login_name){
+        $result = $this->where('id',$user_id)->where('login_name',$login_name)->find();
+        if (empty($result)) {//登录名更改了
+            return true;
+        }
+        return false;   //登录名未更改
     }
 
 }
