@@ -35,7 +35,17 @@
 			                    {if condition="!empty($data.event_message.answer_day)"}
 									<li>答题时间：
 									{foreach $data.event_message.answer_day as $k=>$v}
-										{$v}&emsp;
+									    {switch name="$v"}
+	                      {case value="1"}星期一{/case}
+	                      {case value="2"}星期二{/case}
+												{case value="3"}星期三{/case}
+	                      {case value="4"}星期四{/case}
+												{case value="5"}星期五{/case}
+	                      {case value="6"}星期六{/case}
+												{case value="0"}星期日{/case}
+	                      {default /}无
+                      {/switch}
+                      &emsp;
 									{/foreach}
 									</li>
 			                    {/if}
