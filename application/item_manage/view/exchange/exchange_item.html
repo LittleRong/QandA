@@ -85,28 +85,30 @@
         <div class="pui-row" style="margin: 0;">
             <div class="pui-grid-xs-12" style="margin-top: 20px;">
                 <div class="pui-row" style="padding-left:20px;padding-right:20px">
-					<div class="pui-grid-xs-2 pui-card pui-card-shadow pui-card-radius">
-							<blockquote>
-								<p>兑换规则</p>
-							</blockquote>
-							<div>
+                    <article class="pui-grid-xs-12 pui-grid-md-2 pui-grid-lg-2" style="margin-bottom:5px">
+                        <header class="pui-notice-head">
+                            <strong> <i class="fa fa-info-circle"></i> 兑换规则</strong>
+                        </header>
+                        <section class="pui-notice-content pui-notice-not-foot">
+                            <div>
                                 <p>只能由组长兑换</p>
-									可用积分：{$teamCred}<br>
-									已有道具:{if condition="!empty($haveItem)"}
-														 {foreach $haveItem as $v=>$k}
-															 {$k.item_name}有{$k.num}个
-															 <br>
-														 {/foreach}
-													 {/if}
-							</div>
-				</div>
-                    <div class="pui-grid-xs-9 pui-grid-xs-push-1 pui-card pui-card-shadow pui-card-radius">
+                                    可用积分：{$teamCred}<br>
+                                    已有道具:{if condition="!empty($haveItem)"}
+                                                         {foreach $haveItem as $v=>$k}
+                                                             {$k.item_name}有{$k.num}个
+                                                             <br>
+                                                         {/foreach}
+                                                     {/if}
+                            </div>
+                        </section> 
+                    </article>
+                    <div class="pui-grid-xs-12 pui-grid-md-9 pui-grid-lg-9  pui-card pui-card-shadow pui-card-radius">
                         <h2 style="margin-top: 10px;margin-left:20px;text-align: left"><a type="button" class="pui-btn pui-btn-default" href="{:url('index/userindex/user_index')}" >返回</a></h2>
                         <hr>
                         <div class="pui-row">
                             {if condition="!empty($arr)"}
               {foreach $arr as $v=>$k}
-        			<div class="pui-grid-xs-4">
+        			<div class="pui-grid-xs-6 pui-grid-lg-4">
                         <div class="pui-center pui-text-left">
                             <img src="{$Think.config.web_res_root}/img/道具.jpg" class="pui-img-thumbnail pui-img-xl" />
                         </div>
