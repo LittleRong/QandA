@@ -119,8 +119,11 @@
 	
 <script type="text/javascript" src="{$Think.config.web_res_root}/js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript"> 
+	$(function(){
+		alert("倒计时开始，请在规定时间内交卷");
+	})
 	function leftTimer(year,month,day,hour,minute,second){ 
-	    // 准备 
+	    // 准备 	
 	if(!$("#time").val()){
 		$("#timer").hide();
 		return;
@@ -181,7 +184,8 @@
 		$('#single').click();
 
 		$('#submit').bind("click",function(){
-			if(confirm("确认交卷吗？")){
+			
+				var flag=0;
 				var user_answer ={} ;
 				var answer_single={};
 				//获取单选题id以及答案
@@ -191,11 +195,12 @@
 					//s:单选题id;s_answer:单选题答案id
 					var s=$("#single_panel .timu_item").eq(i).attr('id');
 					var s_answer=$("#single_panel .timu_item input[type='radio']:checked").eq(i).attr("id");
+					if(s_answer){}else{flag++;}//添加题目未做数量
 					var answer_single={};
-		        	answer_single['problem_id']=s;
-		        	answer_single['q_id']=s_answer;
-
+	        		answer_single['problem_id']=s;
+	        		answer_single['q_id']=s_answer;
 					single_items[i]=answer_single;
+				
 				}
 
 				var multi_items=new Array();
@@ -210,12 +215,14 @@
 					var id_array=new Array();
 					$(m_id).each(function(){
 					    id_array.push($(this).attr('id'));//向数组中添加元素
+					    //console.log(".......:"+$(this).attr('id'));
 					});
 					// var idstr=id_array.join(',');//将数组元素连接起来以构建一个字符串
+					if(id_array.toString()==""){flag++};
 					var answer_multi={};
 		        	answer_multi['problem_id']=m;
 		        	answer_multi['q_id']=id_array;
-
+		        	//console.log("id_array:"+id_array);
 		        	multi_items[i]=answer_multi;
 				}
 
@@ -254,6 +261,14 @@
 				user_answer['judge']=	judge_items;
 				user_answer['fill']=	fill_items;
 				user_answer['participant']={$participant};
+
+			if(flag!=0){
+				if(!confirm("温馨提醒：您还有"+flag+"道题没有答。")){
+					return false;
+				}
+			}
+
+			if(confirm("确认交卷吗？")){
 				$.ajax({  
 	                type: "POST",  
 	                url: "{:url('/answer/SubmitAnswer')}",  
