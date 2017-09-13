@@ -65,6 +65,9 @@ class CreditModel {
 
   }
   private function judgeIfTeamRight($team_id){
+        if($this->if_all_right==0){
+          Return 0;
+        }
         $res=Db :: table('participant_haved_answer')
         -> where('refer_team_id',$team_id)
         -> where('answer_date',date('Y-m-d', time()))
@@ -72,7 +75,7 @@ class CreditModel {
         -> where('true_or_false',1)
         -> select();
         if(count($res)<$this->answer_num*2){
-              Return 0;
+          Return 0;
 
         }else{
           Return 1;
