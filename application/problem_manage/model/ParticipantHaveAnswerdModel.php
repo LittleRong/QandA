@@ -45,7 +45,7 @@ class ParticipantHaveAnswerdModel {
 		}
 	}
 	public static function getPardDayAnswer($pant_id){
-		Return Db::table('participant_haved_answer')->field('answer_date')
+		Return Db::table('participant_haved_answer')
 		->where('refer_participant_id',$pant_id)
 		->where('answer_date',date('Y-m-d', time()))
 		->select();
