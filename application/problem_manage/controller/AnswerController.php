@@ -56,6 +56,17 @@ class AnswerController extends Controller {
 		LogTool::record($_POST);
 		Return 2;
 	}
+	private function judgeIfHaveAnswer(){
+		LogTool::record('-------------------judgeIfHaveAnswer--------------------');
+		$res=ParticipantHaveAnswerdModel::getPardDayAnswer($this->refer_participant_id);
+		if(count($res)>0){
+			LogTool::record('-------------------judgeIfHaveAnswer------------11111--------');
+			return 1;
+		}else{
+			LogTool::record('-------------------judgeIfHaveAnswer------------0000--------');
+			return 0;
+		}
+	}
 	public function postSubmitAnswer() {
 
 		LogTool::info('-------------------answer-post-信息--------------------',$_POST);
@@ -64,6 +75,13 @@ class AnswerController extends Controller {
 		$this->pariticipant=$_POST['participant'];
 		$this -> refer_participant_id = $this->pariticipant['participant_id']; //参赛人id
 		$this -> refer_team_id = $this->pariticipant['team_id']; //参赛人队伍的id
+
+		if($this->judgeIfHaveAnswer()){
+			$this->error('您已完成今日答题任务了哦！');
+		}
+
+
+
 
 		$this->creditModel=new CreditModel($this->pariticipant);
 
