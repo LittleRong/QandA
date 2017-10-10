@@ -223,12 +223,12 @@ class AnswerController extends Controller {
 						$pantHaveAnswer = new ParticipantHaveAnswerdModel();
 						$pantHaveAnswer->setPro($this -> refer_participant_id, $this -> refer_team_id, $submit['problem_id'], $submitAnswer);
 						//**************判断正确与否********************//
-						if($submitAnswer=='1' ||$submitAnswer=='是' || $submitAnswer=='对'){
+						if($submitAnswer=='正确' ||$submitAnswer=='1' ||$submitAnswer=='是' || $submitAnswer=='对'){
 								$submitAnswer=true;
 						}else{
 								$submitAnswer=false;
 						}
-						if($judgeAnswer[$submitId]=='1' ||$judgeAnswer[$submitId]=='是' || $judgeAnswer[$submitId]=='对'){
+						if($judgeAnswer[$submitId]=='正确' ||$judgeAnswer[$submitId]=='1' ||$judgeAnswer[$submitId]=='是' || $judgeAnswer[$submitId]=='对'){
 								$judgeAnswer[$submitId]=true;
 						}else{
 								$judgeAnswer[$submitId]=false;
