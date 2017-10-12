@@ -1,5 +1,5 @@
 <?php
-namespace app\manage\model;
+namespace app\problems_manage\model;
 use think\Model;
 use think\Db;
 

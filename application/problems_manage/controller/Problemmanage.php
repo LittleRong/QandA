@@ -1,12 +1,12 @@
 <?php
 
-namespace app\manage\controller;
+namespace app\problems_manage\controller;
 
 use think\Controller;
 use think\Request;
 use think\View;
-use app\manage\model\ProblemModel;
-use app\manage\model\UserModel;
+use app\problems_manage\model\ProblemModel;
+use app\problems_manage\model\UserModel;
 use app\common\controller\ManageController;
 use think\Session;
 
